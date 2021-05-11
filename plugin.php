@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Shortcode Template
- * Description: A Shortcode with attributes.
- * Author: Christian Schemoschek allbut.social UG
- * URL: https://allbut.social
+ * Plugin Name: Instalog.in Integration
  */
 
 class InstalogIn
