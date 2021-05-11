@@ -1,0 +1,12 @@
+.in-test {
+  border: 2px green solid;
+  background: greenyellow;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+#instalogin {
+  width: 50%;
+  margin: auto;
+  margin-top: 5rem;
+}
