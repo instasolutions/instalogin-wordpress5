@@ -6,13 +6,8 @@
 
 class InstalogIn
 {
-    private $title = "";
-    private $content = "";
-
-
     public function __construct()
     {
-        add_shortcode(self::shortcode_tag, array($this, 'shortcode'));
     }
 }
 
