@@ -15,7 +15,6 @@ if (add_after_element) {
         key: "VluObzy1BoNiFcgm5OXSQun42pF9pFNx", // TODO: use setting variable
         authenticationUrl: "/wp-json/instalogin/v1/login-controller", // The authentication controller to process the authentication
       }).start();
-      console.log(insta);
     });
 } else {
   console.error(
