@@ -1,0 +1,70 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "009aad33e0c3ae710674c720c26c6324",
+    "packages": [
+        {
+            "name": "instalogin/sdk",
+            "version": "v0.7.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/instalogin/instalogin-sdk-php.git",
+                "reference": "478701fd5e9d3cab54f6c33d5ff642c99af2d8c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/instalogin/instalogin-sdk-php/zipball/478701fd5e9d3cab54f6c33d5ff642c99af2d8c5",
+                "reference": "478701fd5e9d3cab54f6c33d5ff642c99af2d8c5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "symfony/var-dumper": "3.4.x-dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Instalogin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Piecko",
+                    "email": "michael.piecko@insta.ag"
+                }
+            ],
+            "description": "PHP Wrapper for the Instalogin API",
+            "homepage": "https://www.instalog.in",
+            "keywords": [
+                "Authentication",
+                "instalogin",
+                "login"
+            ],
+            "support": {
+                "source": "https://github.com/instalogin/instalogin-sdk-php/tree/v0.7.8"
+            },
+            "time": "2021-04-22T05:19:25+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

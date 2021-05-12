@@ -1,0 +1,5 @@
+{
+    "require": {
+        "instalogin/sdk": "^0.7.8"
+    }
+}
