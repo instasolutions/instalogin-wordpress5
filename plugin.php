@@ -1,7 +1,14 @@
 <?php
 
 /**
- * Plugin Name: Instalog.in Integration
+ * Plugin Name: Official Instalog.in Integration
+ * Plugin URI: https://instalog.in/
+ * Author: Christian Schemoschek
+ * Author URI: https://allbut.social
+ * Version: 0.1.0
+ * Licence: TODO
+ * Licence URI: TODO
+ * Text Domain: instalog-in
  */
 
 if (!defined('ABSPATH')) {
@@ -12,17 +19,48 @@ require __DIR__ . '/vendor/autoload.php';
 
 class InstalogIn
 {
+    private $client = false;
+
     public function __construct()
     {
-        // wp_enqueue_style('instalog-in-global', plugin_dir_url(__FILE__) . 'style/style.css?v=1');
-        // TODO: style on admin pages
+        $this->init_client();
 
         $this->settings_page();
         $this->login_controller();
         $this->login_page();
         $this->account_page();
+
+        // Settings link in plugin overview on plugins page
+        add_filter('plugin_row_meta', function ($links) {
+            return array_merge($links, ['settings' => "<a href='/wp-admin/admin.php?page=instalog-in'>Settings</a>"]);
+        });
     }
 
+    // Initialize Instalog.in SDK client
+    private function init_client()
+    {
+        $api_key = get_option('instalog-in-api-key');
+        $api_secret = get_option('instalog-in-api-secret');
+        if ($api_key == false || $api_secret == false) {
+            add_action('admin_notices', function () {
+                echo "<div class='error'><b>Instalog.in</b> API key or secret missing.";
+                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalog-in'>settings</a>.</div>";
+            });
+            return;
+        }
+
+        // TODO: does not throw on error
+        try {
+            $this->client = new \Instalogin\Client($api_key, $api_secret);
+        } catch (\Throwable $th) {
+            add_action('admin_notices', function () {
+                echo "<div class='error'><b>Instalog.in</b> API key or secret invalid.</div>";
+                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalog-in'>settings</a>.</div>";
+            });
+        }
+    }
+
+    // Add settings page to admin panel.
     private function settings_page()
     {
         add_action('admin_menu', function () {
@@ -92,24 +130,25 @@ class InstalogIn
         });
     }
 
-    public function render_settings_api_section()
-    {
-        echo "<p>API Settings</p>";
-    }
-
+    // Login REST API endpoint for the instalog.in js SDK
     private function login_controller()
     {
         add_action('rest_api_init', function () {
             register_rest_route('instalogin/v1', '/login-controller', [
                 'methods' => 'GET',
                 'callback' => function ($request) {
-                    $client = new \Instalogin\Client('VluObzy1BoNiFcgm5OXSQun42pF9pFNx', '7e2672af946831902319d3a17573bac3ed3897be1eb3c962b074bd62e75293cb');
+                    // API Has been disabled in backend
+                    $api_enabled = get_option('instalog-in-api-enabled');
+                    if ($api_enabled != 1) {
+                        return false;
+                    }
+
                     // TODO: redirect query param
                     // TODO: error handling
 
                     $auth_header = $request->get_headers()['authorization'][0];
                     $jwt = [mb_substr($auth_header, 7)][0];
-                    $token = $client->decodeJwt($jwt);
+                    $token = $this->client->decodeJwt($jwt);
                     $email = $token->getIdentifier();
                     $user = get_user_by('email', $email);
 
@@ -117,7 +156,7 @@ class InstalogIn
                         return false;
                     }
 
-                    if ($client->verifyToken($token)) {
+                    if ($this->client->verifyToken($token)) {
                         wp_set_auth_cookie($user->id, true, is_ssl());
                         // return ['location' => $user];
                         return ['location' => '/wp-admin'];
@@ -129,6 +168,7 @@ class InstalogIn
         });
     }
 
+    // Allow users to enable instalog.in authentication in their profile page.
     private function account_page()
     {
         add_action('personal_options', function () {
@@ -142,13 +182,17 @@ class InstalogIn
         });
     }
 
+    // Display login graphic on wp login page.
     private function login_page()
     {
+        $api_enabled = get_option('instalog-in-api-enabled');
+        if ($api_enabled != 1) {
+            return false;
+        }
+
         add_action('login_head', function () {
             wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=1');
         });
-
-        // TODO login_footer fuer js
 
         add_action('login_footer', function () {
             ?> <script async id="instalogin-js" src="https://cdn.instalog.in/js/instalogin-0.7.1.js"></script> <?php

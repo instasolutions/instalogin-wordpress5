@@ -6,16 +6,19 @@ class InstalogInSendMail
 {
     public function __construct()
     {
-        $api_enabled = get_option('instalog-in-api-enabled');
 
+        // allow sending user back to previous page
+        $url = $_GET['redirect'];
+
+        $api_enabled = get_option('instalog-in-api-enabled');
         if ($api_enabled != 1) {
             echo "Instalog.in API has been disabled by an administrator.";
+            echo "<br><a href='$url'>Go back.</a>";
             return;
         }
 
         $api_key = get_option('instalog-in-api-key');
         $api_secret = get_option('instalog-in-api-secret');
-
         if ($api_key == false || $api_secret == false) {
             echo "Instalog.in API key or secret missing. Please contact a site administrator for help.";
             return;
@@ -26,8 +29,7 @@ class InstalogInSendMail
         
         // Fails if user is not logged in
         $user = wp_get_current_user();
-        // send user back to previous page
-        $url = $_GET['redirect'];
+
         
         try {
             $client->provisionIdentity($user->user_email, array(
@@ -35,7 +37,7 @@ class InstalogInSendMail
             ));
         } catch (\Instalogin\Exception\TransportException $e) {
             echo 'Could not connect to Instalogin service: '.$e->getMessage();
-            echo '<br><a href="<?=$url?>">Go back.</a>';
+            echo "<br><a href='$url'>Go back.</a>";
             return;
         } ?>
             
