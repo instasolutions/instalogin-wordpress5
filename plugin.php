@@ -175,11 +175,22 @@ class InstalogIn
     private function account_page()
     {
         add_action('personal_options', function () {
-            $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>
+            $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            $query_params = parse_url($url, PHP_URL_QUERY);
+
+            $sent = strpos($query_params, 'sent') !== false; ?>
                 <div>
-                    <h3>Instalog.in</h3>
-                    Activate instant login via Instalog.in:    
-                    <a href="/wp-content/plugins/instalog-in/send_mail.php?redirect=<?=$url?>">Send activation Mail</a>
+                    <h3><a href="https://instalog.in" target="_black" rel="noreferrer">Instalog.in</a></h3>
+                    <?php if ($sent) {?>
+                    </p></div>
+                        <div class="notice notice-info is-dismissible inline">
+                            <p>
+                                <?= $sent ? __('Email has been sent to your inbox!', 'instalog-in') : '' ?>
+                            </p>
+                        </div>
+                    <?php } ?>
+                    <p><?=__('Ready to join the passwordless revolution?', 'instalog-in')?></p>
+                    <a class="button" href="/wp-content/plugins/instalog-in/send_mail.php?redirect=<?=$url?>"><?=__('Send activation Mail', 'instalog-in')?></a>
                 </div>
             <?php
         });
@@ -200,9 +211,7 @@ class InstalogIn
         });
         
         add_action('login_footer', function () {
-            $api_key = get_option('instalog-in-api-key');
-
-            ?> <script async id="instalogin-js" src="https://cdn.instalog.in/js/instalogin-0.7.1.js"></script> <?php
+            $api_key = get_option('instalog-in-api-key'); ?> <script async id="instalogin-js" src="https://cdn.instalog.in/js/instalogin-0.7.1.js"></script> <?php
             wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=1');
             wp_localize_script('instalog-in-qr-widget', 'api_key', $api_key);
         });

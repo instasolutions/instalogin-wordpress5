@@ -44,10 +44,10 @@ class InstalogInSendMail
         <div>
             Sending activation email... You should be redirected automatically in a few seconds.
             <br>
-            If not click <a href="<?=$url?>">here</a>.
+            If not click <a href="<?=$url?>?sent=true">here</a>.
         </div>
         <script> 
-            window.location.href="<?=$url?>?insta-sent=true";
+            window.location.href="<?=$url?>?sent=true";
         </script>
         <?php
     }
