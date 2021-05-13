@@ -140,29 +140,32 @@ class InstalogIn
                     // API Has been disabled in backend
                     $api_enabled = get_option('instalog-in-api-enabled');
                     if ($api_enabled != 1) {
-                        return false;
+                        return new WP_Error('disabled', __('Login via Instalog.in has been disabled by an administrator.', 'instalog-in'));
                     }
 
                     // TODO: redirect query param
-                    // TODO: error handling
 
-                    $auth_header = $request->get_headers()['authorization'][0];
+                    $auth_header = $request->get_headers()['authorization'];
+                    if ($auth_header == [""]) {
+                        return new WP_REST_Response(__('Authorization header missing.', 'instalog-in'), 403);
+                    }
+                    $auth_header = $auth_header[0];
                     $jwt = [mb_substr($auth_header, 7)][0];
                     $token = $this->client->decodeJwt($jwt);
+
                     $email = $token->getIdentifier();
                     $user = get_user_by('email', $email);
 
                     if ($user == false) {
-                        return false;
+                        return new WP_REST_Response(__('Could not find user presented by token.', 'instalog-in'), 403);
                     }
 
                     if ($this->client->verifyToken($token)) {
                         wp_set_auth_cookie($user->id, true, is_ssl());
-                        // return ['location' => $user];
                         return ['location' => '/wp-admin'];
                     }
 
-                    return false;
+                    return new WP_REST_Response(__('Could not verify token.', 'instalog-in'), 403);
                 }
             ]);
         });
