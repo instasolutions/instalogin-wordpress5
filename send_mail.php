@@ -30,7 +30,6 @@ class InstalogInSendMail
         // Fails if user is not logged in
         $user = wp_get_current_user();
 
-        
         try {
             $client->provisionIdentity($user->user_email, array(
                 'sendEmail' => true // Let Instalogin handle the mail sending

@@ -43,7 +43,7 @@ class InstalogIn
         $api_secret = get_option('instalog-in-api-secret');
         if ($api_key == false || $api_secret == false) {
             add_action('admin_notices', function () {
-                echo "<div class='error'><b>Instalog.in</b> API key or secret missing.";
+                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret missing.', 'instalog-in');
                 echo "<br>Go to <a href='/wp-admin/admin.php?page=instalog-in'>settings</a>.</div>";
             });
             return;
@@ -54,7 +54,7 @@ class InstalogIn
             $this->client = new \Instalogin\Client($api_key, $api_secret);
         } catch (\Throwable $th) {
             add_action('admin_notices', function () {
-                echo "<div class='error'><b>Instalog.in</b> API key or secret invalid.</div>";
+                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret invalid.', 'instalog-in') . "</div>";
                 echo "<br>Go to <a href='/wp-admin/admin.php?page=instalog-in'>settings</a>.</div>";
             });
         }
@@ -82,7 +82,7 @@ class InstalogIn
                             <?= settings_fields('instalog-in'); ?>
                             <?= do_settings_sections('instalog-in'); ?>
                             <p>Info Texts</p>
-                            <?= submit_button('Save Settings'); ?>
+                            <?= submit_button(__('Save Settings', 'instalog-in')); ?>
                         </form>
                     </div>
                 <?php
@@ -94,14 +94,14 @@ class InstalogIn
             $api_section = 'instalog-in-api';
             
             // Add to wp
-            add_settings_section($api_section, 'Instalog.in API Settings', function () {
+            add_settings_section($api_section, __('Instalog.in API Settings', 'instalog-in'), function () {
                 // Settings Section Title
             }, $page);
             
             // API Enabled
             $setting_name = 'instalog-in-api-enabled';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", 'Enable Login via Instalog.in', function () {
+            add_settings_field($setting_name . "_field", __('Enable Login via Instalog.in', 'instalog-in'), function () {
                 $setting_name = 'instalog-in-api-enabled';
                 $setting = get_option($setting_name); ?>
                     <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
