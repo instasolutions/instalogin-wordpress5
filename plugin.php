@@ -146,7 +146,7 @@ class InstalogIn
                     // TODO: redirect query param
 
                     $auth_header = $request->get_headers()['authorization'];
-                    if ($auth_header == [""]) {
+                    if ($auth_header == [""] || $auth_header == null) {
                         return new WP_REST_Response(__('Authorization header missing.', 'instalog-in'), 403);
                     }
                     $auth_header = $auth_header[0];
