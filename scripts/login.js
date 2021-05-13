@@ -6,14 +6,15 @@ if (add_after_element) {
   div.id = "instalogin";
   add_after_element.after(div);
 
+  //api_key passed via wp_localize_script
   let insta;
 
   document
     .getElementById("instalogin-js")
     .addEventListener("load", function () {
       insta = new Instalogin.Auth({
-        key: "VluObzy1BoNiFcgm5OXSQun42pF9pFNx", // TODO: use setting variable
-        authenticationUrl: "/wp-json/instalogin/v1/login-controller", // The authentication controller to process the authentication
+        key: api_key,
+        authenticationUrl: "/wp-json/instalogin/v1/login-controller",
       }).start();
     });
 } else {

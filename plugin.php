@@ -193,13 +193,18 @@ class InstalogIn
             return false;
         }
 
+        
+        
         add_action('login_head', function () {
             wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=1');
         });
-
+        
         add_action('login_footer', function () {
+            $api_key = get_option('instalog-in-api-key');
+
             ?> <script async id="instalogin-js" src="https://cdn.instalog.in/js/instalogin-0.7.1.js"></script> <?php
             wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=1');
+            wp_localize_script('instalog-in-qr-widget', 'api_key', $api_key);
         });
     }
 }
