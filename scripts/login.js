@@ -14,7 +14,7 @@ if (add_after_element) {
     .addEventListener("load", function () {
       insta = new Instalogin.Auth({
         key: api_key,
-        authenticationUrl: "/wp-json/instalogin/v1/login-controller",
+        authenticationUrl: "index.php/wp-json/instalogin/v1/login-controller",
       }).start();
     });
 } else {

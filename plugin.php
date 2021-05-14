@@ -5,7 +5,7 @@
  * Plugin URI: https://instalog.in/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
- * Version: 0.1.0
+ * Version: 0.1.2
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalog-in
