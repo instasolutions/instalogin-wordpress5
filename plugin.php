@@ -175,6 +175,9 @@ class InstalogIn
     private function account_page()
     {
         add_action('personal_options', function () {
+            // current user being edited
+            global $user_id;
+            $user = get_user_by('id', $user_id);
             $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             $query_params = parse_url($url, PHP_URL_QUERY);
 
@@ -185,12 +188,12 @@ class InstalogIn
                     </p></div>
                         <div class="notice notice-info is-dismissible inline">
                             <p>
-                                <?= $sent ? __('Email has been sent to your inbox!', 'instalog-in') : '' ?>
+                                <?= $sent ? __('Email has been sent to ' . $user->user_email . ' !', 'instalog-in') : '' ?>
                             </p>
                         </div>
                     <?php } ?>
                     <p><?=__('Ready to join the passwordless revolution?', 'instalog-in')?></p>
-                    <a class="button" href="/wp-content/plugins/instalog-in/send_mail.php?redirect=<?=$url?>"><?=__('Send activation Mail', 'instalog-in')?></a>
+                    <a class="button" href="/wp-content/plugins/instalog-in/send_mail.php?user_id=<?=$user_id?>&redirect=<?=$url?>"><?=__('Send activation Mail', 'instalog-in')?></a>
                 </div>
             <?php
         });

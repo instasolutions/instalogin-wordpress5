@@ -7,9 +7,30 @@ class InstalogInSendMail
     public function __construct()
     {
 
-        // allow sending user back to previous page
-        $url = $_GET['redirect'];
 
+        // allow sending user back to previous page
+        $url = '/wp-admin';
+        if (isset($_GET['redirect'])) {
+            $url = $_GET['redirect'];
+        }
+        
+        // user authorization
+        if (!is_user_logged_in()) {
+            echo "You must be logged in to perform this action.";
+            echo "<br><a href='$url'>Go back.</a>";
+            exit;
+        }
+
+        $user_id = null;
+        if (isset($_GET['user_id']) && current_user_can('edit_users')) {
+            $user_id = $_GET['user_id'];
+        } else {
+            $user_id = get_current_user_id();
+        }
+
+        $user = get_user_by('id', $user_id);
+
+        // check plugin settings
         $api_enabled = get_option('instalog-in-api-enabled');
         if ($api_enabled != 1) {
             echo "Instalog.in API has been disabled by an administrator.";
@@ -28,7 +49,6 @@ class InstalogInSendMail
         $client = new \Instalogin\Client($api_key, $api_secret);
         
         // Fails if user is not logged in
-        $user = wp_get_current_user();
 
         try {
             $client->provisionIdentity($user->user_email, array(
