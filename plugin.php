@@ -143,6 +143,12 @@ class InstalogIn
                         return new WP_Error('disabled', __('Login via Instalog.in has been disabled by an administrator.', 'instalog-in'));
                     }
 
+                    $is_desktop = false;
+                    $x_requested_with = $request->get_headers()['x_requested_with'];
+                    if ($x_requested_with != null && $x_requested_with[0] == 'XMLHttpRequest') {
+                        $is_desktop = true;
+                    }
+
                     // TODO: redirect query param
 
                     $auth_header = $request->get_headers()['authorization'];
@@ -162,7 +168,13 @@ class InstalogIn
 
                     if ($this->client->verifyToken($token)) {
                         wp_set_auth_cookie($user->id, true, is_ssl());
-                        return ['location' => '/wp-admin'];
+
+                        if ($is_desktop) {
+                            return ['location' => '/wp-admin'];
+                        }
+
+                        wp_redirect('/wp-admin', 307);
+                        exit;
                     }
 
                     return new WP_REST_Response(__('Could not verify token.', 'instalog-in'), 403);
