@@ -9,6 +9,7 @@ if (add_after_element) {
   //api_key passed via wp_localize_script
   const insta = new Instalogin.Auth({
     key: api_key,
+    useAuthHeader: false,
     authenticationUrl: "index.php/wp-json/instalogin/v1/login-controller",
   }).start();
 } else {

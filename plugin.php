@@ -151,12 +151,14 @@ class InstalogIn
 
                     // TODO: redirect query param
 
-                    $auth_header = $request->get_headers()['authorization'];
+                    $auth_header = $request->get_headers()['x_instalogin_auth'];
                     if ($auth_header == [""] || $auth_header == null) {
                         return new WP_REST_Response(__('Authorization header missing.', 'instalog-in'), 403);
                     }
                     $auth_header = $auth_header[0];
-                    $jwt = [mb_substr($auth_header, 7)][0];
+                    // ? this is the default header, sometimes stripped by apache
+                    // $jwt = [mb_substr($auth_header, 7)][0];
+                    $jwt = $auth_header;
                     $token = $this->client->decodeJwt($jwt);
 
                     $email = $token->getIdentifier();
@@ -227,8 +229,8 @@ class InstalogIn
         
         add_action('login_footer', function () {
             $api_key = get_option('instalog-in-api-key');
-            wp_enqueue_script('instalog-in-api', 'https://cdn.instalog.in/js/instalogin-0.7.1.js');
-            wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=1', ['instalog-in-api']);
+            wp_enqueue_script('instalog-in-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
+            wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=2', ['instalog-in-api']);
             wp_localize_script('instalog-in-qr-widget', 'api_key', $api_key);
         });
     }
