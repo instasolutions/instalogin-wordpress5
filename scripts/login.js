@@ -6,11 +6,12 @@ if (add_after_element) {
   div.id = "instalogin";
   add_after_element.after(div);
 
-  //api_key passed via wp_localize_script
+  //api_key, display_type passed via wp_localize_script
   const insta = new Instalogin.Auth({
     key: api_key,
     useAuthHeader: false,
     authenticationUrl: "index.php/wp-json/instalogin/v1/login-controller",
+    type: display_type,
   }).start();
 } else {
   console.error(

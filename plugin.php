@@ -5,7 +5,7 @@
  * Plugin URI: https://instalog.in/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
- * Version: 0.1.5
+ * Version: 0.1.6
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalog-in
@@ -105,6 +105,19 @@ class InstalogIn
                 $setting_name = 'instalog-in-api-enabled';
                 $setting = get_option($setting_name); ?>
                     <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
+                <?php
+            }, $page, $api_section);
+
+            // Use QR Code or Smart Image for login
+            $setting_name = 'instalog-in-api-type';
+            register_setting($page, $setting_name);
+            add_settings_field($setting_name . "_field", 'Display Type', function () {
+                $setting_name = 'instalog-in-api-type';
+                $setting = get_option($setting_name); ?>
+                    <select name="instalog-in-api-type">
+                        <option value="qr" <?php selected($setting, 'qr') ?>>QR Code</option>
+                        <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
+                    </select>
                 <?php
             }, $page, $api_section);
 
@@ -228,10 +241,13 @@ class InstalogIn
         });
         
         add_action('login_footer', function () {
-            $api_key = get_option('instalog-in-api-key');
             wp_enqueue_script('instalog-in-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
-            wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=2', ['instalog-in-api']);
+
+            $api_key = get_option('instalog-in-api-key');
+            $display_type = get_option('instalog-in-api-type', 'qr');
+            wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=3', ['instalog-in-api']);
             wp_localize_script('instalog-in-qr-widget', 'api_key', $api_key);
+            wp_localize_script('instalog-in-qr-widget', 'display_type', $display_type);
         });
     }
 }
