@@ -5,7 +5,7 @@
  * Plugin URI: https://instalog.in/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
- * Version: 0.1.6
+ * Version: 0.1.7
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalog-in
@@ -31,9 +31,12 @@ class InstalogIn
         $this->account_page();
 
         // Settings link in plugin overview on plugins page
-        add_filter('plugin_row_meta', function ($links) {
-            return array_merge($links, ['settings' => "<a href='/wp-admin/admin.php?page=instalog-in'>Settings</a>"]);
-        });
+        add_filter('plugin_row_meta', function ($links, $file_name) {
+            if ($file_name == 'instalog-in/plugin.php') {
+                return array_merge($links, ['settings' => "<a href='/wp-admin/admin.php?page=instalog-in'>Settings</a>"]);
+            }
+            return $links;
+        }, 10, 2);
     }
 
     // Initialize Instalog.in SDK client
