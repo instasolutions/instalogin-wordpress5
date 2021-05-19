@@ -237,7 +237,7 @@ class InstalogIn
         
         
         add_action('login_head', function () {
-            wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=1');
+            wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=2');
         });
         
         add_action('login_footer', function () {
