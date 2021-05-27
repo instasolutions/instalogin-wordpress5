@@ -21,9 +21,15 @@ class InstalogIn
 {
     private $client = false;
 
+    private $sc_login_code;
+
     public function __construct()
     {
         $this->init_client();
+
+        require_once('login_snippet.php');
+
+        $this->sc_login_code = new InstaloginLoginSnippet();
 
         $this->settings_page();
         $this->login_controller();
@@ -236,8 +242,6 @@ class InstalogIn
         if ($api_enabled != 1) {
             return false;
         }
-
-        
         
         add_action('login_head', function () {
             wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=3');
