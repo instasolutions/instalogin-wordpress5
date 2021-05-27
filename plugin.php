@@ -5,7 +5,7 @@
  * Plugin URI: https://instalog.in/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
- * Version: 0.1.7
+ * Version: 0.1.8
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalog-in
@@ -240,7 +240,7 @@ class InstalogIn
         
         
         add_action('login_head', function () {
-            wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=2');
+            wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=3');
         });
         
         add_action('login_footer', function () {
