@@ -1,5 +1,10 @@
 <?php
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+
 class InstaloginLoginSnippet
 {
     public function __construct()
@@ -14,12 +19,12 @@ class InstaloginLoginSnippet
             // SETTINGS
             $attributes = shortcode_atts([
                 'size' => '100px',
-                'showWhenLoggedIn' => "false",
+                'show_when_logged_in' => "false",
                 'border' => "false",
             ], $attributes, 'instalogin-login-code');
 
             $size = $attributes['size'];
-            $showWhenLoggedIn = $attributes['showWhenLoggedIn'] == 'true';
+            $showWhenLoggedIn = $attributes['show_when_logged_in'] == 'true';
             $border = $attributes['border'] == 'true';
 
             if (!$showWhenLoggedIn && is_user_logged_in()) {

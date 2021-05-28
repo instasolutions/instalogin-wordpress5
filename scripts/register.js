@@ -1,5 +1,4 @@
 {
-  console.log("hi");
   /** @type {HTMLFormElement[]} */
   const forms = document.querySelectorAll(".instalog-in-register");
 

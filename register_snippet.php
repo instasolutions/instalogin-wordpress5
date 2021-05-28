@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 require __DIR__ . '/vendor/autoload.php';
-include './wp-admin/includes/user.php';
+include __DIR__ . '/../../../wp-admin/includes/user.php';
 
 
 class InstaloginRegisterSnippet
@@ -83,15 +83,15 @@ class InstaloginRegisterSnippet
 
             // SETTINGS
             $attributes = shortcode_atts([
-                        'showUsername' => "true",
-                        'showSubmit' => "true",
-                        'showWhenLoggedIn' => "true",
+                        'show_username' => "true",
+                        'show_submit' => "true",
+                        'show_when_logged_in' => "false",
                     ], $attributes, 'instalogin-register');
         
-            $show_when_logged_in = $attributes['showWhenLoggedIn'] == 'true';
-            $show_username = $attributes['showUsername'] == 'true';
-            $show_submit = $attributes['showSubmit'] == 'true';
-
+            $show_when_logged_in = $attributes['show_when_logged_in'] == 'true';
+            $show_username = $attributes['show_username'] == 'true';
+            $show_submit = $attributes['show_submit'] == 'true';
+            
             if (!$show_when_logged_in && is_user_logged_in()) {
                 return '';
             }
