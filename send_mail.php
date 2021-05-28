@@ -6,8 +6,6 @@ class InstalogInSendMail
 {
     public function __construct()
     {
-
-
         // allow sending user back to previous page
         $url = '/wp-admin';
         if (isset($_GET['redirect'])) {
