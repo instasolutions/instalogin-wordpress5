@@ -22,14 +22,17 @@ class InstalogIn
     private $client = false;
 
     private $sc_login_code;
+    private $sc_register;
 
     public function __construct()
     {
         $this->init_client();
 
         require_once('login_snippet.php');
+        require_once('register_snippet.php');
 
         $this->sc_login_code = new InstaloginLoginSnippet();
+        $this->sc_register = new InstaloginRegisterSnippet($this->client);
 
         $this->settings_page();
         $this->login_controller();

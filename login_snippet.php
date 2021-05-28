@@ -5,9 +5,10 @@ class InstaloginLoginSnippet
     public function __construct()
     {
         add_shortcode('instalogin-login-code', function ($attributes = [], $content = null) {
+            // API disabled via settings?
             $api_enabled = get_option('instalog-in-api-enabled');
             if ($api_enabled != 1) {
-                return false;
+                return '';
             }
 
             // SETTINGS
@@ -20,6 +21,10 @@ class InstaloginLoginSnippet
             $size = $attributes['size'];
             $showWhenLoggedIn = $attributes['showWhenLoggedIn'] == 'true';
             $border = $attributes['border'] == 'true';
+
+            if (!$showWhenLoggedIn && is_user_logged_in()) {
+                return '';
+            }
 
             // SCRIPTS
             wp_enqueue_script('instalog-in-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
@@ -45,9 +50,7 @@ class InstaloginLoginSnippet
                 <div id="instalogin"></div>
             <?php
 
-            $o = ob_get_clean();
-
-            return $o;
+            return ob_get_clean();
         });
     }
 }
