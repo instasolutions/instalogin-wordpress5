@@ -98,7 +98,7 @@ class InstaloginRegisterSnippet
 
             // SCRIPTS
             wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/form.css?v=3');
-            wp_enqueue_script('instalog-in-script', plugin_dir_url(__FILE__) . 'scripts/register.js?v=1');
+            wp_enqueue_script('instalog-in-register', plugin_dir_url(__FILE__) . 'scripts/register.js?v=1', ['wp-i18n']);
 
 
             // RENDER

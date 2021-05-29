@@ -1,4 +1,7 @@
 {
+  wp_set_script_translations("instalog-in-register", "instalog-in");
+  const { __ } = wp.i18n;
+
   /** @type {HTMLFormElement[]} */
   const forms = document.querySelectorAll(".instalog-in-register");
 
@@ -37,7 +40,10 @@
 
       if (response.ok) {
         // TODO: Translation
-        e_info.innerText = "Account created! Please check your inbox.";
+        e_info.innerText = __(
+          "Account created! Please check your inbox.",
+          "instalog-in"
+        );
         if (e_username) e_username.disabled = true;
         if (e_submit) e_submit.disabled = true;
         e_email.disabled = true;
