@@ -84,14 +84,14 @@ class InstaloginRegisterSnippet
             // SETTINGS
             $attributes = shortcode_atts([
                         'require_username' => "true",
-                        'show_submit' => "true",
+                        'show_button' => "true",
                         'button_text' => "Submit",
                         'show_when_logged_in' => "false",
                     ], $attributes, 'instalogin-register');
         
             $show_when_logged_in = $attributes['show_when_logged_in'] == 'true';
             $require_username = $attributes['require_username'] == 'true';
-            $show_submit = $attributes['show_submit'] == 'true';
+            $show_button = $attributes['show_button'] == 'true';
             $button_text = $attributes['button_text'];
             
             if (!$show_when_logged_in && is_user_logged_in()) {
@@ -119,7 +119,7 @@ class InstaloginRegisterSnippet
                         <input type="email" required class="instalog-in-email" class="instalog-in-input">
                     </label>
 
-                    <?php if ($show_submit) { ?>
+                    <?php if ($show_button) { ?>
                         <input class="instalog-in-submit" type="submit" value="<?= $button_text ?>">
                     <?php } ?>
 
