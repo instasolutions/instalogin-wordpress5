@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 require __DIR__ . '/vendor/autoload.php';
-include __DIR__ . '/../../../wp-admin/includes/user.php';
+include_once __DIR__ . '/../../../wp-admin/includes/user.php';
 
 
 class InstaloginRegisterSnippet
@@ -110,7 +110,7 @@ class InstaloginRegisterSnippet
 
                     <?php if ($require_username) { ?>
                         <label>
-                            <span class="instalog-in-label">User</span>
+                            <span class="instalog-in-label">Username</span>
                             <input type="text" required class="instalog-in-username" class="instalog-in-input">
                         </label>
                     <?php } ?>
