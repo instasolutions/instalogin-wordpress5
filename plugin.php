@@ -113,8 +113,18 @@ class InstalogIn
             // API Enabled
             $setting_name = 'instalog-in-api-enabled';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", __('Enable Login via Instalog.in', 'instalog-in'), function () {
+            add_settings_field($setting_name . "_field", __('Enable login via Instalog.in', 'instalog-in'), function () {
                 $setting_name = 'instalog-in-api-enabled';
+                $setting = get_option($setting_name); ?>
+                    <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
+                <?php
+            }, $page, $api_section);
+
+            // Registration via API enabled
+            $setting_name = 'instalog-in-api-registration';
+            register_setting($page, $setting_name);
+            add_settings_field($setting_name . "_field", __('Enable registration via Instalog.in', 'instalog-in'), function () {
+                $setting_name = 'instalog-in-api-registration';
                 $setting = get_option($setting_name); ?>
                     <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
                 <?php

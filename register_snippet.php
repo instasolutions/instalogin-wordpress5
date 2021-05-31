@@ -24,7 +24,8 @@ class InstaloginRegisterSnippet
                 'callback' => function ($request) {
                     // API Has been disabled in backend
                     $api_enabled = get_option('instalog-in-api-enabled') == 1;
-                    if (!$api_enabled) {
+                    $registration_enabled = get_option('instalog-in-api-registration') == 1;
+                    if (!$api_enabled || !$registration_enabled) {
                         return new WP_Error('disabled', __('Registration via Instalog.in has been disabled by an administrator.', 'instalog-in'));
                     }
 
