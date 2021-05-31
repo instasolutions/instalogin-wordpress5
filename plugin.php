@@ -130,6 +130,16 @@ class InstalogIn
                 <?php
             }, $page, $api_section);
 
+            // Redirection
+            $setting_name = 'instalog-in-api-redirect';
+            register_setting($page, $setting_name);
+            add_settings_field($setting_name . "_field", 'Redirect to after login', function () {
+                $setting_name = 'instalog-in-api-redirect';
+                $setting = get_option($setting_name); ?>
+                    <input type="text" placeholder="/wp-admin" name="<?=$setting_name?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>"/>
+                <?php
+            }, $page, $api_section);
+
             // Use QR Code or Smart Image for login
             $setting_name = 'instalog-in-api-type';
             register_setting($page, $setting_name);
@@ -203,8 +213,14 @@ class InstalogIn
                     if ($this->client->verifyToken($token)) {
                         wp_set_auth_cookie($user->id, true, is_ssl());
 
-                        $redirect = $request->get_header('referer');
-                        if ($redirect == null || strpos($redirect, 'wp-login.php') !== false) {
+                        // TODO: Add option redirect to current page?
+                        // $redirect = $request->get_header('referer');
+                        // if ($redirect == null || strpos($redirect, 'wp-login.php') !== false) {
+                        //     $redirect = '/wp-admin';
+                        // }
+
+                        $redirect = get_option('instalog-in-api-redirect', '/wp-admin');
+                        if ($redirect == '') {
                             $redirect = '/wp-admin';
                         }
 
