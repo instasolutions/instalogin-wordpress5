@@ -1,5 +1,4 @@
 {
-  wp_set_script_translations("instalog-in-register", "instalog-in");
   const { __ } = wp.i18n;
 
   /** @type {HTMLFormElement[]} */
@@ -24,8 +23,6 @@
       let username = null;
       if (e_username) username = e_username.value;
       const email = e_email.value;
-
-      //   error.innerText = "Hello";
 
       const body = { username, email };
 
