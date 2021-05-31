@@ -176,11 +176,10 @@ class InstalogIn
 
                     // TODO: redirect query param
 
-                    $auth_header = $request->get_headers()['x_instalogin_auth'];
-                    if ($auth_header == [""] || $auth_header == null) {
+                    $auth_header = $request->get_header('x_instalogin_auth');
+                    if ($auth_header == null) {
                         return new WP_REST_Response(__('Authorization header missing.', 'instalog-in'), 403);
                     }
-                    $auth_header = $auth_header[0];
                     // ? this is the default header, sometimes stripped by apache
                     // $jwt = [mb_substr($auth_header, 7)][0];
                     $jwt = $auth_header;
@@ -196,11 +195,16 @@ class InstalogIn
                     if ($this->client->verifyToken($token)) {
                         wp_set_auth_cookie($user->id, true, is_ssl());
 
-                        if ($is_desktop) {
-                            return ['location' => '/wp-admin'];
+                        $redirect = $request->get_header('referer');
+                        if ($redirect == null || strpos($redirect, 'wp-login.php') !== false) {
+                            $redirect = '/wp-admin';
                         }
 
-                        wp_redirect('/wp-admin', 307);
+                        if ($is_desktop) {
+                            return ['location' => $redirect];
+                        }
+
+                        wp_redirect($redirect, 307);
                         exit;
                     }
 
