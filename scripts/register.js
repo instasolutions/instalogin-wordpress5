@@ -41,12 +41,14 @@
           "Account created! Please check your inbox.",
           "instalog-in"
         );
+        e_info.style.display = "block";
         if (e_username) e_username.disabled = true;
         if (e_submit) e_submit.disabled = true;
         e_email.disabled = true;
       } else {
         const data = await response.json();
         console.error(data);
+        e_error.style.display = "block";
         e_error.innerText = data.message;
       }
     });
