@@ -174,8 +174,6 @@ class InstalogIn
                         $is_desktop = true;
                     }
 
-                    // TODO: redirect query param
-
                     $auth_header = $request->get_header('x_instalogin_auth');
                     if ($auth_header == null) {
                         return new WP_REST_Response(__('Authorization header missing.', 'instalog-in'), 403);
