@@ -29,15 +29,15 @@ class InstalogInSendMail
         $user = get_user_by('id', $user_id);
 
         // check plugin settings
-        $api_enabled = get_option('instalog-in-api-enabled');
+        $api_enabled = get_option('instalogin-api-enabled');
         if ($api_enabled != 1) {
             echo "Instalog.in API has been disabled by an administrator.";
             echo "<br><a href='$url'>Go back.</a>";
             return;
         }
 
-        $api_key = get_option('instalog-in-api-key');
-        $api_secret = get_option('instalog-in-api-secret');
+        $api_key = get_option('instalogin-api-key');
+        $api_secret = get_option('instalogin-api-secret');
         if ($api_key == false || $api_secret == false) {
             echo "Instalog.in API key or secret missing. Please contact a site administrator for help.";
             return;

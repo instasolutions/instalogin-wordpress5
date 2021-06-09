@@ -1,18 +1,18 @@
-.instalog-in-label {
+.instalogin-label {
   display: block;
 }
 
-.instalog-in-submit {
+.instalogin-submit {
   margin-top: 1rem;
   display: block;
 }
 
-.instalog-in-info {
+.instalogin-info {
   display: none;
   margin: 1rem 0;
 }
 
-.instalog-in-error {
+.instalogin-error {
   display: none;
   margin: 1rem 0;
 }

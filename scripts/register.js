@@ -2,19 +2,19 @@
   const { __ } = wp.i18n;
 
   /** @type {HTMLFormElement[]} */
-  const forms = document.querySelectorAll(".instalog-in-register");
+  const forms = document.querySelectorAll(".instalogin-register");
 
   for (const form of forms) {
     /** @type {HTMLInputElement} */
-    const e_username = form.querySelector(".instalog-in-username");
+    const e_username = form.querySelector(".instalogin-username");
     /** @type {HTMLInputElement} */
-    const e_email = form.querySelector(".instalog-in-email");
+    const e_email = form.querySelector(".instalogin-email");
     /** @type HTMLInputElement */
-    const e_submit = form.querySelector(".instalog-in-submit");
+    const e_submit = form.querySelector(".instalogin-submit");
     /** @type HTMLParagraphElement */
-    const e_error = form.querySelector(".instalog-in-error");
+    const e_error = form.querySelector(".instalogin-error");
     /** @type HTMLParagraphElement */
-    const e_info = form.querySelector(".instalog-in-info");
+    const e_info = form.querySelector(".instalogin-info");
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -39,7 +39,7 @@
         // TODO: Translation
         e_info.innerText = __(
           "Account created! Please check your inbox.",
-          "instalog-in"
+          "instalogin"
         );
         e_info.style.display = "block";
         if (e_username) e_username.disabled = true;

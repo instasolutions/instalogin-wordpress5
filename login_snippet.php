@@ -11,7 +11,7 @@ class InstaloginLoginSnippet
     {
         add_shortcode('instalogin-login-code', function ($attributes = [], $content = null) {
             // API disabled via settings?
-            $api_enabled = get_option('instalog-in-api-enabled');
+            $api_enabled = get_option('instalogin-api-enabled');
             if ($api_enabled != 1) {
                 return '';
             }
@@ -32,13 +32,13 @@ class InstaloginLoginSnippet
             }
 
             // SCRIPTS
-            wp_enqueue_script('instalog-in-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
+            wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
 
-            $api_key = get_option('instalog-in-api-key');
-            $display_type = get_option('instalog-in-api-type', 'qr');
-            wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=3', ['instalog-in-api']);
-            wp_localize_script('instalog-in-qr-widget', 'api_key', $api_key);
-            wp_localize_script('instalog-in-qr-widget', 'display_type', $display_type);
+            $api_key = get_option('instalogin-api-key');
+            $display_type = get_option('instalogin-api-type', 'qr');
+            wp_enqueue_script('instalogin-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=3', ['instalogin-api']);
+            wp_localize_script('instalogin-qr-widget', 'api_key', $api_key);
+            wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
 
             // RENDER
             ob_start(); ?>

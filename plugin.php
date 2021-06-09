@@ -5,10 +5,10 @@
  * Plugin URI: https://instalog.in/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
- * Version: 0.2.1
+ * Version: 0.2.5
  * Licence: TODO
  * Licence URI: TODO
- * Text Domain: instalog-in
+ * Text Domain: instalogin
  */
 
 if (!defined('ABSPATH')) {
@@ -41,8 +41,8 @@ class InstalogIn
 
         // Settings link in plugin overview on plugins page
         add_filter('plugin_row_meta', function ($links, $file_name) {
-            if ($file_name == 'instalog-in/plugin.php') {
-                return array_merge($links, ['settings' => "<a href='/wp-admin/admin.php?page=instalog-in'>Settings</a>"]);
+            if ($file_name == 'instalogin/plugin.php') {
+                return array_merge($links, ['settings' => "<a href='/wp-admin/admin.php?page=instalogin'>Settings</a>"]);
             }
             return $links;
         }, 10, 2);
@@ -51,12 +51,12 @@ class InstalogIn
     // Initialize Instalog.in SDK client
     private function init_client()
     {
-        $api_key = get_option('instalog-in-api-key');
-        $api_secret = get_option('instalog-in-api-secret');
+        $api_key = get_option('instalogin-api-key');
+        $api_secret = get_option('instalogin-api-secret');
         if ($api_key == false || $api_secret == false) {
             add_action('admin_notices', function () {
-                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret missing.', 'instalog-in');
-                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalog-in'>settings</a>.</div>";
+                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret missing.', 'instalogin');
+                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalogin'>settings</a>.</div>";
             });
             return;
         }
@@ -66,8 +66,8 @@ class InstalogIn
             $this->client = new \Instalogin\Client($api_key, $api_secret);
         } catch (\Throwable $th) {
             add_action('admin_notices', function () {
-                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret invalid.', 'instalog-in') . "</div>";
-                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalog-in'>settings</a>.</div>";
+                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret invalid.', 'instalogin') . "</div>";
+                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalogin'>settings</a>.</div>";
             });
         }
     }
@@ -76,25 +76,25 @@ class InstalogIn
     private function settings_page()
     {
         add_action('admin_menu', function () {
-            add_menu_page('Instalog.in Settings', 'Instalog.In', 'manage_options', 'instalog-in', function () {
+            add_menu_page('Instalog.in Settings', 'Instalog.In', 'manage_options', 'instalogin', function () {
                 if (! current_user_can('manage_options')) {
                     return;
                 }
 
                 // show settings saved info
                 if (isset($_GET['settings-updated'])) {
-                    add_settings_error('instalog-in_messages', 'instalog-in_message', __('Settings Saved', 'instalog-in'), 'updated');
+                    add_settings_error('instalogin_messages', 'instalogin_message', __('Settings Saved', 'instalogin'), 'updated');
                 }
                 // show messages/errors
-                settings_errors('instalog-in_messages');
+                settings_errors('instalogin_messages');
                 
                 // Render Settings?>
                     <div class="wrap">
                         <form action="options.php" method="post">
-                            <?= settings_fields('instalog-in'); ?>
-                            <?= do_settings_sections('instalog-in'); ?>
+                            <?= settings_fields('instalogin'); ?>
+                            <?= do_settings_sections('instalogin'); ?>
                             <p>Info Texts</p>
-                            <?= submit_button(__('Save Settings', 'instalog-in')); ?>
+                            <?= submit_button(__('Save Settings', 'instalogin')); ?>
                         </form>
                     </div>
                 <?php
@@ -102,51 +102,51 @@ class InstalogIn
         });
 
         add_action('admin_init', function () {
-            $page = 'instalog-in';
-            $api_section = 'instalog-in-api';
+            $page = 'instalogin';
+            $api_section = 'instalogin-api';
             
             // Add to wp
-            add_settings_section($api_section, __('Instalog.in API Settings', 'instalog-in'), function () {
+            add_settings_section($api_section, __('Instalog.in API Settings', 'instalogin'), function () {
                 // Settings Section Title
             }, $page);
             
             // API Enabled
-            $setting_name = 'instalog-in-api-enabled';
+            $setting_name = 'instalogin-api-enabled';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", __('Enable login via Instalog.in', 'instalog-in'), function () {
-                $setting_name = 'instalog-in-api-enabled';
+            add_settings_field($setting_name . "_field", __('Enable login via Instalog.in', 'instalogin'), function () {
+                $setting_name = 'instalogin-api-enabled';
                 $setting = get_option($setting_name); ?>
                     <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
                 <?php
             }, $page, $api_section);
 
             // Registration via API enabled
-            $setting_name = 'instalog-in-api-registration';
+            $setting_name = 'instalogin-api-registration';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", __('Enable registration via Instalog.in', 'instalog-in'), function () {
-                $setting_name = 'instalog-in-api-registration';
+            add_settings_field($setting_name . "_field", __('Enable registration via Instalog.in', 'instalogin'), function () {
+                $setting_name = 'instalogin-api-registration';
                 $setting = get_option($setting_name); ?>
                     <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
                 <?php
             }, $page, $api_section);
 
             // Redirection
-            $setting_name = 'instalog-in-api-redirect';
+            $setting_name = 'instalogin-api-redirect';
             register_setting($page, $setting_name);
             add_settings_field($setting_name . "_field", 'Redirect to after login', function () {
-                $setting_name = 'instalog-in-api-redirect';
+                $setting_name = 'instalogin-api-redirect';
                 $setting = get_option($setting_name); ?>
                     <input type="text" placeholder="/wp-admin" name="<?=$setting_name?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>"/>
                 <?php
             }, $page, $api_section);
 
             // Use QR Code or Smart Image for login
-            $setting_name = 'instalog-in-api-type';
+            $setting_name = 'instalogin-api-type';
             register_setting($page, $setting_name);
             add_settings_field($setting_name . "_field", 'Display Type', function () {
-                $setting_name = 'instalog-in-api-type';
+                $setting_name = 'instalogin-api-type';
                 $setting = get_option($setting_name); ?>
-                    <select name="instalog-in-api-type">
+                    <select name="instalogin-api-type">
                         <option value="qr" <?php selected($setting, 'qr') ?>>QR Code</option>
                         <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
                     </select>
@@ -154,20 +154,20 @@ class InstalogIn
             }, $page, $api_section);
 
             // API Secret
-            $setting_name = 'instalog-in-api-key';
+            $setting_name = 'instalogin-api-key';
             register_setting($page, $setting_name);
             add_settings_field($setting_name . "_field", 'API Key', function () {
-                $setting_name = 'instalog-in-api-key';
+                $setting_name = 'instalogin-api-key';
                 $setting = get_option($setting_name); ?>
                     <input type="text" name="<?=$setting_name?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>"/>
                 <?php
             }, $page, $api_section);
 
             // API Secret
-            $setting_name = 'instalog-in-api-secret';
+            $setting_name = 'instalogin-api-secret';
             register_setting($page, $setting_name);
             add_settings_field($setting_name . "_field", 'API Secret', function () {
-                $setting_name = 'instalog-in-api-secret';
+                $setting_name = 'instalogin-api-secret';
                 $setting = get_option($setting_name); ?>
                     <input type="password" name="<?=$setting_name?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>"/>
                 <?php
@@ -183,9 +183,9 @@ class InstalogIn
                 'methods' => 'GET',
                 'callback' => function ($request) {
                     // API Has been disabled in backend
-                    $api_enabled = get_option('instalog-in-api-enabled');
+                    $api_enabled = get_option('instalogin-api-enabled');
                     if ($api_enabled != 1) {
-                        return new WP_Error('disabled', __('Login via Instalog.in has been disabled by an administrator.', 'instalog-in'));
+                        return new WP_Error('disabled', __('Login via Instalog.in has been disabled by an administrator.', 'instalogin'));
                     }
 
                     $is_desktop = false;
@@ -196,7 +196,7 @@ class InstalogIn
 
                     $auth_header = $request->get_header('x_instalogin_auth');
                     if ($auth_header == null) {
-                        return new WP_REST_Response(__('Authorization header missing.', 'instalog-in'), 403);
+                        return new WP_REST_Response(__('Authorization header missing.', 'instalogin'), 403);
                     }
                     // ? this is the default header, sometimes stripped by apache
                     // $jwt = [mb_substr($auth_header, 7)][0];
@@ -207,7 +207,7 @@ class InstalogIn
                     $user = get_user_by('email', $email);
 
                     if ($user == false) {
-                        return new WP_REST_Response(__('Could not find user presented by token.', 'instalog-in'), 403);
+                        return new WP_REST_Response(__('Could not find user presented by token.', 'instalogin'), 403);
                     }
 
                     if ($this->client->verifyToken($token)) {
@@ -219,7 +219,7 @@ class InstalogIn
                         //     $redirect = '/wp-admin';
                         // }
 
-                        $redirect = get_option('instalog-in-api-redirect', '/wp-admin');
+                        $redirect = get_option('instalogin-api-redirect', '/wp-admin');
                         if ($redirect == '') {
                             $redirect = '/wp-admin';
                         }
@@ -232,7 +232,7 @@ class InstalogIn
                         exit;
                     }
 
-                    return new WP_REST_Response(__('Could not verify token.', 'instalog-in'), 403);
+                    return new WP_REST_Response(__('Could not verify token.', 'instalogin'), 403);
                 }
             ]);
         });
@@ -255,12 +255,12 @@ class InstalogIn
                     </p></div>
                         <div class="notice notice-info is-dismissible inline">
                             <p>
-                                <?= $sent ? __('Email has been sent to ' . $user->user_email . ' !', 'instalog-in') : '' ?>
+                                <?= $sent ? __('Email has been sent to ' . $user->user_email . ' !', 'instalogin') : '' ?>
                             </p>
                         </div>
                     <?php } ?>
-                    <p><?=__('Ready to join the passwordless revolution?', 'instalog-in')?></p>
-                    <a class="button" href="/wp-content/plugins/instalog-in/send_mail.php?user_id=<?=$user_id?>&redirect=<?=$url?>"><?=__('Send activation Mail', 'instalog-in')?></a>
+                    <p><?=__('Ready to join the passwordless revolution?', 'instalogin')?></p>
+                    <a class="button" href="<?= plugin_dir_url(__FILE__) ?>send_mail.php?user_id=<?=$user_id?>&redirect=<?=$url?>"><?=__('Send activation Mail', 'instalogin')?></a>
                 </div>
             <?php
         });
@@ -269,23 +269,23 @@ class InstalogIn
     // Display login graphic on wp login page.
     private function login_page()
     {
-        $api_enabled = get_option('instalog-in-api-enabled');
+        $api_enabled = get_option('instalogin-api-enabled');
         if ($api_enabled != 1) {
             return false;
         }
         
         add_action('login_head', function () {
-            wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/login.css?v=3');
+            wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . 'style/login.css?v=3');
         });
         
         add_action('login_footer', function () {
-            wp_enqueue_script('instalog-in-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
+            wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
 
-            $api_key = get_option('instalog-in-api-key');
-            $display_type = get_option('instalog-in-api-type', 'qr');
-            wp_enqueue_script('instalog-in-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=3', ['instalog-in-api']);
-            wp_localize_script('instalog-in-qr-widget', 'api_key', $api_key);
-            wp_localize_script('instalog-in-qr-widget', 'display_type', $display_type);
+            $api_key = get_option('instalogin-api-key');
+            $display_type = get_option('instalogin-api-type', 'qr');
+            wp_enqueue_script('instalogin-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=3', ['instalogin-api']);
+            wp_localize_script('instalogin-qr-widget', 'api_key', $api_key);
+            wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
         });
     }
 }

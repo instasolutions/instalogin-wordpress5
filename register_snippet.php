@@ -23,20 +23,20 @@ class InstaloginRegisterSnippet
                 'methods' => 'POST',
                 'callback' => function ($request) {
                     // API Has been disabled in backend
-                    $api_enabled = get_option('instalog-in-api-enabled') == 1;
-                    $registration_enabled = get_option('instalog-in-api-registration') == 1;
+                    $api_enabled = get_option('instalogin-api-enabled') == 1;
+                    $registration_enabled = get_option('instalogin-api-registration') == 1;
                     if (!$api_enabled || !$registration_enabled) {
-                        return new WP_Error('disabled', __('Registration via Instalog.in has been disabled by an administrator.', 'instalog-in'));
+                        return new WP_Error('disabled', __('Registration via Instalog.in has been disabled by an administrator.', 'instalogin'));
                     }
 
                     // Check if API set up correctly
                     $client = null;
-                    $api_key = get_option('instalog-in-api-key');
-                    $api_secret = get_option('instalog-in-api-secret');
+                    $api_key = get_option('instalogin-api-key');
+                    $api_secret = get_option('instalogin-api-secret');
                     try {
                         $client = new \Instalogin\Client($api_key, $api_secret);
                     } catch (\Throwable $th) {
-                        return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalog-in'), 500);
+                        return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin'), 500);
                     }
 
                     // body params
@@ -44,7 +44,7 @@ class InstaloginRegisterSnippet
                     $email = $request['email'];
 
                     if ($email == null || !is_email($email)) {
-                        return new WP_REST_Response(__('Sorry, email missing or invalid!', 'instalog-in'), 400);
+                        return new WP_REST_Response(__('Sorry, email missing or invalid!', 'instalogin'), 400);
                     }
 
                     if ($username == null) {
@@ -65,7 +65,7 @@ class InstaloginRegisterSnippet
                         // Delete user if we could not deliver the activation email.
                         wp_delete_user($result);
 
-                        return new WP_REST_Response(__('Sorry, could not connect to instalogin servers! Account could not be created.', 'instalog-in'), 500);
+                        return new WP_REST_Response(__('Sorry, could not connect to instalogin servers! Account could not be created.', 'instalogin'), 500);
                     }
 
                     return;
@@ -77,7 +77,7 @@ class InstaloginRegisterSnippet
     private function shortcode()
     {
         add_shortcode('instalogin-register', function ($attributes = [], $content = null) {
-            $api_enabled = get_option('instalog-in-api-enabled');
+            $api_enabled = get_option('instalogin-api-enabled');
             if ($api_enabled != 1) {
                 return false;
             }
@@ -100,32 +100,32 @@ class InstaloginRegisterSnippet
             }
 
             // SCRIPTS
-            wp_enqueue_style('instalog-in-login', plugin_dir_url(__FILE__) . 'style/form.css?v=3');
-            wp_enqueue_script('instalog-in-register', plugin_dir_url(__FILE__) . 'scripts/register.js?v=1', ['wp-i18n']);
+            wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . 'style/form.css?v=3');
+            wp_enqueue_script('instalogin-register', plugin_dir_url(__FILE__) . 'scripts/register.js?v=1', ['wp-i18n']);
 
 
             // RENDER
             ob_start(); ?>
-                <form class="instalog-in-register">
+                <form class="instalogin-register">
 
                     <?php if ($require_username) { ?>
                         <label>
-                            <span class="instalog-in-label">Username</span>
-                            <input type="text" required class="instalog-in-username" class="instalog-in-input">
+                            <span class="instalogin-label">Username</span>
+                            <input type="text" required class="instalogin-username" class="instalogin-input">
                         </label>
                     <?php } ?>
 
                     <label>
-                        <span class="instalog-in-label">Email</span>
-                        <input type="email" required class="instalog-in-email" class="instalog-in-input">
+                        <span class="instalogin-label">Email</span>
+                        <input type="email" required class="instalogin-email" class="instalogin-input">
                     </label>
 
                     <?php if ($show_button) { ?>
-                        <input class="instalog-in-submit" type="submit" value="<?= $button_text ?>">
+                        <input class="instalogin-submit" type="submit" value="<?= $button_text ?>">
                     <?php } ?>
 
-                    <p class="instalog-in-error"></p>
-                    <p class="instalog-in-info"></p>
+                    <p class="instalogin-error"></p>
+                    <p class="instalogin-info"></p>
                 </form>
             <?php
             return ob_get_clean();
