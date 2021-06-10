@@ -28,11 +28,17 @@ class InstalogIn
     {
         $this->init_client();
 
+        // Shortcodes
         require_once('login_snippet.php');
         require_once('register_snippet.php');
-
+        
         $this->sc_login_code = new InstaloginLoginSnippet();
-        $this->sc_register = new InstaloginRegisterSnippet($this->client);
+        $this->sc_register = new InstaloginRegisterSnippet();
+
+        // Backend
+        require_once('manage_devices.php');
+        new InstaloginDeviceManager();
+        
 
         $this->settings_page();
         $this->login_controller();
@@ -248,25 +254,93 @@ class InstalogIn
             $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             $query_params = parse_url($url, PHP_URL_QUERY);
 
-            $sent = strpos($query_params, 'sent') !== false; ?>
+
+            wp_enqueue_script('instalogin-devices', plugin_dir_url(__FILE__) . "scripts/devices.js", [], '1', true);
+            wp_localize_script('instalogin-devices', 'wpv', [
+                'insta_nonce' => wp_create_nonce('wp_rest'),
+                'show_activation' => $user_id != get_current_user_id(),
+            ]);
+
+            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/profile-send-mail.js", [], '1', true);
+            wp_localize_script('instalogin-send-mail', 'wpv_mail', [
+                'insta_nonce' => wp_create_nonce('wp_rest'),
+                'user_id' => $user_id,
+            ]); ?>
                 <div>
                     <h3><a href="https://instalog.in" target="_black" rel="noreferrer">Instalog.in</a></h3>
-                    <?php if ($sent) {?>
-                    </p></div>
-                        <div class="notice notice-info is-dismissible inline">
+
+                        <div class="instalogin-info-area">
+                        </div>
+
+                    <p><?=__('Ready to join the passwordless revolution?', 'instalogin')?></p>
+
+                    <button class="instalogin-activate button instalogin-send-mail"><?=__('Send activation mail', 'instalogin')?></button>
+
+                    <?php if ($user_id == get_current_user_id()) { ?>
+
+                    <style>
+                        details.instalogin-devices-details {
+                            cursor: pointer;
+                            border-radius: 3px;
+                            transition: 0.15s background linear;
+                            }
+
+
+                            details.instalogin-devices-details .instalogin-devices-container {
+                                cursor: auto;
+                                background: #eee;
+                                padding: 15px;
+                                border-radius: 4px;
+                                
+                                
+                            }
+                            details.instalogin-devices-details .instalogin-devices-container:before {
+                                content: "";
+                                /* width: 0; */
+                                height: 0;
+                                /* top: -10px; */
+                                /* position: absolute; */
+                                /* left: 10px; */
+                            }
+                            
+                            details.instalogin-devices-details[open] .instalogin-devices-container {
+                            animation: animateDown 0.2s linear forwards;
+                            }
+
+                            @keyframes animateDown {
+                            0% {
+                                opacity: 0;
+                                transform: translatey(-15px);
+                            }
+                            100% {
+                                opacity: 1;
+                                transform: translatey(0);
+                            }
+                            }
+                    </style>
+
+                    <details class="instalogin-devices-details">
+                        <summary class="button" style="margin-bottom: .5rem; margin-top: .5rem;"><?=__('Manage Devices', 'instalogin')?></summary>
+                        <div class="instalogin-devices-container">
+                            <!-- <ul class="instalogin-device-list"></ul> -->
+                        </div>
+                    </details>
+
+                    <?php } else { ?>
+
+                        <div class="notice notice-warning is-dismissible inline">
                             <p>
-                                <?= $sent ? __('Email has been sent to ' . $user->user_email . ' !', 'instalogin') : '' ?>
+                                You can not manage another user's devices.
                             </p>
                         </div>
+
                     <?php } ?>
-                    <p><?=__('Ready to join the passwordless revolution?', 'instalogin')?></p>
-                    <a class="button" href="<?= plugin_dir_url(__FILE__) ?>send_mail.php?user_id=<?=$user_id?>&redirect=<?=$url?>"><?=__('Send activation Mail', 'instalogin')?></a>
                 </div>
             <?php
         });
     }
 
-    // Display login graphic on wp login page.
+    // Display login code on wp login page.
     private function login_page()
     {
         $api_enabled = get_option('instalogin-api-enabled');
