@@ -19,12 +19,8 @@
       });
     }
 
-    console.log(wpv);
-    console.log(wpv.show_activation !== "1");
     const devices = await fetch_devices();
     if (devices && devices.length > 0 && wpv.show_activation !== "1") {
-      console.log("doing it", wpv.show_activation !== "1");
-      console.log(wpv);
       for (const activate of activators) {
         activate.style.display = "none";
       }
@@ -91,7 +87,6 @@
         const created_at = document.createElement("td");
         const date = new Date(device.created_at);
         created_at.innerText = `${date.toLocaleTimeString()} - ${date.toLocaleDateString()}`;
-        console.log(device);
 
         tr.appendChild(label);
         tr.appendChild(model);
