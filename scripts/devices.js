@@ -33,7 +33,7 @@
 
   function draw_table() {
     const device_container = document.querySelector(
-      ".instalogin-devices-container"
+      ".instalogin-devices-admin"
     );
     if (device_container) {
       // TODO: translate
@@ -44,7 +44,7 @@
                 <tr>
                     <th class="row-title">Label</th>
                     <th class="row-title">Device</th>
-                    <th class="row-title">Create at</th>
+                    <th class="row-title">Created at</th>
                 </tr>
             </thead>
 
@@ -68,7 +68,7 @@
   }
 
   // (Re)build list HTML
-  function draw_devices(devices) {
+  function draw_devices_backend(devices) {
     const device_table = document.querySelector(".instalogin-device-table");
     // const device_list = document.querySelector(".instalogin-device-list");
     if (device_table) {
@@ -194,7 +194,7 @@
 
     if (response.ok) {
       const json = await response.json();
-      draw_devices(json);
+      draw_devices_backend(json);
       return json;
     } else {
       // TODO: show error message

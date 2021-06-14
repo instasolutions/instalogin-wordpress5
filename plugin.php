@@ -286,7 +286,7 @@ class InstalogIn
                             }
 
 
-                            details.instalogin-devices-details .instalogin-devices-container {
+                            details.instalogin-devices-details .instalogin-devices-admin {
                                 cursor: auto;
                                 background: #eee;
                                 padding: 15px;
@@ -294,16 +294,12 @@ class InstalogIn
                                 
                                 
                             }
-                            details.instalogin-devices-details .instalogin-devices-container:before {
+                            details.instalogin-devices-details .instalogin-devices-admin:before {
                                 content: "";
-                                /* width: 0; */
                                 height: 0;
-                                /* top: -10px; */
-                                /* position: absolute; */
-                                /* left: 10px; */
                             }
                             
-                            details.instalogin-devices-details[open] .instalogin-devices-container {
+                            details.instalogin-devices-details[open] .instalogin-devices-admin {
                             animation: animateDown 0.2s linear forwards;
                             }
 
@@ -321,7 +317,7 @@ class InstalogIn
 
                     <details class="instalogin-devices-details">
                         <summary class="button" style="margin-bottom: .5rem; margin-top: .5rem;"><?=__('Manage Devices', 'instalogin')?></summary>
-                        <div class="instalogin-devices-container">
+                        <div class="instalogin-devices-admin">
                             <!-- <ul class="instalogin-device-list"></ul> -->
                         </div>
                     </details>
