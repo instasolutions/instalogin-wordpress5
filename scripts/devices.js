@@ -76,7 +76,6 @@
 
       for (const device of devices) {
         const tr = document.createElement("tr");
-        // tr.innerText = `${device.label} ${device.model}`;
 
         const label = document.createElement("td");
         label.innerText = device.label;
