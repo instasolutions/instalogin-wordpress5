@@ -1,9 +1,9 @@
 {
-  // script requires insta_nonce provided by php
+  // script requires insta_nonce, is_frontend, show_activation provided by php
 
   // Load devices and hide activation or management options
   async function setup() {
-    draw_table();
+    if (!wpv.is_frontend) draw_table_backend();
 
     const refreshers = document.querySelectorAll(".instalogin-refresh");
     const activators = document.querySelectorAll(".instalogin-activate");
@@ -31,7 +31,7 @@
     }
   }
 
-  function draw_table() {
+  function draw_table_backend() {
     const device_container = document.querySelector(
       ".instalogin-devices-admin"
     );
@@ -132,36 +132,50 @@
 
         device_table.appendChild(tr);
       }
-      // for (const device of devices) {
-      //   const li = document.createElement("li");
-      //   li.innerText = `${device.label} ${device.model}`;
+    }
+  }
 
-      //   const button = document.createElement("button");
-      //   button.innerText = "x";
-      //   let clicked_once = false;
+  // (Re)build list HTML
+  function draw_devices_frontend(devices) {
+    const device_lists = document.querySelectorAll(".instalogin-device-list");
 
-      //   button.addEventListener("click", async (event) => {
-      //     event.preventDefault();
+    for (const device_list of device_lists) {
+      device_list.innerHTML = "";
+      for (const device of devices) {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <div class="instalogin-device-entry">
+            <span>${device.label}</span>
+            <small>${device.model}</small>
+          </div>
+        `;
 
-      //     if (!clicked_once) {
-      //       clicked_once = true;
-      //       button.innerText = "Confirm deletion";
-      //       return;
-      //     }
+        const button = document.createElement("button");
+        button.innerHTML = `<svg class="svg-inline--fa fa-times fa-w-10" data-prefix="far" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"></path></svg>`;
+        let clicked_once = false;
 
-      //     button.innerText = "...";
-      //     button.disabled = true;
+        button.addEventListener("click", async (event) => {
+          event.preventDefault();
 
-      //     if (await delete_device(device.id)) {
-      //       await fetch_devices();
-      //     } else {
-      //       // TODO: Show error
-      //     }
-      //   });
+          if (!clicked_once) {
+            clicked_once = true;
+            button.innerText = "Confirm deletion";
+            return;
+          }
 
-      //   li.appendChild(button);
-      //   device_list.appendChild(li);
-      // }
+          button.innerText = "...";
+          button.disabled = true;
+
+          if (await delete_device(device.id)) {
+            await fetch_devices();
+          } else {
+            // TODO: Show error
+          }
+        });
+
+        li.appendChild(button);
+        device_list.appendChild(li);
+      }
     }
   }
 
@@ -194,7 +208,8 @@
 
     if (response.ok) {
       const json = await response.json();
-      draw_devices_backend(json);
+      if (wpv.is_frontend) draw_devices_frontend(json);
+      else draw_devices_backend(json);
       return json;
     } else {
       // TODO: show error message

@@ -1,6 +1,7 @@
 {
-  // requires insta_nonce and user_id via php
+  // requires insta_nonce, user_id, is_frontend via php
 
+  // Backend(Profile page): Scans page for `instalogin-send-mail` buttons and adds notice on mail send
   async function setup() {
     const { user_id, insta_nonce } = wpv_mail;
 
@@ -38,7 +39,7 @@
             "inline"
           );
           // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          box.innerHTML = `Email has been sent to <b>${json.sent_to}</b> !`;
+          box.innerHTML = `<p>Email has been sent to <b>${json.sent_to}</b> !</p>`;
           info_area.appendChild(box);
         } else {
           const box = document.createElement("div");

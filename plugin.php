@@ -31,9 +31,11 @@ class InstalogIn
         // Shortcodes
         require_once('login_snippet.php');
         require_once('register_snippet.php');
+        require_once('device_snippet.php');
         
         $this->sc_login_code = new InstaloginLoginSnippet();
         $this->sc_register = new InstaloginRegisterSnippet();
+        new InstaloginDeviceSnippet();
 
         // Backend
         require_once('manage_devices.php');
@@ -261,7 +263,7 @@ class InstalogIn
                 'show_activation' => $user_id != get_current_user_id(),
             ]);
 
-            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/profile-send-mail.js", [], '1', true);
+            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/device-send-mail.js", [], '1', true);
             wp_localize_script('instalogin-send-mail', 'wpv_mail', [
                 'insta_nonce' => wp_create_nonce('wp_rest'),
                 'user_id' => $user_id,
@@ -283,27 +285,21 @@ class InstalogIn
                             cursor: pointer;
                             border-radius: 3px;
                             transition: 0.15s background linear;
-                            }
-
-
-                            details.instalogin-devices-details .instalogin-devices-admin {
-                                cursor: auto;
-                                background: #eee;
-                                padding: 15px;
-                                border-radius: 4px;
-                                
-                                
-                            }
-                            details.instalogin-devices-details .instalogin-devices-admin:before {
-                                content: "";
-                                height: 0;
-                            }
-                            
-                            details.instalogin-devices-details[open] .instalogin-devices-admin {
+                        }
+                        details.instalogin-devices-details .instalogin-devices-admin {
+                            cursor: auto;
+                            background: #eee;
+                            padding: 15px;
+                            border-radius: 4px;
+                        }
+                        details.instalogin-devices-details .instalogin-devices-admin:before {
+                            content: "";
+                            height: 0;
+                        }
+                        details.instalogin-devices-details[open] .instalogin-devices-admin {
                             animation: animateDown 0.2s linear forwards;
-                            }
-
-                            @keyframes animateDown {
+                        }
+                        @keyframes animateDown {
                             0% {
                                 opacity: 0;
                                 transform: translatey(-15px);
@@ -312,7 +308,7 @@ class InstalogIn
                                 opacity: 1;
                                 transform: translatey(0);
                             }
-                            }
+                        }
                     </style>
 
                     <details class="instalogin-devices-details">
