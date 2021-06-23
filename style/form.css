@@ -1,3 +1,6 @@
+/* Frontend short codes */
+
+/* Login / Register */
 .instalogin-label {
   display: block;
 }
@@ -15,4 +18,138 @@
 .instalogin-error {
   display: none;
   margin: 1rem 0;
+}
+
+/* Device Manager */
+
+.instalogin-devices {
+  background: white;
+  border-radius: 0.25rem;
+  padding: 1rem;
+
+  position: relative;
+  overflow: hidden;
+
+  max-width: 20rem !important;
+}
+
+.instalogin-devices-title {
+  text-transform: uppercase;
+  font-size: 0.875em;
+  color: #333;
+  font-weight: 300;
+}
+.instalogin-devices-hr {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px #333 solid;
+  opacity: 0.25;
+}
+
+ul.instalogin-device-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  min-height: 10rem;
+}
+ul.instalogin-device-list li {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+ul.instalogin-device-list li button {
+  background-color: transparent !important;
+  padding: 0;
+  border: none;
+  color: black !important;
+}
+
+.instalogin-device-button {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  padding: 0.375rem 0.75rem;
+  color: #6c757d !important;
+  background-color: white !important;
+  border-color: #6c757d;
+  border-radius: 0.25rem;
+  border: 1px solid;
+
+  text-transform: uppercase;
+
+  font-size: small;
+  font-weight: 700;
+}
+
+.instalogin-modal .instalogin-device-button {
+  background: transparent !important;
+  border-color: white;
+  color: white !important;
+}
+
+.instalogin-device-button:hover {
+  color: white !important;
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}
+
+ul.instalogin-device-list .instalogin-device-entry {
+  display: flex;
+  flex-flow: column;
+  margin-top: 0.5rem;
+}
+
+ul.instalogin-device-list .instalogin-device-entry span {
+  font-size: 1rem !important;
+  font-weight: normal;
+}
+
+ul.instalogin-device-list .instalogin-device-entry small {
+  font-size: 0.775em !important;
+  line-height: 1;
+  font-weight: 300;
+}
+
+ul.instalogin-device-list svg {
+  width: 8px !important;
+}
+
+.instalogin-modal {
+  visibility: hidden;
+  opacity: 0;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  font-size: 1.1rem !important;
+
+  color: white;
+  background: rgba(39, 81, 118, 0.9);
+
+  transition: all 0.4s;
+}
+
+.instalogin-device-list {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.instalogin-modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.instalogin-modal-text {
+  text-align: center;
 }

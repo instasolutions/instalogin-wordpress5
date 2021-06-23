@@ -20,14 +20,91 @@
     }
 
     const devices = await fetch_devices();
-    if (devices && devices.length > 0 && wpv.show_activation !== "1") {
-      for (const activate of activators) {
-        activate.style.display = "none";
+    if (!wpv.is_frontend) {
+      if (devices && devices.length > 0 && wpv.show_activation !== "1") {
+        for (const activate of activators) {
+          activate.style.display = "none";
+        }
+      } else {
+        for (const refresh of refreshers) {
+          refresh.style.display = "none";
+        }
       }
-    } else {
-      for (const refresh of refreshers) {
-        refresh.style.display = "none";
+    }
+
+    // add device button
+
+    /** @type{HTMLDivElement} */
+    const modal = document.createElement("div");
+    modal.classList.add("instalogin-modal");
+    modal.innerHTML = `
+        <span class="instalogin-modal-text">
+          An email will be sent to <br>
+          <b>${wpv.email}</b>
+          <br>Are you sure?
+        </span>  
+        <div style="margin-top: 1rem;">
+          <button class="instalogin-modal-button no instalogin-device-button">Cancel</button>
+          <button class="instalogin-modal-button yes instalogin-device-button">Send Mail</button>
+       </div>
+     `;
+
+    const modal_button_no = modal.querySelector(".no");
+    const modal_button_yes = modal.querySelector(".yes");
+
+    modal_button_no.addEventListener("click", async (event) => {
+      event.preventDefault();
+      modal.classList.remove("active");
+    });
+
+    modal_button_yes.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const old_label = modal_button_yes.innerText;
+      modal_button_yes.innerText = "...";
+      const response = await fetch(
+        "/index.php/wp-json/instalogin/v1/device/add",
+        {
+          method: "post",
+          body: JSON.stringify({ user_id: wpv.user_id }),
+          headers: {
+            "Content-Type": "application/json",
+            "X-WP-NONCE": wpv.insta_nonce,
+          },
+        }
+      );
+
+      modal_button_yes.innerText = old_label;
+      modal_button_yes.style.display = "none";
+      modal_button_no.innerText = "Close";
+
+      const info_area = modal.querySelector(".instalogin-modal-text");
+      if (response.ok) {
+        const json = await response.json();
+        // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
+        info_area.innerHTML = `<p>Email has been sent!</p>`;
+      } else {
+        // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
+        info_area.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.`;
+        console.error(response);
       }
+
+      // modal.classList.remove("active");
+    });
+
+    const devices_container = document.querySelector(".instalogin-devices");
+
+    devices_container.appendChild(modal);
+
+    const add_device_buttons = document.querySelectorAll(
+      ".instalogin-add-device"
+    );
+
+    for (const button of add_device_buttons) {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        modal.classList.add("active");
+      });
     }
   }
 
@@ -141,6 +218,11 @@
 
     for (const device_list of device_lists) {
       device_list.innerHTML = "";
+
+      if (devices.length == 0) {
+        device_list.innerHTML = `No devices connected.`;
+      }
+
       for (const device of devices) {
         const li = document.createElement("li");
         li.innerHTML = `
@@ -150,31 +232,55 @@
           </div>
         `;
 
-        const button = document.createElement("button");
-        button.innerHTML = `<svg class="svg-inline--fa fa-times fa-w-10" data-prefix="far" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"></path></svg>`;
-        let clicked_once = false;
+        // Delete Button
+        /** @type{HTMLButtonElement} */
+        const delete_button = document.createElement("button");
+        delete_button.innerHTML = `<svg class="svg-inline--fa fa-times fa-w-10" data-prefix="far" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"></path></svg>`;
 
-        button.addEventListener("click", async (event) => {
+        // Modal
+
+        /** @type{HTMLDivElement} */
+        const delete_modal = document.createElement("div");
+        delete_modal.classList.add("instalogin-modal");
+        delete_modal.innerHTML = `
+          <b>Remove device?</b><br>
+          ${device.model}
+          <div style="margin-top: 1rem;">
+            <button class="instalogin-modal-button no instalogin-device-button">No</button>
+            <button class="instalogin-modal-button yes instalogin-device-button">Yes</button>
+          </div>
+        `;
+
+        delete_button.addEventListener("click", (event) => {
           event.preventDefault();
 
-          if (!clicked_once) {
-            clicked_once = true;
-            button.innerText = "Confirm deletion";
-            return;
-          }
+          delete_modal.classList.add("active");
+        });
 
-          button.innerText = "...";
-          button.disabled = true;
+        const modal_button_no = delete_modal.querySelector(".no");
+        const modal_button_yes = delete_modal.querySelector(".yes");
+
+        modal_button_no.addEventListener("click", async (event) => {
+          event.preventDefault();
+          delete_modal.classList.remove("active");
+        });
+
+        modal_button_yes.addEventListener("click", async (event) => {
+          event.preventDefault();
 
           if (await delete_device(device.id)) {
             await fetch_devices();
           } else {
             // TODO: Show error
+            console.error("Could not remove device.");
           }
+
+          delete_modal.classList.remove("active");
         });
 
-        li.appendChild(button);
+        li.appendChild(delete_button);
         device_list.appendChild(li);
+        device_list.appendChild(delete_modal);
       }
     }
   }
