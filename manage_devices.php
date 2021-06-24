@@ -90,6 +90,11 @@ class InstalogInDeviceManager
                     }
 
                     // get logged in user
+
+                    if (!is_user_logged_in()) {
+                        return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin'), 403);
+                    }
+
                     $user_id = get_current_user_id();
                     $user = get_user_by('id', $user_id);
                     $email = $user->user_email;
@@ -136,6 +141,11 @@ class InstalogInDeviceManager
                     }
 
                     // get logged in user
+
+                    if (!is_user_logged_in()) {
+                        return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin'), 403);
+                    }
+
                     $user_id = get_current_user_id();
                     $user = get_user_by('id', $user_id);
                     $email = $user->user_email;
