@@ -5,7 +5,7 @@
  * Plugin URI: https://instalog.in/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
- * Version: 0.3.8
+ * Version: 0.3.9
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalogin
@@ -272,6 +272,16 @@ class InstalogIn
                     <h3><a href="https://instalog.in" target="_black" rel="noreferrer">Instalog.in</a></h3>
 
                         <div class="instalogin-info-area">
+                        <?php
+                            if (isset($_GET['reset_password']) && $_GET['reset_password'] == 'true') {
+                                wp_set_password(wp_generate_password(64), get_current_user_id()); ?>
+                                    <script>
+                                        window.location="/wp-login.php";
+                                    </script>
+                                <?php
+
+                                // echo "<div class='notice notice-info inline is-dismissible'><p>Random password has been set</p></div>";
+                            } ?>
                         </div>
 
                     <p><?=__('Ready to join the passwordless revolution?', 'instalogin')?></p>
@@ -317,6 +327,51 @@ class InstalogIn
                             <!-- <ul class="instalogin-device-list"></ul> -->
                         </div>
                     </details>
+
+                        <div class="card">
+
+                            <h2 class="title"><?=__('Randomize Password', 'instalogin')?></h2>
+                            <p><?=__('Instalogin enables effortless authentication by freeing you of the burden of having to remember a password.<br><br>
+                            If you created your account with a password we suggest that you replace it with a strong, random and secret password.<br>
+                            This will ensure that your password is unguessable and increase your account\'s security even further.<br><br>
+                            Should you at any point decide that you do not wish to use Instalogin for authentication anymore you may set a new password by requesting a 
+                            password reset email.', 'instalogin')?></p>
+
+                            <label>
+                                <input type="checkbox" name="instalogin-accept-reset" id="instalogin-accept-reset">
+                                Replace my password with a secure random password.
+                            </label>
+                            <br>
+
+                            <button id="instalogin-reset-password" disabled style="margin-top: 1rem;" class="button">Save</button>
+                        </div>
+
+                        <script>
+                            {
+
+                                history.pushState(null, null, '/wp-admin/profile.php');
+
+                                const reset_button = document.querySelector('#instalogin-reset-password');
+                                const checkbox = document.querySelector('#instalogin-accept-reset');
+
+                                if(checkbox) {
+                                    checkbox.addEventListener('change', () => {
+                                        if(checkbox.checked) reset_button.disabled = false;
+                                        else reset_button.disabled = true;
+                                    })
+                                }
+
+                                if(reset_button && checkbox) {
+                                    reset_button.addEventListener('click', (event) => {
+                                        event.preventDefault();
+
+                                        if(checkbox.checked) {
+                                            window.location = '/wp-admin/profile.php?reset_password=true'
+                                        }
+                                    })
+                                }
+                            }
+                        </script>
 
                     <?php } else { ?>
 
