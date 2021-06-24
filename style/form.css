@@ -30,6 +30,8 @@
   position: relative;
   overflow: hidden;
 
+  margin: 1.5rem 0;
+
   max-width: 20rem !important;
 }
 
