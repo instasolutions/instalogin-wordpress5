@@ -29,6 +29,8 @@ class InstaloginDeviceSnippet
 
             // SCRIPTS
 
+            wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . 'style/form.css?v=3');
+
             $user = wp_get_current_user();
             $email = $user->user_email;
 
