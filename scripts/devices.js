@@ -34,10 +34,11 @@
 
     // add device button
 
-    /** @type{HTMLDivElement} */
-    const modal = document.createElement("div");
-    modal.classList.add("instalogin-modal");
-    modal.innerHTML = `
+    if (wpv.is_frontend) {
+      /** @type{HTMLDivElement} */
+      const modal = document.createElement("div");
+      modal.classList.add("instalogin-modal");
+      modal.innerHTML = `
         <span class="instalogin-modal-text">
           An email will be sent to <br>
           <b>${wpv.email}</b>
@@ -49,62 +50,63 @@
        </div>
      `;
 
-    const modal_button_no = modal.querySelector(".no");
-    const modal_button_yes = modal.querySelector(".yes");
+      const modal_button_no = modal.querySelector(".no");
+      const modal_button_yes = modal.querySelector(".yes");
 
-    modal_button_no.addEventListener("click", async (event) => {
-      event.preventDefault();
-      modal.classList.remove("active");
-    });
+      modal_button_no.addEventListener("click", async (event) => {
+        event.preventDefault();
+        modal.classList.remove("active");
+      });
 
-    modal_button_yes.addEventListener("click", async (event) => {
-      event.preventDefault();
+      modal_button_yes.addEventListener("click", async (event) => {
+        event.preventDefault();
 
-      const old_label = modal_button_yes.innerText;
-      modal_button_yes.innerText = "...";
-      const response = await fetch(
-        "/index.php/wp-json/instalogin/v1/device/add",
-        {
-          method: "post",
-          body: JSON.stringify({ user_id: wpv.user_id }),
-          headers: {
-            "Content-Type": "application/json",
-            "X-WP-NONCE": wpv.insta_nonce,
-          },
+        const old_label = modal_button_yes.innerText;
+        modal_button_yes.innerText = "...";
+        const response = await fetch(
+          "/index.php/wp-json/instalogin/v1/device/add",
+          {
+            method: "post",
+            body: JSON.stringify({ user_id: wpv.user_id }),
+            headers: {
+              "Content-Type": "application/json",
+              "X-WP-NONCE": wpv.insta_nonce,
+            },
+          }
+        );
+
+        modal_button_yes.innerText = old_label;
+        modal_button_yes.style.display = "none";
+        modal_button_no.innerText = "Close";
+
+        const info_area = modal.querySelector(".instalogin-modal-text");
+        if (response.ok) {
+          const json = await response.json();
+          // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
+          info_area.innerHTML = `<p>Email has been sent!</p>`;
+        } else {
+          // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
+          info_area.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.`;
+          console.error(response);
         }
+
+        // modal.classList.remove("active");
+      });
+
+      const devices_container = document.querySelector(".instalogin-devices");
+
+      devices_container.appendChild(modal);
+
+      const add_device_buttons = document.querySelectorAll(
+        ".instalogin-add-device"
       );
 
-      modal_button_yes.innerText = old_label;
-      modal_button_yes.style.display = "none";
-      modal_button_no.innerText = "Close";
-
-      const info_area = modal.querySelector(".instalogin-modal-text");
-      if (response.ok) {
-        const json = await response.json();
-        // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-        info_area.innerHTML = `<p>Email has been sent!</p>`;
-      } else {
-        // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-        info_area.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.`;
-        console.error(response);
+      for (const button of add_device_buttons) {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          modal.classList.add("active");
+        });
       }
-
-      // modal.classList.remove("active");
-    });
-
-    const devices_container = document.querySelector(".instalogin-devices");
-
-    devices_container.appendChild(modal);
-
-    const add_device_buttons = document.querySelectorAll(
-      ".instalogin-add-device"
-    );
-
-    for (const button of add_device_buttons) {
-      button.addEventListener("click", (event) => {
-        event.preventDefault();
-        modal.classList.add("active");
-      });
     }
   }
 
