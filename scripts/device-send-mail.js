@@ -49,6 +49,7 @@
             "is-dismissible",
             "inline"
           );
+          error.error("instalogin: could not send mail", response);
           // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
           box.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.`;
           info_area.appendChild(box);
