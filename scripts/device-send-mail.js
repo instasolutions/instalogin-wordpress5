@@ -42,6 +42,7 @@
           box.innerHTML = `<p>Email has been sent to <b>${json.sent_to}</b> !</p>`;
           info_area.appendChild(box);
         } else {
+          const body = await response.text();
           const box = document.createElement("div");
           box.classList.add(
             "notice",
@@ -51,7 +52,7 @@
           );
           error.error("instalogin: could not send mail", response);
           // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          box.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.`;
+          box.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.<br>${body}`;
           info_area.appendChild(box);
           console.error(response);
         }

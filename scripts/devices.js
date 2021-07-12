@@ -85,9 +85,10 @@
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
           info_area.innerHTML = `<p>Email has been sent!</p>`;
         } else {
+          const body = await response.text();
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          info_area.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.`;
-          console.error(response);
+          info_area.innerHTML = `Email could not be sent!<br>Please try again later or contact an administrator.<br>${body}`;
+          console.error("instalogin: could not send mail.", response);
         }
 
         // modal.classList.remove("active");
