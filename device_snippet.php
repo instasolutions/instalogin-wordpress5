@@ -33,17 +33,11 @@ class InstaloginDeviceSnippet
 
             $user = wp_get_current_user();
             $email = $user->user_email;
+            $user_id = $user->ID;
 
-            wp_enqueue_script('instalogin-devices', plugin_dir_url(__FILE__) . "scripts/devices.js", [], '1', true);
-            wp_localize_script('instalogin-devices', 'wpv', [
-                'insta_nonce' => wp_create_nonce('wp_rest'),
-                'show_activation' => false,
-                'is_frontend' => true,
-                'email' => $email,
-                'user_id' => $user_id,
-            ]);
+            wp_enqueue_script('instalogin-devices', plugin_dir_url(__FILE__) . "scripts/devices.js", ['wp-i18n'], '1', true);
 
-            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/device-send-mail.js", [], '1', true);
+            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/device-send-mail.js", ['wp-i18n'], '1', true);
             wp_localize_script('instalogin-send-mail', 'wpv_mail', [
                 'insta_nonce' => wp_create_nonce('wp_rest'),
                 'user_id' => $user_id,
@@ -51,20 +45,20 @@ class InstaloginDeviceSnippet
 
             // RENDER
             ob_start(); ?>
-                <div>
-                    <div class="instalogin-devices">
+            <div>
+                <div class="instalogin-devices">
 
-                        <span class="instalogin-devices-title">Connected Devices</span>
-                        <hr class="instalogin-devices-hr">
+                    <span class="instalogin-devices-title">Connected Devices</span>
+                    <hr class="instalogin-devices-hr">
 
-                        <ul class="instalogin-device-list">
-                            
-                        </ul>
-                        <button class="instalogin-device-button instalogin-refresh">Refresh</button>
-                        <button class="instalogin-device-button instalogin-add-device">Add Device</button>
-                    </div>
+                    <ul class="instalogin-device-list">
+
+                    </ul>
+                    <button class="instalogin-device-button instalogin-refresh">Refresh</button>
+                    <button class="instalogin-device-button instalogin-add-device">Add Device</button>
                 </div>
-            <?php
+            </div>
+<?php
 
             return ob_get_clean();
         });

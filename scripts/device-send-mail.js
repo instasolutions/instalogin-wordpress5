@@ -4,6 +4,7 @@
   // Backend(Profile page): Scans page for `instalogin-send-mail` buttons and adds notice on mail send
   async function setup() {
     const { user_id, insta_nonce } = wpv_mail;
+    const { __ } = wp.i18n;
 
     const send_mail_buttons = document.querySelectorAll(
       ".instalogin-send-mail"
@@ -38,8 +39,7 @@
             "is-dismissible",
             "inline"
           );
-          // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          box.innerHTML = `<p>Email has been sent to <b>${json.sent_to}</b> !</p>`;
+          box.innerHTML = `<p>${__("Email has been sent to", "instalogin")} <b>${json.sent_to}</b> !</p>`;
           info_area.appendChild(box);
         } else {
           const body = await response.text();
@@ -52,7 +52,7 @@
           );
           error.error("instalogin: could not send mail", response);
           // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          box.innerHTML = `Email could not be sent!<br> Please try again later or contact an administrator.<br>${body}`;
+          box.innerHTML = `${__("Email could not be sent!", "instalogin")}!<br> ${__("Please try again later or contact an administrator", "instalogin")}.<br>${body}`;
           info_area.appendChild(box);
           console.error(response);
         }

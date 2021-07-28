@@ -32,7 +32,7 @@ class InstalogIn
         require_once('login_snippet.php');
         require_once('register_snippet.php');
         require_once('device_snippet.php');
-        
+
         $this->sc_login_code = new InstaloginLoginSnippet();
         $this->sc_register = new InstaloginRegisterSnippet();
         new InstaloginDeviceSnippet();
@@ -40,7 +40,7 @@ class InstalogIn
         // Backend
         require_once('manage_devices.php');
         new InstaloginDeviceManager();
-        
+
 
         $this->settings_page();
         $this->login_controller();
@@ -85,7 +85,7 @@ class InstalogIn
     {
         add_action('admin_menu', function () {
             add_menu_page('Instalog.in Settings', 'Instalog.In', 'manage_options', 'instalogin', function () {
-                if (! current_user_can('manage_options')) {
+                if (!current_user_can('manage_options')) {
                     return;
                 }
 
@@ -95,37 +95,38 @@ class InstalogIn
                 }
                 // show messages/errors
                 settings_errors('instalogin_messages');
-                
-                // Render Settings?>
-                    <div class="wrap">
-                        <form action="options.php" method="post">
-                            <?= settings_fields('instalogin'); ?>
-                            <?= do_settings_sections('instalogin'); ?>
-                            <p>Info Texts</p>
-                            <?= submit_button(__('Save Settings', 'instalogin')); ?>
-                        </form>
-                    </div>
-                <?php
+
+                // Render Settings
+?>
+                <div class="wrap">
+                    <form action="options.php" method="post">
+                        <?= settings_fields('instalogin'); ?>
+                        <?= do_settings_sections('instalogin'); ?>
+                        <p>Info Texts</p>
+                        <?= submit_button(__('Save Settings', 'instalogin')); ?>
+                    </form>
+                </div>
+            <?php
             }, 'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIGJhc2VQcm9maWxlPSJ0aW55LXBzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KCTx0aXRsZT5OZXcgUHJvamVjdDwvdGl0bGU+Cgk8ZGVmcz4KCQk8aW1hZ2UgIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMiIgaWQ9ImltZzEiIGhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQjRBQUFBZ0JBTUFBQUQzYnRWTUFBQUFBWE5TUjBJQjJja3Nmd0FBQUJoUVRGUkZBQUFBK2ZyNy8vLy80K2ZuNCtqdDd2RHg4L1gxL1AzOXZraStTQUFBQUFoMFVrNVRBTXIvTm1PRXF1KyszVFMxQUFBQXFFbEVRVlI0bkYyUlN4S0RNQXhEQlduTHRzTUpnakpselhBQ3p0SWo5UDZMMmdxWmZMekk4Q0pIVGdTZ21uaWdxUWZKbGczNXFmaDFqcUhnSkZ5NFoxeWRJN1JZelRST3N2Q05KNDMzMjVNdUcrYytOVGhmS0J2aU11Y2NHR3ZQQVdldmIraDFuOS9xZzE5Z2J1ajBCYjArUnd6bjArZ1h1MzU3eFR1L3AraFUyQXVsdjV3M0hZYXVjdWRnUzhoT1A5YzljcVF5eHFOby81Q3cza1BaN2hVMUJHM052UExISHowTkdxTFdTN2x3QUFBQUFFbEZUa1N1UW1DQyIvPgoJPC9kZWZzPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCTwvc3R5bGU+Cgk8dXNlIGlkPSJCYWNrZ3JvdW5kIiBocmVmPSIjaW1nMSIgeD0iMSIgeT0iMCIgLz4KPC9zdmc+');
         });
 
         add_action('admin_init', function () {
             $page = 'instalogin';
             $api_section = 'instalogin-api';
-            
+
             // Add to wp
             add_settings_section($api_section, __('Instalog.in API Settings', 'instalogin'), function () {
                 // Settings Section Title
             }, $page);
-            
+
             // API Enabled
             $setting_name = 'instalogin-api-enabled';
             register_setting($page, $setting_name);
             add_settings_field($setting_name . "_field", __('Enable login via Instalog.in', 'instalogin'), function () {
                 $setting_name = 'instalogin-api-enabled';
                 $setting = get_option($setting_name); ?>
-                    <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
-                <?php
+                <input type="checkbox" name="<?= $setting_name ?>" value="1" <?= $setting == 1 ? 'checked' : '' ?> />
+            <?php
             }, $page, $api_section);
 
             // Registration via API enabled
@@ -134,8 +135,8 @@ class InstalogIn
             add_settings_field($setting_name . "_field", __('Enable registration via Instalog.in', 'instalogin'), function () {
                 $setting_name = 'instalogin-api-registration';
                 $setting = get_option($setting_name); ?>
-                    <input type="checkbox" name="<?=$setting_name?>" value="1" <?= $setting == 1 ? 'checked' : '' ?>/>
-                <?php
+                <input type="checkbox" name="<?= $setting_name ?>" value="1" <?= $setting == 1 ? 'checked' : '' ?> />
+            <?php
             }, $page, $api_section);
 
             // Redirection
@@ -144,8 +145,8 @@ class InstalogIn
             add_settings_field($setting_name . "_field", 'Redirect to after login', function () {
                 $setting_name = 'instalogin-api-redirect';
                 $setting = get_option($setting_name); ?>
-                    <input type="text" placeholder="/wp-admin" name="<?=$setting_name?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>"/>
-                <?php
+                <input type="text" placeholder="/wp-admin" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
+            <?php
             }, $page, $api_section);
 
             // Use QR Code or Smart Image for login
@@ -154,11 +155,11 @@ class InstalogIn
             add_settings_field($setting_name . "_field", 'Display Type', function () {
                 $setting_name = 'instalogin-api-type';
                 $setting = get_option($setting_name); ?>
-                    <select name="instalogin-api-type">
-                        <option value="qr" <?php selected($setting, 'qr') ?>>QR Code</option>
-                        <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
-                    </select>
-                <?php
+                <select name="instalogin-api-type">
+                    <option value="qr" <?php selected($setting, 'qr') ?>>QR Code</option>
+                    <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
+                </select>
+            <?php
             }, $page, $api_section);
 
             // API Secret
@@ -167,8 +168,8 @@ class InstalogIn
             add_settings_field($setting_name . "_field", 'API Key', function () {
                 $setting_name = 'instalogin-api-key';
                 $setting = get_option($setting_name); ?>
-                    <input type="text" name="<?=$setting_name?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>"/>
-                <?php
+                <input type="text" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
+            <?php
             }, $page, $api_section);
 
             // API Secret
@@ -177,8 +178,8 @@ class InstalogIn
             add_settings_field($setting_name . "_field", 'API Secret', function () {
                 $setting_name = 'instalogin-api-secret';
                 $setting = get_option($setting_name); ?>
-                    <input type="password" name="<?=$setting_name?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>"/>
-                <?php
+                <input type="password" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
+            <?php
             }, $page, $api_section);
         });
     }
@@ -253,42 +254,42 @@ class InstalogIn
             // current user being edited
             global $user_id;
             $user = get_user_by('id', $user_id);
-            $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             $query_params = parse_url($url, PHP_URL_QUERY);
 
 
-            wp_enqueue_script('instalogin-devices', plugin_dir_url(__FILE__) . "scripts/devices.js", [], '1', true);
+            wp_enqueue_script('instalogin-devices', plugin_dir_url(__FILE__) . "scripts/devices.js", ['wp-i18n'], '1', true);
             wp_localize_script('instalogin-devices', 'wpv', [
                 'insta_nonce' => wp_create_nonce('wp_rest'),
                 'show_activation' => $user_id != get_current_user_id(),
             ]);
 
-            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/device-send-mail.js", [], '1', true);
+            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/device-send-mail.js", ['wp-i18n'], '1', true);
             wp_localize_script('instalogin-send-mail', 'wpv_mail', [
                 'insta_nonce' => wp_create_nonce('wp_rest'),
                 'user_id' => $user_id,
             ]); ?>
-                <div>
-                    <h3><a href="https://instalog.in" target="_black" rel="noreferrer">Instalog.in</a></h3>
+            <div>
+                <h3><a href="https://instalog.in" target="_black" rel="noreferrer">Instalog.in</a></h3>
 
-                        <div class="instalogin-info-area">
-                        <?php
-                            if (isset($_GET['reset_password']) && $_GET['reset_password'] == 'true') {
-                                wp_set_password(wp_generate_password(64), get_current_user_id()); ?>
-                                    <script>
-                                        window.location="/wp-login.php";
-                                    </script>
-                                <?php
+                <div class="instalogin-info-area">
+                    <?php
+                    if (isset($_GET['reset_password']) && $_GET['reset_password'] == 'true') {
+                        wp_set_password(wp_generate_password(64), get_current_user_id()); ?>
+                        <script>
+                            window.location = "/wp-login.php";
+                        </script>
+                    <?php
 
-                                // echo "<div class='notice notice-info inline is-dismissible'><p>Random password has been set</p></div>";
-                            } ?>
-                        </div>
+                        // echo "<div class='notice notice-info inline is-dismissible'><p>Random password has been set</p></div>";
+                    } ?>
+                </div>
 
-                    <p><?=__('Ready to join the passwordless revolution?', 'instalogin')?></p>
+                <p><?= __('Ready to join the passwordless revolution?', 'instalogin') ?></p>
 
-                    <button class="instalogin-activate button instalogin-send-mail"><?=__('Send activation mail', 'instalogin')?></button>
+                <button class="instalogin-activate button instalogin-send-mail"><?= __('Send activation mail', 'instalogin') ?></button>
 
-                    <?php if ($user_id == get_current_user_id()) { ?>
+                <?php if ($user_id == get_current_user_id()) { ?>
 
                     <style>
                         details.instalogin-devices-details {
@@ -296,24 +297,29 @@ class InstalogIn
                             border-radius: 3px;
                             transition: 0.15s background linear;
                         }
+
                         details.instalogin-devices-details .instalogin-devices-admin {
                             cursor: auto;
                             background: #eee;
                             padding: 15px;
                             border-radius: 4px;
                         }
+
                         details.instalogin-devices-details .instalogin-devices-admin:before {
                             content: "";
                             height: 0;
                         }
+
                         details.instalogin-devices-details[open] .instalogin-devices-admin {
                             animation: animateDown 0.2s linear forwards;
                         }
+
                         @keyframes animateDown {
                             0% {
                                 opacity: 0;
                                 transform: translatey(-15px);
                             }
+
                             100% {
                                 opacity: 1;
                                 transform: translatey(0);
@@ -322,68 +328,68 @@ class InstalogIn
                     </style>
 
                     <details class="instalogin-devices-details">
-                        <summary class="button" style="margin-bottom: .5rem; margin-top: .5rem;"><?=__('Manage Devices', 'instalogin')?></summary>
+                        <summary class="button" style="margin-bottom: .5rem; margin-top: .5rem;"><?= __('Manage Devices', 'instalogin') ?></summary>
                         <div class="instalogin-devices-admin">
                             <!-- <ul class="instalogin-device-list"></ul> -->
                         </div>
                     </details>
 
-                        <div class="card">
+                    <div class="card">
 
-                            <h2 class="title"><?=__('Randomize Password', 'instalogin')?></h2>
-                            <p><?=__('Instalogin enables effortless authentication by freeing you of the burden of having to remember a password.<br><br>
+                        <h2 class="title"><?= __('Randomize Password', 'instalogin') ?></h2>
+                        <p><?= __('Instalogin enables effortless authentication by freeing you of the burden of having to remember a password.<br><br>
                             If you created your account with a password we suggest that you replace it with a strong, random and secret password.<br>
                             This will ensure that your password is unguessable and increase your account\'s security even further.<br><br>
                             Should you at any point decide that you do not wish to use Instalogin for authentication anymore you may set a new password by requesting a 
-                            password reset email.', 'instalogin')?></p>
+                            password reset email.', 'instalogin') ?></p>
 
-                            <label>
-                                <input type="checkbox" name="instalogin-accept-reset" id="instalogin-accept-reset">
-                                Replace my password with a secure random password.
-                            </label>
-                            <br>
+                        <label>
+                            <input type="checkbox" name="instalogin-accept-reset" id="instalogin-accept-reset">
+                            Replace my password with a secure random password.
+                        </label>
+                        <br>
 
-                            <button id="instalogin-reset-password" disabled style="margin-top: 1rem;" class="button">Save</button>
-                        </div>
+                        <button id="instalogin-reset-password" disabled style="margin-top: 1rem;" class="button">Save</button>
+                    </div>
 
-                        <script>
-                            {
+                    <script>
+                        {
 
-                                history.pushState(null, null, '/wp-admin/profile.php');
+                            history.pushState(null, null, '/wp-admin/profile.php');
 
-                                const reset_button = document.querySelector('#instalogin-reset-password');
-                                const checkbox = document.querySelector('#instalogin-accept-reset');
+                            const reset_button = document.querySelector('#instalogin-reset-password');
+                            const checkbox = document.querySelector('#instalogin-accept-reset');
 
-                                if(checkbox) {
-                                    checkbox.addEventListener('change', () => {
-                                        if(checkbox.checked) reset_button.disabled = false;
-                                        else reset_button.disabled = true;
-                                    })
-                                }
-
-                                if(reset_button && checkbox) {
-                                    reset_button.addEventListener('click', (event) => {
-                                        event.preventDefault();
-
-                                        if(checkbox.checked) {
-                                            window.location = '/wp-admin/profile.php?reset_password=true'
-                                        }
-                                    })
-                                }
+                            if (checkbox) {
+                                checkbox.addEventListener('change', () => {
+                                    if (checkbox.checked) reset_button.disabled = false;
+                                    else reset_button.disabled = true;
+                                })
                             }
-                        </script>
 
-                    <?php } else { ?>
+                            if (reset_button && checkbox) {
+                                reset_button.addEventListener('click', (event) => {
+                                    event.preventDefault();
 
-                        <div class="notice notice-warning is-dismissible inline">
-                            <p>
-                                You can not manage another user's devices.
-                            </p>
-                        </div>
+                                    if (checkbox.checked) {
+                                        window.location = '/wp-admin/profile.php?reset_password=true'
+                                    }
+                                })
+                            }
+                        }
+                    </script>
 
-                    <?php } ?>
-                </div>
-            <?php
+                <?php } else { ?>
+
+                    <div class="notice notice-warning is-dismissible inline">
+                        <p>
+                            You can not manage another user's devices.
+                        </p>
+                    </div>
+
+                <?php } ?>
+            </div>
+<?php
         });
     }
 
@@ -394,11 +400,11 @@ class InstalogIn
         if ($api_enabled != 1) {
             return false;
         }
-        
+
         add_action('login_head', function () {
             wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . 'style/login.css?v=3');
         });
-        
+
         add_action('login_footer', function () {
             wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
 

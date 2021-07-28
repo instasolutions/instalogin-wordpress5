@@ -56,7 +56,7 @@ class InstaloginRegisterSnippet
                     if (is_wp_error($result)) {
                         return new WP_Error($result->get_error_code(), $result->get_error_message());
                     }
-                    
+
                     try {
                         $client->provisionIdentity($email, [
                             'sendEmail' => true // Let Instalogin handle the mail sending
@@ -84,17 +84,17 @@ class InstaloginRegisterSnippet
 
             // SETTINGS
             $attributes = shortcode_atts([
-                        'require_username' => "true",
-                        'show_button' => "true",
-                        'button_text' => "Submit",
-                        'show_when_logged_in' => "false",
-                    ], $attributes, 'instalogin-register');
-        
+                'require_username' => "true",
+                'show_button' => "true",
+                'button_text' => "Submit",
+                'show_when_logged_in' => "false",
+            ], $attributes, 'instalogin-register');
+
             $show_when_logged_in = $attributes['show_when_logged_in'] == 'true';
             $require_username = $attributes['require_username'] == 'true';
             $show_button = $attributes['show_button'] == 'true';
             $button_text = $attributes['button_text'];
-            
+
             if (!$show_when_logged_in && is_user_logged_in()) {
                 return '';
             }
@@ -103,31 +103,30 @@ class InstaloginRegisterSnippet
             wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . 'style/form.css?v=3');
             wp_enqueue_script('instalogin-register', plugin_dir_url(__FILE__) . 'scripts/register.js?v=1', ['wp-i18n']);
 
-
             // RENDER
             ob_start(); ?>
-                <form class="instalogin-register">
+            <form class="instalogin-register">
 
-                    <?php if ($require_username) { ?>
-                        <label>
-                            <span class="instalogin-label">Username</span>
-                            <input type="text" required class="instalogin-username" class="instalogin-input">
-                        </label>
-                    <?php } ?>
-
+                <?php if ($require_username) { ?>
                     <label>
-                        <span class="instalogin-label">Email</span>
-                        <input type="email" required class="instalogin-email" class="instalogin-input">
+                        <span class="instalogin-label">Username</span>
+                        <input type="text" required class="instalogin-username" class="instalogin-input">
                     </label>
+                <?php } ?>
 
-                    <?php if ($show_button) { ?>
-                        <input class="instalogin-submit" type="submit" value="<?= $button_text ?>">
-                    <?php } ?>
+                <label>
+                    <span class="instalogin-label">Email</span>
+                    <input type="email" required class="instalogin-email" class="instalogin-input">
+                </label>
 
-                    <p class="instalogin-error"></p>
-                    <p class="instalogin-info"></p>
-                </form>
-            <?php
+                <?php if ($show_button) { ?>
+                    <input class="instalogin-submit" type="submit" value="<?= $button_text ?>">
+                <?php } ?>
+
+                <p class="instalogin-error"></p>
+                <p class="instalogin-info"></p>
+            </form>
+<?php
             return ob_get_clean();
         });
     }

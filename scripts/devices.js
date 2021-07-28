@@ -1,5 +1,6 @@
 {
   // script requires insta_nonce, is_frontend, show_activation provided by php
+  const { __ } = wp.i18n;
 
   // Load devices and hide activation or management options
   async function setup() {
@@ -40,13 +41,13 @@
       modal.classList.add("instalogin-modal");
       modal.innerHTML = `
         <span class="instalogin-modal-text">
-          An email will be sent to <br>
+          ${__("An email will be sent to", "instalogin")} <br>
           <b>${wpv.email}</b>
-          <br>Are you sure?
+          <br>${__("Are you sure?", "instalogin")}
         </span>  
         <div style="margin-top: 1rem;">
-          <button class="instalogin-modal-button no instalogin-device-button">Cancel</button>
-          <button class="instalogin-modal-button yes instalogin-device-button">Send Mail</button>
+          <button class="instalogin-modal-button no instalogin-device-button">${__("Cancel", "instalogin")}</button>
+          <button class="instalogin-modal-button yes instalogin-device-button">${__("Send Mail", "instalogin")}</button>
        </div>
      `;
 
@@ -83,11 +84,11 @@
         if (response.ok) {
           const json = await response.json();
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          info_area.innerHTML = `<p>Email has been sent!</p>`;
+          info_area.innerHTML = `<p>${__("Email has been sent!", 'instalogin')}</p>`;
         } else {
           const body = await response.text();
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          info_area.innerHTML = `Email could not be sent!<br>Please try again later or contact an administrator.<br>${body}`;
+          info_area.innerHTML = `${__("Email could not be sent!", "instalogin")}<br>${__("Please try again later or contact an administrator.", "instalogin")}<br>${body}`;
           console.error("instalogin: could not send mail.", response);
         }
 
@@ -134,8 +135,8 @@
             <tfoot>
                 <tr>
                     <th>
-                        <button class="button instalogin-refresh">Refresh</button>
-                        <button class="button-primary instalogin-send-mail">Add Device</button>
+                        <button class="button instalogin-refresh">${__("Refresh", "instalogin")}</button>
+                        <button class="button-primary instalogin-send-mail">${__("Add Device", "instalogin")}</button>
                     </th>
                     <th></th>
                     <th></th>
@@ -196,7 +197,7 @@
 
           if (!clicked_once) {
             clicked_once = true;
-            delete_button.innerText = "Confirm deletion";
+            delete_button.innerText = __("Confirm deletion", "instalogin");
             return;
           }
 
@@ -223,7 +224,7 @@
       device_list.innerHTML = "";
 
       if (devices.length == 0) {
-        device_list.innerHTML = `No devices connected.`;
+        device_list.innerHTML = __("No devices connected.", "instalogin");
       }
 
       for (const device of devices) {
@@ -249,8 +250,8 @@
           <b>Remove device?</b><br>
           ${device.model}
           <div style="margin-top: 1rem;">
-            <button class="instalogin-modal-button no instalogin-device-button">No</button>
-            <button class="instalogin-modal-button yes instalogin-device-button">Yes</button>
+            <button class="instalogin-modal-button no instalogin-device-button">${__("No", "instalogin")}</button>
+            <button class="instalogin-modal-button yes instalogin-device-button">${__("yes", "instalogin")}</button>
           </div>
         `;
 
