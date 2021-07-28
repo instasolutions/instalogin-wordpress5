@@ -5,10 +5,12 @@
  * Plugin URI: https://instalog.in/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
- * Version: 0.3.11
+ * Requires at least: 5.0
+ * Version: 0.3.13
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalogin
+ * Domain Path: /languages
  */
 
 if (!defined('ABSPATH')) {
