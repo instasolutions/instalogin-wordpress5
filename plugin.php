@@ -6,7 +6,7 @@
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
  * Requires at least: 5.0
- * Version: 0.3.13
+ * Version: 0.3.22
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalogin
@@ -43,6 +43,10 @@ class InstalogIn
         require_once('manage_devices.php');
         new InstaloginDeviceManager();
 
+        // wizard
+
+        require_once('wizard/settings_rest.php');
+        new InstalogWizardSettingsAPI();
 
         $this->settings_page();
         $this->login_controller();
@@ -61,12 +65,23 @@ class InstalogIn
     // Initialize Instalog.in SDK client
     private function init_client()
     {
+
         $api_key = get_option('instalogin-api-key');
         $api_secret = get_option('instalogin-api-secret');
         if ($api_key == false || $api_secret == false) {
             add_action('admin_notices', function () {
-                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret missing.', 'instalogin');
-                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalogin'>settings</a>.</div>";
+?>
+                <div class="notice notice-info">
+                    <h3>Instalogin Setup</h3>
+                    <p>
+                        <?= __('You are almost ready to use Instalogin!', 'instalogin') ?><br>
+                        <?= __('Plase finish the setup: ', 'instalogin') ?><br>
+                    </p>
+                    <p>
+                        <a class="button" href="<?= plugin_dir_url(__FILE__) ?>/wizard">Run Installation Wizard</a>
+                    </p>
+                </div>
+            <?php
             });
             return;
         }
@@ -86,6 +101,19 @@ class InstalogIn
     private function settings_page()
     {
         add_action('admin_menu', function () {
+
+            // TODO: ADD TOOLTIPS
+
+
+            __('Tooltip enable instalogin TODO', 'instalogin');
+            __('Tooltip enable registration TODO', 'instalogin');
+            __('Tooltip redirect to after login TODO (default /wp-admin)', 'instalogin');
+            __('Tooltip Display type TODO', 'instalogin');
+            __('Tooltip API Key TODO', 'instalogin');
+            __('Tooltip API Secret TODO', 'instalogin');
+
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
             add_menu_page('Instalog.in Settings', 'Instalog.In', 'manage_options', 'instalogin', function () {
                 if (!current_user_can('manage_options')) {
                     return;
@@ -99,7 +127,7 @@ class InstalogIn
                 settings_errors('instalogin_messages');
 
                 // Render Settings
-?>
+            ?>
                 <div class="wrap">
                     <form action="options.php" method="post">
                         <?= settings_fields('instalogin'); ?>
@@ -144,7 +172,7 @@ class InstalogIn
             // Redirection
             $setting_name = 'instalogin-api-redirect';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", 'Redirect to after login', function () {
+            add_settings_field($setting_name . "_field", __('Redirect to after login', "instalogin"), function () {
                 $setting_name = 'instalogin-api-redirect';
                 $setting = get_option($setting_name); ?>
                 <input type="text" placeholder="/wp-admin" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
@@ -154,7 +182,7 @@ class InstalogIn
             // Use QR Code or Smart Image for login
             $setting_name = 'instalogin-api-type';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", 'Display Type', function () {
+            add_settings_field($setting_name . "_field", __('Display Type', "instalogin"), function () {
                 $setting_name = 'instalogin-api-type';
                 $setting = get_option($setting_name); ?>
                 <select name="instalogin-api-type">
@@ -167,7 +195,7 @@ class InstalogIn
             // API Secret
             $setting_name = 'instalogin-api-key';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", 'API Key', function () {
+            add_settings_field($setting_name . "_field", __('API Key', "instalogin"), function () {
                 $setting_name = 'instalogin-api-key';
                 $setting = get_option($setting_name); ?>
                 <input type="text" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
@@ -177,7 +205,7 @@ class InstalogIn
             // API Secret
             $setting_name = 'instalogin-api-secret';
             register_setting($page, $setting_name);
-            add_settings_field($setting_name . "_field", 'API Secret', function () {
+            add_settings_field($setting_name . "_field", __('API Secret', "instalogin"), function () {
                 $setting_name = 'instalogin-api-secret';
                 $setting = get_option($setting_name); ?>
                 <input type="password" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
