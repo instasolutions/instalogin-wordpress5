@@ -39,7 +39,10 @@
             "is-dismissible",
             "inline"
           );
-          box.innerHTML = `<p>${__("Email has been sent to", "instalogin")} <b>${json.sent_to}</b> !</p>`;
+          box.innerHTML = `<p>${__(
+            "Email has been sent to",
+            "instalogin"
+          )} <b>${json.sent_to}</b> !</p>`;
           info_area.appendChild(box);
         } else {
           const body = await response.text();
@@ -50,9 +53,15 @@
             "is-dismissible",
             "inline"
           );
-          error.error("instalogin: could not send mail", response);
+          console.error("instalogin: could not send mail", response);
           // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          box.innerHTML = `${__("Email could not be sent!", "instalogin")}!<br> ${__("Please try again later or contact an administrator", "instalogin")}.<br>${body}`;
+          box.innerHTML = `${__(
+            "Email could not be sent!",
+            "instalogin"
+          )}!<br> ${__(
+            "Please try again later or contact an administrator",
+            "instalogin"
+          )}.<br>${body}`;
           info_area.appendChild(box);
           console.error(response);
         }
