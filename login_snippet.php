@@ -40,20 +40,24 @@ class InstaloginLoginSnippet
             wp_localize_script('instalogin-qr-widget', 'api_key', $api_key);
             wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
 
+            // TOOD: if key unset, display error message
+
+
             // RENDER
             ob_start(); ?>
-                <style>
-                    #instalogin .instalogin-container {
-                        <?= $border ? 'border: 1px solid rgb(200, 200, 200);' : 'border: none !important;' ?>;
-                        width: <?=$size?>;
-                    }
-                    #instalogin .instalogin-image {
-                        width: <?=$size?>;
-                    }
-                </style>
+            <style>
+                #instalogin .instalogin-container {
+                    <?= $border ? 'border: 1px solid rgb(200, 200, 200);' : 'border: none !important;' ?>;
+                    width: <?= $size ?>;
+                }
 
-                <div id="instalogin"></div>
-            <?php
+                #instalogin .instalogin-image {
+                    width: <?= $size ?>;
+                }
+            </style>
+
+            <div id="instalogin"></div>
+<?php
 
             return ob_get_clean();
         });
