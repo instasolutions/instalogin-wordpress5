@@ -47,7 +47,7 @@ class InstaloginLoginSnippet
             ob_start(); ?>
             <style>
                 #instalogin .instalogin-container {
-                    <?= $border ? 'border: 1px solid rgb(200, 200, 200);' : 'border: none !important;' ?>;
+                    border: <?= $border ? ' 1px solid rgb(200, 200, 200);' : ' none !important;' ?>;
                     width: <?= $size ?>;
                 }
 
