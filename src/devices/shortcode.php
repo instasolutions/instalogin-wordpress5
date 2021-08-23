@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 
-class InstaloginDeviceSnippet
+class InstaloginDevicesShortcode
 {
     public function __construct()
     {
@@ -17,11 +17,7 @@ class InstaloginDeviceSnippet
             // }
 
             // SETTINGS
-            $attributes = shortcode_atts([], $attributes, 'instalogin-login-code');
-
-            $size = $attributes['size'];
-            $showWhenLoggedIn = $attributes['show_when_logged_in'] == 'true';
-            $border = $attributes['border'] == 'true';
+            $attributes = shortcode_atts([], $attributes, 'instalogin-devices');
 
             if (!is_user_logged_in()) {
                 return '<div>' . __('You must be logged in to manage devices.', 'instalogin') . '</div>';
@@ -29,15 +25,20 @@ class InstaloginDeviceSnippet
 
             // SCRIPTS
 
-            wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . 'style/form.css?v=3');
+            wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . '../../style/form.css?v=3');
 
             $user = wp_get_current_user();
             $email = $user->user_email;
             $user_id = $user->ID;
 
-            wp_enqueue_script('instalogin-devices', plugin_dir_url(__FILE__) . "scripts/devices.js", ['wp-i18n'], '1', true);
+            wp_enqueue_script('instalogin-devices', plugin_dir_url(__FILE__) . "../../scripts/devices.js", ['wp-i18n'], '1', true);
+            wp_localize_script('instalogin-devices', 'wpv', [
+                'is_frontend' => true,
+                'insta_nonce' => wp_create_nonce('wp_rest'),
+                'show_activation' => false,
+            ]);
 
-            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "scripts/device-send-mail.js", ['wp-i18n'], '1', true);
+            wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "../../scripts/device-send-mail.js", ['wp-i18n'], '1', true);
             wp_localize_script('instalogin-send-mail', 'wpv_mail', [
                 'insta_nonce' => wp_create_nonce('wp_rest'),
                 'user_id' => $user_id,

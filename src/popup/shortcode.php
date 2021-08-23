@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class InstaloginPopupSnippet
+class InstaloginPopupShortcode
 {
     public function __construct()
     {
@@ -22,7 +22,7 @@ class InstaloginPopupSnippet
             //     'size' => '100px',
             //     'show_when_logged_in' => "false",
             //     'border' => "false",
-            // ], $attributes, 'instalogin-login-code');
+            // ], $attributes, 'insta-popup');
 
 
             // if (!$showWhenLoggedIn && is_user_logged_in()) {

@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 
-class InstaloginLoginSnippet
+class InstaloginLoginShortcode
 {
     public function __construct()
     {
@@ -36,7 +36,7 @@ class InstaloginLoginSnippet
 
             $api_key = get_option('instalogin-api-key');
             $display_type = get_option('instalogin-api-type', 'qr');
-            wp_enqueue_script('instalogin-qr-widget', plugin_dir_url(__FILE__) . 'scripts/login.js?v=3', ['instalogin-api']);
+            wp_enqueue_script('instalogin-qr-widget', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api']);
             wp_localize_script('instalogin-qr-widget', 'api_key', $api_key);
             wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
 

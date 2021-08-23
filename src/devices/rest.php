@@ -4,29 +4,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-require __DIR__ . '/vendor/autoload.php';
-
-class InstalogInDeviceManager
+class InstalogInDevicesAPI
 {
     private $client = null;
 
-    public function __construct()
+    public function __construct($client)
     {
 
-        // Check if API set up correctly
-        $api_key = get_option('instalogin-api-key', false);
-        $api_secret = get_option('instalogin-api-secret', false);
-
-        if ($api_key != false && $api_secret != false) {
-
-            try {
-                $this->client = new \Instalogin\Client($api_key, $api_secret);
-            } catch (\Throwable $th) {
-                // users are notified via rest api
-            }
-        }
-
-
+        $this->client = $client;
 
         $this->api_add_device();
         $this->api_get_devices();

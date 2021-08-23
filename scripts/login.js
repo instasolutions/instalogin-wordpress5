@@ -1,9 +1,10 @@
+console.log("insta: loading qr code");
 /** @type {HTMLButtonElement} */
 let add_after_element = document.querySelector("p.submit");
 
 if (!add_after_element) {
   console.warn(
-    "instalog.in - could not find Button `Log In`. Trying to find snippet."
+    "insta: could not find Button `Log In`. Trying to find shortcode container."
   );
 } else {
   const div = document.createElement("div");
@@ -18,3 +19,5 @@ const insta = new Instalogin.Auth({
   authenticationUrl: "/index.php/wp-json/instalogin/v1/login-controller",
   type: display_type,
 }).start();
+
+console.log(insta);
