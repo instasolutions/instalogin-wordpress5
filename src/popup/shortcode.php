@@ -93,7 +93,6 @@ class InstaloginPopupShortcode
                 }
 
                 .insta-popup-container .insta-popup {
-
                     z-index: 1000;
 
                     padding: 1.5rem;
@@ -152,7 +151,6 @@ class InstaloginPopupShortcode
                     color: #808080;
                     font-size: 14px;
                     line-height: 1.3;
-
                 }
 
                 .insta-popup-container .insta-button {
@@ -169,7 +167,6 @@ class InstaloginPopupShortcode
                     text-decoration: none;
                     transition: transform .15s ease-out;
                     box-shadow: none;
-
                 }
 
                 .insta-popup-container .insta-button:hover {
