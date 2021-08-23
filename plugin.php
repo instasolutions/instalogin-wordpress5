@@ -6,7 +6,7 @@
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
  * Requires at least: 5.0
- * Version: 0.3.22
+ * Version: 0.4.0
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalogin
@@ -32,12 +32,15 @@ class InstalogIn
 
         // Shortcodes
         require_once('login_snippet.php');
+        require_once('src/popup/popup_snippet.php');
         require_once('register_snippet.php');
         require_once('device_snippet.php');
+
 
         $this->sc_login_code = new InstaloginLoginSnippet();
         $this->sc_register = new InstaloginRegisterSnippet();
         new InstaloginDeviceSnippet();
+        new InstaloginPopupSnippet();
 
         // Backend
         require_once('manage_devices.php');
