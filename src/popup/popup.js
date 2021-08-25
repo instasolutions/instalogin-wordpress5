@@ -1,6 +1,8 @@
 {
+  /** @type{HTMLDivElement} */
   const popup = document.querySelector(".insta-popup");
   const background = document.querySelector(".insta-background");
+  /** @type{HTMLButtonElement} */
   const opener = document.querySelector(".insta-opener");
 
   let is_open = false;
@@ -21,6 +23,29 @@
       background.classList.toggle("popup-active");
       toggle_insta();
     });
+
+    if (trigger == "hover") {
+      opener.addEventListener("mouseenter", () => {
+        popup.classList.add("popup-active");
+        background.classList.add("popup-active");
+
+        insta.start();
+      });
+
+      popup.addEventListener("mouseenter", () => {
+        popup.classList.add("popup-active");
+        background.classList.add("popup-active");
+
+        insta.start();
+      });
+
+      popup.addEventListener("mouseleave", () => {
+        popup.classList.remove("popup-active");
+        background.classList.remove("popup-active");
+
+        insta.stop();
+      });
+    }
   }
 
   function toggle_insta() {

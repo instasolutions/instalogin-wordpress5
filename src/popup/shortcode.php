@@ -17,17 +17,13 @@ class InstaloginPopupShortcode
 
             $registration_enabled = get_option('instalogin-api-registration', 0) == 1;
 
-            // SETTINGS
-            // $attributes = shortcode_atts([
-            //     'size' => '100px',
-            //     'show_when_logged_in' => "false",
-            //     'border' => "false",
-            // ], $attributes, 'insta-popup');
-
-
             // if (!$showWhenLoggedIn && is_user_logged_in()) {
             //     return '';
             // }
+
+            $setting_name = 'instalogin-popup-style';
+            require_once(dirname(__FILE__) . '/default_settings.php');
+            $setting = get_option($setting_name, $default_popup_settings);
 
             // SCRIPTS
             wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
@@ -39,16 +35,20 @@ class InstaloginPopupShortcode
             wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
 
             wp_enqueue_script('instalogin-popup', plugin_dir_url(__FILE__) . 'popup.js?v=1', ['instalogin-qr-widget']);
+            wp_localize_script('instalogin-popup', 'trigger', $setting['trigger']);
 
             // TOOD: if key unset, display error message
+
+
 
             // RENDER
             ob_start(); ?>
             <style>
                 #instalogin {
-                    background: white;
+                    background: <?= $setting['qr-bg'] ?>;
                     border-radius: 20px;
-                    box-shadow: #00000029 0px 3px 6px;
+                    /* border:; */
+                    box-shadow: <?= $setting['qr-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
                 }
 
                 .insta-popup-container #instalogin .instalogin-container {
@@ -56,7 +56,6 @@ class InstaloginPopupShortcode
                     width: 250px;
                     height: 250px;
                     padding: 2rem;
-                    /* background-color: white; */
 
                     display: flex;
                     flex-flow: column;
@@ -70,6 +69,7 @@ class InstaloginPopupShortcode
                 .insta-popup-container #instalogin .instalogin-image-container {
                     display: flex;
                     justify-content: center;
+                    background: <?= $setting['qr-bg'] ?>;
                 }
 
                 .insta-popup-container #instalogin .instalogin-image {
@@ -96,17 +96,19 @@ class InstaloginPopupShortcode
                     z-index: 1000;
 
                     padding: 1.5rem;
-                    box-shadow: #00000029 0px 3px 6px;
+                    box-shadow: <?= $setting['box-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
 
-                    border-radius: 40px;
+                    border-radius: <?= $setting['box-border-radius'] ?>;
 
                     position: absolute;
-                    top: 0;
+
+                    <?= $setting['position'] ?>: <?= $setting['vertical'] ?>;
+                    left: <?= $setting['horizontal'] ?>;
 
                     display: flex;
                     gap: 2rem;
 
-                    background-color: #E9E9E9;
+                    background-color: <?= $setting['box-bg'] ?>;
 
                     opacity: 0;
                     visibility: hidden;
@@ -132,32 +134,35 @@ class InstaloginPopupShortcode
                 }
 
                 .insta-popup-container .insta-title {
-                    font-size: 32px;
-                    font-family: "TT Norms";
-                    color: #3E84AD;
-                    font-weight: bold;
+                    font-size: <?= $setting['title-size'] ?>;
+                    font-family: <?= $setting['font'] ?>;
+                    color: <?= $setting['title-color'] ?>;
+                    font-weight: <?= $setting['title-weight'] ?>;
                 }
 
                 .insta-popup-container .insta-sub {
-                    font-size: 18px;
-                    font-weight: bold;
-                    color: #808080;
+                    font-size: <?= $setting['sub-title-size'] ?>;
+                    font-weight: <?= $setting['sub-title-weight'] ?>;
+                    font-family: <?= $setting['font'] ?>;
+                    color: <?= $setting['sub-title-color'] ?>;
                     line-height: 1.15;
                 }
 
                 .insta-popup-container .insta-text {
-                    font-size: .8rem;
                     margin-top: .5rem;
-                    color: #808080;
-                    font-size: 14px;
                     line-height: 1.3;
+
+                    font-size: <?= $setting['text-size'] ?>;
+                    font-weight: <?= $setting['text-weight'] ?>;
+                    font-family: <?= $setting['font'] ?>;
+                    color: <?= $setting['text-color'] ?>;
                 }
 
                 .insta-popup-container .insta-button {
-                    font-size: 14px !important;
-                    color: white !important;
-                    background: #3E84AD !important;
-                    border-radius: 100px;
+                    font-size: <?= $setting['button-size'] ?> !important;
+                    color: <?= $setting['button-color'] ?> !important;
+                    background: <?= $setting['button-bg'] ?> !important;
+                    border-radius: <?= $setting['button-radius'] ?>;
                     float: right;
                     margin-top: 1rem;
 
@@ -175,35 +180,48 @@ class InstaloginPopupShortcode
                 }
             </style>
 
+            <?php
+            if (is_user_logged_in()) {
+            ?>
+                <div>
+                    <a href="<?= wp_logout_url() ?>">
+                        <button>
+                            <?= _e("Logout", "instalogin") ?>
+                        </button>
+                    </a>
+                </div>
+            <?php
+            } else {
+            ?>
 
+                <div class="insta-popup-container">
+                    <button class="insta-opener">
+                        <?= _e("Sign In", "instalogin") ?>
+                    </button>
 
-            <div class="insta-popup-container">
-                <button class="insta-opener">
-                    <?= _e("Sign In", "instalogin") ?>
-                </button>
+                    <div class="insta-background"></div>
+                    <div class="insta-popup">
+                        <div id="instalogin"></div>
+                        <div class="popup-body">
+                            <!-- TODO: English -->
+                            <div>
+                                <span class="insta-title"><?= $setting['title-text'] ?></span>
+                                <div class="insta-sub"><?= $setting['sub-title-text'] ?></div>
+                                <p class="insta-text"><?= $setting['text-text'] ?></p>
+                            </div>
 
-                <div class="insta-background"></div>
-                <div class="insta-popup">
-                    <div id="instalogin"></div>
-                    <div class="popup-body">
-                        <!-- TODO: English -->
-                        <div>
-                            <span class="insta-title"><?= __('Adminlogin', 'instalogin') ?></span>
-                            <div class="insta-sub"><?= __('Passwortfreies<br> Login der nächsten Generation') ?></div>
-                            <p class="insta-text"><?= __('Den InstaCode mit der Instalogin-App scannen und passwortlos sicher einloggen.') ?></p>
+                            <?php if (get_option('users_can_register') || $registration_enabled) { ?>
+                                <a href="<?= wp_registration_url() ?>" class="insta-button"><?= __('Registrieren', 'instalogin') ?></a>
+                            <?php } ?>
                         </div>
 
-                        <?php if (get_option('users_can_register') || $registration_enabled) { ?>
-                            <a href="<?= wp_registration_url() ?>" class="insta-button"><?= __('Registrieren', 'instalogin') ?></a>
-                        <?php } ?>
                     </div>
-
                 </div>
-            </div>
 
 
 
 <?php
+            }
 
             return ob_get_clean();
         });

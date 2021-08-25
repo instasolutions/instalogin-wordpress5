@@ -170,6 +170,7 @@ class InstaloginSettings
                         </div>
 
                         <div class="tab content4">
+                            <?= do_settings_fields('instalogin', 'instalogin-popup'); ?>
                         </div>
 
                         <!-- <?= do_settings_sections('instalogin'); ?> -->
@@ -185,6 +186,9 @@ class InstaloginSettings
             $this->basic_tab($page);
             $this->api_tab($page);
             $this->api_smartcode($page);
+
+            require_once(dirname(__FILE__) . '/../popup/settings.php');
+            new InstaloginPopupSettings($page);
         });
     }
 

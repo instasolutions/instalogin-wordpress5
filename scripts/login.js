@@ -19,5 +19,3 @@ const insta = new Instalogin.Auth({
   authenticationUrl: "/index.php/wp-json/instalogin/v1/login-controller",
   type: display_type,
 }).start();
-
-console.log(insta);
