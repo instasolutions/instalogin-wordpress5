@@ -32,10 +32,14 @@ class InstaloginLoginAPI
 
                     $auth_header = $request->get_header('x_instalogin_auth');
                     if ($auth_header == null) {
-                        return new WP_REST_Response(__('Authorization header missing.', 'instalogin'), 403);
+
+                        $auth_header = $request->get_header('authorization');
+                        if ($auth_header == null) {
+                            return new WP_REST_Response(__(print_r("Authorization header missing.", true), 'instalogin'), 403);
+                        }
+                        $auth_header = [mb_substr($auth_header, 7)][0];
                     }
-                    // ? this is the default header, sometimes stripped by apache
-                    // $jwt = [mb_substr($auth_header, 7)][0];
+
                     $jwt = $auth_header;
                     $token = $this->client->decodeJwt($jwt);
 
