@@ -1,0 +1,112 @@
+input[type="radio"].tab-title {
+  display: none;
+}
+
+input + label {
+  display: inline-block;
+}
+
+input ~ .tab {
+  display: none;
+}
+
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3,
+#tab4:checked ~ .tab.content4,
+#tab5:checked ~ .tab.content5 {
+  display: grid;
+  grid-template-columns: 300px 200px 1fr;
+  gap: 1.3rem;
+}
+
+input + label {
+  background: white;
+  padding: 1rem 1.2rem;
+  position: relative;
+  top: 1px;
+  font-size: 20px;
+  color: #bf5777;
+  font-weight: bold;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+input:checked + label {
+  background: #bf5777;
+  color: white;
+}
+
+input ~ .tab {
+  padding: 2rem 1.1rem;
+  /* width: 100%; */
+  background: white;
+  font-weight: bold;
+  color: #1d2327;
+  font-size: 14px;
+}
+
+.insta-container {
+  background: white;
+  padding: 1rem 1.5rem;
+  padding-right: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.insta-container > p {
+  color: #1d4264;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.insta-container .insta-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.insta-logo {
+  height: 50px;
+}
+
+.insta-button {
+  font-size: 14px !important;
+  color: white !important;
+  background: #3e84ad !important;
+  border: none;
+  border-radius: 100px;
+  float: right;
+  margin-top: 1rem;
+  font-weight: bold;
+
+  padding: 8px 24px;
+
+  align-self: end;
+  text-decoration: none;
+  transition: transform 0.15s ease-out;
+  box-shadow: none;
+}
+
+.insta-button:hover {
+  transform: scale(1.05);
+  box-shadow: none;
+}
+
+.insta-info {
+  font-weight: normal;
+  color: #808080;
+}
+
+.insta-save-box {
+  background: #3e84ad;
+  padding: 2rem 2rem 4rem;
+}
+
+.insta-save-box input {
+  background: #ffd858 !important;
+  font-size: 14px;
+  color: #1d2327 !important;
+  font-weight: bold;
+  padding: 0.2rem 0.8rem !important;
+}

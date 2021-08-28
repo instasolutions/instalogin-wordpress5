@@ -29,7 +29,7 @@ class InstaloginPopupSettings
 
                 .insta-popup-settings label {
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
+                    grid-template-columns: 300px 200px;
                     margin-bottom: .5rem;
                 }
             </style>
