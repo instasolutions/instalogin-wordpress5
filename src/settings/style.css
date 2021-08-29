@@ -48,51 +48,6 @@ input ~ .tab {
   font-size: 14px;
 }
 
-.insta-container {
-  background: white;
-  padding: 1rem 1.5rem;
-  padding-right: 3rem;
-  margin-bottom: 0.8rem;
-}
-
-.insta-container > p {
-  color: #1d4264;
-  font-size: 16px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.insta-container .insta-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.insta-logo {
-  height: 50px;
-}
-
-.insta-button {
-  font-size: 14px !important;
-  color: white !important;
-  background: var(--insta-blue-light) !important;
-  border: none;
-  border-radius: 100px;
-  float: right;
-  margin-top: 1rem;
-  font-weight: bold;
-
-  padding: 8px 24px;
-
-  align-self: end;
-  text-decoration: none;
-  transition: transform 0.15s ease-out;
-  box-shadow: none;
-}
-
-.insta-button:hover {
-  transform: scale(1.05);
-  box-shadow: none;
-}
-
 .insta-info {
   font-weight: normal;
   color: #808080;

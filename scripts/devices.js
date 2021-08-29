@@ -46,8 +46,14 @@
           <br>${__("Are you sure?", "instalogin")}
         </span>  
         <div style="margin-top: 1rem;">
-          <button class="instalogin-modal-button no instalogin-device-button">${__("Cancel", "instalogin")}</button>
-          <button class="instalogin-modal-button yes instalogin-device-button">${__("Send Mail", "instalogin")}</button>
+          <button class="instalogin-modal-button no instalogin-device-button">${__(
+            "Cancel",
+            "instalogin"
+          )}</button>
+          <button class="instalogin-modal-button yes instalogin-device-button">${__(
+            "Send Mail",
+            "instalogin"
+          )}</button>
        </div>
      `;
 
@@ -84,11 +90,20 @@
         if (response.ok) {
           const json = await response.json();
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          info_area.innerHTML = `<p>${__("Email has been sent!", 'instalogin')}</p>`;
+          info_area.innerHTML = `<p>${__(
+            "Email has been sent!",
+            "instalogin"
+          )}</p>`;
         } else {
           const body = await response.text();
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          info_area.innerHTML = `${__("Email could not be sent!", "instalogin")}<br>${__("Please try again later or contact an administrator.", "instalogin")}<br>${body}`;
+          info_area.innerHTML = `${__(
+            "Email could not be sent!",
+            "instalogin"
+          )}<br>${__(
+            "Please try again later or contact an administrator.",
+            "instalogin"
+          )}<br>${body}`;
           console.error("instalogin: could not send mail.", response);
         }
 
@@ -132,18 +147,15 @@
             <tbody class="instalogin-device-table">
             </tbody>
 
-            <tfoot>
-                <tr>
-                    <th>
-                        <button class="button instalogin-refresh">${__("Refresh", "instalogin")}</button>
-                        <button class="button-primary instalogin-send-mail">${__("Add Device", "instalogin")}</button>
-                    </th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </tfoot>
-
         </table>
+        <button class="insta-button instalogin-refresh">${__(
+          "Refresh",
+          "instalogin"
+        )}</button>
+        <button class="insta-button instalogin-send-mail">${__(
+          "Add Device",
+          "instalogin"
+        )}</button>
     </div>`;
     }
   }
@@ -168,26 +180,30 @@
         const date = new Date(device.created_at);
         created_at.innerText = `${date.toLocaleTimeString()} - ${date.toLocaleDateString()}`;
 
-        tr.appendChild(label);
-        tr.appendChild(model);
-        tr.appendChild(created_at);
-
-        // delete
-        const actions_div = document.createElement("div");
-        actions_div.classList.add("row-actions");
-
-        const delete_span = document.createElement("span");
-        delete_span.classList.add("trash");
+        const delete_td = document.createElement("td");
 
         const delete_button = document.createElement("a");
         delete_button.href = "#";
-        delete_button.classList.add("submitdelete");
-        // TODO: translation
+        delete_button.classList.add("insta-delete");
         delete_button.innerText = "Delete";
 
-        label.appendChild(actions_div);
-        actions_div.appendChild(delete_span);
-        delete_span.appendChild(delete_button);
+        delete_td.appendChild(delete_button);
+
+        tr.appendChild(label);
+        tr.appendChild(model);
+        tr.appendChild(created_at);
+        tr.appendChild(delete_td);
+
+        // delete
+        // const actions_div = document.createElement("div");
+        // actions_div.classList.add("row-actions");
+
+        // const delete_span = document.createElement("span");
+        // delete_span.classList.add("trash");
+
+        // label.appendChild(actions_div);
+        // actions_div.appendChild(delete_span);
+        // delete_span.appendChild(delete_button);
 
         let clicked_once = false;
 
@@ -250,8 +266,14 @@
           <b>Remove device?</b><br>
           ${device.model}
           <div style="margin-top: 1rem;">
-            <button class="instalogin-modal-button no instalogin-device-button">${__("No", "instalogin")}</button>
-            <button class="instalogin-modal-button yes instalogin-device-button">${__("yes", "instalogin")}</button>
+            <button class="instalogin-modal-button no instalogin-device-button">${__(
+              "No",
+              "instalogin"
+            )}</button>
+            <button class="instalogin-modal-button yes instalogin-device-button">${__(
+              "yes",
+              "instalogin"
+            )}</button>
           </div>
         `;
 
