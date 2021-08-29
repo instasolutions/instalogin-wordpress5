@@ -75,6 +75,10 @@ class InstalogIn
         add_action('admin_enqueue_scripts', function ($hook) {
             wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
         });
+
+        add_action('init', function () {
+            load_plugin_textdomain('instalogin', false, dirname(plugin_basename(__FILE__)) . "/languages");
+        });
     }
 
     // Initialize Instalog.in SDK client
@@ -89,7 +93,7 @@ class InstalogIn
                     <h3>Instalogin Setup</h3>
                     <p>
                         <?= __('You are almost ready to use Instalogin!', 'instalogin') ?><br>
-                        <?= __('Plase finish the setup: ', 'instalogin') ?><br>
+                        <?= __('Please finish the setup: ', 'instalogin') ?><br>
                     </p>
                     <p>
                         <a class="button" href="<?= plugin_dir_url(__FILE__) ?>/wizard">Run Installation Wizard</a>
