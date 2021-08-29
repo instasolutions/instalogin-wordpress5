@@ -65,6 +65,16 @@ class InstalogIn
 
         require_once('src/profile/profile_page.php');
         new InstaloginProfilePage();
+
+        // global styles
+
+        add_action('wp_enqueue_scripts', function () {
+            wp_enqueue_script('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
+        });
+
+        add_action('admin_enqueue_scripts', function ($hook) {
+            wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
+        });
     }
 
     // Initialize Instalog.in SDK client

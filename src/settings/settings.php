@@ -26,7 +26,7 @@ class InstaloginSettings
 
         add_action('admin_enqueue_scripts', function ($hook) {
             if (strpos($hook, "instalogin") !== false) {
-                wp_enqueue_style('insta-settings-style', plugin_dir_url(__FILE__) . "style.css", [], '1');
+                wp_enqueue_style('insta-settings-style', plugin_dir_url(__FILE__) . "style.css", ['insta-global'], '1');
             }
         });
 

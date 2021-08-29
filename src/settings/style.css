@@ -26,7 +26,7 @@ input + label {
   position: relative;
   top: 1px;
   font-size: 20px;
-  color: #bf5777;
+  color: var(--insta-red);
   font-weight: bold;
 
   user-select: none;
@@ -35,7 +35,7 @@ input + label {
 }
 
 input:checked + label {
-  background: #bf5777;
+  background: var(--insta-red);
   color: white;
 }
 
@@ -44,7 +44,7 @@ input ~ .tab {
   /* width: 100%; */
   background: white;
   font-weight: bold;
-  color: #1d2327;
+  color: var(--insta-black);
   font-size: 14px;
 }
 
@@ -73,7 +73,7 @@ input ~ .tab {
 .insta-button {
   font-size: 14px !important;
   color: white !important;
-  background: #3e84ad !important;
+  background: var(--insta-blue-light) !important;
   border: none;
   border-radius: 100px;
   float: right;
@@ -99,7 +99,7 @@ input ~ .tab {
 }
 
 .insta-save-box {
-  background: #3e84ad;
+  background: var(--insta-blue-light);
   padding: 2rem 2rem 4rem;
 }
 
@@ -108,7 +108,7 @@ input ~ .tab {
   border-radius: 4px !important;
   border: none !important;
   font-size: 14px;
-  color: #1d2327 !important;
+  color: var(--insta-black) !important;
   font-weight: bold;
   padding: 0.2rem 0.8rem !important;
 }
