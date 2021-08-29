@@ -14,8 +14,7 @@ if (!current_user_can('manage_options')) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Instalogin - Installation</title>
-    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css'> -->
+    <title><?= __("Instalogin - Installation", "instalogin") ?></title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -34,22 +33,22 @@ if (!current_user_can('manage_options')) {
                 <div class="steps">
                     <a class="step">
                         <span class="icon"></span>
-                        <span class="label">Willkommen</span>
+                        <span class="label"><?= __('Welcome', 'instalogin') ?></span>
                     </a>
                     <div class="step-divider"></div>
                     <a class="step">
                         <span class="icon"></span>
-                        <span class="label">Setup</span>
+                        <span class="label"><?= __('Setup', 'instalogin') ?></span>
                     </a>
                     <div class="step-divider"></div>
                     <a class="step">
                         <span class="icon"></span>
-                        <span class="label">Aktivieren</span>
+                        <span class="label"><?= __('Activate', 'instalogin') ?></span>
                     </a>
                     <div class="step-divider"></div>
                     <a class="step">
                         <span class="icon"></span>
-                        <span class="label">Abschließen</span>
+                        <span class="label"><?= __('Finish', 'instalogin') ?></span>
                     </a>
                 </div>
 
@@ -57,70 +56,70 @@ if (!current_user_can('manage_options')) {
 
                     <!-- Welcome -->
                     <div class="step-content">
-                        <h1>Willkommen bei Instalogin</h1>
-                        <h2>Der Zwei-Faktor-Authentifizierung in nur einem Schritt!</h2>
-                        <p> Instalogin funktioniert sowohl für dich und dein Team im Backend als auch für deine Kunden im Frontend.</p>
+                        <h1><?= __('Welcome to Instalogin', 'instalogin') ?></h1>
+                        <h2><?= __('Two factor authentication in one step!', 'instalogin') ?></h2>
+                        <p><?= __('Instalogin works for your team in the backend as well as your uses in the frontend.', 'instalogin') ?></p>
 
-                        <p> <a href="https://www.instalog.in/en/test-drive/index.html" target="_blank" rel="noopener"><button class="btn">Registrieren</button></a></p>
+                        <p> <a href="https://www.instalog.in/en/test-drive/index.html" target="_blank" rel="noopener"><button class="btn"><?= __('Register', 'instalogin') ?></button></a></p>
 
-                        <p>Du hast bereits einen Account? Dann leg direkt los!</p>
+                        <!-- <p>Du hast bereits einen Account? Dann leg direkt los!</p> -->
                     </div>
 
                     <!-- Settings -->
                     <div class="step-content">
-                        <h1>Einstellungen</h1>
+                        <h1><?= __('Configuration', 'instalogin') ?></h1>
 
                         <div class="form">
-
-                            <p>Den Key und das Secret findest du <a href="https://www.instalog.in/en/test-drive/index.html">hier</a>!</p>
+                            <p><?= __('You may find your credentials over <a href="https://www.instalog.in/en/test-drive/index.html">here</a>!', 'instalogin') ?></p>
 
                             <label class="">
                                 <div>
-                                    API Key
+                                    <?= __('API Key', 'instalogin') ?>
                                 </div>
                                 <input type="text" id="api_key" required>
-                                <div class="info info-key">Pflichtfeld. Muss exakt 32 Zeichen lang sein.</div>
+                                <div class="info info-key"><?= __('Required. Must be exactly 32 characters of length.', 'instalogin') ?></div>
                             </label>
 
                             <label>
                                 <div>
-                                    API Secret
+                                    <?= __('API Secret', 'instalogin') ?>
                                 </div>
                                 <input type="text" id="api_secret">
-                                <div class="info info-secret">Pflichtfeld. Muss exakt 64 Zeichen lang sein.</div>
+                                <div class="info info-secret"><?= __('Required. Must be exactly 64 characters of length.', 'instalogin') ?></div>
                             </label>
 
 
                             <label style="margin-top: 1rem;">
                                 <input type="checkbox" id="enable_registration">
                                 <span>
-                                    Registrierung per Instalogin erlauben
+                                    <?= __('Enable registration via Instalogin', 'instalogin') ?>
                                 </span>
                             </label>
 
                             <label style="margin-top: 1rem;">
-                                <div>Anzeigetyp</div>
+                                <div><?= __('Code Type', 'instalogin') ?></div>
                                 <select id="code_type">
-                                    <option value="qr">QR Code</option>
-                                    <option value="si">Smart Image</option>
+                                    <option value="qr"><?= __('QR Code', 'instalogin') ?></option>
+                                    <option value="si"><?= __('Smart Image', 'instalogin') ?></option>
                                 </select>
                             </label>
 
                         </div>
                         <p>
-                            <button class="btn btn-save">Einstellungen Speichern</button>
+                            <button class="btn btn-save"><?= __('Save Settings', 'instalogin') ?></button>
+                            <!-- TODO: check insta api for valid key/secret -->
                         </p>
                     </div>
 
                     <!-- Install App -->
                     <div class="step-content">
-                        <h1>Lass uns loslegen!</h1>
-                        <h2>der Zwei-Faktor-Authentifizierung in nur einem Schritt!</h2>
+                        <h1><?= __("Let's begin!", 'instalogin') ?></h1>
                         <p>Erhalte eine Aktivierungsmail und scanne anschließend in der App den Verifizierungscode:</p>
+                        <p><?= __('Request a confirmation email and use the Insta app to scan the verification code.', 'instalogin') ?></p>
                         <p>
-                            <button class="btn btn-mail">Sende Aktivierungsmail</button>
+                            <button class="btn btn-mail"><?= __('Request activation mail', 'instalogin') ?></button>
                         </p>
-                        <p>Du hast die App noch nicht? Lade sie hier herunter:</p>
+                        <p><?= __("Don't have the app alread? Get it here:", 'instalogin') ?></p>
                         <div>
                             <a href="https://apps.apple.com/app/instalog-in/id1097751906" rel="noopener" target="_blank">
                                 <img src="images/appstore.png" width="200px" alt="App Store" style="margin:5px">
@@ -133,13 +132,13 @@ if (!current_user_can('manage_options')) {
 
                     <!-- Done -->
                     <div class="step-content">
-                        <h1>Das war es schon!</h1>
-                        <h2>Die Installation wurde erfolgreich abgeschlossen</h2>
+                        <h1><?= __("That's it!", 'instalogin') ?></h1>
+                        <h2><?= __("The installation has been completet successfully.", 'instalogin') ?></h2>
                         <br>
-                        Du kannst entweder zum Backend zurückkehren oder den Login direkt testen:
+                        <?= __("Go back or try loggin in right now:", 'instalogin') ?>
                         <p>
-                            <a href="/wp-admin"><button class="btn">Installation beenden</button></a>
-                            <a href="<?= wp_logout_url('/wp-login.php') ?>"><button class="btn">Login testen</button></a>
+                            <a href="/wp-admin"><button class="btn"><?= __("Exit installer", 'instalogin') ?></button></a>
+                            <a href="<?= wp_logout_url('/wp-login.php') ?>"><button class="btn"><?= __("Test Instalogin", 'instalogin') ?></button></a>
                         </p>
 
                     </div>
@@ -152,10 +151,10 @@ if (!current_user_can('manage_options')) {
         <!-- Buttons container must be included.  -->
         <!-- Also, each `step-label` is needed  -->
         <div class="buttons">
-            <button class="btn step-back" disabled>Zurück</button>
-            <button class="btn step-next">Weiter</button>
-            <a href="/wp-admin/admin.php?page=instalogin"><button class="btn step-complete">Zurück zum Backend</button></a>
-            <button class="btn step-finish">Abschließen</button>
+            <button class="btn step-back" disabled><?= __("Back", 'instalogin') ?></button>
+            <button class="btn step-next"><?= __("Next", 'instalogin') ?></button>
+            <a href="/wp-admin/admin.php?page=instalogin"><button class="btn step-complete"><?= __("Abort", 'instalogin') ?></button></a>
+            <button class="btn step-finish"><?= __("Finish", 'instalogin') ?></button>
         </div>
     </div>
 
