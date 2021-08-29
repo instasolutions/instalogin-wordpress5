@@ -4,7 +4,7 @@ class InstaloginRegisterShortcode
 {
     public function __construct()
     {
-        add_shortcode('instalogin-register', function ($attributes = [], $content = null) {
+        add_shortcode('insta-register', function ($attributes = [], $content = null) {
             $api_enabled = get_option('instalogin-api-enabled');
             if ($api_enabled != 1) {
                 return false;

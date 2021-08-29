@@ -9,7 +9,7 @@ class InstaloginLoginShortcode
 {
     public function __construct()
     {
-        add_shortcode('instalogin-login-code', function ($attributes = [], $content = null) {
+        add_shortcode('insta-login', function ($attributes = [], $content = null) {
             // API disabled via settings?
             $api_enabled = get_option('instalogin-api-enabled');
             if ($api_enabled != 1) {
