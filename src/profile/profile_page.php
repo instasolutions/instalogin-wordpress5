@@ -188,7 +188,7 @@ class InstaloginProfilePage
                         }
                     </style>
 
-                    <details open class="instalogin-devices-details insta-box">
+                    <details class="instalogin-devices-details insta-box">
                         <summary class="insta" style="margin-bottom: .5rem; margin-top: .5rem;"><?= __('Manage Instalogin Devices', 'instalogin') ?></summary>
                         <div class="instalogin-devices-admin">
                             <!-- <ul class="instalogin-device-list"></ul> -->
