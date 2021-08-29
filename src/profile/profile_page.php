@@ -25,7 +25,7 @@ class InstaloginProfilePage
                 'user_id' => $user_id,
             ]); ?>
             <div>
-                <h3><a href="https://instalog.in" target="_black" rel="noreferrer">Instalog.in</a></h3>
+                <h3><a href="https://instalogin.me" target="_black" rel="noreferrer">Instalogin</a></h3>
 
                 <div class="instalogin-info-area">
                     <?php
@@ -35,12 +35,10 @@ class InstaloginProfilePage
                             window.location = "/wp-login.php";
                         </script>
                     <?php
-
-                        // echo "<div class='notice notice-info inline is-dismissible'><p>Random password has been set</p></div>";
                     } ?>
                 </div>
 
-                <p><?= __('Ready to join the passwordless revolution?', 'instalogin') ?></p>
+                <p><?= __('Ready to join the no-password revolution?', 'instalogin') ?></p>
 
                 <button class="instalogin-activate button instalogin-send-mail"><?= __('Send activation mail', 'instalogin') ?></button>
 
@@ -100,11 +98,11 @@ class InstaloginProfilePage
 
                         <label>
                             <input type="checkbox" name="instalogin-accept-reset" id="instalogin-accept-reset">
-                            Replace my password with a secure random password.
+                            <?= __("Replace my password with a secure random password.", 'instalogin') ?>
                         </label>
                         <br>
 
-                        <button id="instalogin-reset-password" disabled style="margin-top: 1rem;" class="button">Save</button>
+                        <button id="instalogin-reset-password" disabled style="margin-top: 1rem;" class="button"><?= __("Save", 'instalogin') ?></button>
                     </div>
 
                     <script>
@@ -138,7 +136,7 @@ class InstaloginProfilePage
 
                     <div class="notice notice-warning is-dismissible inline">
                         <p>
-                            You can not manage another user's devices.
+                            <?= __("You can not manage another user's devices.", 'instalogin') ?>
                         </p>
                     </div>
 
