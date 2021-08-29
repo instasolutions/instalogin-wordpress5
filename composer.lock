@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "009aad33e0c3ae710674c720c26c6324",
+    "content-hash": "75b21c970982c1a075511e93c828ad5d",
     "packages": [
         {
             "name": "instalogin/sdk",
-            "version": "v0.7.8",
+            "version": "v0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/instalogin/instalogin-sdk-php.git",
-                "reference": "478701fd5e9d3cab54f6c33d5ff642c99af2d8c5"
+                "reference": "8947169f1410eaeac4a658b93bdbded6d5ddc679"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/instalogin/instalogin-sdk-php/zipball/478701fd5e9d3cab54f6c33d5ff642c99af2d8c5",
-                "reference": "478701fd5e9d3cab54f6c33d5ff642c99af2d8c5",
+                "url": "https://api.github.com/repos/instalogin/instalogin-sdk-php/zipball/8947169f1410eaeac4a658b93bdbded6d5ddc679",
+                "reference": "8947169f1410eaeac4a658b93bdbded6d5ddc679",
                 "shasum": ""
             },
             "require": {
@@ -53,9 +53,9 @@
                 "login"
             ],
             "support": {
-                "source": "https://github.com/instalogin/instalogin-sdk-php/tree/v0.7.8"
+                "source": "https://github.com/instalogin/instalogin-sdk-php/tree/v0.8.1"
             },
-            "time": "2021-04-22T05:19:25+00:00"
+            "time": "2021-05-26T07:52:03+00:00"
         }
     ],
     "packages-dev": [],
