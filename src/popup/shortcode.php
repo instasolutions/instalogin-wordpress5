@@ -196,7 +196,7 @@ class InstaloginPopupShortcode
 
                 <div class="insta-popup-container">
                     <button class="insta-opener">
-                        <?= _e("Sign In", "instalogin") ?>
+                        <?= __("Sign In", "instalogin") ?>
                     </button>
 
                     <div class="insta-background"></div>
@@ -211,7 +211,7 @@ class InstaloginPopupShortcode
                             </div>
 
                             <?php if (get_option('users_can_register') || $registration_enabled) { ?>
-                                <a href="<?= wp_registration_url() ?>" class="insta-button"><?= __('Registrieren', 'instalogin') ?></a>
+                                <a href="<?= wp_registration_url() ?>" class="insta-button"><?= __('Register', 'instalogin') ?></a>
                             <?php } ?>
                         </div>
 

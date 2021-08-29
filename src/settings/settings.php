@@ -80,16 +80,16 @@ class InstaloginSettings
                         <?= settings_fields("instalogin") ?>
 
                         <input type="radio" name="tabs" id="tab1" checked class="tab-title" />
-                        <label for="tab1">Basic Settings</label>
+                        <label for="tab1"><?= __("Basic Settings", 'instalogin') ?></label>
 
                         <input type="radio" name="tabs" id="tab2" class="tab" />
-                        <label for="tab2">Lizenz (Key&Secret)</label>
+                        <label for="tab2"><?= __("License (Key&Secret)", 'instalogin') ?></label>
 
                         <input type="radio" name="tabs" id="tab3" class="tab" />
-                        <label for="tab3">Ansicht SmartCode</label>
+                        <label for="tab3"><?= __("SmartCode Type", 'instalogin') ?></label>
 
                         <input type="radio" name="tabs" id="tab4" class="tab" />
-                        <label for="tab4">Login Popup</label>
+                        <label for="tab4"><?= __("Login Popup Style", 'instalogin') ?></label>
 
                         <div class="tab content1">
                             <?= do_settings_fields('instalogin', 'instalogin-basic'); ?>
@@ -145,7 +145,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-enabled';
             $setting = get_option($setting_name); ?>
             <input type="checkbox" name="<?= $setting_name ?>" value="1" <?= $setting == 1 ? 'checked' : '' ?> />
-            <div class="insta-info">info</div>
+            <div class="insta-info"><?= __("Enable or disable all Instalogin methods. Users may not use Instalogin to sign in to or to create new accounts.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
 
@@ -156,7 +156,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-registration';
             $setting = get_option($setting_name); ?>
             <input type="checkbox" name="<?= $setting_name ?>" value="1" <?= $setting == 1 ? 'checked' : '' ?> />
-            <div class="insta-info">info</div>
+            <div class="insta-info"><?= __("Allow users to create accounts without using a password. Their accounts will be protected by Instalogin.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
 
@@ -167,7 +167,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-redirect';
             $setting = get_option($setting_name); ?>
             <input type="text" placeholder="/wp-admin" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
-            <div class="insta-info">info</div>
+            <div class="insta-info"><?= __("Decide to which page users should be redirected to after successfully login in. '/wp-admin' is the common directory.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
     }
@@ -188,7 +188,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-key';
             $setting = get_option($setting_name); ?>
             <input type="text" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
-            <div class="insta-info">info</div>
+            <div class="insta-info"><?= __("Your public API key provided by Instalogin.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
 
@@ -199,7 +199,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-secret';
             $setting = get_option($setting_name); ?>
             <input type="password" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
-            <div class="insta-info">info</div>
+            <div class="insta-info"><?= __("Your private secret provided by Instalogin.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
     }
@@ -223,7 +223,7 @@ class InstaloginSettings
                 <option value="qr" <?php selected($setting, 'qr') ?>>QR Code</option>
                 <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
             </select>
-            <div class="insta-info">info</div>
+            <div class="insta-info"><?= __("You may set a custom smart image on your Instalgin <a href='#'>account configuration</a> page.", 'instalogin') ?></div>
 <?php
         }, $page, $section);
     }

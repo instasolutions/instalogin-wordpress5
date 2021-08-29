@@ -49,14 +49,14 @@ class InstaloginDevicesShortcode
             <div>
                 <div class="instalogin-devices">
 
-                    <span class="instalogin-devices-title">Connected Devices</span>
+                    <span class="instalogin-devices-title"><?= __("Connected Devices", 'instalogin') ?></span>
                     <hr class="instalogin-devices-hr">
 
                     <ul class="instalogin-device-list">
 
                     </ul>
-                    <button class="instalogin-device-button instalogin-refresh">Refresh</button>
-                    <button class="instalogin-device-button instalogin-add-device">Add Device</button>
+                    <button class="instalogin-device-button instalogin-refresh"><?= __("Refresh", 'instalogin') ?></button>
+                    <button class="instalogin-device-button instalogin-add-device"><?= __("Add Device", 'instalogin') ?></button>
                 </div>
             </div>
 <?php
