@@ -271,7 +271,7 @@
               "instalogin"
             )}</button>
             <button class="instalogin-modal-button yes instalogin-device-button">${__(
-              "yes",
+              "Yes",
               "instalogin"
             )}</button>
           </div>

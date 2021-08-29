@@ -119,7 +119,7 @@ if (!current_user_can('manage_options')) {
                         <p>
                             <button class="btn btn-mail"><?= __('Request activation mail', 'instalogin') ?></button>
                         </p>
-                        <p><?= __("Don't have the app alread? Get it here:", 'instalogin') ?></p>
+                        <p><?= __("Don't have the app already? Get it here:", 'instalogin') ?></p>
                         <div>
                             <a href="https://apps.apple.com/app/instalog-in/id1097751906" rel="noopener" target="_blank">
                                 <img src="images/appstore.png" width="200px" alt="App Store" style="margin:5px">
@@ -133,7 +133,7 @@ if (!current_user_can('manage_options')) {
                     <!-- Done -->
                     <div class="step-content">
                         <h1><?= __("That's it!", 'instalogin') ?></h1>
-                        <h2><?= __("The installation has been completet successfully.", 'instalogin') ?></h2>
+                        <h2><?= __("The installation has been completed successfully.", 'instalogin') ?></h2>
                         <br>
                         <?= __("Go back or try loggin in right now:", 'instalogin') ?>
                         <p>
