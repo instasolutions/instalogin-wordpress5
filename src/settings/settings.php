@@ -74,7 +74,7 @@ class InstaloginSettings
                                     <button class="insta-button"><?= __('Account Login', 'instalogin') ?></button>
                                 </div>
                             </div>
-                            <p><?= __('Lorem ipsum dolor sit amet,  eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt vitae semper quis lectus nulla at volutpat diam. Nunc lobortis mattis aliquam faucibus purus in massa tempor.', 'instalogin') ?></p>
+                            <p><?= __('Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!', 'instalogin') ?></p>
                         </div>
 
                         <?= settings_fields("instalogin") ?>
