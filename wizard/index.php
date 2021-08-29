@@ -58,7 +58,7 @@ if (!current_user_can('manage_options')) {
                     <div class="step-content">
                         <h1><?= __('Welcome to Instalogin', 'instalogin') ?></h1>
                         <h2><?= __('Two factor authentication in one step!', 'instalogin') ?></h2>
-                        <p><?= __('Instalogin works for your team in the backend as well as your uses in the frontend.', 'instalogin') ?></p>
+                        <p><?= __('Instalogin works for your team in the backend as well as your users in the frontend.', 'instalogin') ?></p>
 
                         <p> <a href="https://www.instalog.in/en/test-drive/index.html" target="_blank" rel="noopener"><button class="btn"><?= __('Register', 'instalogin') ?></button></a></p>
 
