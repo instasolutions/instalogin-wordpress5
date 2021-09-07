@@ -69,7 +69,7 @@ class InstalogIn
         // global styles
 
         add_action('wp_enqueue_scripts', function () {
-            wp_enqueue_script('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
+            wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
         });
 
         add_action('admin_enqueue_scripts', function ($hook) {
