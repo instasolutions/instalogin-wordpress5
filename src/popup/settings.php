@@ -32,6 +32,15 @@ class InstaloginPopupSettings
                     grid-template-columns: 300px 200px;
                     margin-bottom: .5rem;
                 }
+
+                .insta-popup-settings h4::after {
+                    display: block;
+                    content: "";
+                    height: 2px;
+                    margin-top: .5rem;
+                    width: 200px;
+                    background: var(--insta-blue-light);
+                }
             </style>
 
             <div class="insta-popup-settings">
@@ -194,7 +203,7 @@ class InstaloginPopupSettings
                 <div>
                     <h4><?= __("Text", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("", 'instalogin') ?></span>
+                        <span><?= __("Content", 'instalogin') ?></span>
                         <textarea type="text" placeholder="Sign In" name="<?= $setting_name ?>[text-text]">
 <?= $setting['text-text'] ?>
                         </textarea>
