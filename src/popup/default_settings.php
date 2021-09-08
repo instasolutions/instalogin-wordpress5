@@ -34,6 +34,7 @@ $default_popup_settings = [
     'text-color' => "#808080",
     'text-weight' => "400",
     'button-text' => "Registrieren", // TODO: Translate
+    'button-type' => "text", // TODO: Translate
     'button-size' => "14px",
     'button-color' => "#FFFFFF",
     'button-bg' => "#3E84AD",

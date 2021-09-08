@@ -77,6 +77,14 @@ class InstaloginPopupSettings
                         <span><?= __("Horizontal Offset", 'instalogin') ?></span>
                         <input type="text" palceholder="e.g. 0px" name="<?= $setting_name ?>[horizontal]" value="<?= $setting['horizontal'] ?>">
                     </label>
+
+                    <label>
+                        <span><?= __("Button Type", 'instalogin') ?></span>
+                        <select name="<?= $setting_name ?>[button-type]">
+                            <option <?php selected($setting['button-type'], 'text') ?> value="text">Text</option>
+                            <option <?php selected($setting['button-type'], 'icon') ?> value="icon">Icon</option>
+                        </select>
+                    </label>
                 </div>
 
                 <div>
