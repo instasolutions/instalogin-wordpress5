@@ -28,13 +28,14 @@ class InstaloginPopupShortcode
             // SCRIPTS
             wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
 
+            $container_id = wp_generate_password(5, false);;
             $api_key = get_option('instalogin-api-key', false);
             $display_type = get_option('instalogin-api-type', 'qr');
-            wp_enqueue_script('instalogin-qr-widget', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api']);
-            wp_localize_script('instalogin-qr-widget', 'api_key', $api_key);
-            wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
 
-            wp_enqueue_script('instalogin-popup', plugin_dir_url(__FILE__) . 'popup.js?v=1', ['instalogin-qr-widget']);
+            wp_enqueue_script('instalogin-login', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api'], null, true);
+            wp_add_inline_script('instalogin-login', "insta = init_insta('$container_id', '$api_key', '$display_type');", 'after');
+
+            wp_enqueue_script('instalogin-popup', plugin_dir_url(__FILE__) . 'popup.js?v=1', [], null, true);
             wp_localize_script('instalogin-popup', 'trigger', $setting['trigger']);
 
             // TOOD: if key unset, display error message
@@ -44,14 +45,14 @@ class InstaloginPopupShortcode
             // RENDER
             ob_start(); ?>
             <style>
-                #instalogin {
+                .insta-popup-container .instalogin-popup {
                     background: <?= $setting['qr-bg'] ?>;
                     border-radius: 20px;
                     /* border:; */
                     box-shadow: <?= $setting['qr-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
                 }
 
-                .insta-popup-container #instalogin .instalogin-container {
+                .insta-popup-container .instalogin-popup .instalogin-container {
                     border: none !important;
                     width: 250px;
                     height: 250px;
@@ -66,17 +67,16 @@ class InstaloginPopupShortcode
 
                 }
 
-                .insta-popup-container #instalogin .instalogin-image-container {
+                .insta-popup-container .instalogin-popup .instalogin-image-container {
                     display: flex;
                     justify-content: center;
                     background: <?= $setting['qr-bg'] ?>;
                 }
 
-                .insta-popup-container #instalogin .instalogin-image {
+                .insta-popup-container .instalogin-popup .instalogin-image {
                     width: 80%;
                     margin: auto;
                     /* height: 80%; */
-
                 }
 
                 .insta-background {
@@ -201,7 +201,7 @@ class InstaloginPopupShortcode
 
                     <div class="insta-background"></div>
                     <div class="insta-popup">
-                        <div id="instalogin"></div>
+                        <div class="instalogin-popup" id="<?= $container_id ?>"></div>
                         <div class="popup-body">
                             <!-- TODO: English -->
                             <div>
