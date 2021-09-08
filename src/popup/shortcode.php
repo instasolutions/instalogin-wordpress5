@@ -210,7 +210,7 @@ class InstaloginPopupShortcode
                                 <p class="insta-text"><?= $setting['text-text'] ?></p>
                             </div>
 
-                            <?php if (get_option('users_can_register') || $registration_enabled) { ?>
+                            <?php if (get_option('users_can_register')) { ?>
                                 <a href="<?= wp_registration_url() ?>" class="insta-button"><?= __('Register', 'instalogin') ?></a>
                             <?php } ?>
                         </div>
