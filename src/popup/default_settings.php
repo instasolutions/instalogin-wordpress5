@@ -34,10 +34,26 @@ $default_popup_settings = [
     'text-color' => "#808080",
     'text-weight' => "400",
     'button-text' => "Registrieren", // TODO: Translate
-    'button-type' => "text", // TODO: Translate
     'button-size' => "14px",
     'button-color' => "#FFFFFF",
     'button-bg' => "#3E84AD",
     'button-radius' => "100px",
-    'button-weight' => "#3E84AD",
+    'button-weight' => "400",
+
+    'login-type' => "text", // TODO: Translate
+    'login-text' => "Sign In",
+    'login-out-text' => 'Sign Out',
+    'login-font-size' => '1rem',
+    'login-bg' => '#3E84AD',
+    'login-color' => '#FFFFFF',
+    'login-radius' => '8px',
+    'login-weight' => '400',
+    'login-size' => '32px',
+    'login-padding' => '0.4rem .7rem',
+
 ];
+
+// TODO Set missing defaults function
+// TODO Paddings, Margins
+// TODO Icon selector
+// TODO: Button Borders (color, style, thickness)

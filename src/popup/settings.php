@@ -86,13 +86,71 @@ class InstaloginPopupSettings
                         <span><?= __("Horizontal Offset", 'instalogin') ?></span>
                         <input type="text" palceholder="e.g. 0px" name="<?= $setting_name ?>[horizontal]" value="<?= $setting['horizontal'] ?>">
                     </label>
+                </div>
 
+                <div>
+                    <h4><?= __("Login(-out) Button", 'instalogin') ?></h4>
                     <label>
                         <span><?= __("Button Type", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[button-type]">
-                            <option <?php selected($setting['button-type'], 'text') ?> value="text">Text</option>
-                            <option <?php selected($setting['button-type'], 'icon') ?> value="icon">Icon</option>
+                        <select name="<?= $setting_name ?>[login-type]">
+                            <option <?php selected($setting['login-type'], 'text') ?> value="text">Text</option>
+                            <option <?php selected($setting['login-type'], 'icon') ?> value="icon">Icon</option>
                         </select>
+                    </label>
+
+                    <label>
+                        <span><?= __("Padding", 'instalogin') ?></span>
+                        <input type="text" palceholder="top right bottom left" name="<?= $setting_name ?>[login-padding]" value="<?= $setting['login-padding'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Login Text", 'instalogin') ?></span>
+                        <input type="text" palceholder="Sign In" name="<?= $setting_name ?>[login-text]" value="<?= $setting['login-text'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Logout Text", 'instalogin') ?></span>
+                        <input type="text" palceholder="Sign Out" name="<?= $setting_name ?>[login-out-text]" value="<?= $setting['login-out-text'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Font Size", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[login-font-size]" value="<?= $setting['login-font-size'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Background", 'instalogin') ?></span>
+                        <input type="color" name="<?= $setting_name ?>[login-bg]" value="<?= $setting['login-bg'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?= $setting_name ?>[login-color]" value="<?= $setting['login-color'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Border Radius", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 30px" name="<?= $setting_name ?>[login-radius]" value="<?= $setting['login-radius'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Weight", 'instalogin') ?></span>
+                        <select name="<?= $setting_name ?>[login-weight]">
+                            <option <?php selected($setting['login-weight'], '100') ?> value="100">100</option>
+                            <option <?php selected($setting['login-weight'], '200') ?> value="200">200</option>
+                            <option <?php selected($setting['login-weight'], '300') ?> value="300">300</option>
+                            <option <?php selected($setting['login-weight'], '400') ?> value="400">400</option>
+                            <option <?php selected($setting['login-weight'], '500') ?> value="500">500</option>
+                            <option <?php selected($setting['login-weight'], '600') ?> value="600">600</option>
+                            <option <?php selected($setting['login-weight'], '700') ?> value="700">700</option>
+                            <option <?php selected($setting['login-weight'], '800') ?> value="800">800</option>
+                            <option <?php selected($setting['login-weight'], '900') ?> value="900">900</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span><?= __("Size (Icon Only)", 'instalogin') ?></span>
+                        <input type="text" palceholder="e.g. 4px" name="<?= $setting_name ?>[login-size]" value="<?= $setting['login-size'] ?>">
                     </label>
                 </div>
 
@@ -239,7 +297,7 @@ class InstaloginPopupSettings
                         <input type="text" placeholder="Sign In" name="<?= $setting_name ?>[button-text]" value="<?= $setting['button-text'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Size", 'instalogin') ?></span>
+                        <span><?= __("Font Size", 'instalogin') ?></span>
                         <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[button-size]" value="<?= $setting['button-size'] ?>">
                     </label>
                     <label>
