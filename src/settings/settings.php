@@ -90,6 +90,70 @@ class InstaloginSettings
 
                         <div class="tab content2">
                             <?= do_settings_fields('instalogin', 'instalogin-api'); ?>
+
+                            <div>
+                                <button id="btn-verify" class="button">Verify Credentials</button>
+                                <span id="result" style="height: 100%; display: inline-flex; align-items: center; margin-left: .5rem;"></span>
+
+                                <script>
+                                    {
+                                        const button = document.querySelector('#btn-verify');
+                                        const result = document.querySelector('#result');
+                                        const key = document.querySelector('#instalogin-api-key');
+                                        const secret = document.querySelector('#instalogin-api-secret');
+
+                                        if (!button) {
+                                            console.warn('Key validation: Could not find button.');
+                                        } else {
+
+                                            button.addEventListener('click', async (event) => {
+                                                if (!result) {
+                                                    console.warn('Key validation: Could not find result.');
+                                                    return;
+                                                }
+                                                if (!key) {
+                                                    console.warn('Key validation: Could not find key input.');
+                                                    return;
+                                                }
+                                                if (!secret) {
+                                                    console.warn('Key validation: Could not find secret input.');
+                                                    return;
+                                                }
+
+                                                event.preventDefault();
+                                                button.disabled = true;
+
+                                                const response = await fetch(
+                                                    "/index.php/wp-json/instalogin/v1/verify_credentials", {
+                                                        method: "post",
+                                                        body: JSON.stringify({
+                                                            key: key.value,
+                                                            secret: secret.value
+                                                        }),
+                                                        headers: {
+                                                            "Content-Type": "application/json",
+                                                            "X-WP-NONCE": "<?= wp_create_nonce('wp_rest') ?>",
+                                                        },
+                                                    }
+                                                );
+
+                                                if (response.ok) {
+                                                    result.innerHTML = 'OK';
+                                                    result.style.color = 'green';
+                                                } else {
+                                                    result.innerHTML = "INVALID";
+                                                    result.style.color = 'red';
+                                                }
+
+                                                button.disabled = false;
+                                            });
+                                        }
+
+                                    }
+                                </script>
+                            </div>
+                            <div></div>
+                            <div></div>
                             <p>
                                 <?= __("If you do not have the necessary credentials, you may request them ", 'instalogin') ?>
                                 <a href="<?= __("http://instalogin.me/requestaccess", 'instalogin') ?>" target="_blank" rel="noopener">here!</a>
@@ -218,7 +282,7 @@ class InstaloginSettings
         add_settings_field($setting_name . "_field", __('API Key', "instalogin"), function () {
             $setting_name = 'instalogin-api-key';
             $setting = get_option($setting_name); ?>
-            <input type="text" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
+            <input type="text" id="<?= $setting_name ?>" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
             <div class="insta-info"><?= __("Your public API key provided by Instalogin.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
@@ -229,7 +293,7 @@ class InstaloginSettings
         add_settings_field($setting_name . "_field", __('API Secret', "instalogin"), function () {
             $setting_name = 'instalogin-api-secret';
             $setting = get_option($setting_name); ?>
-            <input type="password" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
+            <input type="password" id="<?= $setting_name ?>" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
             <div class="insta-info"><?= __("Your private secret provided by Instalogin.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
