@@ -44,6 +44,9 @@ class InstalogIn
         require_once('src/devices/rest.php');
         new InstalogInDevicesAPI($this->client);
 
+        require_once('src/settings/rest.php');
+        new InstaloginSettingsAPI();
+
         require_once('src/login/rest.php');
         new InstaloginLoginAPI($this->client);
 
