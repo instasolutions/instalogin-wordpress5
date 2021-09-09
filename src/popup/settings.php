@@ -24,7 +24,7 @@ class InstaloginPopupSettings
 
             <style>
                 .insta-popup-settings {
-                    grid-column: span 3;
+                    grid-column: span 2;
                 }
 
                 .insta-popup-settings label {
@@ -33,13 +33,18 @@ class InstaloginPopupSettings
                     margin-bottom: .5rem;
                 }
 
-                .insta-popup-settings h4::after {
+                .insta-popup-settings h4::after,
+                .insta-popup-usage h4::after {
                     display: block;
                     content: "";
                     height: 2px;
                     margin-top: .5rem;
                     width: 200px;
                     background: var(--insta-blue-light);
+                }
+
+                .insta-popup-usage b {
+                    white-space: nowrap;
                 }
             </style>
 
@@ -327,6 +332,11 @@ class InstaloginPopupSettings
                         </select>
                     </label>
                 </div>
+            </div>
+
+            <div style="margin-top: 0rem;" class="insta-popup-usage">
+                <h4><?= __("Usage", 'instalogin') ?></h4>
+                <p style="max-width: 60ch;" class="insta-info"><?= __("Login popups may be added to pages by either inserting <b>[insta-popup]</b> into any content area or by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</b>.", 'instalogin') ?></p>
             </div>
 
 <?php   }, $page, $section);
