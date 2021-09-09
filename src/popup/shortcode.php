@@ -15,8 +15,6 @@ class InstaloginPopupShortcode
                 return '';
             }
 
-            $registration_enabled = get_option('instalogin-api-registration', 0) == 1;
-
             $setting_name = 'instalogin-popup-style';
             require_once(dirname(__FILE__) . '/default_settings.php');
             $setting = get_option($setting_name, $default_popup_settings);
@@ -35,6 +33,8 @@ class InstaloginPopupShortcode
             wp_localize_script('instalogin-popup', 'trigger', $setting['trigger']);
 
             // TOOD: if key unset, display error message
+
+            wp_nav_menu();
 
             // RENDER
             ob_start(); ?>
