@@ -15,6 +15,12 @@ class InstaloginLoginPage
         });
 
         add_action('login_footer', function () {
+
+            $action = isset($_GET['action']) ? $_GET['action'] : null;
+            if ($action != null) {
+                return;
+            }
+
             wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
 
             $container_id = 'instalogin';
