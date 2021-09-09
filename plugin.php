@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Plugin Name: Official Instalog.in Integration
- * Plugin URI: https://instalog.in/
+ * Plugin Name: Official Instalogin Integration
+ * Plugin URI: https://instalogin.me/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
  * Requires at least: 5.0

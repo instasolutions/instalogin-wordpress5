@@ -32,7 +32,7 @@ class InstaloginSettings
 
         add_action('admin_menu', function () {
 
-            add_menu_page('Instalog.in Settings', 'Instalog.In', 'manage_options', 'instalogin', function () {
+            add_menu_page('Instalogin Settings', 'InstalogIn', 'manage_options', 'instalogin', function () {
                 if (!current_user_can('manage_options')) {
                     return;
                 }
@@ -146,7 +146,7 @@ class InstaloginSettings
         // Registration via API enabled
         $setting_name = 'instalogin-api-registration';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('Enable registration via Instalog.in', 'instalogin'), function () {
+        add_settings_field($setting_name . "_field", __('Enable registration via Instalogin', 'instalogin'), function () {
             $setting_name = 'instalogin-api-registration';
             $setting = get_option($setting_name); ?>
             <input type="checkbox" name="<?= $setting_name ?>" value="1" <?= $setting == 1 ? 'checked' : '' ?> />

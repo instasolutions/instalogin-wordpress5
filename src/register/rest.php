@@ -21,7 +21,7 @@ class InstaloginRegisterAPI
                     $api_enabled = get_option('instalogin-api-enabled') == 1;
                     $registration_enabled = get_option('instalogin-api-registration') == 1;
                     if (!$api_enabled || !$registration_enabled) {
-                        return new WP_Error('disabled', __('Registration via Instalog.in has been disabled by an administrator.', 'instalogin'));
+                        return new WP_Error('disabled', __('Registration via Instalogin has been disabled by an administrator.', 'instalogin'));
                     }
 
                     $client = $this->client;
