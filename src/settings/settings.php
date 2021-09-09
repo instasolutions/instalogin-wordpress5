@@ -214,7 +214,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-type';
             $setting = get_option($setting_name); ?>
             <select name="instalogin-api-type">
-                <option value="qr" <?php selected($setting, 'qr') ?>>QR Code</option>
+                <option value="qr" <?php selected($setting, 'qr') ?>>InstaCode</option>
                 <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
             </select>
             <div class="insta-info"><?= __("You may set a custom smart image on your Instalogin <a href='#'>account configuration</a> page.", 'instalogin') ?></div>
