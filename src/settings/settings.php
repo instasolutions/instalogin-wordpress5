@@ -72,6 +72,9 @@ class InstaloginSettings
                         <input type="radio" name="tabs" id="tab4" class="tab" />
                         <label for="tab4"><?= __("Login Popup Style", 'instalogin') ?></label>
 
+                        <input type="radio" name="tabs" id="tab5" class="tab" />
+                        <label for="tab5"><?= __("Usage", 'instalogin') ?></label>
+
                         <div class="tab content1">
                             <?= do_settings_fields('instalogin', 'instalogin-basic'); ?>
                             <div></div>
@@ -99,6 +102,40 @@ class InstaloginSettings
 
                         <div class="tab content4">
                             <?= do_settings_fields('instalogin', 'instalogin-popup'); ?>
+                        </div>
+
+                        <div class="tab content5">
+                            <div style="grid-column: span 3;" class="insta-info">
+                                <h3 style="color: var(--insta-blue);"><?= __("Usage", 'instalogin') ?></h3>
+
+                                <p>
+                                    <?= __("A Instalogin login code will be added to the wordpress login page automatically.", 'instalogin') ?><br>
+                                    <?= __("If <b>'registration via Instalogin'</b> is enabled in the basic settings tab, an email allowing users to connect their account to the InstaApp will be sent out automatically.", 'instalogin') ?>
+                                </p>
+
+                                <h4 style="color: var(--insta-blue);"><?= __("Shortcodes", 'instalogin') ?></h4>
+                                <p>
+                                    <?= __("If you would like to add login and registration options to the frontend of your website you may use these shortcodes:", 'instalogin') ?>
+                                </p>
+
+                                <p>
+                                    <?= __("<b>[insta-login]</b> adds an InstaCode to your page.", 'instalogin') ?>
+                                    <br>
+                                    <?= __("Instalogin will use these settings by default as such <b>[insta-login size='100px' show_when_logged_in='false' border='false' ]</b> .", 'instalogin') ?>
+                                    <br>
+                                    <?= __("Feel free to edit any or all settings.", 'instalogin') ?>
+                                </p>
+
+                                <p>
+                                    <?= __("<b>[insta-register]</b> adds a simple registration form to your page.", 'instalogin') ?>
+                                    <br>
+                                    <?= __("With optional default settings: <b>[insta-register require_username='true' show_button='true' button_text='Submit' show_when_logged_in='false' ]</b> .", 'instalogin') ?>
+                                    <br>
+                                    <?= __("If a username is not required, the users email address will be used.", 'instalogin') ?>
+                                </p>
+
+                                <p><?= __("<b>[insta-popup]</b> May be used to add a login popup to a page. Alternatively you can add a popup by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</b>.", 'instalogin') ?></p>
+                            </div>
                         </div>
 
                         <!-- <?= do_settings_sections('instalogin'); ?> -->

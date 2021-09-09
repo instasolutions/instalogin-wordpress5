@@ -334,10 +334,7 @@ class InstaloginPopupSettings
                 </div>
             </div>
 
-            <div style="margin-top: 0rem;" class="insta-popup-usage">
-                <h4><?= __("Usage", 'instalogin') ?></h4>
-                <p style="max-width: 60ch;" class="insta-info"><?= __("Login popups may be added to pages by either inserting <b>[insta-popup]</b> into any content area or by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</b>.", 'instalogin') ?></p>
-            </div>
+
 
 <?php   }, $page, $section);
     }
