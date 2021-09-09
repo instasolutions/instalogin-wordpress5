@@ -60,6 +60,9 @@ class InstalogIn
         require_once('src/settings/settings.php');
         new InstaloginSettings();
 
+        require_once('src/register/register_mail.php');
+        new InstaloginRegisterMail($this->client);
+
         require_once('src/login/login_page.php');
         new InstaloginLoginPage();
 
