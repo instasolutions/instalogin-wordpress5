@@ -78,6 +78,10 @@ class InstaloginSettings
 
                         <div class="tab content2">
                             <?= do_settings_fields('instalogin', 'instalogin-api'); ?>
+                            <p>
+                                <?= __("If you do not have the necessary credentials, you may request them ", 'instalogin') ?>
+                                <a href="<?= __("http://instalogin.me/requestaccess", 'instalogin') ?>" target="_blank" rel="noopener">here!</a>
+                            </p>
                         </div>
 
                         <div class="tab content3">
