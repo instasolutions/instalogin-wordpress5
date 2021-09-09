@@ -106,7 +106,7 @@ class InstaloginPopupShortcode
 
                     opacity: 0;
                     visibility: hidden;
-                    transform: translateY(-20px);
+                    transform: translateY(-7px);
 
                     transition: all .15s ease-out;
                 }
@@ -114,7 +114,7 @@ class InstaloginPopupShortcode
                 .insta-popup-container .popup-active {
                     visibility: visible;
                     opacity: 1;
-                    transform: translateY(-5px);
+                    transform: translateY(0px);
 
                 }
 
