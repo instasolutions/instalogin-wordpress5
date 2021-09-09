@@ -16,6 +16,11 @@ class InstaloginRegisterMail
                 return false;
             }
 
+            $registration_enabled = get_option('instalogin-api-registration', 0) == 1;
+            if (!$registration_enabled) {
+                return false;
+            }
+
             $user = get_user_by('id', $user_id);
             $email = $user->user_email;
 
