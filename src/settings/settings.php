@@ -74,6 +74,15 @@ class InstaloginSettings
 
                         <div class="tab content1">
                             <?= do_settings_fields('instalogin', 'instalogin-basic'); ?>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <a class="button red" href="<?= plugin_dir_url(__FILE__) ?>/../../../wizard/"><?= __("Reinstall", 'instalogin') ?></a>
+                            <div></div>
+                            <div><?= __("Rerun the setup installation wizard.", 'instalogin') ?></div>
                         </div>
 
                         <div class="tab content2">
