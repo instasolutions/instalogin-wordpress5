@@ -217,7 +217,21 @@ class InstaloginSettings
                 <option value="qr" <?php selected($setting, 'qr') ?>>InstaCode</option>
                 <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
             </select>
-            <div class="insta-info"><?= __("You may set a custom smart image on your Instalogin <a href='#'>account configuration</a> page.", 'instalogin') ?></div>
+            <div class="insta-info" style="grid-row: span 2;"><?= __("During beta smart images must be configured by an Instalogin employee.<br> You may submit a request to <a href='emailto:smartimage@instalogin.me'>smartimage@instalogin.me</a>. <br>Send us a 500px x 500px image an we will do the rest.", 'instalogin') ?></div>
+            <div style="grid-column: span 3;">
+                <h4>Examples:</h4>
+            </div>
+            <div style="grid-column: span 3; display: flex;">
+                <div>
+                    <h5 style="text-align: center;">InstaCode</h5>
+                    <img src="<?= plugin_dir_url(__FILE__) ?>../../img/qr.png" alt="">
+                </div>
+                <div>
+                    <h5 style="text-align: center;">SmartImage</h5>
+                    <img src="<?= plugin_dir_url(__FILE__) ?>../../img/si.png" alt="">
+                </div>
+            </div>
+
 <?php
         }, $page, $section);
     }

@@ -99,7 +99,7 @@ if (!current_user_can('manage_options')) {
                             <label style="margin-top: 1rem;">
                                 <div><?= __('Code Type', 'instalogin') ?></div>
                                 <select id="code_type">
-                                    <option value="qr"><?= __('QR Code', 'instalogin') ?></option>
+                                    <option value="qr"><?= __('InstaCode', 'instalogin') ?></option>
                                     <option value="si"><?= __('Smart Image', 'instalogin') ?></option>
                                 </select>
                             </label>
