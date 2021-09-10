@@ -84,6 +84,7 @@ class InstalogIn
 
         add_action('admin_enqueue_scripts', function ($hook) {
             wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
+            wp_enqueue_script('insta-media-selectors', plugin_dir_url(__FILE__) . "scripts/media.js", [], '1', true);
         });
 
         add_action('init', function () {

@@ -50,6 +50,8 @@ $default_popup_settings = [
     'login-weight' => '400',
     'login-size' => '32px',
     'login-padding' => '0.4rem .7rem',
+    'login-icon' => '',
+    'login-icon-out' => '',
 
 ];
 

@@ -157,6 +157,24 @@ class InstaloginPopupSettings
                         <span><?= __("Size (Icon Only)", 'instalogin') ?></span>
                         <input type="text" palceholder="e.g. 4px" name="<?= $setting_name ?>[login-size]" value="<?= $setting['login-size'] ?>">
                     </label>
+
+                    <label>
+                        <span><?= __("Login Icon", 'instalogin') ?></span>
+                        <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
+                            <button class="button"><?= __("Select Icon", 'instalogin') ?></button>
+                            <input type="hidden" name="<?= $setting_name ?>[login-icon]" value="<?= $setting['login-icon'] ?>">
+                            <img width="32px" height="32px" src="<?= $setting['login-icon'] ?>" alt="">
+                        </div>
+                    </label>
+
+                    <label>
+                        <span><?= __("Logout Icon", 'instalogin') ?></span>
+                        <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
+                            <button class="button"><?= __("Select Icon", 'instalogin') ?></button>
+                            <input type="hidden" name="<?= $setting_name ?>[login-icon-out]" value="<?= $setting['login-icon-out'] ?>">
+                            <img width="32px" height="32px" src="<?= $setting['login-icon-out'] ?>" alt="">
+                        </div>
+                    </label>
                 </div>
 
                 <div>
