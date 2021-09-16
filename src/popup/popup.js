@@ -15,6 +15,7 @@
       insta.stop();
 
       background.addEventListener("click", (event) => {
+        event.preventDefault();
         if (!event.target.closest(".insta-popup")) {
           popup.classList.toggle("popup-active");
           background.classList.toggle("popup-active");
@@ -23,7 +24,8 @@
       });
 
       for (const opener of openers) {
-        opener.addEventListener("click", () => {
+        opener.addEventListener("click", (event) => {
+          event.preventDefault();
           popup.classList.toggle("popup-active");
           background.classList.toggle("popup-active");
           toggle_insta(popup);

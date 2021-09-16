@@ -10,11 +10,16 @@ class InstaloginPopupShortcode
     {
         add_shortcode('insta-popup', function ($attributes = [], $content = null) {
 
-            return InstaloginPopupShortcode::render_popup();
+
+            $attributes = shortcode_atts([
+                'preview' => "false",
+            ], $attributes, 'insta-popup');
+
+            return InstaloginPopupShortcode::render_popup($attributes['preview'] == 'true');
         });
     }
 
-    public static function render_popup()
+    public static function render_popup($preview = false)
     {
         $api_enabled = get_option('instalogin-api-enabled');
         if ($api_enabled != 1) {
@@ -223,7 +228,7 @@ class InstaloginPopupShortcode
         </style>
 
         <?php
-        if (is_user_logged_in()) {
+        if (is_user_logged_in() && $preview == false) {
         ?>
             <div style="height: 100%; display: flex; align-items: center;">
                 <a class="insta-popup-logout" href="<?= wp_logout_url() ?>">
