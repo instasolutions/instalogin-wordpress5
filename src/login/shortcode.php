@@ -21,7 +21,7 @@ class InstaloginLoginShortcode
                 'size' => '100px',
                 'show_when_logged_in' => "false",
                 'border' => "false",
-            ], $attributes, 'instalogin-login-code');
+            ], $attributes, 'insta-login');
 
             $size = $attributes['size'];
             $showWhenLoggedIn = $attributes['show_when_logged_in'] == 'true';
