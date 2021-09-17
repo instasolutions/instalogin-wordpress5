@@ -20,7 +20,8 @@ class InstaloginPopupPreviewPage
                     }
 
                     #wpadminbar,
-                    #adminmenumain {
+                    #adminmenumain,
+                    #wpfooter {
                         display: none;
                     }
                 </style>
