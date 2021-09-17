@@ -11,7 +11,7 @@ class InstaloginLoginAPI
         $this->login_controller();
     }
 
-    // Login REST API endpoint for the instalog.in js SDK
+    // Login REST API endpoint for the instalogin js SDK
     private function login_controller()
     {
         add_action('rest_api_init', function () {
@@ -21,7 +21,7 @@ class InstaloginLoginAPI
                     // API Has been disabled in backend
                     $api_enabled = get_option('instalogin-api-enabled');
                     if ($api_enabled != 1) {
-                        return new WP_Error('disabled', __('Login via Instalog.in has been disabled by an administrator.', 'instalogin'));
+                        return new WP_Error('disabled', __('Login via Instalogin has been disabled by an administrator.', 'instalogin'));
                     }
 
                     $is_desktop = false;

@@ -15,13 +15,20 @@ class InstaloginLoginPage
         });
 
         add_action('login_footer', function () {
+
+            $action = isset($_GET['action']) ? $_GET['action'] : null;
+            if ($action != null) {
+                return;
+            }
+
             wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
 
+            $container_id = 'instalogin';
             $api_key = get_option('instalogin-api-key');
             $display_type = get_option('instalogin-api-type', 'qr');
-            wp_enqueue_script('instalogin-qr-widget', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api']);
-            wp_localize_script('instalogin-qr-widget', 'api_key', $api_key);
-            wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
+
+            wp_enqueue_script('instalogin-login', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api'], null, true);
+            wp_add_inline_script('instalogin-login', "init_insta('$container_id', '$api_key', '$display_type');", 'after');
         });
     }
 }

@@ -28,7 +28,7 @@
         }
       } else {
         for (const refresh of refreshers) {
-          refresh.style.display = "none";
+          // refresh.style.display = "none";
         }
       }
     }

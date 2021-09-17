@@ -21,7 +21,7 @@ class InstaloginRegisterAPI
                     $api_enabled = get_option('instalogin-api-enabled') == 1;
                     $registration_enabled = get_option('instalogin-api-registration') == 1;
                     if (!$api_enabled || !$registration_enabled) {
-                        return new WP_Error('disabled', __('Registration via Instalog.in has been disabled by an administrator.', 'instalogin'));
+                        return new WP_Error('disabled', __('Registration via Instalogin has been disabled by an administrator.', 'instalogin'));
                     }
 
                     $client = $this->client;
@@ -48,16 +48,16 @@ class InstaloginRegisterAPI
                         return new WP_Error($result->get_error_code(), $result->get_error_message());
                     }
 
-                    try {
-                        $client->provisionIdentity($email, [
-                            'sendEmail' => true // Let Instalogin handle the mail sending
-                        ]);
-                    } catch (\Throwable $th) {
-                        // Delete user if we could not deliver the activation email.
-                        wp_delete_user($result);
+                    // try {
+                    //     $client->provisionIdentity($email, [
+                    //         'sendEmail' => true // Let Instalogin handle the mail sending
+                    //     ]);
+                    // } catch (\Throwable $th) {
+                    //     // Delete user if we could not deliver the activation email.
+                    //     wp_delete_user($result);
 
-                        return new WP_REST_Response(__('Sorry, could not connect to instalogin servers! Account could not be created.', 'instalogin'), 500);
-                    }
+                    //     return new WP_REST_Response(__('Sorry, could not connect to instalogin servers! Account could not be created.', 'instalogin'), 500);
+                    // }
 
                     return;
                 }

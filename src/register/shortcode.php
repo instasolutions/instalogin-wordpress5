@@ -16,7 +16,7 @@ class InstaloginRegisterShortcode
                 'show_button' => "true",
                 'button_text' => "Submit",
                 'show_when_logged_in' => "false",
-            ], $attributes, 'instalogin-register');
+            ], $attributes, 'insta-register');
 
             $show_when_logged_in = $attributes['show_when_logged_in'] == 'true';
             $require_username = $attributes['require_username'] == 'true';

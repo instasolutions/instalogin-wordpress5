@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name: Official Instalog.in Integration
- * Plugin URI: https://instalog.in/
+ * Plugin Name: Official Instalogin Integration
+ * Plugin URI: https://instalogin.me/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
  * Requires at least: 5.0
- * Version: 0.5.0
+ * Version: 0.7.6
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalogin
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 class InstalogIn
 {
@@ -44,6 +44,9 @@ class InstalogIn
         require_once('src/devices/rest.php');
         new InstalogInDevicesAPI($this->client);
 
+        require_once('src/settings/rest.php');
+        new InstaloginSettingsAPI();
+
         require_once('src/login/rest.php');
         new InstaloginLoginAPI($this->client);
 
@@ -60,11 +63,21 @@ class InstalogIn
         require_once('src/settings/settings.php');
         new InstaloginSettings();
 
+        require_once('src/register/register_mail.php');
+        new InstaloginRegisterMail($this->client);
+
         require_once('src/login/login_page.php');
         new InstaloginLoginPage();
 
         require_once('src/profile/profile_page.php');
         new InstaloginProfilePage();
+
+        // menu customizer
+        require_once('src/popup/menu.php');
+        new InstaloginPopupMenuItem();
+
+        require_once('src/popup/preview.php');
+        new InstaloginPopupPreviewPage();
 
         // global styles
 
@@ -74,6 +87,7 @@ class InstalogIn
 
         add_action('admin_enqueue_scripts', function ($hook) {
             wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
+            wp_enqueue_script('insta-media-selectors', plugin_dir_url(__FILE__) . "scripts/media.js", [], '1', true);
         });
 
         add_action('init', function () {

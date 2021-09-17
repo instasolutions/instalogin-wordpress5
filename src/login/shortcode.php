@@ -21,7 +21,7 @@ class InstaloginLoginShortcode
                 'size' => '100px',
                 'show_when_logged_in' => "false",
                 'border' => "false",
-            ], $attributes, 'instalogin-login-code');
+            ], $attributes, 'insta-login');
 
             $size = $attributes['size'];
             $showWhenLoggedIn = $attributes['show_when_logged_in'] == 'true';
@@ -34,29 +34,29 @@ class InstaloginLoginShortcode
             // SCRIPTS
             wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
 
+            $container_id = wp_generate_password(5, false);
             $api_key = get_option('instalogin-api-key');
             $display_type = get_option('instalogin-api-type', 'qr');
-            wp_enqueue_script('instalogin-qr-widget', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api']);
-            wp_localize_script('instalogin-qr-widget', 'api_key', $api_key);
-            wp_localize_script('instalogin-qr-widget', 'display_type', $display_type);
+
+            wp_enqueue_script('instalogin-login', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api'], null, true);
+            wp_add_inline_script('instalogin-login', "init_insta('$container_id', '$api_key', '$display_type');", 'after');
 
             // TOOD: if key unset, display error message
-
 
             // RENDER
             ob_start(); ?>
             <style>
-                #instalogin .instalogin-container {
+                .instalogin-login .instalogin-container {
                     border: <?= $border ? ' 1px solid rgb(200, 200, 200);' : ' none !important;' ?>;
                     width: <?= $size ?>;
                 }
 
-                #instalogin .instalogin-image {
+                .instalogin-login .instalogin-image {
                     width: <?= $size ?>;
                 }
             </style>
 
-            <div id="instalogin"></div>
+            <div class="instalogin-login" id="<?= $container_id ?>"></div>
 <?php
 
             return ob_get_clean();

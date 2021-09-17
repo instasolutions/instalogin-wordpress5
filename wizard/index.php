@@ -23,7 +23,7 @@ if (!current_user_can('manage_options')) {
     <div class="container">
         <div>
             <center>
-                <img src="images/logo.png" alt="Instalogin">
+                <img src="images/logo.svg" alt="Instalogin">
             </center>
             <!--  Stepper container. This is the main element that is passed to the stepper class.  -->
             <div class="stepper">
@@ -60,7 +60,7 @@ if (!current_user_can('manage_options')) {
                         <h2><?= __('Two factor authentication in one step!', 'instalogin') ?></h2>
                         <p><?= __('Instalogin works for your team in the backend as well as your users in the frontend.', 'instalogin') ?></p>
 
-                        <p> <a href="https://www.instalog.in/en/test-drive/index.html" target="_blank" rel="noopener"><button class="btn"><?= __('Register', 'instalogin') ?></button></a></p>
+                        <p> <a href="<?= __("https://instalogin.me/en/demo-en/", 'instalogin') ?>" target="_blank" rel="noopener"><button class="btn"><?= __('Register', 'instalogin') ?></button></a></p>
 
                         <!-- <p>Du hast bereits einen Account? Dann leg direkt los!</p> -->
                     </div>
@@ -70,7 +70,7 @@ if (!current_user_can('manage_options')) {
                         <h1><?= __('Configuration', 'instalogin') ?></h1>
 
                         <div class="form">
-                            <p><?= __('You may find your credentials over <a href="https://www.instalog.in/en/test-drive/index.html">here</a>!', 'instalogin') ?></p>
+                            <p><?= __('You may find your credentials over <a href="https://instalogin.me/en/demo-en/">here</a>!', 'instalogin') ?></p>
 
                             <label class="">
                                 <div>
@@ -88,6 +88,11 @@ if (!current_user_can('manage_options')) {
                                 <div class="info info-secret"><?= __('Required. Must be exactly 64 characters of length.', 'instalogin') ?></div>
                             </label>
 
+                            <p>
+                                <?= __("If you do not have the necessary credentials, you may request them ", 'instalogin') ?>
+                                <a href="<?= __("https://instalogin.me/de/keysecret/", 'instalogin') ?>" target="_blank" rel="noopener">here!</a>
+                            </p>
+
 
                             <label style="margin-top: 1rem;">
                                 <input type="checkbox" id="enable_registration">
@@ -99,7 +104,7 @@ if (!current_user_can('manage_options')) {
                             <label style="margin-top: 1rem;">
                                 <div><?= __('Code Type', 'instalogin') ?></div>
                                 <select id="code_type">
-                                    <option value="qr"><?= __('QR Code', 'instalogin') ?></option>
+                                    <option value="qr"><?= __('InstaCode', 'instalogin') ?></option>
                                     <option value="si"><?= __('Smart Image', 'instalogin') ?></option>
                                 </select>
                             </label>

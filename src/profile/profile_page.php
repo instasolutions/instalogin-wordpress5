@@ -2,7 +2,7 @@
 
 class InstaloginProfilePage
 {
-    // Allow users to enable instalog.in authentication in their profile page.
+    // Allow users to enable instalogin authentication in their profile page.
     public function __construct()
     {
         add_action('personal_options', function () {

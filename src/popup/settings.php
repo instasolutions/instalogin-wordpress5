@@ -24,13 +24,27 @@ class InstaloginPopupSettings
 
             <style>
                 .insta-popup-settings {
-                    grid-column: span 3;
+                    grid-column: span 2;
                 }
 
                 .insta-popup-settings label {
                     display: grid;
                     grid-template-columns: 300px 200px;
                     margin-bottom: .5rem;
+                }
+
+                .insta-popup-settings h4::after,
+                .insta-popup-usage h4::after {
+                    display: block;
+                    content: "";
+                    height: 2px;
+                    margin-top: .5rem;
+                    width: 200px;
+                    background: var(--insta-blue-light);
+                }
+
+                .insta-popup-usage b {
+                    white-space: nowrap;
                 }
             </style>
 
@@ -76,6 +90,90 @@ class InstaloginPopupSettings
                     <label>
                         <span><?= __("Horizontal Offset", 'instalogin') ?></span>
                         <input type="text" palceholder="e.g. 0px" name="<?= $setting_name ?>[horizontal]" value="<?= $setting['horizontal'] ?>">
+                    </label>
+                </div>
+
+                <div>
+                    <h4><?= __("Login(-out) Button", 'instalogin') ?></h4>
+                    <label>
+                        <span><?= __("Button Type", 'instalogin') ?></span>
+                        <select name="<?= $setting_name ?>[login-type]">
+                            <option <?php selected($setting['login-type'], 'text') ?> value="text">Text</option>
+                            <option <?php selected($setting['login-type'], 'icon') ?> value="icon">Icon</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span><?= __("Padding", 'instalogin') ?></span>
+                        <input type="text" palceholder="top right bottom left" name="<?= $setting_name ?>[login-padding]" value="<?= $setting['login-padding'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Login Text", 'instalogin') ?></span>
+                        <input type="text" palceholder="Sign In" name="<?= $setting_name ?>[login-text]" value="<?= $setting['login-text'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Logout Text", 'instalogin') ?></span>
+                        <input type="text" palceholder="Sign Out" name="<?= $setting_name ?>[login-out-text]" value="<?= $setting['login-out-text'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Font Size", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[login-font-size]" value="<?= $setting['login-font-size'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Background", 'instalogin') ?></span>
+                        <input type="color" name="<?= $setting_name ?>[login-bg]" value="<?= $setting['login-bg'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?= $setting_name ?>[login-color]" value="<?= $setting['login-color'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Border Radius", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 30px" name="<?= $setting_name ?>[login-radius]" value="<?= $setting['login-radius'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Weight", 'instalogin') ?></span>
+                        <select name="<?= $setting_name ?>[login-weight]">
+                            <option <?php selected($setting['login-weight'], '100') ?> value="100">100</option>
+                            <option <?php selected($setting['login-weight'], '200') ?> value="200">200</option>
+                            <option <?php selected($setting['login-weight'], '300') ?> value="300">300</option>
+                            <option <?php selected($setting['login-weight'], '400') ?> value="400">400</option>
+                            <option <?php selected($setting['login-weight'], '500') ?> value="500">500</option>
+                            <option <?php selected($setting['login-weight'], '600') ?> value="600">600</option>
+                            <option <?php selected($setting['login-weight'], '700') ?> value="700">700</option>
+                            <option <?php selected($setting['login-weight'], '800') ?> value="800">800</option>
+                            <option <?php selected($setting['login-weight'], '900') ?> value="900">900</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span><?= __("Size (Icon Only)", 'instalogin') ?></span>
+                        <input type="text" palceholder="e.g. 4px" name="<?= $setting_name ?>[login-size]" value="<?= $setting['login-size'] ?>">
+                    </label>
+
+                    <label>
+                        <span><?= __("Login Icon", 'instalogin') ?></span>
+                        <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
+                            <button class="button"><?= __("Select Icon", 'instalogin') ?></button>
+                            <input type="hidden" name="<?= $setting_name ?>[login-icon]" value="<?= $setting['login-icon'] ?>">
+                            <img width="32px" height="32px" src="<?= $setting['login-icon'] ?>" alt="">
+                        </div>
+                    </label>
+
+                    <label>
+                        <span><?= __("Logout Icon", 'instalogin') ?></span>
+                        <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
+                            <button class="button"><?= __("Select Icon", 'instalogin') ?></button>
+                            <input type="hidden" name="<?= $setting_name ?>[login-icon-out]" value="<?= $setting['login-icon-out'] ?>">
+                            <img width="32px" height="32px" src="<?= $setting['login-icon-out'] ?>" alt="">
+                        </div>
                     </label>
                 </div>
 
@@ -186,7 +284,7 @@ class InstaloginPopupSettings
                 <div>
                     <h4><?= __("Text", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("", 'instalogin') ?></span>
+                        <span><?= __("Content", 'instalogin') ?></span>
                         <textarea type="text" placeholder="Sign In" name="<?= $setting_name ?>[text-text]">
 <?= $setting['text-text'] ?>
                         </textarea>
@@ -222,7 +320,7 @@ class InstaloginPopupSettings
                         <input type="text" placeholder="Sign In" name="<?= $setting_name ?>[button-text]" value="<?= $setting['button-text'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Size", 'instalogin') ?></span>
+                        <span><?= __("Font Size", 'instalogin') ?></span>
                         <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[button-size]" value="<?= $setting['button-size'] ?>">
                     </label>
                     <label>
@@ -252,6 +350,35 @@ class InstaloginPopupSettings
                         </select>
                     </label>
                 </div>
+            </div>
+
+            <div>
+                <h4>Preview</h4>
+                <button id="refresh" style="margin-bottom: 4px;" class="button"><?= __("Save & Refresh", 'instalogin') ?></button>
+                <iframe id="preview" src="http://10.31.91.15/wp-admin/admin.php?page=popup-preview" title="Popup Preview" width="100%" height="650px" frameborder="0"></iframe>
+
+
+                <script>
+                    {
+                        const refresh = document.querySelector('#refresh');
+                        const form = document.querySelector('form');
+                        const preview = document.querySelector('#preview');
+
+                        refresh.addEventListener('click', async (event) => {
+                            event.preventDefault();
+
+                            const response = await fetch('options.php', {
+                                method: 'post',
+                                body: new FormData(form)
+                            });
+
+                            let old = preview.src;
+                            preview.src = '';
+                            preview.src = old;
+
+                        });
+                    }
+                </script>
             </div>
 
 <?php   }, $page, $section);
