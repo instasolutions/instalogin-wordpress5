@@ -6,7 +6,7 @@
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
  * Requires at least: 5.0
- * Version: 0.5.0
+ * Version: 0.7.6
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalogin
