@@ -179,6 +179,7 @@ class InstaloginPopupShortcode
             }
 
             .insta-popup-button {
+                cursor: pointer;
                 font-size: <?= $setting['login-font-size'] ?> !important;
                 font-weight: <?= $setting['login-weight'] ?> !important;
                 color: <?= $setting['login-color'] ?> !important;
@@ -234,7 +235,7 @@ class InstaloginPopupShortcode
                 <a class="insta-popup-logout" href="<?= wp_logout_url() ?>">
                     <?php if ($setting['login-type'] == 'text') { ?>
                         <button class="insta-popup-button">
-                            <?= _e("Logout", "instalogin") ?>
+                            <?= $setting['login-out-text'] ?>
                         </button>
                         <?php } else {
 
@@ -263,7 +264,7 @@ class InstaloginPopupShortcode
             <div class="insta-popup-container">
                 <?php if ($setting['login-type'] == 'text') { ?>
                     <button class="insta-opener insta-popup-button">
-                        <?= __("Sign In", "instalogin") ?>
+                        <?= $setting['login-text'] ?>
                     </button>
                     <?php } else {
 
