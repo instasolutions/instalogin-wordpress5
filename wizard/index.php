@@ -23,7 +23,7 @@ if (!current_user_can('manage_options')) {
     <div class="container">
         <div>
             <center>
-                <img src="images/logo.png" alt="Instalogin">
+                <img src="images/logo.svg" alt="Instalogin">
             </center>
             <!--  Stepper container. This is the main element that is passed to the stepper class.  -->
             <div class="stepper">
