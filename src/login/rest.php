@@ -11,7 +11,7 @@ class InstaloginLoginAPI
         $this->login_controller();
     }
 
-    // Login REST API endpoint for the instalog.in js SDK
+    // Login REST API endpoint for the instalogin js SDK
     private function login_controller()
     {
         add_action('rest_api_init', function () {

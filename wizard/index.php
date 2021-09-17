@@ -60,7 +60,7 @@ if (!current_user_can('manage_options')) {
                         <h2><?= __('Two factor authentication in one step!', 'instalogin') ?></h2>
                         <p><?= __('Instalogin works for your team in the backend as well as your users in the frontend.', 'instalogin') ?></p>
 
-                        <p> <a href="https://www.instalog.in/en/test-drive/index.html" target="_blank" rel="noopener"><button class="btn"><?= __('Register', 'instalogin') ?></button></a></p>
+                        <p> <a href="<?= __("https://instalogin.me/en/demo-en/", 'instalogin') ?>" target="_blank" rel="noopener"><button class="btn"><?= __('Register', 'instalogin') ?></button></a></p>
 
                         <!-- <p>Du hast bereits einen Account? Dann leg direkt los!</p> -->
                     </div>
@@ -70,7 +70,7 @@ if (!current_user_can('manage_options')) {
                         <h1><?= __('Configuration', 'instalogin') ?></h1>
 
                         <div class="form">
-                            <p><?= __('You may find your credentials over <a href="https://www.instalog.in/en/test-drive/index.html">here</a>!', 'instalogin') ?></p>
+                            <p><?= __('You may find your credentials over <a href="https://instalogin.me/en/demo-en/">here</a>!', 'instalogin') ?></p>
 
                             <label class="">
                                 <div>

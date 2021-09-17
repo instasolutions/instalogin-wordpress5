@@ -236,7 +236,7 @@ class InstaloginSettings
         // API Enabled
         $setting_name = 'instalogin-api-enabled';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('Enable login via Instalog.in', 'instalogin'), function () {
+        add_settings_field($setting_name . "_field", __('Enable login via Instalogin', 'instalogin'), function () {
             $setting_name = 'instalogin-api-enabled';
             $setting = get_option($setting_name); ?>
             <input type="checkbox" name="<?= $setting_name ?>" value="1" <?= $setting == 1 ? 'checked' : '' ?> />
