@@ -76,6 +76,9 @@ class InstalogIn
         require_once('src/popup/menu.php');
         new InstaloginPopupMenuItem();
 
+        require_once('src/popup/preview.php');
+        new InstaloginPopupPreviewPage();
+
         // global styles
 
         add_action('wp_enqueue_scripts', function () {
