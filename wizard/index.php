@@ -88,6 +88,11 @@ if (!current_user_can('manage_options')) {
                                 <div class="info info-secret"><?= __('Required. Must be exactly 64 characters of length.', 'instalogin') ?></div>
                             </label>
 
+                            <p>
+                                <?= __("If you do not have the necessary credentials, you may request them ", 'instalogin') ?>
+                                <a href="<?= __("https://instalogin.me/de/keysecret/", 'instalogin') ?>" target="_blank" rel="noopener">here!</a>
+                            </p>
+
 
                             <label style="margin-top: 1rem;">
                                 <input type="checkbox" id="enable_registration">
