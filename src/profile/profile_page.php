@@ -186,10 +186,19 @@ class InstaloginProfilePage
                             transform: scale(1.05);
                             box-shadow: none;
                         }
+
+                        .insta-info-p {
+                            color: #3C3C3B;
+                            font-size: 14px;
+                            margin-top: 2rem;
+                        }
                     </style>
 
                     <details class="instalogin-devices-details insta-box">
                         <summary class="insta" style="margin-bottom: .5rem; margin-top: .5rem;"><?= __('Manage Instalogin Devices', 'instalogin') ?></summary>
+                        <p class="insta-info-p">
+                            <?= __("Add a new device with just a click! We will send you an email containing the InstaCode.<br>Scan the code using the app and you're ready to go.", 'instalogin') ?>
+                        </p>
                         <div class="instalogin-devices-admin">
                             <!-- <ul class="instalogin-device-list"></ul> -->
                         </div>

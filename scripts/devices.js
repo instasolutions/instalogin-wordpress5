@@ -148,12 +148,12 @@
             </tbody>
 
         </table>
-        <button class="insta-button instalogin-refresh">${__(
-          "Refresh",
-          "instalogin"
-        )}</button>
         <button class="insta-button instalogin-send-mail">${__(
           "Add Device",
+          "instalogin"
+        )}</button>
+        <button class="insta-button instalogin-refresh">${__(
+          "Refresh",
           "instalogin"
         )}</button>
     </div>`;

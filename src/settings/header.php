@@ -27,19 +27,19 @@ function settings_header()
             height: 50px;
         }
 
-        .insta-button {
+        .insta-button-hollow {
+            display: inline-block;
             font-size: 14px !important;
-            color: white !important;
-            background: var(--insta-blue-light) !important;
-            border: none;
+            color: var(--insta-blue-light) !important;
+            background: white !important;
+            border: solid 2px var(--insta-blue-light);
             border-radius: 100px;
-            float: right;
-            margin-top: 1rem;
+            margin-top: 1.2rem !important;
             font-weight: bold;
+
 
             padding: 8px 24px;
 
-            align-self: end;
             text-decoration: none;
             transition: transform 0.15s ease-out;
             box-shadow: none;
@@ -59,11 +59,9 @@ function settings_header()
     <div class="insta-container">
         <div class="insta-header">
             <img class="logo" src="<?= plugin_dir_url(__FILE__) . "../../img/logo.svg" ?> " alt="Instalogin Logo">
-            <div>
-                <a href="<?= __("https://instalogin.me/de/kontakt/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button"><?= __('Contact', 'instalogin') ?></a>
-            </div>
         </div>
         <p><?= __('Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!', 'instalogin') ?></p>
+        <a href="<?= __("https://instalogin.me/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow"><?= __('Find out more!', 'instalogin') ?></a>
     </div>
 
 <?php
