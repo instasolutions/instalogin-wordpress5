@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Official Instalogin Integration
+ * Plugin Name: Instalogin
  * Plugin URI: https://instalogin.me/
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
@@ -73,6 +73,22 @@ class InstalogIn
 
         require_once('src/popup/preview.php');
         new InstaloginPopupPreviewPage();
+
+        // Run wizard on first activation
+        add_action('activated_plugin', function ($plugin) {
+            if (strpos($plugin, 'instalogin') !== false) {
+                if (!get_option('instalogin-api-key', false)) {
+                    update_option('instalogin-redirect-wizard', true);
+                }
+            }
+        }, 10, 1);
+
+        add_action('admin_init', function () {
+            if (get_option('instalogin-redirect-wizard', false)) {
+                delete_option('instalogin-redirect-wizard');
+                wp_redirect(plugin_dir_url(__FILE__) . "wizard/");
+            }
+        });
 
         // global styles
 
