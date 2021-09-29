@@ -53,11 +53,6 @@ class InstalogIn
         require_once('src/register/rest.php');
         new InstaloginRegisterAPI($this->client);
 
-
-        // wizard
-        require_once('wizard/settings_rest.php');
-        new InstalogWizardSettingsAPI();
-
         // Pages
 
         require_once('src/settings/settings.php');

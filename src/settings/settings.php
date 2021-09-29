@@ -247,11 +247,11 @@ class InstaloginSettings
         // Registration via API enabled
         $setting_name = 'instalogin-api-registration';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('Enable registration via Instalogin', 'instalogin'), function () {
+        add_settings_field($setting_name . "_field", __('Activation on Register', 'instalogin'), function () {
             $setting_name = 'instalogin-api-registration';
             $setting = get_option($setting_name); ?>
             <input type="checkbox" name="<?= $setting_name ?>" value="1" <?= $setting == 1 ? 'checked' : '' ?> />
-            <div class="insta-info"><?= __("Allow users to create accounts without using a password. Their accounts will be protected by Instalogin.", 'instalogin') ?></div>
+            <div class="insta-info"><?= __("An Instalogin mail will be sent to every new user upon registration.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
 

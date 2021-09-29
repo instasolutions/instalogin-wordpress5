@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="142.778" height="55.269" viewBox="0 0 142.778 55.269">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_18074" data-name="Rechteck 18074" width="142.778" height="55.269" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Pfad_30259" data-name="Pfad 30259" d="M20.36,17.5a1.842,1.842,0,0,0-.461,1.29V39.239a1.842,1.842,0,0,0,.461,1.29h.092L31.875,29.106h0L20.453,17.5Z" transform="translate(-19.899 -17.5)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-0.483" y1="1.608" x2="-0.446" y2="1.608" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00a0ff"/>
+      <stop offset="0.01" stop-color="#00a1ff"/>
+      <stop offset="0.26" stop-color="#00beff"/>
+      <stop offset="0.51" stop-color="#00d2ff"/>
+      <stop offset="0.76" stop-color="#00dfff"/>
+      <stop offset="1" stop-color="#00e3ff"/>
+    </linearGradient>
+    <clipPath id="clip-path-4">
+      <path id="Pfad_30260" data-name="Pfad 30260" d="M32.9,29.569h0l3.777,4.053h.092l4.514-2.671c1.29-.737,1.29-1.934,0-2.671L36.769,25.7h-.092Z" transform="translate(-32.9 -25.7)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="-3.133" y1="4.012" x2="-3.038" y2="4.012" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffe000"/>
+      <stop offset="0.41" stop-color="#ffbd00"/>
+      <stop offset="0.78" stop-color="orange"/>
+      <stop offset="1" stop-color="#ff9c00"/>
+    </linearGradient>
+    <clipPath id="clip-path-5">
+      <path id="Pfad_30261" data-name="Pfad 30261" d="M20.4,41.514a1.474,1.474,0,0,0,1.934.092l13.449-7.646L31.914,30Z" transform="translate(-20.4 -30)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-3" x1="-0.871" y1="1.621" x2="-0.824" y2="1.621" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff3a44"/>
+      <stop offset="1" stop-color="#c31162"/>
+    </linearGradient>
+    <clipPath id="clip-path-6">
+      <path id="Pfad_30262" data-name="Pfad 30262" d="M20.4,17.476,31.914,28.991l3.869-3.869L22.334,17.476a2.119,2.119,0,0,0-1.013-.276,1.2,1.2,0,0,0-.921.368" transform="translate(-20.4 -17.199)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-4" x1="-0.876" y1="2.249" x2="-0.828" y2="2.249" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#32a071"/>
+      <stop offset="0.07" stop-color="#2da771"/>
+      <stop offset="0.48" stop-color="#15cf74"/>
+      <stop offset="0.8" stop-color="#06e775"/>
+      <stop offset="1" stop-color="#00f076"/>
+    </linearGradient>
+    <clipPath id="clip-path-7">
+      <rect id="Rechteck_18070" data-name="Rechteck 18070" width="15.383" height="8.042" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-8">
+      <rect id="Rechteck_18071" data-name="Rechteck 18071" width="0.461" height="1.428" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-9">
+      <rect id="Rechteck_18072" data-name="Rechteck 18072" width="5.527" height="3.887" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-10">
+      <rect id="Rechteck_18073" data-name="Rechteck 18073" width="21.278" height="11.846" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Batch-PlayStore" transform="translate(71.389 27.634)">
+    <g id="Gruppe_14594" data-name="Gruppe 14594" transform="translate(-71.389 -27.634)" clip-path="url(#clip-path)">
+      <g id="Gruppe_14580" data-name="Gruppe 14580">
+        <g id="Gruppe_14579" data-name="Gruppe 14579" opacity="0">
+          <g id="Gruppe_14578" data-name="Gruppe 14578" clip-path="url(#clip-path)">
+            <rect id="Rechteck_18062" data-name="Rechteck 18062" width="142.778" height="55.269" fill="#fff"/>
+          </g>
+        </g>
+        <path id="Pfad_30244" data-name="Pfad 30244" d="M129.749,46.846H14.606A4.606,4.606,0,0,1,10,42.24V14.606A4.606,4.606,0,0,1,14.606,10H129.749a4.606,4.606,0,0,1,4.606,4.606V42.24a4.606,4.606,0,0,1-4.606,4.606" transform="translate(-0.789 -0.789)"/>
+        <path id="Pfad_30245" data-name="Pfad 30245" d="M129.749,10.737a3.869,3.869,0,0,1,3.869,3.869V42.24a3.869,3.869,0,0,1-3.869,3.869H14.606a3.869,3.869,0,0,1-3.869-3.869V14.606a3.869,3.869,0,0,1,3.869-3.869H129.749m0-.737H14.606A4.606,4.606,0,0,0,10,14.606V42.24a4.606,4.606,0,0,0,4.606,4.606H129.749a4.606,4.606,0,0,0,4.606-4.606V14.606A4.606,4.606,0,0,0,129.749,10" transform="translate(-0.789 -0.789)" fill="#a6a6a6"/>
+        <path id="Pfad_30246" data-name="Pfad 30246" d="M56.929,19.932a2.487,2.487,0,0,1-.645,1.842,2.671,2.671,0,0,1-2.027.829,2.948,2.948,0,0,1-2.027-4.974,2.763,2.763,0,0,1,2.027-.829l1.105.276a2.3,2.3,0,0,1,.829.645l-.461.461a1.842,1.842,0,0,0-1.474-.645,2.119,2.119,0,0,0-2.211,2.211,2.211,2.211,0,0,0,3.685,1.566,1.75,1.75,0,0,0,.461-1.105H54.257v-.645h2.671a2.4,2.4,0,0,1,0,.461" transform="translate(-4.055 -1.325)" fill="#fff"/>
+        <path id="Pfad_30247" data-name="Pfad 30247" d="M56.929,19.932a2.487,2.487,0,0,1-.645,1.842,2.671,2.671,0,0,1-2.027.829,2.948,2.948,0,0,1-2.027-4.974,2.763,2.763,0,0,1,2.027-.829l1.105.276a2.3,2.3,0,0,1,.829.645l-.461.461a1.842,1.842,0,0,0-1.474-.645,2.119,2.119,0,0,0-2.211,2.211,2.211,2.211,0,0,0,3.685,1.566,1.75,1.75,0,0,0,.461-1.105H54.257v-.645h2.671A2.4,2.4,0,0,1,56.929,19.932Z" transform="translate(-4.055 -1.325)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.184"/>
+        <path id="Pfad_30248" data-name="Pfad 30248" d="M61.724,17.645H59.237v1.75h2.3v.737h-2.3v1.75h2.487v.645H58.5V17h3.224Z" transform="translate(-4.613 -1.341)" fill="#fff"/>
+        <path id="Pfad_30249" data-name="Pfad 30249" d="M61.724,17.645H59.237v1.75h2.3v.737h-2.3v1.75h2.487v.645H58.5V17h3.224Z" transform="translate(-4.613 -1.341)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.184"/>
+        <path id="Pfad_30250" data-name="Pfad 30250" d="M65.1,22.527h-.737V17.645H62.8V17h3.869v.645H65.1Z" transform="translate(-4.952 -1.341)" fill="#fff"/>
+        <path id="Pfad_30251" data-name="Pfad 30251" d="M65.1,22.527h-.737V17.645H62.8V17h3.869v.645H65.1Z" transform="translate(-4.952 -1.341)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.184"/>
+        <rect id="Rechteck_18064" data-name="Rechteck 18064" width="0.737" height="5.527" transform="translate(64.388 15.659)" fill="#fff"/>
+        <rect id="Rechteck_18065" data-name="Rechteck 18065" width="0.737" height="5.527" transform="translate(64.388 15.659)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.184"/>
+        <path id="Pfad_30252" data-name="Pfad 30252" d="M73.911,22.527h-.645V17.645H71.7V17h3.777v.645H73.911Z" transform="translate(-5.654 -1.341)" fill="#fff"/>
+        <path id="Pfad_30253" data-name="Pfad 30253" d="M73.911,22.527h-.645V17.645H71.7V17h3.777v.645H73.911Z" transform="translate(-5.654 -1.341)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.184"/>
+        <path id="Pfad_30254" data-name="Pfad 30254" d="M83.184,21.781a2.856,2.856,0,0,1-4.053,0,2.948,2.948,0,0,1,0-4.053,2.856,2.856,0,0,1,4.053,0,2.948,2.948,0,0,1,0,4.053m-3.5-.461a2.119,2.119,0,0,0,3.04,0,2.4,2.4,0,0,0,0-3.132,2.119,2.119,0,0,0-3.04,0,2.4,2.4,0,0,0,0,3.132" transform="translate(-6.176 -1.331)" fill="#fff"/>
+        <path id="Pfad_30255" data-name="Pfad 30255" d="M83.184,21.781a2.856,2.856,0,0,1-4.053,0,2.948,2.948,0,0,1,0-4.053,2.856,2.856,0,0,1,4.053,0A2.948,2.948,0,0,1,83.184,21.781Zm-3.5-.461a2.119,2.119,0,0,0,3.04,0,2.4,2.4,0,0,0,0-3.132,2.119,2.119,0,0,0-3.04,0A2.4,2.4,0,0,0,79.684,21.32Z" transform="translate(-6.176 -1.331)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.184"/>
+        <path id="Pfad_30256" data-name="Pfad 30256" d="M85.6,22.527V17h.829L89.1,21.329h.092L89.1,20.224V17h.737v5.527H89.1l-2.856-4.514h0v4.514Z" transform="translate(-6.75 -1.341)" fill="#fff"/>
+        <path id="Pfad_30257" data-name="Pfad 30257" d="M85.6,22.527V17h.829L89.1,21.329h.092L89.1,20.224V17h.737v5.527H89.1l-2.856-4.514h0v4.514Z" transform="translate(-6.75 -1.341)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.184"/>
+        <path id="Pfad_30258" data-name="Pfad 30258" d="M75.971,31.421a3.961,3.961,0,1,0,3.961,3.869,3.869,3.869,0,0,0-3.961-3.961m0,6.264a2.395,2.395,0,1,1,2.211-2.3,2.3,2.3,0,0,1-2.211,2.395M67.4,31.421a3.961,3.961,0,1,0,3.961,3.869A3.869,3.869,0,0,0,67.4,31.329m0,6.264a2.395,2.395,0,1,1,2.211-2.3A2.3,2.3,0,0,1,67.4,37.685M57.18,32.619v1.658H61.14a3.5,3.5,0,0,1-.921,2.119,4.053,4.053,0,0,1-3.04,1.2,4.422,4.422,0,0,1,0-8.843,4.237,4.237,0,0,1,3.04,1.105l1.2-1.2A5.8,5.8,0,0,0,57.18,27a6.08,6.08,0,0,0,0,12.159,5.5,5.5,0,0,0,5.711-5.619,5.342,5.342,0,0,0-.092-1.013Zm41.728,1.29a3.6,3.6,0,0,0-7,1.474A3.861,3.861,0,0,0,99,37.593l-1.382-.921a2.211,2.211,0,0,1-1.934,1.105,2.027,2.027,0,0,1-1.934-1.2L99,34.369ZM93.565,35.2a2.119,2.119,0,0,1,2.027-2.3,1.474,1.474,0,0,1,1.474.829Zm-4.237,3.777h1.75V27.46h-1.75ZM86.472,32.25H86.38a2.671,2.671,0,0,0-2.027-.921,3.961,3.961,0,0,0,0,7.83,2.671,2.671,0,0,0,2.027-.921h.092v.553a2.039,2.039,0,0,1-2.119,2.3,2.211,2.211,0,0,1-1.934-1.382l-1.474.645a3.777,3.777,0,0,0,3.5,2.3c2.027,0,3.685-1.2,3.685-4.053v-7H86.564Zm-1.934,5.435a2.395,2.395,0,1,1,0-4.79,2.211,2.211,0,0,1,2.119,2.395,2.211,2.211,0,0,1-2.119,2.395M107.014,27.46h-4.145V38.975h1.75V34.645h2.395a3.592,3.592,0,1,0,0-7.185m0,5.527h-2.487V29.026h2.487a1.98,1.98,0,1,1,0,3.961m10.593-1.658a3.224,3.224,0,0,0-3.04,1.75l1.566.645a1.834,1.834,0,0,1,3.408.645h0a3.777,3.777,0,0,0-1.75-.461c-1.658,0-3.316.921-3.316,2.579a2.671,2.671,0,0,0,2.856,2.579,2.4,2.4,0,0,0,2.211-1.105h.092v.921h1.658V34.553a3.22,3.22,0,0,0-3.5-3.224m-.184,6.356c-.553,0-1.382-.276-1.382-1.013s1.013-1.2,1.842-1.2a3.04,3.04,0,0,1,1.566.368,2.119,2.119,0,0,1-2.027,1.842m9.58-6.08-1.934,4.974h-.092l-2.027-4.974h-1.842l3.04,7-1.75,3.869h1.75l4.79-10.87Zm-15.475,7.369h1.75V27.46h-1.75Z" transform="translate(-4.029 -2.129)" fill="#fff"/>
+      </g>
+      <g id="Gruppe_14581" data-name="Gruppe 14581" transform="translate(18.33 16.12)" clip-path="url(#clip-path-3)">
+        <rect id="Rechteck_18066" data-name="Rechteck 18066" width="24.779" height="24.751" transform="translate(-11.485 11.556) rotate(-45)" fill="url(#linear-gradient)"/>
+      </g>
+      <g id="Gruppe_14582" data-name="Gruppe 14582" transform="translate(30.306 23.673)" clip-path="url(#clip-path-4)">
+        <rect id="Rechteck_18067" data-name="Rechteck 18067" width="9.672" height="7.876" fill="url(#linear-gradient-2)"/>
+      </g>
+      <g id="Gruppe_14583" data-name="Gruppe 14583" transform="translate(18.791 27.634)" clip-path="url(#clip-path-5)">
+        <rect id="Rechteck_18068" data-name="Rechteck 18068" width="19.344" height="19.344" transform="translate(-5.964 5.937) rotate(-45)" fill="url(#linear-gradient-3)"/>
+      </g>
+      <g id="Gruppe_14584" data-name="Gruppe 14584" transform="translate(18.791 15.842)" clip-path="url(#clip-path-6)">
+        <rect id="Rechteck_18069" data-name="Rechteck 18069" width="19.252" height="19.243" transform="translate(-5.892 5.918) rotate(-45)" fill="url(#linear-gradient-4)"/>
+      </g>
+      <g id="Gruppe_14593" data-name="Gruppe 14593" transform="translate(18.423 15.752)">
+        <g id="Gruppe_14586" data-name="Gruppe 14586" transform="translate(0.368 15.659)" opacity="0.2">
+          <g id="Gruppe_14585" data-name="Gruppe 14585" clip-path="url(#clip-path-7)">
+            <path id="Pfad_30263" data-name="Pfad 30263" d="M35.7,34.1,22.342,41.746a1.566,1.566,0,0,1-1.842,0h0a1.566,1.566,0,0,0,1.842,0L35.791,34.1Z" transform="translate(-20.408 -34.1)"/>
+          </g>
+        </g>
+        <g id="Gruppe_14588" data-name="Gruppe 14588" transform="translate(0 21.923)" opacity="0.12">
+          <g id="Gruppe_14587" data-name="Gruppe 14587" clip-path="url(#clip-path-8)">
+            <path id="Pfad_30264" data-name="Pfad 30264" d="M20.36,42.19A1.842,1.842,0,0,1,19.9,40.9h0a1.842,1.842,0,0,0,.461,1.29Z" transform="translate(-19.992 -40.9)"/>
+          </g>
+        </g>
+        <g id="Gruppe_14590" data-name="Gruppe 14590" transform="translate(15.66 11.883)" opacity="0.12">
+          <g id="Gruppe_14589" data-name="Gruppe 14589" clip-path="url(#clip-path-9)">
+            <path id="Pfad_30265" data-name="Pfad 30265" d="M41.606,31.2,37,33.777h.092l4.514-2.487A1.658,1.658,0,0,0,42.527,30a1.75,1.75,0,0,1-.921,1.2" transform="translate(-37 -30)"/>
+          </g>
+        </g>
+        <g id="Gruppe_14592" data-name="Gruppe 14592" opacity="0.25">
+          <g id="Gruppe_14591" data-name="Gruppe 14591" clip-path="url(#clip-path-10)">
+            <path id="Pfad_30266" data-name="Pfad 30266" d="M22.3,17.566,40.265,27.791a1.75,1.75,0,0,1,.921,1.2,1.658,1.658,0,0,0-.921-1.29L22.3,17.474c-1.29-.737-2.3-.092-2.3,1.382h0c0-1.474,1.013-2.119,2.3-1.382" transform="translate(-20 -17.105)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

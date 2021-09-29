@@ -1,210 +1,100 @@
-console.log("Instalogin installation wizard");
+/** @type{HTMLButtonElement} */
+const next = document.querySelector("#next");
+/** @type{HTMLButtonElement} */
+const back = document.querySelector("#back");
+/** @type{HTMLButtonElement} */
+const finish = document.querySelector("#finish");
 
-// const { user_id, nonce } = wiard_data;
+/** @type{HTMLElement} */
+const slider = document.querySelector("main");
 
-let settings_saved = false;
+const slides = slider.querySelectorAll("section");
+const total_slides = slides.length;
 
-// Form
+const titles = document.querySelectorAll(".step-label");
 
-/** @type {HTMLInputElement} */
-const e_api_key = document.querySelector("#api_key");
-/** @type {HTMLInputElement} */
-const e_api_secret = document.querySelector("#api_secret");
-/** @type {HTMLInputElement} */
-const e_enable_registration = document.querySelector("#enable_registration");
-/** @type {HTMLInputElement} */
-const e_code_type = document.querySelector("#code_type");
+let current_slide = 0;
 
-/** @type {HTMLButtonElement} */
-const button_save = document.querySelector(".btn-save");
+const SLIDE = {
+  welcome: 0,
+  setup: 1,
+  license: 2,
+  finalize: 3,
+  connect: 4,
+  done: 5,
+};
 
-async function save_options() {
-  // Check values
+set_slide(current_slide);
 
-  const api_key = e_api_key.value.trim();
-  const api_secret = e_api_secret.value.trim();
+next.addEventListener("click", () => {
+  next_slide();
+});
 
-  const e_info_key = document.querySelector(".info-key");
-  const e_info_secret = document.querySelector(".info-secret");
+back.addEventListener("click", () => {
+  prev_slide();
+});
 
-  e_info_key.style.display = "none";
-  e_info_secret.style.display = "none";
+function next_slide() {
+  // save settings if current slide was license settings
+  if (current_slide == SLIDE.license) save_settings();
 
-  if (api_key.length != 32) {
-    if (e_info_key) e_info_key.style.display = "block";
-    return;
+  // mark current slider as done
+  if (current_slide < titles.length) {
+    titles[current_slide].classList.add("done");
   }
 
-  if (api_secret.length != 64) {
-    if (e_info_secret) e_info_secret.style.display = "block";
-    return;
-  }
+  // change slide
+  current_slide = ++current_slide % total_slides;
+  set_slide(current_slide);
 
-  // Save
-
-  const response = await fetch(
-    "/index.php/wp-json/instalogin/v1/wizard/settings",
-    {
-      method: "post",
-      body: JSON.stringify({
-        api_key,
-        api_secret,
-        enable_registration: e_enable_registration.checked,
-        code_type: e_code_type.value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        "X-WP-NONCE": nonce,
-      },
-    }
-  );
-
-  if (response.ok) {
-    console.log("Options saved successfully.");
-  } else {
-    console.error("Could not save options", response);
-  }
-
-  return response.ok;
+  // disable next if license inactive
+  next.disabled = current_slide == SLIDE.license && !license_active;
 }
 
-button_save.addEventListener("click", async (event) => {
-  event.preventDefault();
-  const success = await save_options();
+function prev_slide() {
+  current_slide = Math.max(0, --current_slide);
+  set_slide(current_slide);
 
-  // TODO: show error
-  if (success) {
-    button_next.disabled = false;
-    settings_saved = true;
-    button_save.disabled = true;
-    button_save.blur();
-    button_save.innerText = "Einstellungen gespeichert!";
-
-    e_api_key.disabled = true;
-    e_api_secret.disabled = true;
-    e_enable_registration.disabled = true;
-    e_code_type.disabled = true;
-  } else console.error("Could not save");
-});
-
-// Send Mail
-
-const button_mail = document.querySelector(".btn-mail");
-
-button_mail.addEventListener("click", async (event) => {
-  event.preventDefault();
-  button_mail.innerText = "...";
-  button_mail.disabled = true;
-  button_mail.blur();
-
-  const response = await fetch("/index.php/wp-json/instalogin/v1/device/add", {
-    method: "post",
-    body: JSON.stringify({ user_id }),
-    headers: {
-      "Content-Type": "application/json",
-      "X-WP-NONCE": nonce,
-    },
-  });
-
-  if (response.ok) {
-    const json = await response.json();
-    // button_mail.innerHTML = __("Email has been sent!", "instalogin");
-    button_mail.innerHTML = "Email versendet!";
-  } else {
-    const body = await response.text();
-    console.error("instalogin: could not send mail", response);
-
-    // button_mail.innerHTML = `${__(
-    //   "Email could not be sent!",
-    //   "instalogin"
-    // )}<br>${body}`;
-
-    button_mail.innerHTML = `Email konnte nicht versendet werden.<br>${body}`;
-  }
-});
-
-// Stepper
-
-/** @type {HTMLDivElement[]} */
-const step_indicators = document.querySelectorAll(".step");
-/** @type {HTMLDivElement[]} */
-const step_contents = document.querySelectorAll(".step-content");
-
-/** @type {HTMLButtonElement} */
-const button_next = document.querySelector(".step-next");
-/** @type {HTMLButtonElement} */
-const button_back = document.querySelector(".step-back");
-
-// Used to know on which page to start the saving process.
-const SETTINGS_PAGE_INDEX = 1;
-
-let current_step = 0;
-const max_step_index = step_indicators.length - 1;
-
-if (step_contents.length !== step_indicators.length)
-  console.error(
-    `Amount of contents(${step_contents.length}) does not match amount of indicators(${step_indicators.length})!`
-  );
-
-// Setup
-
-// set icon numbers
-for (let i = 0; i < step_indicators.length; i++) {
-  const step = step_indicators[i];
-  const icon = step.querySelector(".icon");
-  icon.innerHTML = i + 1;
-
-  step.index = i;
-  step.addEventListener("click", (event) => {
-    event.preventDefault();
-    current_step = step.index;
-    set_active_step(current_step);
-  });
+  // enable next if slide changed
+  next.disabled = current_slide == SLIDE.license && !license_active;
 }
 
-set_active_step(0);
-
-// Next / Back
-
-button_next.addEventListener("click", async (event) => {
-  event.preventDefault();
-
-  // Switch page
-  current_step = Math.min(max_step_index, current_step + 1);
-  set_active_step(current_step);
-
-  // switched to settings page
-  if (current_step == SETTINGS_PAGE_INDEX && !settings_saved) {
-    button_next.disabled = true;
-    button_next.blur();
-  }
-});
-
-button_back.addEventListener("click", (event) => {
-  event.preventDefault();
-  current_step = Math.max(0, current_step - 1);
-  set_active_step(current_step);
-});
-
-function set_active_step(index) {
-  console.log(`Setting active step to ${index}`);
-
-  for (const step of step_indicators) {
-    step.classList.remove("active");
+function set_slide(num) {
+  // change slide
+  for (const slide of slides) {
+    slide.style.transform = `translateX(-${num}00%)`;
+    slide.classList.remove("active");
   }
 
-  for (const step of step_contents) {
-    step.style.display = "none";
+  slides[num].classList.add("active");
+
+  // next and finish button
+  if (num == total_slides - 1) {
+    next.classList.add("hidden");
+    finish.classList.remove("hidden");
+  } else {
+    next.classList.remove("hidden");
+    finish.classList.add("hidden");
   }
 
-  button_back.disabled = index === 0;
-  button_next.disabled = index === max_step_index;
-  button_back.blur();
-  button_next.blur();
+  //   Back button
+  if (num == 0) {
+    back.disabled = true;
+  } else {
+    back.disabled = false;
+  }
 
-  const step_content = step_contents[index];
-  step_content.style.display = "block";
+  //   Slider Titles
+  for (const title of titles) {
+    title.classList.remove("active");
+  }
 
-  const step_indicator = step_indicators[index];
-  step_indicator.classList.add("active");
+  if (num < titles.length) {
+    titles[num].classList.add("active");
+  }
+
+  // New Slide Actions
+  if (num == SLIDE.connect) {
+    send_mail();
+  }
 }
