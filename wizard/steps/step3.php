@@ -5,7 +5,7 @@
     }
 
     .step3 .boxes {
-        margin-top: 5rem;
+        margin-top: 2rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -29,7 +29,6 @@
         gap: 1rem;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 2.2rem;
     }
 
     .step3 .head-row>div {

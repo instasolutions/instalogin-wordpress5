@@ -40,7 +40,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 4rem;
+  padding: 2rem 4rem;
   background: var(--blue);
   color: white;
   gap: 1.5rem;
