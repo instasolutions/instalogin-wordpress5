@@ -107,7 +107,7 @@ class InstaloginProfilePage
                     <style>
                         .insta-box {
                             background: white;
-                            padding: 1rem 1.4rem 2.3rem;
+                            padding: 1rem 2.4rem 2.3rem;
                             margin-bottom: 1rem;
                         }
 
@@ -192,7 +192,34 @@ class InstaloginProfilePage
                             font-size: 14px;
                             margin-top: 2rem;
                         }
+
+                        .insta-head-green {
+                            color: #31AA52;
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+
+                        .insta-text-green {
+                            color: #31AA52;
+                            font-size: 16px;
+                            font-weight: bold;
+                            margin-top: 1rem;
+                        }
                     </style>
+
+                    <div class="insta-box">
+                        <h2 class="insta-head-green"><?= __("How to connect a device", 'instalogin') ?></h2>
+                        <div style="display: flex;">
+                            <img style="margin-right: 2rem;" src="<?= plugin_dir_url(__FILE__) . "../../img/connect_device.svg" ?>" alt="">
+                            <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+                                <img src="<?= plugin_dir_url(__FILE__) . "../../img/woman.svg" ?>" alt="">
+
+                                <div class="insta-text-green">
+                                    <?= __("You did it! Password are no more! ", 'instalogin') ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <details class="instalogin-devices-details insta-box">
                         <summary class="insta" style="margin-bottom: .5rem; margin-top: .5rem;"><?= __('Manage Instalogin Devices', 'instalogin') ?></summary>

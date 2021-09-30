@@ -94,12 +94,13 @@ $email = $user->user_email;
 
     .step6 .img {
         padding: 1.4rem;
+        margin-right: -40px;
     }
 
     .step6 .img-border {
         display: flex;
         gap: 1.2rem;
-        padding: 1rem 1.5rem;
+        padding: 1rem 0;
         border: 1px solid white;
     }
 
@@ -187,7 +188,7 @@ $email = $user->user_email;
         <div class="bg-gray-light box">
 
             <details open>
-                <summary><?= __("Mange Instalogin Devices", 'instalogin') ?></summary>
+                <summary><?= __("Manage Instalogin Devices", 'instalogin') ?></summary>
 
                 <div class="grid">
                     <div class="title blue-dark"><?= __("Device", 'instalogin') ?></div>
@@ -231,7 +232,7 @@ $email = $user->user_email;
 
         </div>
         <div class="box bg-gray">
-            <h3 class="red"><?= __("Scan the mail and it's all done!", 'instalogin') ?></h3>
+            <h3 style="text-align: center;" class="red"><?= __("Scan the mail and it's all done!", 'instalogin') ?></h3>
             <img class="img" src="./images/icon_wizard-email-finished.svg" alt="">
         </div>
     </div>

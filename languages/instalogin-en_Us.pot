@@ -1,24 +1,27 @@
 # Copyright (C) 2021 Christian Schemoschek
-# This file is distributed under the same license as the Official Instalogin Integration plugin.
+# This file is distributed under the same license as the Instalogin plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Official Instalogin Integration 0.7.3\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/instalog-in\n"
+"Project-Id-Version: Instalogin 0.8.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/instalogin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-09-17T19:53:55+02:00\n"
+"POT-Creation-Date: 2021-09-30T16:41:18+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: instalogin\n"
 
 #. Plugin Name of the plugin
-msgid "Official Instalogin Integration"
+#: src/popup/menu.php:12
+#: src/popup/menu.php:13
+msgid "Instalogin"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: src/settings/header.php:67
 msgid "https://instalogin.me/"
 msgstr ""
 
@@ -30,15 +33,15 @@ msgstr ""
 msgid "https://allbut.social"
 msgstr ""
 
-#: plugin.php:109
+#: plugin.php:120
 msgid "You are almost ready to use Instalogin!"
 msgstr ""
 
-#: plugin.php:110
+#: plugin.php:121
 msgid "Please finish the setup: "
 msgstr ""
 
-#: plugin.php:126
+#: plugin.php:137
 msgid "API key or secret invalid."
 msgstr ""
 
@@ -52,7 +55,7 @@ msgstr ""
 #: src/devices/rest.php:37
 #: src/devices/rest.php:87
 #: src/devices/rest.php:139
-#: wizard/settings_rest.php:26
+#: src/settings/rest.php:58
 msgid "You must be logged in to perform this action."
 msgstr ""
 
@@ -82,12 +85,12 @@ msgid "Connected Devices"
 msgstr ""
 
 #: src/devices/shortcode.php:58
-#: scripts/devices.js:151
+#: scripts/devices.js:155
 msgid "Refresh"
 msgstr ""
 
 #: src/devices/shortcode.php:59
-#: scripts/devices.js:155
+#: scripts/devices.js:151
 msgid "Add Device"
 msgstr ""
 
@@ -117,7 +120,6 @@ msgstr ""
 
 #: src/popup/default_settings.php:36
 #: src/popup/shortcode.php:304
-#: wizard/index.php:63
 msgid "Register"
 msgstr ""
 
@@ -127,11 +129,6 @@ msgstr ""
 
 #: src/popup/default_settings.php:45
 msgid "Sign Out"
-msgstr ""
-
-#: src/popup/menu.php:12
-#: src/popup/menu.php:13
-msgid "Instalogin"
 msgstr ""
 
 #: src/popup/menu.php:30
@@ -307,19 +304,32 @@ msgid "Ready to join the no-password revolution?"
 msgstr ""
 
 #: src/profile/profile_page.php:45
-#: src/profile/profile_page.php:250
+#: src/profile/profile_page.php:286
 msgid "Send activation mail"
 msgstr ""
 
-#: src/profile/profile_page.php:192
+#: src/profile/profile_page.php:211
+msgid "How to connect a device"
+msgstr ""
+
+#: src/profile/profile_page.php:218
+msgid "You did it! Password are no more! "
+msgstr ""
+
+#: src/profile/profile_page.php:225
+#: wizard/steps/step6.php:191
 msgid "Manage Instalogin Devices"
 msgstr ""
 
-#: src/profile/profile_page.php:200
+#: src/profile/profile_page.php:227
+msgid "Add a new device with just a click! We will send you an email containing the InstaCode.<br>Scan the code using the app and you're ready to go."
+msgstr ""
+
+#: src/profile/profile_page.php:236
 msgid "Maximum Security: Randomize your Password"
 msgstr ""
 
-#: src/profile/profile_page.php:201
+#: src/profile/profile_page.php:237
 msgid ""
 "Instalogin enables effortless authentication by freeing you of the burden of having to remember a password.<br>\n"
 "                                If you created your account with a password we suggest that you replace it with a strong, random and secret password.<br>\n"
@@ -328,15 +338,15 @@ msgid ""
 "                                password reset email."
 msgstr ""
 
-#: src/profile/profile_page.php:209
+#: src/profile/profile_page.php:245
 msgid "Yes, replace my password with a secure random password.<br>I know that login will only be possible via the InstaApp unless I reset my password. "
 msgstr ""
 
-#: src/profile/profile_page.php:213
+#: src/profile/profile_page.php:249
 msgid "Randomize my Password"
 msgstr ""
 
-#: src/profile/profile_page.php:248
+#: src/profile/profile_page.php:284
 msgid "You can not manage another user's devices."
 msgstr ""
 
@@ -356,20 +366,20 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: src/settings/header.php:63
-msgid "https://instalogin.me/de/kontakt/"
-msgstr ""
-
-#: src/settings/header.php:63
-msgid "Contact"
-msgstr ""
-
 #: src/settings/header.php:66
 msgid "Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!"
 msgstr ""
 
-#: src/settings/rest.php:18
+#: src/settings/header.php:67
+msgid "Find out more!"
+msgstr ""
+
+#: src/settings/rest.php:23
 msgid "You do not have the required permissions to do this!"
+msgstr ""
+
+#: src/settings/rest.php:63
+msgid "You must be an administrator to perform this action."
 msgstr ""
 
 #: src/settings/settings.php:17
@@ -410,12 +420,10 @@ msgid "Rerun the setup installation wizard."
 msgstr ""
 
 #: src/settings/settings.php:158
-#: wizard/index.php:92
 msgid "If you do not have the necessary credentials, you may request them "
 msgstr ""
 
 #: src/settings/settings.php:159
-#: wizard/index.php:93
 msgid "https://instalogin.me/de/keysecret/"
 msgstr ""
 
@@ -465,7 +473,6 @@ msgstr ""
 
 #: src/settings/settings.php:206
 #: src/settings/settings.php:208
-#: wizard/index.php:114
 msgid "Save Settings"
 msgstr ""
 
@@ -474,20 +481,23 @@ msgid "Basic"
 msgstr ""
 
 #: src/settings/settings.php:239
+#: wizard/steps/step3.php:186
 msgid "Enable login via Instalogin"
 msgstr ""
 
 #: src/settings/settings.php:243
+#: wizard/steps/step3.php:189
 msgid "Enable or disable all Instalogin methods. Users may not use Instalogin to sign in to or to create new accounts."
 msgstr ""
 
 #: src/settings/settings.php:250
-#: wizard/index.php:100
-msgid "Enable registration via Instalogin"
+#: wizard/steps/step3.php:192
+msgid "Activation on Register"
 msgstr ""
 
 #: src/settings/settings.php:254
-msgid "Allow users to create accounts without using a password. Their accounts will be protected by Instalogin."
+#: wizard/steps/step3.php:195
+msgid "An Instalogin mail will be sent to every new user upon registration."
 msgstr ""
 
 #: src/settings/settings.php:261
@@ -495,6 +505,7 @@ msgid "Redirect to after login"
 msgstr ""
 
 #: src/settings/settings.php:265
+#: wizard/steps/step3.php:201
 msgid "Decide to which page users should be redirected to after successfully login in. '/wp-admin' is the common directory."
 msgstr ""
 
@@ -503,7 +514,7 @@ msgid "API"
 msgstr ""
 
 #: src/settings/settings.php:282
-#: wizard/index.php:77
+#: wizard/steps/step3.php:156
 msgid "API Key"
 msgstr ""
 
@@ -512,7 +523,7 @@ msgid "Your public API key provided by Instalogin."
 msgstr ""
 
 #: src/settings/settings.php:293
-#: wizard/index.php:85
+#: wizard/steps/step3.php:161
 msgid "API Secret"
 msgstr ""
 
@@ -528,125 +539,182 @@ msgstr ""
 msgid "During beta smart images must be configured by an Instalogin employee.<br> You may submit a request to <a href='emailto:smartimage@instalogin.me'>smartimage@instalogin.me</a>. <br>Send us a 500px x 500px image an we will do the rest."
 msgstr ""
 
-#: wizard/index.php:7
+#: wizard/index.php:5
 msgid "You must be an administrator to use the wizard."
 msgstr ""
 
-#: wizard/index.php:17
-msgid "Instalogin - Installation"
-msgstr ""
-
-#: wizard/index.php:36
+#: wizard/index.php:25
 msgid "Welcome"
 msgstr ""
 
-#: wizard/index.php:41
+#: wizard/index.php:27
 msgid "Setup"
 msgstr ""
 
-#: wizard/index.php:46
-msgid "Activate"
+#: wizard/index.php:29
+#: wizard/steps/step3.php:150
+msgid "License"
+msgstr ""
+
+#: wizard/index.php:31
+msgid "Finalize"
+msgstr ""
+
+#: wizard/index.php:33
+msgid "Connect Devices"
 msgstr ""
 
 #: wizard/index.php:51
-#: wizard/index.php:162
-msgid "Finish"
-msgstr ""
-
-#: wizard/index.php:59
-msgid "Welcome to Instalogin"
-msgstr ""
-
-#: wizard/index.php:60
-msgid "Two factor authentication in one step!"
-msgstr ""
-
-#: wizard/index.php:61
-msgid "Instalogin works for your team in the backend as well as your users in the frontend."
-msgstr ""
-
-#: wizard/index.php:63
-msgid "https://instalogin.me/en/demo-en/"
-msgstr ""
-
-#: wizard/index.php:70
-msgid "Configuration"
-msgstr ""
-
-#: wizard/index.php:73
-msgid "You may find your credentials over <a href=\"https://instalogin.me/en/demo-en/\">here</a>!"
-msgstr ""
-
-#: wizard/index.php:80
-msgid "Required. Must be exactly 32 characters of length."
-msgstr ""
-
-#: wizard/index.php:88
-msgid "Required. Must be exactly 64 characters of length."
-msgstr ""
-
-#: wizard/index.php:105
-msgid "Code Type"
-msgstr ""
-
-#: wizard/index.php:107
-msgid "InstaCode"
-msgstr ""
-
-#: wizard/index.php:108
-msgid "Smart Image"
-msgstr ""
-
-#: wizard/index.php:121
-msgid "Let's begin!"
-msgstr ""
-
-#: wizard/index.php:123
-msgid "Request a confirmation email and use the Insta app to scan the verification code."
-msgstr ""
-
-#: wizard/index.php:125
-msgid "Request activation mail"
-msgstr ""
-
-#: wizard/index.php:127
-msgid "Don't have the app already? Get it here:"
-msgstr ""
-
-#: wizard/index.php:140
-msgid "That's it!"
-msgstr ""
-
-#: wizard/index.php:141
-msgid "The installation has been completed successfully."
-msgstr ""
-
-#: wizard/index.php:143
-msgid "Go back or try loggin in right now:"
-msgstr ""
-
-#: wizard/index.php:145
-msgid "Exit installer"
-msgstr ""
-
-#: wizard/index.php:146
-msgid "Test Instalogin"
-msgstr ""
-
-#: wizard/index.php:159
 msgid "Back"
 msgstr ""
 
-#: wizard/index.php:160
+#: wizard/index.php:53
+msgid "Return to Wordpress"
+msgstr ""
+
+#: wizard/index.php:58
 msgid "Next"
 msgstr ""
 
-#: wizard/index.php:161
-msgid "Abort"
+#: wizard/index.php:60
+msgid "Finish"
 msgstr ""
 
-#: wizard/settings_rest.php:31
-msgid "You must be an administrator to perform this action."
+#: wizard/index.php:70
+msgid "LICENSE ACTIVE!"
+msgstr ""
+
+#: wizard/index.php:71
+msgid "Activation Failed! Try again."
+msgstr ""
+
+#: wizard/steps/step1.php:47
+msgid "Welcome to Instalogin"
+msgstr ""
+
+#: wizard/steps/step1.php:48
+msgid "Password free login and two-factor-authentication in one step!"
+msgstr ""
+
+#: wizard/steps/step1.php:49
+msgid "Instalogin works for you and your team in the backend as well as your customers in the frontend.<br>Our password free login in two steps; "
+msgstr ""
+
+#: wizard/steps/step2.php:76
+msgid "This setup consists of 2 parts:"
+msgstr ""
+
+#: wizard/steps/step2.php:83
+#: wizard/steps/step4.php:102
+msgid "Website Owners & Admins"
+msgstr ""
+
+#: wizard/steps/step2.php:86
+#: wizard/steps/step4.php:107
+msgid "Install the Instalogin plugin in Wordpress."
+msgstr ""
+
+#: wizard/steps/step2.php:95
+#: wizard/steps/step4.php:117
+msgid "Website Users"
+msgstr ""
+
+#: wizard/steps/step2.php:97
+#: wizard/steps/step4.php:120
+msgid "As admin or customer:<br>Connect your smartphone to enable login."
+msgstr ""
+
+#: wizard/steps/step3.php:143
+#: wizard/steps/step4.php:91
+msgid "Install Instalogin on<br> your website"
+msgstr ""
+
+#: wizard/steps/step3.php:152
+msgid "Key and secret are required to secure the communication during the login procedure.<br>They are simultaneously needed to connect to the Instalogin Servers and act as licence."
+msgstr ""
+
+#: wizard/steps/step3.php:171
+msgid "If you do not have a license you may place your order here:"
+msgstr ""
+
+#: wizard/steps/step3.php:174
+msgid "Order License"
+msgstr ""
+
+#: wizard/steps/step3.php:183
+msgid "Features"
+msgstr ""
+
+#: wizard/steps/step3.php:198
+msgid "Redirect"
+msgstr ""
+
+#: wizard/steps/step3.php:204
+msgid "Code Type"
+msgstr ""
+
+#: wizard/steps/step3.php:207
+msgid "InstaCode"
+msgstr ""
+
+#: wizard/steps/step3.php:208
+msgid "Smart Image"
+msgstr ""
+
+#: wizard/steps/step3.php:210
+msgid "You may use a custom image instead of the InstaCode. More info can be found in the settings later on."
+msgstr ""
+
+#: wizard/steps/step4.php:119
+msgid "Next:"
+msgstr ""
+
+#: wizard/steps/step5.php:117
+msgid "As user or admin:<br>Connect your smartphone with Instalogin."
+msgstr ""
+
+#: wizard/steps/step5.php:124
+msgid "Connecting your admin account to Instalogin"
+msgstr ""
+
+#: wizard/steps/step5.php:130
+msgid "We have send you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!"
+msgstr ""
+
+#: wizard/steps/step5.php:133
+msgid "Email was sent to:"
+msgstr ""
+
+#: wizard/steps/step6.php:177
+msgid "What do I have to do,<br> to use Instalogin as a registered user on this website?"
+msgstr ""
+
+#: wizard/steps/step6.php:184
+msgid "In your user profile use the Instalogin settings to add your smartphone"
+msgstr ""
+
+#: wizard/steps/step6.php:194
+msgid "Device"
+msgstr ""
+
+#: wizard/steps/step6.php:195
+msgid "Name"
+msgstr ""
+
+#: wizard/steps/step6.php:196
+msgid "Added at"
+msgstr ""
+
+#: wizard/steps/step6.php:227
+msgid "Add login device"
+msgstr ""
+
+#: wizard/steps/step6.php:229
+msgid "This will send a confirmation mail to your email address.<br>Scan the code with the InstaApp to add the device."
+msgstr ""
+
+#: wizard/steps/step6.php:235
+msgid "Scan the mail and it's all done!"
 msgstr ""
 
 #: scripts/device-send-mail.js:42

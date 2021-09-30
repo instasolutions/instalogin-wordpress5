@@ -6,7 +6,7 @@
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
  * Requires at least: 5.0
- * Version: 0.7.6
+ * Version: 0.8.0
  * Licence: TODO
  * Licence URI: TODO
  * Text Domain: instalogin
@@ -134,7 +134,7 @@ class InstalogIn
             $this->client = new \Instalogin\Client($api_key, $api_secret);
         } catch (\Throwable $th) {
             add_action('admin_notices', function () {
-                echo "<div class='error'><b>Instalog.in</b> " . __('API key or secret invalid.', 'instalogin') . "</div>";
+                echo "<div class='error'><b>Instalogin</b> " . __('API key or secret invalid.', 'instalogin') . "</div>";
                 echo "<br>Go to <a href='/wp-admin/admin.php?page=instalogin'>settings</a>.</div>";
             });
         }
