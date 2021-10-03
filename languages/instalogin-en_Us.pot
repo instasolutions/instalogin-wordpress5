@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-09-30T16:41:18+02:00\n"
+"POT-Creation-Date: 2021-10-04T01:04:37+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: instalogin\n"
@@ -141,7 +141,7 @@ msgid "PopUp Preview"
 msgstr ""
 
 #: src/popup/settings.php:10
-#: src/settings/settings.php:307
+#: src/settings/settings.php:306
 msgid "Smartcode"
 msgstr ""
 
@@ -313,7 +313,7 @@ msgid "How to connect a device"
 msgstr ""
 
 #: src/profile/profile_page.php:218
-msgid "You did it! Password are no more! "
+msgid "You did it! Passwords are no more! "
 msgstr ""
 
 #: src/profile/profile_page.php:225
@@ -407,7 +407,7 @@ msgid "Login Popup Style"
 msgstr ""
 
 #: src/settings/settings.php:76
-#: src/settings/settings.php:173
+#: src/settings/settings.php:172
 msgid "Usage"
 msgstr ""
 
@@ -420,122 +420,117 @@ msgid "Rerun the setup installation wizard."
 msgstr ""
 
 #: src/settings/settings.php:158
-msgid "If you do not have the necessary credentials, you may request them "
+msgid "If you do not have the necessary credentials, you may request them <a href='https://instalogin.me/de/keysecret/' target='_blank' rel='noopener'>here!</a>"
 msgstr ""
 
-#: src/settings/settings.php:159
-msgid "https://instalogin.me/de/keysecret/"
-msgstr ""
-
-#: src/settings/settings.php:176
+#: src/settings/settings.php:175
 msgid "A Instalogin login code will be added to the wordpress login page automatically."
 msgstr ""
 
-#: src/settings/settings.php:177
+#: src/settings/settings.php:176
 msgid "If <b>'registration via Instalogin'</b> is enabled in the basic settings tab, an email allowing users to connect their account to the InstaApp will be sent out automatically."
 msgstr ""
 
-#: src/settings/settings.php:180
+#: src/settings/settings.php:179
 msgid "Shortcodes"
 msgstr ""
 
-#: src/settings/settings.php:182
+#: src/settings/settings.php:181
 msgid "If you would like to add login and registration options to the frontend of your website you may use these shortcodes:"
 msgstr ""
 
-#: src/settings/settings.php:186
+#: src/settings/settings.php:185
 msgid "<b>[insta-login]</b> adds an InstaCode to your page."
 msgstr ""
 
-#: src/settings/settings.php:188
+#: src/settings/settings.php:187
 msgid "Instalogin will use these settings by default as such <b>[insta-login size='100px' show_when_logged_in='false' border='false' ]</b> ."
 msgstr ""
 
-#: src/settings/settings.php:190
+#: src/settings/settings.php:189
 msgid "Feel free to edit any or all settings."
 msgstr ""
 
-#: src/settings/settings.php:194
+#: src/settings/settings.php:193
 msgid "<b>[insta-register]</b> adds a simple registration form to your page."
 msgstr ""
 
-#: src/settings/settings.php:196
+#: src/settings/settings.php:195
 msgid "With optional default settings: <b>[insta-register require_username='true' show_button='true' button_text='Submit' show_when_logged_in='false' ]</b> ."
 msgstr ""
 
-#: src/settings/settings.php:198
+#: src/settings/settings.php:197
 msgid "If a username is not required, the users email address will be used."
 msgstr ""
 
-#: src/settings/settings.php:201
+#: src/settings/settings.php:200
 msgid "<b>[insta-popup]</b> May be used to add a login popup to a page. Alternatively you can add a popup by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</b>."
 msgstr ""
 
-#: src/settings/settings.php:206
-#: src/settings/settings.php:208
+#: src/settings/settings.php:205
+#: src/settings/settings.php:207
 msgid "Save Settings"
 msgstr ""
 
-#: src/settings/settings.php:232
+#: src/settings/settings.php:231
 msgid "Basic"
 msgstr ""
 
-#: src/settings/settings.php:239
+#: src/settings/settings.php:238
 #: wizard/steps/step3.php:186
 msgid "Enable login via Instalogin"
 msgstr ""
 
-#: src/settings/settings.php:243
+#: src/settings/settings.php:242
 #: wizard/steps/step3.php:189
 msgid "Enable or disable all Instalogin methods. Users may not use Instalogin to sign in to or to create new accounts."
 msgstr ""
 
-#: src/settings/settings.php:250
+#: src/settings/settings.php:249
 #: wizard/steps/step3.php:192
 msgid "Activation on Register"
 msgstr ""
 
-#: src/settings/settings.php:254
+#: src/settings/settings.php:253
 #: wizard/steps/step3.php:195
 msgid "An Instalogin mail will be sent to every new user upon registration."
 msgstr ""
 
-#: src/settings/settings.php:261
+#: src/settings/settings.php:260
 msgid "Redirect to after login"
 msgstr ""
 
-#: src/settings/settings.php:265
-#: wizard/steps/step3.php:201
-msgid "Decide to which page users should be redirected to after successfully login in. '/wp-admin' is the common directory."
+#: src/settings/settings.php:264
+msgid "Decide to which page users should be redirected to after successfully logging in. '/wp-admin' is the common directory."
 msgstr ""
 
-#: src/settings/settings.php:275
+#: src/settings/settings.php:274
 msgid "API"
 msgstr ""
 
-#: src/settings/settings.php:282
+#: src/settings/settings.php:281
 #: wizard/steps/step3.php:156
 msgid "API Key"
 msgstr ""
 
-#: src/settings/settings.php:286
+#: src/settings/settings.php:285
 msgid "Your public API key provided by Instalogin."
 msgstr ""
 
-#: src/settings/settings.php:293
+#: src/settings/settings.php:292
 #: wizard/steps/step3.php:161
 msgid "API Secret"
 msgstr ""
 
-#: src/settings/settings.php:297
+#: src/settings/settings.php:296
 msgid "Your private secret provided by Instalogin."
 msgstr ""
 
-#: src/settings/settings.php:314
+#: src/settings/settings.php:313
 msgid "Display Type"
 msgstr ""
 
-#: src/settings/settings.php:321
+#: src/settings/settings.php:320
 msgid "During beta smart images must be configured by an Instalogin employee.<br> You may submit a request to <a href='emailto:smartimage@instalogin.me'>smartimage@instalogin.me</a>. <br>Send us a 500px x 500px image an we will do the rest."
 msgstr ""
 
@@ -649,6 +644,10 @@ msgstr ""
 msgid "Redirect"
 msgstr ""
 
+#: wizard/steps/step3.php:201
+msgid "Decide to which page users should be redirected to after successfully login in. '/wp-admin' is the common directory."
+msgstr ""
+
 #: wizard/steps/step3.php:204
 msgid "Code Type"
 msgstr ""
@@ -678,7 +677,7 @@ msgid "Connecting your admin account to Instalogin"
 msgstr ""
 
 #: wizard/steps/step5.php:130
-msgid "We have send you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!"
+msgid "We have sent you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!"
 msgstr ""
 
 #: wizard/steps/step5.php:133

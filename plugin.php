@@ -6,7 +6,7 @@
  * Author: Christian Schemoschek
  * Author URI: https://allbut.social
  * Requires at least: 5.0
- * Version: 0.8.0
+ * Version: 0.8.1
  * Licence: GPL v2 or later
  * Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: instalogin
