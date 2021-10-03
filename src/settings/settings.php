@@ -155,8 +155,7 @@ class InstaloginSettings
                             <div></div>
                             <div></div>
                             <p>
-                                <?= __("If you do not have the necessary credentials, you may request them ", 'instalogin') ?>
-                                <a href="<?= __("https://instalogin.me/de/keysecret/", 'instalogin') ?>" target="_blank" rel="noopener">here!</a>
+                                <?= __("If you do not have the necessary credentials, you may request them <a href='https://instalogin.me/de/keysecret/' target='_blank' rel='noopener'>here!</a>", 'instalogin') ?>
                             </p>
                         </div>
 
