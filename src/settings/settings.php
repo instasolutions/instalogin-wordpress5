@@ -262,7 +262,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-redirect';
             $setting = get_option($setting_name); ?>
             <input type="text" placeholder="/wp-admin" name="<?= $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
-            <div class="insta-info"><?= __("Decide to which page users should be redirected to after successfully login in. '/wp-admin' is the common directory.", 'instalogin') ?></div>
+            <div class="insta-info"><?= __("Decide to which page users should be redirected to after successfully logging in. '/wp-admin' is the common directory.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
     }

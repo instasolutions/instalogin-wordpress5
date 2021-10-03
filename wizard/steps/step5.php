@@ -127,7 +127,7 @@ $email = $user->user_email;
     <div class="boxes bg-gray-light">
         <div class="bg-gray box">
             <p class="gray-dark">
-                <?= __("We have send you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!", 'instalogin') ?>
+                <?= __("We have sent you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!", 'instalogin') ?>
             </p>
             <div>
                 <span><?= __("Email was sent to:", 'instalogin') ?></span>

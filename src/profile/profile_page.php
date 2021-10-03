@@ -215,7 +215,7 @@ class InstaloginProfilePage
                                 <img src="<?= plugin_dir_url(__FILE__) . "../../img/woman.svg" ?>" alt="">
 
                                 <div class="insta-text-green">
-                                    <?= __("You did it! Password are no more! ", 'instalogin') ?>
+                                    <?= __("You did it! Passwords are no more! ", 'instalogin') ?>
                                 </div>
                             </div>
                         </div>
