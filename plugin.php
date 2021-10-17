@@ -1,10 +1,11 @@
 <?php
 
 /**
- * Plugin Name: Instalogin
+ * Plugin Name: Official Instalogin
  * Plugin URI: https://instalogin.me/
+ * Description: Official Instalogin integration enables login via InstaCode on your Wordpress installation.
  * Author: Christian Schemoschek
- * Author URI: https://allbut.social
+ * Author URI: https://instalogin.me
  * Requires at least: 5.0
  * Version: 0.8.1
  * Licence: GPL v2 or later
