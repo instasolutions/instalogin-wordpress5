@@ -223,7 +223,7 @@ $email = $user->user_email;
                 </div>
 
                 <div class="info-row">
-                    <a href="/wp-admin/profile.php" target="_blank">
+                    <a href="<?php echo admin_url('/profile.php') ?>" target="_blank">
                         <button class="add-button"><?= __("Add login device", 'instalogin') ?></button>
                     </a>
                     <p><?= __("This will send a confirmation mail to your email address.<br>Scan the code with the InstaApp to add the device.", 'instalogin') ?></p>
