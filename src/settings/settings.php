@@ -3,6 +3,8 @@
 class InstaloginSettings
 {
 
+    public $page_suffix = '';
+
     public function __construct()
     {
         $this->main_page();
@@ -25,14 +27,14 @@ class InstaloginSettings
     {
 
         add_action('admin_enqueue_scripts', function ($hook) {
-            if (strpos($hook, "instalogin") !== false) {
+            if ($hook == $this->page_suffix) {
                 wp_enqueue_style('insta-settings-style', plugin_dir_url(__FILE__) . "style.css", ['insta-global'], '1');
             }
         });
 
         add_action('admin_menu', function () {
 
-            add_menu_page('Instalogin Settings', 'InstalogIn', 'manage_options', 'instalogin', function () {
+            $this->page_suffix = add_menu_page('Instalogin Settings', 'InstalogIn', 'manage_options', 'instalogin', function () {
                 if (!current_user_can('manage_options')) {
                     return;
                 }
