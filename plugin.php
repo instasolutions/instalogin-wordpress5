@@ -122,11 +122,11 @@ class InstalogIn
                 <div class="notice notice-info">
                     <h3>Instalogin Setup</h3>
                     <p>
-                        <?= __('You are almost ready to use Instalogin!', 'instalogin') ?><br>
-                        <?= __('Please finish the setup: ', 'instalogin') ?><br>
+                        <?php _e('You are almost ready to use Instalogin!', 'instalogin') ?><br>
+                        <?php _e('Please finish the setup: ', 'instalogin') ?><br>
                     </p>
                     <p>
-                        <a class="button" href="<?= plugin_dir_url(__FILE__) ?>/wizard">Run Installation Wizard</a>
+                        <a class="button" href="<?php echo plugin_dir_url(__FILE__) ?>/wizard">Run Installation Wizard</a>
                     </p>
                 </div>
 <?php

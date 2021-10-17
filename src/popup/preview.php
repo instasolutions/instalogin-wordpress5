@@ -28,7 +28,7 @@ class InstaloginPopupPreviewPage
 
                 <div class="wrap">
                     <div style="width: 100%; min-height: 400px; display: flex; justify-content: center; align-items: center;">
-                        <?= do_shortcode('[insta-popup preview="true"]') ?>
+                        <?php echo do_shortcode('[insta-popup preview="true"]') ?>
                     </div>
                 </div>
 <?php

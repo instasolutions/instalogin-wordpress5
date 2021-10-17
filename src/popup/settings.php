@@ -50,97 +50,97 @@ class InstaloginPopupSettings
 
             <div class="insta-popup-settings">
                 <div>
-                    <h4><?= __("Container Design", 'instalogin') ?></h4>
+                    <h4><?php _e("Container Design", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Background", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[box-bg]" value="<?= $setting['box-bg'] ?>">
+                        <span><?php _e("Background", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[box-bg]" value="<?php echo $setting['box-bg'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Font Family", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. Verdana" name="<?= $setting_name ?>[font]" value="<?= $setting['font'] ?>">
+                        <span><?php _e("Font Family", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. Verdana" name="<?php echo $setting_name ?>[font]" value="<?php echo $setting['font'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Popup Trigger", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[trigger]">
+                        <span><?php _e("Popup Trigger", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[trigger]">
                             <option <?php selected($setting['trigger'], 'click') ?> value="click">Click Button</option>
                             <option <?php selected($setting['trigger'], 'hover') ?> value="hover">Hover Button</option>
                         </select>
                     </label>
                     <label>
-                        <span><?= __("Shadow", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[box-shadow]">
+                        <span><?php _e("Shadow", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[box-shadow]">
                             <option <?php selected($setting['box-shadow'], 'on') ?> value="on">On</option>
                             <option <?php selected($setting['box-shadow'], 'off') ?> value="off">Off</option>
                         </select>
                     </label>
 
                     <label>
-                        <span><?= __("Position", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[position]">
+                        <span><?php _e("Position", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[position]">
                             <option <?php selected($setting['position'], 'top') ?> value="top">Below</option>
                             <option <?php selected($setting['position'], 'bottom') ?> value="bottom">Above</option>
                         </select>
                     </label>
 
                     <label>
-                        <span><?= __("Vertical Offset", 'instalogin') ?></span>
-                        <input type="text" palceholder="e.g. 0px" name="<?= $setting_name ?>[vertical]" value="<?= $setting['vertical'] ?>">
+                        <span><?php _e("Vertical Offset", 'instalogin') ?></span>
+                        <input type="text" palceholder="e.g. 0px" name="<?php echo $setting_name ?>[vertical]" value="<?php echo $setting['vertical'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Horizontal Offset", 'instalogin') ?></span>
-                        <input type="text" palceholder="e.g. 0px" name="<?= $setting_name ?>[horizontal]" value="<?= $setting['horizontal'] ?>">
+                        <span><?php _e("Horizontal Offset", 'instalogin') ?></span>
+                        <input type="text" palceholder="e.g. 0px" name="<?php echo $setting_name ?>[horizontal]" value="<?php echo $setting['horizontal'] ?>">
                     </label>
                 </div>
 
                 <div>
-                    <h4><?= __("Login(-out) Button", 'instalogin') ?></h4>
+                    <h4><?php _e("Login(-out) Button", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Button Type", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[login-type]">
+                        <span><?php _e("Button Type", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[login-type]">
                             <option <?php selected($setting['login-type'], 'text') ?> value="text">Text</option>
                             <option <?php selected($setting['login-type'], 'icon') ?> value="icon">Icon</option>
                         </select>
                     </label>
 
                     <label>
-                        <span><?= __("Padding", 'instalogin') ?></span>
-                        <input type="text" palceholder="top right bottom left" name="<?= $setting_name ?>[login-padding]" value="<?= $setting['login-padding'] ?>">
+                        <span><?php _e("Padding", 'instalogin') ?></span>
+                        <input type="text" palceholder="top right bottom left" name="<?php echo $setting_name ?>[login-padding]" value="<?php echo $setting['login-padding'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Login Text", 'instalogin') ?></span>
-                        <input type="text" palceholder="Sign In" name="<?= $setting_name ?>[login-text]" value="<?= $setting['login-text'] ?>">
+                        <span><?php _e("Login Text", 'instalogin') ?></span>
+                        <input type="text" palceholder="Sign In" name="<?php echo $setting_name ?>[login-text]" value="<?php echo $setting['login-text'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Logout Text", 'instalogin') ?></span>
-                        <input type="text" palceholder="Sign Out" name="<?= $setting_name ?>[login-out-text]" value="<?= $setting['login-out-text'] ?>">
+                        <span><?php _e("Logout Text", 'instalogin') ?></span>
+                        <input type="text" palceholder="Sign Out" name="<?php echo $setting_name ?>[login-out-text]" value="<?php echo $setting['login-out-text'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Font Size", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[login-font-size]" value="<?= $setting['login-font-size'] ?>">
+                        <span><?php _e("Font Size", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 14pt" name="<?php echo $setting_name ?>[login-font-size]" value="<?php echo $setting['login-font-size'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Background", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[login-bg]" value="<?= $setting['login-bg'] ?>">
+                        <span><?php _e("Background", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[login-bg]" value="<?php echo $setting['login-bg'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Color", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[login-color]" value="<?= $setting['login-color'] ?>">
+                        <span><?php _e("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[login-color]" value="<?php echo $setting['login-color'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Border Radius", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 30px" name="<?= $setting_name ?>[login-radius]" value="<?= $setting['login-radius'] ?>">
+                        <span><?php _e("Border Radius", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 30px" name="<?php echo $setting_name ?>[login-radius]" value="<?php echo $setting['login-radius'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Weight", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[login-weight]">
+                        <span><?php _e("Weight", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[login-weight]">
                             <option <?php selected($setting['login-weight'], '100') ?> value="100">100</option>
                             <option <?php selected($setting['login-weight'], '200') ?> value="200">200</option>
                             <option <?php selected($setting['login-weight'], '300') ?> value="300">300</option>
@@ -154,65 +154,65 @@ class InstaloginPopupSettings
                     </label>
 
                     <label>
-                        <span><?= __("Size (Icon Only)", 'instalogin') ?></span>
-                        <input type="text" palceholder="e.g. 4px" name="<?= $setting_name ?>[login-size]" value="<?= $setting['login-size'] ?>">
+                        <span><?php _e("Size (Icon Only)", 'instalogin') ?></span>
+                        <input type="text" palceholder="e.g. 4px" name="<?php echo $setting_name ?>[login-size]" value="<?php echo $setting['login-size'] ?>">
                     </label>
 
                     <label>
-                        <span><?= __("Login Icon", 'instalogin') ?></span>
+                        <span><?php _e("Login Icon", 'instalogin') ?></span>
                         <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
-                            <button class="button"><?= __("Select Icon", 'instalogin') ?></button>
-                            <input type="hidden" name="<?= $setting_name ?>[login-icon]" value="<?= $setting['login-icon'] ?>">
-                            <img width="32px" height="32px" src="<?= $setting['login-icon'] ?>" alt="">
+                            <button class="button"><?php _e("Select Icon", 'instalogin') ?></button>
+                            <input type="hidden" name="<?php echo $setting_name ?>[login-icon]" value="<?php echo $setting['login-icon'] ?>">
+                            <img width="32px" height="32px" src="<?php echo $setting['login-icon'] ?>" alt="">
                         </div>
                     </label>
 
                     <label>
-                        <span><?= __("Logout Icon", 'instalogin') ?></span>
+                        <span><?php _e("Logout Icon", 'instalogin') ?></span>
                         <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
-                            <button class="button"><?= __("Select Icon", 'instalogin') ?></button>
-                            <input type="hidden" name="<?= $setting_name ?>[login-icon-out]" value="<?= $setting['login-icon-out'] ?>">
-                            <img width="32px" height="32px" src="<?= $setting['login-icon-out'] ?>" alt="">
+                            <button class="button"><?php _e("Select Icon", 'instalogin') ?></button>
+                            <input type="hidden" name="<?php echo $setting_name ?>[login-icon-out]" value="<?php echo $setting['login-icon-out'] ?>">
+                            <img width="32px" height="32px" src="<?php echo $setting['login-icon-out'] ?>" alt="">
                         </div>
                     </label>
                 </div>
 
                 <div>
-                    <h4><?= __("Border", 'instalogin') ?></h4>
+                    <h4><?php _e("Border", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Style", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[box-border-style]">
+                        <span><?php _e("Style", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[box-border-style]">
                             <option <?php selected($setting['box-border-style'], 'none') ?> value="none">None</option>
                             <option <?php selected($setting['box-border-style'], 'solid') ?> value="solid">Solid</option>
                         </select>
                     </label>
                     <label>
-                        <span><?= __("Color", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[box-border-color]" value="<?= $setting['box-border-color'] ?>">
+                        <span><?php _e("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[box-border-color]" value="<?php echo $setting['box-border-color'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Width", 'instalogin') ?></span>
-                        <input type="text" palceholder="e.g. 4px" name="<?= $setting_name ?>[box-border-width]" value="<?= $setting['box-border-width'] ?>">
+                        <span><?php _e("Width", 'instalogin') ?></span>
+                        <input type="text" palceholder="e.g. 4px" name="<?php echo $setting_name ?>[box-border-width]" value="<?php echo $setting['box-border-width'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Radius", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 30px" name="<?= $setting_name ?>[box-border-radius]" value="<?= $setting['box-border-radius'] ?>">
+                        <span><?php _e("Radius", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 30px" name="<?php echo $setting_name ?>[box-border-radius]" value="<?php echo $setting['box-border-radius'] ?>">
                     </label>
                 </div>
 
                 <div>
-                    <h4><?= __("QR Code", 'instalogin') ?></h4>
+                    <h4><?php _e("QR Code", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Padding", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 16px" name="<?= $setting_name ?>[qr-padding]" value="<?= $setting['qr-padding'] ?>">
+                        <span><?php _e("Padding", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 16px" name="<?php echo $setting_name ?>[qr-padding]" value="<?php echo $setting['qr-padding'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Background", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[qr-bg]" value="<?= $setting['qr-bg'] ?>">
+                        <span><?php _e("Background", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[qr-bg]" value="<?php echo $setting['qr-bg'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Shadow", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[qr-shadow]">
+                        <span><?php _e("Shadow", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[qr-shadow]">
                             <option <?php selected($setting['qr-shadow'], 'on') ?> value="on">On</option>
                             <option <?php selected($setting['qr-shadow'], 'off') ?> value="off">Off</option>
                         </select>
@@ -220,22 +220,22 @@ class InstaloginPopupSettings
                 </div>
 
                 <div>
-                    <h4><?= __("Title", 'instalogin') ?></h4>
+                    <h4><?php _e("Title", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Text", 'instalogin') ?></span>
-                        <input type="text" placeholder="Sign In" name="<?= $setting_name ?>[title-text]" value="<?= $setting['title-text'] ?>">
+                        <span><?php _e("Text", 'instalogin') ?></span>
+                        <input type="text" placeholder="Sign In" name="<?php echo $setting_name ?>[title-text]" value="<?php echo $setting['title-text'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Size", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[title-size]" value="<?= $setting['title-size'] ?>">
+                        <span><?php _e("Size", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 14pt" name="<?php echo $setting_name ?>[title-size]" value="<?php echo $setting['title-size'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Color", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[title-color]" value="<?= $setting['title-color'] ?>">
+                        <span><?php _e("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[title-color]" value="<?php echo $setting['title-color'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Weight", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[title-weight]">
+                        <span><?php _e("Weight", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[title-weight]">
                             <option <?php selected($setting['title-weight'], '100') ?> value="100">100</option>
                             <option <?php selected($setting['title-weight'], '200') ?> value="200">200</option>
                             <option <?php selected($setting['title-weight'], '300') ?> value="300">300</option>
@@ -250,24 +250,24 @@ class InstaloginPopupSettings
                 </div>
 
                 <div>
-                    <h4><?= __("Sub Title", 'instalogin') ?></h4>
+                    <h4><?php _e("Sub Title", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Text", 'instalogin') ?></span>
-                        <textarea type="text" placeholder="Sign In" name="<?= $setting_name ?>[sub-title-text]">
-<?= $setting['sub-title-text'] ?>
+                        <span><?php _e("Text", 'instalogin') ?></span>
+                        <textarea type="text" placeholder="Sign In" name="<?php echo $setting_name ?>[sub-title-text]">
+<?php echo $setting['sub-title-text'] ?>
                         </textarea>
                     </label>
                     <label>
-                        <span><?= __("Size", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[sub-title-size]" value="<?= $setting['sub-title-size'] ?>">
+                        <span><?php _e("Size", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 14pt" name="<?php echo $setting_name ?>[sub-title-size]" value="<?php echo $setting['sub-title-size'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Color", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[sub-title-color]" value="<?= $setting['sub-title-color'] ?>">
+                        <span><?php _e("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[sub-title-color]" value="<?php echo $setting['sub-title-color'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Weight", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[sub-title-weight]">
+                        <span><?php _e("Weight", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[sub-title-weight]">
                             <option <?php selected($setting['sub-title-weight'], '100') ?> value="100">100</option>
                             <option <?php selected($setting['sub-title-weight'], '200') ?> value="200">200</option>
                             <option <?php selected($setting['sub-title-weight'], '300') ?> value="300">300</option>
@@ -282,24 +282,24 @@ class InstaloginPopupSettings
                 </div>
 
                 <div>
-                    <h4><?= __("Text", 'instalogin') ?></h4>
+                    <h4><?php _e("Text", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Content", 'instalogin') ?></span>
-                        <textarea type="text" placeholder="Sign In" name="<?= $setting_name ?>[text-text]">
-<?= $setting['text-text'] ?>
+                        <span><?php _e("Content", 'instalogin') ?></span>
+                        <textarea type="text" placeholder="Sign In" name="<?php echo $setting_name ?>[text-text]">
+<?php echo $setting['text-text'] ?>
                         </textarea>
                     </label>
                     <label>
-                        <span><?= __("Size", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[text-size]" value="<?= $setting['text-size'] ?>">
+                        <span><?php _e("Size", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 14pt" name="<?php echo $setting_name ?>[text-size]" value="<?php echo $setting['text-size'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Color", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[text-color]" value="<?= $setting['text-color'] ?>">
+                        <span><?php _e("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[text-color]" value="<?php echo $setting['text-color'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Weight", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[text-weight]">
+                        <span><?php _e("Weight", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[text-weight]">
                             <option <?php selected($setting['text-weight'], '100') ?> value="100">100</option>
                             <option <?php selected($setting['text-weight'], '200') ?> value="200">200</option>
                             <option <?php selected($setting['text-weight'], '300') ?> value="300">300</option>
@@ -314,30 +314,30 @@ class InstaloginPopupSettings
                 </div>
 
                 <div>
-                    <h4><?= __("Button", 'instalogin') ?></h4>
+                    <h4><?php _e("Button", 'instalogin') ?></h4>
                     <label>
-                        <span><?= __("Text", 'instalogin') ?></span>
-                        <input type="text" placeholder="Sign In" name="<?= $setting_name ?>[button-text]" value="<?= $setting['button-text'] ?>">
+                        <span><?php _e("Text", 'instalogin') ?></span>
+                        <input type="text" placeholder="Sign In" name="<?php echo $setting_name ?>[button-text]" value="<?php echo $setting['button-text'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Font Size", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 14pt" name="<?= $setting_name ?>[button-size]" value="<?= $setting['button-size'] ?>">
+                        <span><?php _e("Font Size", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 14pt" name="<?php echo $setting_name ?>[button-size]" value="<?php echo $setting['button-size'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Border Radius", 'instalogin') ?></span>
-                        <input type="text" placeholder="e.g. 30px" name="<?= $setting_name ?>[button-radius]" value="<?= $setting['button-radius'] ?>">
+                        <span><?php _e("Border Radius", 'instalogin') ?></span>
+                        <input type="text" placeholder="e.g. 30px" name="<?php echo $setting_name ?>[button-radius]" value="<?php echo $setting['button-radius'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Color", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[button-color]" value="<?= $setting['button-color'] ?>">
+                        <span><?php _e("Color", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[button-color]" value="<?php echo $setting['button-color'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Background", 'instalogin') ?></span>
-                        <input type="color" name="<?= $setting_name ?>[button-bg]" value="<?= $setting['button-bg'] ?>">
+                        <span><?php _e("Background", 'instalogin') ?></span>
+                        <input type="color" name="<?php echo $setting_name ?>[button-bg]" value="<?php echo $setting['button-bg'] ?>">
                     </label>
                     <label>
-                        <span><?= __("Weight", 'instalogin') ?></span>
-                        <select name="<?= $setting_name ?>[button-weight]">
+                        <span><?php _e("Weight", 'instalogin') ?></span>
+                        <select name="<?php echo $setting_name ?>[button-weight]">
                             <option <?php selected($setting['button-weight'], '100') ?> value="100">100</option>
                             <option <?php selected($setting['button-weight'], '200') ?> value="200">200</option>
                             <option <?php selected($setting['button-weight'], '300') ?> value="300">300</option>
@@ -354,7 +354,7 @@ class InstaloginPopupSettings
 
             <div>
                 <h4>Preview</h4>
-                <button id="refresh" style="margin-bottom: 4px;" class="button"><?= __("Save & Refresh", 'instalogin') ?></button>
+                <button id="refresh" style="margin-bottom: 4px;" class="button"><?php _e("Save & Refresh", 'instalogin') ?></button>
                 <iframe id="preview" src="<?php echo admin_url('?page=popup-preview') ?>" title="Popup Preview" width="100%" height="650px" frameborder="0"></iframe>
 
 

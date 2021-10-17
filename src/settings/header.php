@@ -61,10 +61,10 @@ function settings_header()
 
     <div class="insta-container">
         <div class="insta-header">
-            <img class="logo" src="<?= plugin_dir_url(__FILE__) . "../../img/logo.svg" ?> " alt="Instalogin Logo">
+            <img class="logo" src="<?php echo plugin_dir_url(__FILE__) . "../../img/logo.svg" ?> " alt="Instalogin Logo">
         </div>
-        <p class="insta-description"><?= __('Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!', 'instalogin') ?></p>
-        <a href="<?= __("https://instalogin.me/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow"><?= __('Find out more!', 'instalogin') ?></a>
+        <p class="insta-description"><?php _e('Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!', 'instalogin') ?></p>
+        <a href="<?php _e("https://instalogin.me/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow"><?php _e('Find out more!', 'instalogin') ?></a>
     </div>
 
 <?php

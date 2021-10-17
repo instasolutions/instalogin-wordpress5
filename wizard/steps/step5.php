@@ -114,24 +114,24 @@ $email = $user->user_email;
             <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/man.svg" alt="">
             <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/teamwork.svg" alt="">
 
-            <h1 class="blue"><?= __("As user or admin:<br>Connect your smartphone with Instalogin.", 'instalogin') ?></h1>
+            <h1 class="blue"><?php _e("As user or admin:<br>Connect your smartphone with Instalogin.", 'instalogin') ?></h1>
         </div>
         <div class="letter">B</div>
     </div>
 
 
     <h2 style="text-align: center;" class="green">
-        <?= __("Connecting your admin account to Instalogin", 'instalogin') ?>
+        <?php _e("Connecting your admin account to Instalogin", 'instalogin') ?>
     </h2>
 
     <div class="boxes bg-gray-light">
         <div class="bg-gray box">
             <p class="gray-dark">
-                <?= __("We have sent you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!", 'instalogin') ?>
+                <?php _e("We have sent you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!", 'instalogin') ?>
             </p>
             <div>
-                <span><?= __("Email was sent to:", 'instalogin') ?></span>
-                <span class="email"><?= $email ?></span>
+                <span><?php _e("Email was sent to:", 'instalogin') ?></span>
+                <span class="email"><?php echo $email ?></span>
             </div>
 
             <div class="img-border">

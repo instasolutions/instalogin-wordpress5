@@ -49,10 +49,10 @@ class InstaloginPopupShortcode
         ob_start(); ?>
         <style>
             .insta-popup-container .instalogin-popup {
-                background: <?= $setting['qr-bg'] ?>;
+                background: <?php echo $setting['qr-bg'] ?>;
                 border-radius: 20px;
                 /* border:; */
-                box-shadow: <?= $setting['qr-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
+                box-shadow: <?php echo $setting['qr-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
             }
 
             .insta-popup-container .instalogin-popup .instalogin-container {
@@ -73,7 +73,7 @@ class InstaloginPopupShortcode
             .insta-popup-container .instalogin-popup .instalogin-image-container {
                 display: flex;
                 justify-content: center;
-                background: <?= $setting['qr-bg'] ?>;
+                background: <?php echo $setting['qr-bg'] ?>;
             }
 
             .insta-popup-container .instalogin-popup .instalogin-image {
@@ -99,19 +99,19 @@ class InstaloginPopupShortcode
                 z-index: 1000;
 
                 padding: 1.5rem;
-                box-shadow: <?= $setting['box-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
+                box-shadow: <?php echo $setting['box-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
 
-                border-radius: <?= $setting['box-border-radius'] ?>;
+                border-radius: <?php echo $setting['box-border-radius'] ?>;
 
                 position: absolute;
 
-                <?= $setting['position'] ?>: <?= $setting['vertical'] ?>;
-                left: <?= $setting['horizontal'] ?>;
+                <?php echo $setting['position'] ?>: <?php echo $setting['vertical'] ?>;
+                left: <?php echo $setting['horizontal'] ?>;
 
                 display: flex;
                 gap: 2rem;
 
-                background-color: <?= $setting['box-bg'] ?>;
+                background-color: <?php echo $setting['box-bg'] ?>;
 
                 opacity: 0;
                 visibility: hidden;
@@ -138,17 +138,17 @@ class InstaloginPopupShortcode
 
             .insta-popup-container .insta-title {
                 white-space: nowrap;
-                font-size: <?= $setting['title-size'] ?>;
-                font-family: <?= $setting['font'] ?>;
-                color: <?= $setting['title-color'] ?>;
-                font-weight: <?= $setting['title-weight'] ?>;
+                font-size: <?php echo $setting['title-size'] ?>;
+                font-family: <?php echo $setting['font'] ?>;
+                color: <?php echo $setting['title-color'] ?>;
+                font-weight: <?php echo $setting['title-weight'] ?>;
             }
 
             .insta-popup-container .insta-sub {
-                font-size: <?= $setting['sub-title-size'] ?>;
-                font-weight: <?= $setting['sub-title-weight'] ?>;
-                font-family: <?= $setting['font'] ?>;
-                color: <?= $setting['sub-title-color'] ?>;
+                font-size: <?php echo $setting['sub-title-size'] ?>;
+                font-weight: <?php echo $setting['sub-title-weight'] ?>;
+                font-family: <?php echo $setting['font'] ?>;
+                color: <?php echo $setting['sub-title-color'] ?>;
                 line-height: 1.15;
             }
 
@@ -156,17 +156,17 @@ class InstaloginPopupShortcode
                 margin-top: .5rem;
                 line-height: 1.3;
 
-                font-size: <?= $setting['text-size'] ?>;
-                font-weight: <?= $setting['text-weight'] ?>;
-                font-family: <?= $setting['font'] ?>;
-                color: <?= $setting['text-color'] ?>;
+                font-size: <?php echo $setting['text-size'] ?>;
+                font-weight: <?php echo $setting['text-weight'] ?>;
+                font-family: <?php echo $setting['font'] ?>;
+                color: <?php echo $setting['text-color'] ?>;
             }
 
             .insta-popup-container .insta-button {
-                font-size: <?= $setting['button-size'] ?> !important;
-                color: <?= $setting['button-color'] ?> !important;
-                background: <?= $setting['button-bg'] ?> !important;
-                border-radius: <?= $setting['button-radius'] ?>;
+                font-size: <?php echo $setting['button-size'] ?> !important;
+                color: <?php echo $setting['button-color'] ?> !important;
+                background: <?php echo $setting['button-bg'] ?> !important;
+                border-radius: <?php echo $setting['button-radius'] ?>;
                 float: right;
                 margin-top: 1rem;
 
@@ -180,23 +180,23 @@ class InstaloginPopupShortcode
 
             .insta-popup-button {
                 cursor: pointer;
-                font-size: <?= $setting['login-font-size'] ?> !important;
-                font-weight: <?= $setting['login-weight'] ?> !important;
-                color: <?= $setting['login-color'] ?> !important;
-                background: <?= $setting['login-bg'] ?> !important;
-                border-radius: <?= $setting['login-radius'] ?> !important;
-                padding: <?= $setting['login-padding'] ?> !important;
+                font-size: <?php echo $setting['login-font-size'] ?> !important;
+                font-weight: <?php echo $setting['login-weight'] ?> !important;
+                color: <?php echo $setting['login-color'] ?> !important;
+                background: <?php echo $setting['login-bg'] ?> !important;
+                border-radius: <?php echo $setting['login-radius'] ?> !important;
+                padding: <?php echo $setting['login-padding'] ?> !important;
             }
 
             .insta-popup-icon,
             .insta-popup-icon:hover {
                 background: none !important;
-                color: <?= $setting['login-color'] ?> !important;
+                color: <?php echo $setting['login-color'] ?> !important;
                 border: none !important;
 
                 padding: 0;
-                width: <?= $setting['login-size'] ?>;
-                height: <?= $setting['login-size'] ?>;
+                width: <?php echo $setting['login-size'] ?>;
+                height: <?php echo $setting['login-size'] ?>;
             }
 
             .insta-popup-icon svg {
@@ -232,17 +232,17 @@ class InstaloginPopupShortcode
         if (is_user_logged_in() && $preview == false) {
         ?>
             <div style="height: 100%; display: flex; align-items: center;">
-                <a class="insta-popup-logout" href="<?= wp_logout_url() ?>">
+                <a class="insta-popup-logout" href="<?php echo wp_logout_url() ?>">
                     <?php if ($setting['login-type'] == 'text') { ?>
                         <button class="insta-popup-button">
-                            <?= $setting['login-out-text'] ?>
+                            <?php echo $setting['login-out-text'] ?>
                         </button>
                         <?php } else {
 
                         if ($setting['login-icon-out'] != '' || $setting['login-icon-out'] != null) {
                         ?>
                             <button class="insta-popup-icon">
-                                <img src="<?= $setting['login-icon-out'] ?>" alt="logout">
+                                <img src="<?php echo $setting['login-icon-out'] ?>" alt="logout">
                             </button>
                         <?php
                         } else {
@@ -264,14 +264,14 @@ class InstaloginPopupShortcode
             <div class="insta-popup-container">
                 <?php if ($setting['login-type'] == 'text') { ?>
                     <button class="insta-opener insta-popup-button">
-                        <?= $setting['login-text'] ?>
+                        <?php echo $setting['login-text'] ?>
                     </button>
                     <?php } else {
 
                     if ($setting['login-icon'] != '' || $setting['login-icon'] != null) {
                     ?>
                         <button class="insta-opener insta-popup-icon">
-                            <img src="<?= $setting['login-icon'] ?>" alt="logout">
+                            <img src="<?php echo $setting['login-icon'] ?>" alt="logout">
                         </button>
                     <?php
                     } else {
@@ -292,16 +292,16 @@ class InstaloginPopupShortcode
                 <?php } ?>
                 <div class="insta-background"></div>
                 <div class="insta-popup">
-                    <div class="instalogin-popup" id="<?= $container_id ?>"></div>
+                    <div class="instalogin-popup" id="<?php echo $container_id ?>"></div>
                     <div class="popup-body">
                         <div>
-                            <span class="insta-title"><?= $setting['title-text'] ?></span>
-                            <div class="insta-sub"><?= $setting['sub-title-text'] ?></div>
-                            <p class="insta-text"><?= $setting['text-text'] ?></p>
+                            <span class="insta-title"><?php echo $setting['title-text'] ?></span>
+                            <div class="insta-sub"><?php echo $setting['sub-title-text'] ?></div>
+                            <p class="insta-text"><?php echo $setting['text-text'] ?></p>
                         </div>
 
                         <?php if (get_option('users_can_register')) { ?>
-                            <a href="<?= wp_registration_url() ?>" class="insta-button"><?= __('Register', 'instalogin') ?></a>
+                            <a href="<?php echo wp_registration_url() ?>" class="insta-button"><?php _e('Register', 'instalogin') ?></a>
                         <?php } ?>
                     </div>
 

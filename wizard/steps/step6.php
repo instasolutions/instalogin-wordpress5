@@ -174,26 +174,26 @@ $email = $user->user_email;
             <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/man.svg" alt="">
             <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/teamwork.svg" alt="">
 
-            <h1 class="blue"><?= __("What do I have to do,<br> to use Instalogin as a registered user on this website?", 'instalogin') ?></h1>
+            <h1 class="blue"><?php _e("What do I have to do,<br> to use Instalogin as a registered user on this website?", 'instalogin') ?></h1>
         </div>
         <div class="letter">B</div>
     </div>
 
 
     <h2 style="text-align: center;" class="green">
-        <?= __("In your user profile use the Instalogin settings to add your smartphone", 'instalogin') ?>
+        <?php _e("In your user profile use the Instalogin settings to add your smartphone", 'instalogin') ?>
     </h2>
 
     <div class="boxes bg-gray-light">
         <div class="bg-gray-light box">
 
             <details open>
-                <summary><?= __("Manage Instalogin Devices", 'instalogin') ?></summary>
+                <summary><?php _e("Manage Instalogin Devices", 'instalogin') ?></summary>
 
                 <div class="grid">
-                    <div class="title blue-dark"><?= __("Device", 'instalogin') ?></div>
-                    <div class="title blue-dark"><?= __("Name", 'instalogin') ?></div>
-                    <div class="title gray-dark"><?= __("Added at", 'instalogin') ?></div>
+                    <div class="title blue-dark"><?php _e("Device", 'instalogin') ?></div>
+                    <div class="title blue-dark"><?php _e("Name", 'instalogin') ?></div>
+                    <div class="title gray-dark"><?php _e("Added at", 'instalogin') ?></div>
                     <div></div>
 
                     <div class="row-el bg-gray"></div>
@@ -224,15 +224,15 @@ $email = $user->user_email;
 
                 <div class="info-row">
                     <a href="<?php echo admin_url('/profile.php') ?>" target="_blank">
-                        <button class="add-button"><?= __("Add login device", 'instalogin') ?></button>
+                        <button class="add-button"><?php _e("Add login device", 'instalogin') ?></button>
                     </a>
-                    <p><?= __("This will send a confirmation mail to your email address.<br>Scan the code with the InstaApp to add the device.", 'instalogin') ?></p>
+                    <p><?php _e("This will send a confirmation mail to your email address.<br>Scan the code with the InstaApp to add the device.", 'instalogin') ?></p>
                 </div>
             </details>
 
         </div>
         <div class="box bg-gray">
-            <h3 style="text-align: center;" class="red"><?= __("Scan the mail and it's all done!", 'instalogin') ?></h3>
+            <h3 style="text-align: center;" class="red"><?php _e("Scan the mail and it's all done!", 'instalogin') ?></h3>
             <img class="img" src="<?php echo plugin_dir_url(__FILE__) ?>../images/icon_wizard-email-finished.svg" alt="">
         </div>
     </div>
