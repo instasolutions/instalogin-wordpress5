@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c81648197c27621fe196995becb0848b",
+    "content-hash": "92bf8980112b2abc6da48d551aa309cd",
     "packages": [
         {
             "name": "instalogin/sdk",
-            "version": "v0.8.2",
+            "version": "v0.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/instasolutions/instalogin-sdk-php.git",
-                "reference": "3575f358f21ab7d00b3bad32eb2c8c1d71030280"
+                "reference": "e2459d9097ff62bc8e3735acd78c8a9f5abec323"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/instasolutions/instalogin-sdk-php/zipball/3575f358f21ab7d00b3bad32eb2c8c1d71030280",
-                "reference": "3575f358f21ab7d00b3bad32eb2c8c1d71030280",
+                "url": "https://api.github.com/repos/instasolutions/instalogin-sdk-php/zipball/e2459d9097ff62bc8e3735acd78c8a9f5abec323",
+                "reference": "e2459d9097ff62bc8e3735acd78c8a9f5abec323",
                 "shasum": ""
             },
             "require": {
@@ -53,9 +53,9 @@
                 "login"
             ],
             "support": {
-                "source": "https://github.com/instasolutions/instalogin-sdk-php/tree/v0.8.2"
+                "source": "https://github.com/instasolutions/instalogin-sdk-php/tree/v0.8.4"
             },
-            "time": "2021-08-27T17:42:40+00:00"
+            "time": "2021-09-26T10:45:42+00:00"
         }
     ],
     "packages-dev": [],
