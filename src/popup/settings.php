@@ -355,7 +355,7 @@ class InstaloginPopupSettings
             <div>
                 <h4>Preview</h4>
                 <button id="refresh" style="margin-bottom: 4px;" class="button"><?= __("Save & Refresh", 'instalogin') ?></button>
-                <iframe id="preview" src="/wp-admin/admin.php?page=popup-preview" title="Popup Preview" width="100%" height="650px" frameborder="0"></iframe>
+                <iframe id="preview" src="<?php echo admin_url('?page=popup-preview') ?>" title="Popup Preview" width="100%" height="650px" frameborder="0"></iframe>
 
 
                 <script>

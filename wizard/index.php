@@ -49,15 +49,15 @@ if (!current_user_can('manage_options')) {
         <footer>
             <div>
                 <button id="back"><?= __("Back", 'instalogin') ?></button>
-                <a href="/wp-admin/admin.php?page=instalogin">
+                <a href="<?php echo admin_url('?page=instalogin') ?>">
                     <button><?= __("Return to Wordpress", 'instalogin') ?></button>
                 </a>
             </div>
 
             <div>
                 <button id="next" class="primary"><?= __("Next", 'instalogin') ?></button>
-                <a href="/wp-admin/admin.php?page=instalogin">
-                    <button id="finish" class="primary hidden"><?= __("Finish", 'instalogin') ?></button>
+                <a href="<?php echo admin_url('?page=instalogin') ?>">
+                    <button id=" finish" class="primary hidden"><?= __("Finish", 'instalogin') ?></button>
                 </a>
             </div>
         </footer>

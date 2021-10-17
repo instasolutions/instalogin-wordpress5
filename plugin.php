@@ -136,7 +136,7 @@ class InstalogIn
         } catch (\Throwable $th) {
             add_action('admin_notices', function () {
                 echo "<div class='error'><b>Instalogin</b> " . __('API key or secret invalid.', 'instalogin') . "</div>";
-                echo "<br>Go to <a href='/wp-admin/admin.php?page=instalogin'>settings</a>.</div>";
+                echo "<br>Go to <a href='" . admin_url('?page=instalogin') . "'>settings</a>.</div>";
             });
         }
     }

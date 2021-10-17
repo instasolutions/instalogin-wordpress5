@@ -14,7 +14,7 @@ class InstaloginSettings
         // Settings link in plugin overview on plugins page
         add_filter('plugin_row_meta', function ($links, $file_name) {
             if ($file_name == 'instalogin/plugin.php') {
-                return array_merge($links, ['settings' => "<a href='/wp-admin/admin.php?page=instalogin'>" . __("Settings", 'instalogin') . "</a>"]);
+                return array_merge($links, ['settings' => "<a href='" . admin_url('?page=instalogin') . "'>" . __("Settings", 'instalogin') . "</a>"]);
             }
             return $links;
         }, 10, 2);
