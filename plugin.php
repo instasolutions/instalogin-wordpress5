@@ -75,6 +75,10 @@ class InstalogIn
         require_once('src/popup/preview.php');
         new InstaloginPopupPreviewPage();
 
+        // wizard
+        require_once('wizard/index.php');
+        new InstaloginWizardPage();
+
         // Run wizard on first activation
         add_action('activated_plugin', function ($plugin) {
             if (strpos($plugin, 'instalogin') !== false) {

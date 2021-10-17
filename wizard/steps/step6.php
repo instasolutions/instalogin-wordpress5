@@ -171,8 +171,8 @@ $email = $user->user_email;
 
     <div class="head-row">
         <div>
-            <img width="70px" src="./images/man.svg" alt="">
-            <img width="70px" src="./images/teamwork.svg" alt="">
+            <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/man.svg" alt="">
+            <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/teamwork.svg" alt="">
 
             <h1 class="blue"><?= __("What do I have to do,<br> to use Instalogin as a registered user on this website?", 'instalogin') ?></h1>
         </div>
@@ -233,7 +233,7 @@ $email = $user->user_email;
         </div>
         <div class="box bg-gray">
             <h3 style="text-align: center;" class="red"><?= __("Scan the mail and it's all done!", 'instalogin') ?></h3>
-            <img class="img" src="./images/icon_wizard-email-finished.svg" alt="">
+            <img class="img" src="<?php echo plugin_dir_url(__FILE__) ?>../images/icon_wizard-email-finished.svg" alt="">
         </div>
     </div>
 </section>

@@ -3,6 +3,18 @@
   src: url("./TTNorms/TTNormsPro-Medium.ttf");
 }
 
+/* hide wp admin menu  */
+.notice {
+  display: none !important;
+}
+
+#wpadminbar,
+#adminmenumain,
+#wpfooter {
+  display: none;
+}
+
+/* wizard */
 body {
   --green: #31aa52;
   --blue: #3e84ad;
