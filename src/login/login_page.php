@@ -16,8 +16,8 @@ class InstaloginLoginPage
 
         add_action('login_footer', function () {
 
-            $action = isset($_GET['action']) ? $_GET['action'] : null;
-            if ($action != null) {
+            // don't show login code when registering or requesting email etc.
+            if (isset($_GET['action'])) {
                 return;
             }
 

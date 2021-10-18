@@ -60,10 +60,7 @@ class InstaloginLoginAPI
                         //     $redirect = '/wp-admin';
                         // }
 
-                        $redirect = get_option('instalogin-api-redirect', '/wp-admin');
-                        if ($redirect == '') {
-                            $redirect = admin_url();
-                        }
+                        $redirect = get_option('instalogin-api-redirect', admin_url());
 
                         if ($is_desktop) {
                             return ['location' => $redirect];

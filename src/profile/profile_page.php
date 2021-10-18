@@ -31,10 +31,10 @@ class InstaloginProfilePage
 
                 <div class="instalogin-info-area">
                     <?php
-                    if (isset($_GET['reset_password']) && $_GET['reset_password'] == 'true') {
+                    if (isset($_GET['reset_password']) && sanitize_key($_GET['reset_password']) == 'true') {
                         wp_set_password(wp_generate_password(64), get_current_user_id()); ?>
                         <script>
-                            window.location = "/wp-login.php";
+                            window.location = '<?php echo wp_login_url() ?>';
                         </script>
                     <?php
                     } ?>
@@ -253,7 +253,7 @@ class InstaloginProfilePage
                     <script>
                         {
 
-                            history.pushState(null, null, '/wp-admin/profile.php');
+                            history.pushState(null, null, '<?php echo admin_url('profile.php') ?>');
 
                             const reset_button = document.querySelector('#instalogin-reset-password');
                             const checkbox = document.querySelector('#instalogin-accept-reset');
@@ -270,7 +270,7 @@ class InstaloginProfilePage
                                     event.preventDefault();
 
                                     if (checkbox.checked) {
-                                        window.location = '/wp-admin/profile.php?reset_password=true'
+                                        window.location = '<?php echo admin_url('profile.php?reset_password=true') ?>'
                                     }
                                 })
                             }
