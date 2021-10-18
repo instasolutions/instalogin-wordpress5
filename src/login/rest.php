@@ -51,6 +51,7 @@ class InstaloginLoginAPI
                     }
 
                     if ($this->client->verifyToken($token)) {
+                        wp_set_current_user($user->id);
                         wp_set_auth_cookie($user->id, true, is_ssl());
 
                         // TODO: Add option redirect to current page?
