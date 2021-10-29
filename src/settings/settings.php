@@ -85,7 +85,7 @@ class InstaloginSettings
                             <div></div>
                             <div></div>
                             <div></div>
-                            <a class="button red" href="<?php echo plugin_dir_url(__FILE__) ?>/../../../wizard/"><?php _e("Reinstall", 'instalogin') ?></a>
+                            <a class="button red" href="<?php echo admin_url('?page=instalogin-wizard') ?>"><?php _e("Reinstall", 'instalogin') ?></a>
                             <div></div>
                             <div><?php _e("Rerun the setup installation wizard.", 'instalogin') ?></div>
                         </div>
