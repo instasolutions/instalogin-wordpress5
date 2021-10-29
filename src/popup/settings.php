@@ -7,7 +7,7 @@ class InstaloginPopupSettings
         $section = 'instalogin-popup';
 
         // Add to wp
-        add_settings_section($section, __('Smartcode', 'instalogin'), function () {
+        add_settings_section($section, __('Smartcode', 'instalogin-me'), function () {
             // Settings Section Title
         }, $page);
 
@@ -16,7 +16,7 @@ class InstaloginPopupSettings
         // Use QR Code or Smart Image for login
         $setting_name = 'instalogin-popup-style';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('', "instalogin"), function () {
+        add_settings_field($setting_name . "_field", __('', 'instalogin-me'), function () {
             $setting_name = 'instalogin-popup-style';
 
             require_once(dirname(__FILE__) . '/default_settings.php');

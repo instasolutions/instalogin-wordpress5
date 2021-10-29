@@ -30,7 +30,7 @@ class InstaloginRegisterMail
                 ));
                 return new WP_REST_Response(['sent_to' => $email]);
             } catch (\Instalogin\Exception\TransportException $e) {
-                return new WP_REST_Response(__('Could not connect to Instalogin service.', 'instalogin') . " " . $e->getMessage(), 500);
+                return new WP_REST_Response(__('Could not connect to Instalogin service.', 'instalogin-me') . " " . $e->getMessage(), 500);
             }
         });
     }

@@ -2,7 +2,7 @@
 // include $_SERVER['DOCUMENT_ROOT'] . "/wp-blog-header.php";
 
 // if (!current_user_can('manage_options')) {
-//     echo __("You must be an administrator to use the wizard.", "instalogin");
+//     echo __('You must be an administrator to use the wizard.', 'instalogin-me');
 //     return;
 // }
 
@@ -16,8 +16,8 @@ class InstaloginWizardPage
         add_action('admin_menu', function () {
             $this->page_suffix = add_submenu_page(
                 null,
-                __('Instalogin Wizard', 'instalogin'),
-                __('Instalogin Wizard', 'instalogin'),
+                __('Instalogin Wizard', 'instalogin-me'),
+                __('Instalogin Wizard', 'instalogin-me'),
                 'manage_options',
                 'instalogin-wizard',
                 [$this, 'render']
@@ -34,8 +34,8 @@ class InstaloginWizardPage
 
                 $user_id = get_current_user_id();
                 $nonce = wp_create_nonce('wp_rest');
-                $license_active = __('LICENSE ACTIVE!', 'instalogin');
-                $activation_failed = __('Activation Failed! Try again.', 'instalogin');
+                $license_active = __('LICENSE ACTIVE!', 'instalogin-me');
+                $activation_failed = __('Activation Failed! Try again.', 'instalogin-me');
 
                 wp_add_inline_script('insta-wizard', "const user_id = '$user_id'; const nonce = '$nonce'; const licence_active_text = '$license_active'; const licence_bad_text = '$activation_failed'; ", 'before');
             }

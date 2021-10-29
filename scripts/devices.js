@@ -41,9 +41,9 @@
       modal.classList.add("instalogin-modal");
       modal.innerHTML = `
         <span class="instalogin-modal-text">
-          ${__("An email will be sent to", "instalogin")} <br>
+          ${__("An email will be sent to", "instalogin-me")} <br>
           <b>${wpv.email}</b>
-          <br>${__("Are you sure?", "instalogin")}
+          <br>${__("Are you sure?", "instalogin-me")}
         </span>  
         <div style="margin-top: 1rem;">
           <button class="instalogin-modal-button no instalogin-device-button">${__(
@@ -213,7 +213,7 @@
 
           if (!clicked_once) {
             clicked_once = true;
-            delete_button.innerText = __("Confirm deletion", "instalogin");
+            delete_button.innerText = __("Confirm deletion", "instalogin-me");
             return;
           }
 
@@ -240,7 +240,7 @@
       device_list.innerHTML = "";
 
       if (devices.length == 0) {
-        device_list.innerHTML = __("No devices connected.", "instalogin");
+        device_list.innerHTML = __("No devices connected.", "instalogin-me");
       }
 
       for (const device of devices) {

@@ -9,8 +9,8 @@ class InstaloginPopupMenuItem
         // Add category to menu builder
         add_filter('customize_nav_menu_available_item_types', function ($item_types) {
             $item_types[] = array(
-                'title'      => __('Instalogin', 'instalogin'),
-                'type_label' => __('Instalogin', 'instalogin'),
+                'title'      => __('Instalogin', 'instalogin-me'),
+                'type_label' => __('Instalogin', 'instalogin-me'),
                 'type'       => 'instalogin_nav',
                 'object'     => 'instalogin',
             );
@@ -27,8 +27,8 @@ class InstaloginPopupMenuItem
 
             $items[] = [
                 'id'         => 'insta-popup',
-                'title'      => __("Instalogin PopUp", 'instalogin'),
-                'type_label' => __('', 'instalogin'),
+                'title'      => __('Instalogin PopUp', 'instalogin-me'),
+                'type_label' => __('', 'instalogin-me'),
                 'url'        => '#',
             ];
 

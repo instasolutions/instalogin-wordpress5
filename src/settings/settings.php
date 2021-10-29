@@ -16,7 +16,7 @@ class InstaloginSettings
         // Settings link in plugin overview on plugins page
         add_filter('plugin_row_meta', function ($links, $file_name) {
             if ($file_name == 'instalogin/plugin.php') {
-                return array_merge($links, ['settings' => "<a href='" . admin_url('?page=instalogin') . "'>" . __("Settings", 'instalogin') . "</a>"]);
+                return array_merge($links, ['settings' => "<a href='" . admin_url('?page=instalogin') . "'>" . __('Settings', 'instalogin-me') . "</a>"]);
             }
             return $links;
         }, 10, 2);
@@ -43,7 +43,7 @@ class InstaloginSettings
 
                 // show settings saved info
                 if (isset($_GET['settings-updated'])) {
-                    add_settings_error('instalogin_messages', 'instalogin_message', __('Settings Saved', 'instalogin'), 'updated');
+                    add_settings_error('instalogin_messages', 'instalogin_message', __('Settings Saved', 'instalogin-me'), 'updated');
                 }
                 // show messages/errors
                 settings_errors('instalogin_messages');
@@ -204,7 +204,7 @@ class InstaloginSettings
                         </div>
 
                         <!-- <?php echo do_settings_sections('instalogin'); ?> -->
-                        <!-- <?php echo submit_button(__('Save Settings', 'instalogin')); ?> -->
+                        <!-- <?php echo submit_button(__('Save Settings', 'instalogin-me')); ?> -->
                         <div class="insta-save-box">
                             <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e('Save Settings', 'instalogin') ?>">
                         </div>
@@ -230,14 +230,14 @@ class InstaloginSettings
         $section = 'instalogin-basic';
 
         // Add to wp
-        add_settings_section($section, __('Basic', 'instalogin'), function () {
+        add_settings_section($section, __('Basic', 'instalogin-me'), function () {
             // Settings Section Title
         }, $page);
 
         // API Enabled
         $setting_name = 'instalogin-api-enabled';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('Enable login via Instalogin', 'instalogin'), function () {
+        add_settings_field($setting_name . "_field", __('Enable login via Instalogin', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-enabled';
             $setting = get_option($setting_name); ?>
             <input type="checkbox" name="<?php echo $setting_name ?>" value="1" <?php echo $setting == 1 ? 'checked' : '' ?> />
@@ -248,7 +248,7 @@ class InstaloginSettings
         // Registration via API enabled
         $setting_name = 'instalogin-api-registration';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('Activation on Register', 'instalogin'), function () {
+        add_settings_field($setting_name . "_field", __('Activation on Register', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-registration';
             $setting = get_option($setting_name); ?>
             <input type="checkbox" name="<?php echo $setting_name ?>" value="1" <?php echo $setting == 1 ? 'checked' : '' ?> />
@@ -259,7 +259,7 @@ class InstaloginSettings
         // Redirection
         $setting_name = 'instalogin-api-redirect';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('Redirect to after login', "instalogin"), function () {
+        add_settings_field($setting_name . "_field", __('Redirect to after login', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-redirect';
             $setting = get_option($setting_name); ?>
             <input type="text" placeholder="/wp-admin" name="<?php echo $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
@@ -273,14 +273,14 @@ class InstaloginSettings
         $section = 'instalogin-api';
 
         // Add to wp
-        add_settings_section($section, __('API', 'instalogin'), function () {
+        add_settings_section($section, __('API', 'instalogin-me'), function () {
             // Settings Section Title
         }, $page);
 
         // API Secret
         $setting_name = 'instalogin-api-key';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('API Key', "instalogin"), function () {
+        add_settings_field($setting_name . "_field", __('API Key', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-key';
             $setting = get_option($setting_name); ?>
             <input type="text" id="<?php echo $setting_name ?>" name="<?php echo $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
@@ -291,7 +291,7 @@ class InstaloginSettings
         // API Secret
         $setting_name = 'instalogin-api-secret';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('API Secret', "instalogin"), function () {
+        add_settings_field($setting_name . "_field", __('API Secret', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-secret';
             $setting = get_option($setting_name); ?>
             <input type="password" id="<?php echo $setting_name ?>" name="<?php echo $setting_name ?>" value="<?php echo isset($setting) ? esc_attr($setting) : ''; ?>" />
@@ -305,14 +305,14 @@ class InstaloginSettings
         $section = 'instalogin-smartcode';
 
         // Add to wp
-        add_settings_section($section, __('Smartcode', 'instalogin'), function () {
+        add_settings_section($section, __('Smartcode', 'instalogin-me'), function () {
             // Settings Section Title
         }, $page);
 
         // Use QR Code or Smart Image for login
         $setting_name = 'instalogin-api-type';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('Display Type', "instalogin"), function () {
+        add_settings_field($setting_name . "_field", __('Display Type', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-type';
             $setting = get_option($setting_name); ?>
             <select name="instalogin-api-type">

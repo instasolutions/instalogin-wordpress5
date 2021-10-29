@@ -20,7 +20,7 @@ class InstaloginSettingsAPI
                 'callback' => function ($request) {
 
                     if (!is_user_logged_in() || !current_user_can('manage_options')) {
-                        return new WP_REST_Response(__('You do not have the required permissions to do this!', 'instalogin'), 400);
+                        return new WP_REST_Response(__('You do not have the required permissions to do this!', 'instalogin-me'), 400);
                     }
 
                     // body params
@@ -55,12 +55,12 @@ class InstaloginSettingsAPI
 
                         // get logged in user
                         if (!is_user_logged_in()) {
-                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin'), 403);
+                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin-me'), 403);
                         }
 
                         // user is admin
                         if (!current_user_can('manage_options')) {
-                            return new WP_REST_Response(__('You must be an administrator to perform this action.', 'instalogin'), 403);
+                            return new WP_REST_Response(__('You must be an administrator to perform this action.', 'instalogin-me'), 403);
                         }
 
                         // body params

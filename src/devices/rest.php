@@ -29,12 +29,12 @@ class InstalogInDevicesAPI
                     'callback' => function ($request) {
                         // send error if instalogin client could not be initialized
                         if ($this->client == null) {
-                            return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin'), 500);
+                            return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin-me'), 500);
                         }
 
                         // get logged in user
                         if (!is_user_logged_in()) {
-                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin'), 403);
+                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin-me'), 403);
                         }
 
                         $user_id = null;
@@ -49,7 +49,7 @@ class InstalogInDevicesAPI
                         // check plugin settings
                         $api_enabled = get_option('instalogin-api-enabled') == 1;
                         if (!$api_enabled) {
-                            return new WP_REST_Response(__('Instalogin API has been disabled by an administrator.', 'instalogin'), 500);
+                            return new WP_REST_Response(__('Instalogin API has been disabled by an administrator.', 'instalogin-me'), 500);
                         }
 
                         // send mail
@@ -59,7 +59,7 @@ class InstalogInDevicesAPI
                             ));
                             return new WP_REST_Response(['sent_to' => $email]);
                         } catch (\Instalogin\Exception\TransportException $e) {
-                            return new WP_REST_Response(__('Could not connect to Instalogin service.', 'instalogin') . " " . $e->getMessage(), 500);
+                            return new WP_REST_Response(__('Could not connect to Instalogin service.', 'instalogin-me') . " " . $e->getMessage(), 500);
                         }
                     }
                 ]
@@ -78,13 +78,13 @@ class InstalogInDevicesAPI
                     'callback' => function ($request) {
                         // send error if instalogin client could not be initialized
                         if ($this->client == null) {
-                            return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin'), 500);
+                            return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin-me'), 500);
                         }
 
                         // get logged in user
 
                         if (!is_user_logged_in()) {
-                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin'), 403);
+                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin-me'), 403);
                         }
 
                         $user_id = get_current_user_id();
@@ -130,13 +130,13 @@ class InstalogInDevicesAPI
                     'callback' => function ($request) {
                         // send error if instalogin client could not be initialized
                         if ($this->client == null) {
-                            return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin'), 500);
+                            return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin-me'), 500);
                         }
 
                         // get logged in user
 
                         if (!is_user_logged_in()) {
-                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin'), 403);
+                            return new WP_REST_Response(__('You must be logged in to perform this action.', 'instalogin-me'), 403);
                         }
 
                         $user_id = get_current_user_id();
@@ -147,7 +147,7 @@ class InstalogInDevicesAPI
                         $device_id = $request['device_id'];
 
                         if ($device_id == null || $device_id == '') {
-                            return new WP_REST_Response(__('Missing device_id parameter in body.', 'instalogin'), 400);
+                            return new WP_REST_Response(__('Missing device_id parameter in body.', 'instalogin-me'), 400);
                         }
 
                         // Build readable device array
@@ -167,7 +167,7 @@ class InstalogInDevicesAPI
                             if ($device_found) {
                                 $this->client->deleteToken($device_id);
                             } else {
-                                return new WP_REST_Response(__('Device id does not belong to this identity.', 'instalogin'), 400);
+                                return new WP_REST_Response(__('Device id does not belong to this identity.', 'instalogin-me'), 400);
                             }
 
                             return new WP_REST_Response(true);

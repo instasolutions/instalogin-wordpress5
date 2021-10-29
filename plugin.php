@@ -10,7 +10,7 @@
  * Version: 0.10.0
  * Licence: GPL v2 or later
  * Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: instalogin
+ * Text Domain: instalogin-me
  * Domain Path: /languages
  */
 
@@ -139,7 +139,7 @@ class InstalogIn
             $this->client = new \Instalogin\Client($api_key, $api_secret);
         } catch (\Throwable $th) {
             add_action('admin_notices', function () {
-                echo "<div class='error'><b>Instalogin</b> " . __('API key or secret invalid.', 'instalogin') . "</div>";
+                echo "<div class='error'><b>Instalogin</b> " . __('API key or secret invalid.', 'instalogin-me') . "</div>";
                 echo "<br>Go to <a href='" . admin_url('?page=instalogin') . "'>settings</a>.</div>";
             });
         }

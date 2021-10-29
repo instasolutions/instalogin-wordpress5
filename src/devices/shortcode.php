@@ -20,7 +20,7 @@ class InstaloginDevicesShortcode
             $attributes = shortcode_atts([], $attributes, 'instalogin-devices');
 
             if (!is_user_logged_in()) {
-                return '<div>' . __('You must be logged in to manage devices.', 'instalogin') . '</div>';
+                return '<div>' . __('You must be logged in to manage devices.', 'instalogin-me') . '</div>';
             }
 
             // SCRIPTS

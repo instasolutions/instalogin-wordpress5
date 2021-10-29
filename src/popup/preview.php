@@ -7,8 +7,8 @@ class InstaloginPopupPreviewPage
         add_action('admin_menu', function () {
             add_submenu_page(
                 null,
-                __('PopUp Preview', 'instalogin'),
-                __('PopUp Preview', 'instalogin'),
+                __('PopUp Preview', 'instalogin-me'),
+                __('PopUp Preview', 'instalogin-me'),
                 'manage_options',
                 'popup-preview',
                 function () {

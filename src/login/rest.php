@@ -21,7 +21,7 @@ class InstaloginLoginAPI
                     // API Has been disabled in backend
                     $api_enabled = get_option('instalogin-api-enabled');
                     if ($api_enabled != 1) {
-                        return new WP_Error('disabled', __('Login via Instalogin has been disabled by an administrator.', 'instalogin'));
+                        return new WP_Error('disabled', __('Login via Instalogin has been disabled by an administrator.', 'instalogin-me'));
                     }
 
                     $is_desktop = false;
@@ -47,7 +47,7 @@ class InstaloginLoginAPI
                     $user = get_user_by('email', $email);
 
                     if ($user == false) {
-                        return new WP_REST_Response(__('Could not find user presented by token.', 'instalogin'), 403);
+                        return new WP_REST_Response(__('Could not find user presented by token.', 'instalogin-me'), 403);
                     }
 
                     if ($this->client->verifyToken($token)) {
@@ -70,7 +70,7 @@ class InstaloginLoginAPI
                         exit;
                     }
 
-                    return new WP_REST_Response(__('Could not verify token.', 'instalogin'), 403);
+                    return new WP_REST_Response(__('Could not verify token.', 'instalogin-me'), 403);
                 }
             ]);
         });

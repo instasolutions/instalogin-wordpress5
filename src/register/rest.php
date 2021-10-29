@@ -21,13 +21,13 @@ class InstaloginRegisterAPI
                     $api_enabled = get_option('instalogin-api-enabled') == 1;
                     $registration_enabled = get_option('instalogin-api-registration') == 1;
                     if (!$api_enabled || !$registration_enabled) {
-                        return new WP_Error('disabled', __('Registration via Instalogin has been disabled by an administrator.', 'instalogin'));
+                        return new WP_Error('disabled', __('Registration via Instalogin has been disabled by an administrator.', 'instalogin-me'));
                     }
 
                     $client = $this->client;
                     // Check if API set up correctly
                     if ($client == null) {
-                        return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin'), 500);
+                        return new WP_REST_Response(__('Sorry, the instalogin API data is incorrect!', 'instalogin-me'), 500);
                     }
 
                     // body params
@@ -35,7 +35,7 @@ class InstaloginRegisterAPI
                     $email = $request['email'];
 
                     if ($email == null || !is_email($email)) {
-                        return new WP_REST_Response(__('Sorry, email missing or invalid!', 'instalogin'), 400);
+                        return new WP_REST_Response(__('Sorry, email missing or invalid!', 'instalogin-me'), 400);
                     }
 
                     if ($username == null) {
@@ -56,7 +56,7 @@ class InstaloginRegisterAPI
                     //     // Delete user if we could not deliver the activation email.
                     //     wp_delete_user($result);
 
-                    //     return new WP_REST_Response(__('Sorry, could not connect to instalogin servers! Account could not be created.', 'instalogin'), 500);
+                    //     return new WP_REST_Response(__('Sorry, could not connect to instalogin servers! Account could not be created.', 'instalogin-me'), 500);
                     // }
 
                     return;
