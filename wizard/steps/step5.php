@@ -131,7 +131,7 @@ $email = $user->user_email;
             </p>
             <div>
                 <span><?php _e("Email was sent to:", 'instalogin') ?></span>
-                <span class="email"><?php echo $email ?></span>
+                <span class="email"><?php echo esc_html($email) ?></span>
             </div>
 
             <div class="img-border">
