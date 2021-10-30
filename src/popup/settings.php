@@ -16,7 +16,7 @@ class InstaloginPopupSettings
         // Use QR Code or Smart Image for login
         $setting_name = 'instalogin-popup-style';
         register_setting($page, $setting_name);
-        add_settings_field($setting_name . "_field", __('', 'instalogin-me'), function () {
+        add_settings_field($setting_name . "_field", '', function () {
             $setting_name = 'instalogin-popup-style';
 
             require_once(dirname(__FILE__) . '/default_settings.php');

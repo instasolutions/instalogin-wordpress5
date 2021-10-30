@@ -28,7 +28,7 @@ class InstaloginPopupMenuItem
             $items[] = [
                 'id'         => 'insta-popup',
                 'title'      => __('Instalogin PopUp', 'instalogin-me'),
-                'type_label' => __('', 'instalogin-me'),
+                'type_label' => '',
                 'url'        => '#',
             ];
 
