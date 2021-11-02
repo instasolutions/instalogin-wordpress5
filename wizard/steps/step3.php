@@ -139,7 +139,7 @@
 
     <div class="head-row">
         <div>
-            <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/man.svg" alt="">
+            <img width="70px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/man.svg" alt="">
             <h1 class="red"><?php _e("Install Instalogin on<br> your website", 'instalogin') ?></h1>
         </div>
         <div class="letter">A</div>

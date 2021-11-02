@@ -171,8 +171,8 @@ $email = $user->user_email;
 
     <div class="head-row">
         <div>
-            <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/man.svg" alt="">
-            <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/teamwork.svg" alt="">
+            <img width="70px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/man.svg" alt="">
+            <img width="70px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/teamwork.svg" alt="">
 
             <h1 class="blue"><?php _e("What do I have to do,<br> to use Instalogin as a registered user on this website?", 'instalogin') ?></h1>
         </div>
@@ -223,7 +223,7 @@ $email = $user->user_email;
                 </div>
 
                 <div class="info-row">
-                    <a href="<?php echo admin_url('/profile.php') ?>" target="_blank">
+                    <a href="<?php echo esc_attr(admin_url('/profile.php')) ?>" target="_blank">
                         <button class="add-button"><?php _e("Add login device", 'instalogin') ?></button>
                     </a>
                     <p><?php _e("This will send a confirmation mail to your email address.<br>Scan the code with the InstaApp to add the device.", 'instalogin') ?></p>
@@ -233,7 +233,7 @@ $email = $user->user_email;
         </div>
         <div class="box bg-gray">
             <h3 style="text-align: center;" class="red"><?php _e("Scan the mail and it's all done!", 'instalogin') ?></h3>
-            <img class="img" src="<?php echo plugin_dir_url(__FILE__) ?>../images/icon_wizard-email-finished.svg" alt="">
+            <img class="img" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/icon_wizard-email-finished.svg" alt="">
         </div>
     </div>
 </section>

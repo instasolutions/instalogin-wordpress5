@@ -27,14 +27,14 @@ class InstaloginProfilePage
             ]); ?>
             <div>
 
-                <?php echo settings_header() ?>
+                <?php echo esc_html(settings_header()) ?>
 
                 <div class="instalogin-info-area">
                     <?php
                     if (isset($_GET['reset_password']) && sanitize_key($_GET['reset_password']) == 'true') {
                         wp_set_password(wp_generate_password(64), get_current_user_id()); ?>
                         <script>
-                            window.location = '<?php echo wp_login_url() ?>';
+                            window.location = '<?php echo esc_html(wp_login_url()) ?>';
                         </script>
                     <?php
                     } ?>
@@ -210,9 +210,9 @@ class InstaloginProfilePage
                     <div class="insta-box">
                         <h2 class="insta-head-green"><?php _e("How to connect a device", 'instalogin') ?></h2>
                         <div style="display: flex;">
-                            <img style="margin-right: 2rem;" src="<?php echo plugin_dir_url(__FILE__) . "../../img/connect_device.svg" ?>" alt="">
+                            <img style="margin-right: 2rem;" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) . "../../img/connect_device.svg" ?>" alt="">
                             <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-                                <img src="<?php echo plugin_dir_url(__FILE__) . "../../img/woman.svg" ?>" alt="">
+                                <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) . "../../img/woman.svg" ?>" alt="">
 
                                 <div class="insta-text-green">
                                     <?php _e("You did it! Passwords are no more! ", 'instalogin') ?>
@@ -253,7 +253,7 @@ class InstaloginProfilePage
                     <script>
                         {
 
-                            history.pushState(null, null, '<?php echo admin_url('profile.php') ?>');
+                            history.pushState(null, null, '<?php echo esc_html(admin_url('profile.php')) ?>');
 
                             const reset_button = document.querySelector('#instalogin-reset-password');
                             const checkbox = document.querySelector('#instalogin-accept-reset');
@@ -270,7 +270,7 @@ class InstaloginProfilePage
                                     event.preventDefault();
 
                                     if (checkbox.checked) {
-                                        window.location = '<?php echo admin_url('profile.php?reset_password=true') ?>'
+                                        window.location = '<?php echo esc_html(admin_url('profile.php?reset_password=true')) ?>'
                                     }
                                 })
                             }

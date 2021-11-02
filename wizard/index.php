@@ -1,11 +1,4 @@
 <?php
-// include $_SERVER['DOCUMENT_ROOT'] . "/wp-blog-header.php";
-
-// if (!current_user_can('manage_options')) {
-//     echo __('You must be an administrator to use the wizard.', 'instalogin-me');
-//     return;
-// }
-
 class InstaloginWizardPage
 {
 
@@ -59,7 +52,7 @@ class InstaloginWizardPage
                     <div class="step-label">5. <?php _e("Connect Devices", 'instalogin') ?></div>
                 </nav>
                 <div>
-                    <img src="<?php echo plugin_dir_url(__FILE__) ?>images/Instalogin-horiz_Blue-Grey.svg" alt="">
+                    <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>images/Instalogin-horiz_Blue-Grey.svg" alt="">
                 </div>
             </header>
 
@@ -75,14 +68,14 @@ class InstaloginWizardPage
             <footer>
                 <div>
                     <button id="back"><?php _e("Back", 'instalogin') ?></button>
-                    <a href="<?php echo admin_url('?page=instalogin') ?>">
+                    <a href="<?php echo esc_attr(admin_url('?page=instalogin')) ?>">
                         <button><?php _e("Return to Wordpress", 'instalogin') ?></button>
                     </a>
                 </div>
 
                 <div>
                     <button id="next" class="primary"><?php _e("Next", 'instalogin') ?></button>
-                    <a href="<?php echo admin_url('?page=instalogin') ?>">
+                    <a href="<?php echo esc_attr(admin_url('?page=instalogin')) ?>">
                         <button id="finish" class="primary hidden"><?php _e("Finish", 'instalogin') ?></button>
                     </a>
                 </div>

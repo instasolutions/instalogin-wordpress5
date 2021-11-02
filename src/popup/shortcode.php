@@ -52,7 +52,7 @@ class InstaloginPopupShortcode
                 background: <?php echo esc_attr($setting['qr-bg']) ?>;
                 border-radius: 20px;
                 /* border:; */
-                box-shadow: <?php echo $setting['qr-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
+                box-shadow: <?php echo esc_html($setting['qr-shadow']) == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
             }
 
             .insta-popup-container .instalogin-popup .instalogin-container {
@@ -99,7 +99,7 @@ class InstaloginPopupShortcode
                 z-index: 1000;
 
                 padding: 1.5rem;
-                box-shadow: <?php echo $setting['box-shadow'] == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
+                box-shadow: <?php echo esc_html($setting['box-shadow']) == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
 
                 border-radius: <?php echo esc_attr($setting['box-border-radius']) ?>;
 
@@ -232,7 +232,7 @@ class InstaloginPopupShortcode
         if (is_user_logged_in() && $preview == false) {
         ?>
             <div style="height: 100%; display: flex; align-items: center;">
-                <a class="insta-popup-logout" href="<?php echo wp_logout_url() ?>">
+                <a class="insta-popup-logout" href="<?php echo esc_attr(wp_logout_url()) ?>">
                     <?php if ($setting['login-type'] == 'text') { ?>
                         <button class="insta-popup-button">
                             <?php echo esc_attr($setting['login-out-text']) ?>
@@ -292,7 +292,7 @@ class InstaloginPopupShortcode
                 <?php } ?>
                 <div class="insta-background"></div>
                 <div class="insta-popup">
-                    <div class="instalogin-popup" id="<?php echo $container_id ?>"></div>
+                    <div class="instalogin-popup" id="<?php echo esc_attr($container_id) ?>"></div>
                     <div class="popup-body">
                         <div>
                             <span class="insta-title"><?php echo esc_html($setting['title-text']) ?></span>
@@ -301,7 +301,7 @@ class InstaloginPopupShortcode
                         </div>
 
                         <?php if (get_option('users_can_register')) { ?>
-                            <a href="<?php echo wp_registration_url() ?>" class="insta-button"><?php _e('Register', 'instalogin') ?></a>
+                            <a href="<?php echo esc_attr(wp_registration_url()) ?>" class="insta-button"><?php _e('Register', 'instalogin') ?></a>
                         <?php } ?>
                     </div>
 

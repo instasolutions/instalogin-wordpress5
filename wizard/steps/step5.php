@@ -111,8 +111,8 @@ $email = $user->user_email;
 
     <div class="head-row">
         <div>
-            <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/man.svg" alt="">
-            <img width="70px" src="<?php echo plugin_dir_url(__FILE__) ?>../images/teamwork.svg" alt="">
+            <img width="70px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/man.svg" alt="">
+            <img width="70px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/teamwork.svg" alt="">
 
             <h1 class="blue"><?php _e("As user or admin:<br>Connect your smartphone with Instalogin.", 'instalogin') ?></h1>
         </div>
@@ -135,19 +135,19 @@ $email = $user->user_email;
             </div>
 
             <div class="img-border">
-                <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/App Icon.svg" alt="">
-                <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/Icon awesome-arrow-right.svg" alt="">
+                <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/App Icon.svg" alt="">
+                <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/Icon awesome-arrow-right.svg" alt="">
                 <a rel="noopener" target="_blank" href="https://apps.apple.com/app/instalog-in/id1097751906">
-                    <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/Batch-AppStore.svg" alt="">
+                    <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/Batch-AppStore.svg" alt="">
                 </a>
                 <a rel="noopener" target="_blank" href="https://play.google.com/store/apps/details?id=com.instaholding.instalog">
-                    <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/Batch-PlayStore.svg" alt="">
+                    <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/Batch-PlayStore.svg" alt="">
                 </a>
             </div>
             <!-- <img class="img-border" src="./images/icon_donwload-appstore.svg" alt=""> -->
         </div>
         <div class="box bg-gray-light">
-            <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/icon_wizard-email.svg" alt="">
+            <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/icon_wizard-email.svg" alt="">
         </div>
     </div>
 </section>

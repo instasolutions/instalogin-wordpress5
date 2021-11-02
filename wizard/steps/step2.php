@@ -79,7 +79,7 @@
         <div class="box">
             <div>
                 <div class="row">
-                    <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/man.svg" alt="">
+                    <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/man.svg" alt="">
                     <h3 class="red"><?php _e("Website Owners & Admins", 'instalogin') ?></h3>
                 </div>
 
@@ -91,7 +91,7 @@
         <div class="box">
             <div>
                 <div class="row">
-                    <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/teamwork.svg" alt="">
+                    <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/teamwork.svg" alt="">
                     <h3><?php _e("Website Users", 'instalogin') ?></h3>
                 </div>
                 <h2><?php _e("As admin or customer:<br>Connect your smartphone to enable login.", 'instalogin') ?></h2>

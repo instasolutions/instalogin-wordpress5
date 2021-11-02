@@ -7,7 +7,7 @@
  * Author: Christian Schemoschek
  * Author URI: https://instalogin.me
  * Requires at least: 5.0
- * Version: 0.10.1
+ * Version: 0.10.2
  * Licence: GPL v2 or later
  * Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: instalogin-me
@@ -126,7 +126,7 @@ class InstalogIn
                         <?php _e('Please finish the setup: ', 'instalogin') ?><br>
                     </p>
                     <p>
-                        <a class="button" href="<?php echo plugin_dir_url(__FILE__) ?>/wizard">Run Installation Wizard</a>
+                        <a class="button" href="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>/wizard">Run Installation Wizard</a>
                     </p>
                 </div>
 <?php
@@ -140,7 +140,7 @@ class InstalogIn
         } catch (\Throwable $th) {
             add_action('admin_notices', function () {
                 echo "<div class='error'><b>Instalogin</b> " . __('API key or secret invalid.', 'instalogin-me') . "</div>";
-                echo "<br>Go to <a href='" . admin_url('?page=instalogin') . "'>settings</a>.</div>";
+                echo "<br>Go to <a href='" . esc_attr(admin_url('?page=instalogin')) . "'>settings</a>.</div>";
             });
         }
     }

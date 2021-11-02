@@ -41,7 +41,7 @@
 
 <section class="step1">
     <div>
-        <img src="<?php echo plugin_dir_url(__FILE__) ?>../images/monitor-welcome.png" alt="">
+        <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/monitor-welcome.png" alt="">
     </div>
     <div class="max-width">
         <h1><?php _e("Welcome to Instalogin", 'instalogin') ?></h1>

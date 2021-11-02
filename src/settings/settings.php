@@ -85,7 +85,7 @@ class InstaloginSettings
                             <div></div>
                             <div></div>
                             <div></div>
-                            <a class="button red" href="<?php echo admin_url('?page=instalogin-wizard') ?>"><?php _e("Reinstall", 'instalogin') ?></a>
+                            <a class="button red" href="<?php echo esc_attr(admin_url('?page=instalogin-wizard')) ?>"><?php _e("Reinstall", 'instalogin') ?></a>
                             <div></div>
                             <div><?php _e("Rerun the setup installation wizard.", 'instalogin') ?></div>
                         </div>
@@ -134,7 +134,7 @@ class InstaloginSettings
                                                         }),
                                                         headers: {
                                                             "Content-Type": "application/json",
-                                                            "X-WP-NONCE": "<?php echo wp_create_nonce('wp_rest') ?>",
+                                                            "X-WP-NONCE": "<?php echo esc_html(wp_create_nonce('wp_rest')) ?>",
                                                         },
                                                     }
                                                 );
@@ -203,8 +203,6 @@ class InstaloginSettings
                             </div>
                         </div>
 
-                        <!-- <?php echo do_settings_sections('instalogin'); ?> -->
-                        <!-- <?php echo submit_button(__('Save Settings', 'instalogin-me')); ?> -->
                         <div class="insta-save-box">
                             <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e('Save Settings', 'instalogin') ?>">
                         </div>
@@ -240,7 +238,7 @@ class InstaloginSettings
         add_settings_field($setting_name . "_field", __('Enable login via Instalogin', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-enabled';
             $setting = get_option($setting_name); ?>
-            <input type="checkbox" name="<?php echo $setting_name ?>" value="1" <?php echo esc_attr($setting) == 1 ? 'checked' : '' ?> />
+            <input type="checkbox" name="<?php echo esc_attr($setting_name) ?>" value="1" <?php echo esc_attr($setting) == 1 ? 'checked' : '' ?> />
             <div class="insta-info"><?php _e("Enable or disable all Instalogin methods. Users may not use Instalogin to sign in to or to create new accounts.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
@@ -251,7 +249,7 @@ class InstaloginSettings
         add_settings_field($setting_name . "_field", __('Activation on Register', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-registration';
             $setting = get_option($setting_name); ?>
-            <input type="checkbox" name="<?php echo $setting_name ?>" value="1" <?php echo esc_attr($setting) == 1 ? 'checked' : '' ?> />
+            <input type="checkbox" name="<?php echo esc_attr($setting_name) ?>" value="1" <?php echo esc_attr($setting) == 1 ? 'checked' : '' ?> />
             <div class="insta-info"><?php _e("An Instalogin mail will be sent to every new user upon registration.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
@@ -262,7 +260,7 @@ class InstaloginSettings
         add_settings_field($setting_name . "_field", __('Redirect to after login', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-redirect';
             $setting = get_option($setting_name); ?>
-            <input type="text" placeholder="/wp-admin" name="<?php echo $setting_name ?>" value="<?php echo esc_attr($setting); ?>" />
+            <input type="text" placeholder="/wp-admin" name="<?php echo esc_attr($setting_name) ?>" value="<?php echo esc_attr($setting); ?>" />
             <div class="insta-info"><?php _e("Decide to which page users should be redirected to after successfully logging in. '/wp-admin' is the common directory.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
@@ -283,7 +281,7 @@ class InstaloginSettings
         add_settings_field($setting_name . "_field", __('API Key', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-key';
             $setting = get_option($setting_name); ?>
-            <input type="text" id="<?php echo $setting_name ?>" name="<?php echo $setting_name ?>" value="<?php echo esc_attr($setting); ?>" />
+            <input type="text" id="<?php echo esc_attr($setting_name) ?>" name="<?php echo esc_attr($setting_name) ?>" value="<?php echo esc_attr($setting); ?>" />
             <div class="insta-info"><?php _e("Your public API key provided by Instalogin.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
@@ -294,7 +292,7 @@ class InstaloginSettings
         add_settings_field($setting_name . "_field", __('API Secret', 'instalogin-me'), function () {
             $setting_name = 'instalogin-api-secret';
             $setting = get_option($setting_name); ?>
-            <input type="password" id="<?php echo $setting_name ?>" name="<?php echo $setting_name ?>" value="<?php echo esc_attr($setting); ?>" />
+            <input type="password" id="<?php echo esc_attr($setting_name) ?>" name="<?php echo esc_attr($setting_name) ?>" value="<?php echo esc_attr($setting); ?>" />
             <div class="insta-info"><?php _e("Your private secret provided by Instalogin.", 'instalogin') ?></div>
         <?php
         }, $page, $section);
@@ -326,11 +324,11 @@ class InstaloginSettings
             <div style="grid-column: span 3; display: flex;">
                 <div>
                     <h5 style="text-align: center;">InstaCode</h5>
-                    <img src="<?php echo plugin_dir_url(__FILE__) ?>../../img/qr.png" alt="">
+                    <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../../img/qr.png" alt="">
                 </div>
                 <div>
                     <h5 style="text-align: center;">SmartImage</h5>
-                    <img src="<?php echo plugin_dir_url(__FILE__) ?>../../img/si.png" alt="">
+                    <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../../img/si.png" alt="">
                 </div>
             </div>
 

@@ -47,16 +47,16 @@ class InstaloginLoginShortcode
             ob_start(); ?>
             <style>
                 .instalogin-login .instalogin-container {
-                    border: <?php echo $border ? ' 1px solid rgb(200, 200, 200);' : ' none !important;' ?>;
-                    width: <?php echo $size ?>;
+                    border: <?php echo esc_html($border) ? ' 1px solid rgb(200, 200, 200);' : ' none !important;' ?>;
+                    width: <?php echo esc_html($size) ?>;
                 }
 
                 .instalogin-login .instalogin-image {
-                    width: <?php echo $size ?>;
+                    width: <?php echo esc_html($size) ?>;
                 }
             </style>
 
-            <div class="instalogin-login" id="<?php echo $container_id ?>"></div>
+            <div class="instalogin-login" id="<?php echo esc_attr($container_id) ?>"></div>
 <?php
 
             return ob_get_clean();

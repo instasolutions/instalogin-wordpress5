@@ -48,7 +48,7 @@ class InstaloginRegisterShortcode
                 </label>
 
                 <?php if ($show_button) { ?>
-                    <input class="instalogin-submit" type="submit" value="<?php echo $button_text ?>">
+                    <input class="instalogin-submit" type="submit" value="<?php echo esc_attr($button_text) ?>">
                 <?php } ?>
 
                 <p class="instalogin-error"></p>
