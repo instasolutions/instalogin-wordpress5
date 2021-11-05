@@ -7,7 +7,7 @@
  * Author: Christian Schemoschek
  * Author URI: https://instalogin.me
  * Requires at least: 5.0
- * Version: 0.10.2
+ * Version: 0.10.3
  * Licence: GPL v2 or later
  * Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: instalogin-me
@@ -91,7 +91,7 @@ class InstalogIn
         add_action('admin_init', function () {
             if (get_option('instalogin-redirect-wizard', false)) {
                 delete_option('instalogin-redirect-wizard');
-                wp_redirect(plugin_dir_url(__FILE__) . "wizard/");
+                wp_redirect(admin_url('?page=instalogin-wizard'));
             }
         });
 
