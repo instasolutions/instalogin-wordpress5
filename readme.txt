@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Instalogin ===
 Contributors: allbutsocial
 Tags: login, signin, authentication, two-factor-authentication
 Requires at least: 5.0
