@@ -27,7 +27,7 @@ class InstaloginProfilePage
             ]); ?>
             <div>
 
-                <?php echo esc_html(settings_header()) ?>
+                <?php echo settings_header() ?>
 
                 <div class="instalogin-info-area">
                     <?php
