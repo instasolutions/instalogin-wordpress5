@@ -126,7 +126,7 @@ class InstaloginSettings
                                                 button.disabled = true;
 
                                                 const response = await fetch(
-                                                    "/index.php/wp-json/instalogin/v1/verify_credentials", {
+                                                    insta_api + "verify_credentials", {
                                                         method: "post",
                                                         body: JSON.stringify({
                                                             key: key.value,
