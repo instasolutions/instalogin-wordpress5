@@ -132,7 +132,7 @@ class InstalogIn
                         <?php _e('Please finish the setup: ', 'instalogin') ?><br>
                     </p>
                     <p>
-                        <a class="button" href="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>/wizard">Run Installation Wizard</a>
+                        <a class="button" href="<?php echo esc_attr(admin_url('?page=instalogin-wizard')) ?>">Run Installation Wizard</a>
                     </p>
                 </div>
 <?php
