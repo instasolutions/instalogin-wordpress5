@@ -324,7 +324,7 @@
 
   // API call to fetch enabled devices
   async function fetch_devices() {
-    const response = await fetch(insta_api + "devices?wp_nonce", {
+    const response = await fetch(insta_api + "devices", {
       method: "get",
       headers: { "X-WP-NONCE": wpv.insta_nonce },
     });
