@@ -101,7 +101,7 @@ class InstalogIn
             wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
 
             wp_enqueue_script('insta_global_scripts', plugin_dir_url(__FILE__) . "scripts/global.js", [], '0.0.1', false);
-            wp_add_inline_script('insta_global_scripts', "const insta_api = " . rest_url('instalogin/v1/'), 'before');
+            wp_add_inline_script('insta_global_scripts', "const insta_api = '" . rest_url('instalogin/v1/') . "'", 'before');
         });
 
         add_action('admin_enqueue_scripts', function ($hook) {

@@ -11,6 +11,10 @@ class InstaloginLoginPage
         }
 
         add_action('login_head', function () {
+            // load global variables
+            wp_enqueue_script('insta_global_scripts', plugin_dir_url(__FILE__) . "scripts/global.js", [], '0.0.1', false);
+            wp_add_inline_script('insta_global_scripts', "const insta_api = '" . rest_url('instalogin/v1/') . "'", 'before');
+
             wp_enqueue_style('instalogin-login', plugin_dir_url(__FILE__) . '../../style/login.css?v=3');
         });
 
