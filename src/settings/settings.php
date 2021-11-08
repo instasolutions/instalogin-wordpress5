@@ -157,7 +157,7 @@ class InstaloginSettings
                             <div></div>
                             <div></div>
                             <p>
-                                <?php _e("If you do not have the necessary credentials, you may request them <a href='https://instalogin.me/de/keysecret/' target='_blank' rel='noopener'>here!</a>", 'instalogin') ?>
+                                <?php _e("If you do not have the necessary credentials, you may request them <a href='https://instalogin.me/keysecret/' target='_blank' rel='noopener'>here!</a>", 'instalogin') ?>
                             </p>
                         </div>
 

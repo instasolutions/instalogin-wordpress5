@@ -170,7 +170,7 @@
 
                 <p class="gray-dark"><?php _e("If you do not have a license you may place your order here:", 'instalogin') ?></p>
                 <div>
-                    <a href="https://instalogin.me/key_secret/" rel="noopener" target="_blank">
+                    <a href="https://instalogin.me/keysecret/" rel="noopener" target="_blank">
                         <button class="order"><?php _e("Order License", 'instalogin') ?></button>
                     </a>
                 </div>
