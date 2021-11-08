@@ -13,7 +13,7 @@ async function send_mail() {
     return;
   }
 
-  const response = await fetch("/index.php/wp-json/instalogin/v1/device/add", {
+  const response = await fetch(insta_api + "device/add", {
     method: "post",
     body: JSON.stringify({ user_id }),
     headers: {
@@ -36,22 +36,19 @@ async function save_settings() {
   const redirect = document.querySelector("#redirect").value;
   const code_type = document.querySelector("#code_type").value;
 
-  const response = await fetch(
-    "/index.php/wp-json/instalogin/v1/wizard/settings",
-    {
-      method: "post",
-      body: JSON.stringify({
-        enable_instalogin,
-        enable_registration,
-        code_type,
-        redirect,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        "X-WP-NONCE": nonce,
-      },
-    }
-  );
+  const response = await fetch(insta_api + "wizard/settings", {
+    method: "post",
+    body: JSON.stringify({
+      enable_instalogin,
+      enable_registration,
+      code_type,
+      redirect,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+      "X-WP-NONCE": nonce,
+    },
+  });
 
   console.log("save settings", response);
 }
@@ -62,20 +59,17 @@ async function activate() {
   /** @type{HTMLButtonElement} */
   const button = document.querySelector(".activate");
 
-  const response = await fetch(
-    "/index.php/wp-json/instalogin/v1/verify_credentials",
-    {
-      method: "post",
-      body: JSON.stringify({
-        key: key.value,
-        secret: secret.value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        "X-WP-NONCE": nonce,
-      },
-    }
-  );
+  const response = await fetch(insta_api + "verify_credentials", {
+    method: "post",
+    body: JSON.stringify({
+      key: key.value,
+      secret: secret.value,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+      "X-WP-NONCE": nonce,
+    },
+  });
 
   if (response.ok) {
     license_active = true;

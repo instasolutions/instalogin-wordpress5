@@ -7,7 +7,7 @@
  * Author: InstaSolutions GmbH
  * Author URI: https://instalogin.me
  * Requires at least: 5.0
- * Version: 0.10.4
+ * Version: 0.10.5
  * Licence: GPL v2 or later
  * Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: instalogin-me
@@ -95,15 +95,21 @@ class InstalogIn
             }
         });
 
-        // global styles
+        // global scripts
 
         add_action('wp_enqueue_scripts', function () {
             wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
+
+            wp_enqueue_script('insta_global_scripts', plugin_dir_url(__FILE__) . "scripts/global.js", [], '0.0.1', false);
+            wp_add_inline_script('insta_global_scripts', "const insta_api = " . rest_url('instalogin/v1/'), 'before');
         });
 
         add_action('admin_enqueue_scripts', function ($hook) {
             wp_enqueue_style('insta-global', plugin_dir_url(__FILE__) . "style/global.css", [], '1');
             wp_enqueue_script('insta-media-selectors', plugin_dir_url(__FILE__) . "scripts/media.js", [], '1', true);
+
+            wp_enqueue_script('insta_global_scripts_admin', plugin_dir_url(__FILE__) . "scripts/global.js", [], '0.0.1', false);
+            wp_add_inline_script('insta_global_scripts_admin', "const insta_api = '" . rest_url('instalogin/v1/') . "';", 'before');
         });
 
         add_action('init', function () {

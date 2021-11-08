@@ -15,17 +15,14 @@
         event.preventDefault();
         const old_label = button.innerText;
         button.innerText = "...";
-        const response = await fetch(
-          "/index.php/wp-json/instalogin/v1/device/add",
-          {
-            method: "post",
-            body: JSON.stringify({ user_id }),
-            headers: {
-              "Content-Type": "application/json",
-              "X-WP-NONCE": insta_nonce,
-            },
-          }
-        );
+        const response = await fetch(insta_api + "device/add", {
+          method: "post",
+          body: JSON.stringify({ user_id }),
+          headers: {
+            "Content-Type": "application/json",
+            "X-WP-NONCE": insta_nonce,
+          },
+        });
 
         button.innerText = old_label;
 

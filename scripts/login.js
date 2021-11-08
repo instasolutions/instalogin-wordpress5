@@ -34,7 +34,7 @@ function init_insta(id, api_key, display_type) {
     id,
     key: api_key,
     useAuthHeader: false,
-    authenticationUrl: "/index.php/wp-json/instalogin/v1/login-controller",
+    authenticationUrl: insta_api + "login-controller",
     type: display_type,
   }).start();
 }

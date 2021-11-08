@@ -70,17 +70,14 @@
 
         const old_label = modal_button_yes.innerText;
         modal_button_yes.innerText = "...";
-        const response = await fetch(
-          "/index.php/wp-json/instalogin/v1/device/add",
-          {
-            method: "post",
-            body: JSON.stringify({ user_id: wpv.user_id }),
-            headers: {
-              "Content-Type": "application/json",
-              "X-WP-NONCE": wpv.insta_nonce,
-            },
-          }
-        );
+        const response = await fetch(insta_api + "device/add", {
+          method: "post",
+          body: JSON.stringify({ user_id: wpv.user_id }),
+          headers: {
+            "Content-Type": "application/json",
+            "X-WP-NONCE": wpv.insta_nonce,
+          },
+        });
 
         modal_button_yes.innerText = old_label;
         modal_button_yes.style.display = "none";
@@ -313,30 +310,24 @@
 
   // API call to delete a device
   async function delete_device(id) {
-    const response = await fetch(
-      "/index.php/wp-json/instalogin/v1/device/remove",
-      {
-        method: "post",
-        body: JSON.stringify({ device_id: id }),
-        headers: {
-          "Content-Type": "application/json",
-          "X-WP-NONCE": wpv.insta_nonce,
-        },
-      }
-    );
+    const response = await fetch(insta_api + "/device/remove", {
+      method: "post",
+      body: JSON.stringify({ device_id: id }),
+      headers: {
+        "Content-Type": "application/json",
+        "X-WP-NONCE": wpv.insta_nonce,
+      },
+    });
 
     return response.ok;
   }
 
   // API call to fetch enabled devices
   async function fetch_devices() {
-    const response = await fetch(
-      "/index.php/wp-json/instalogin/v1/devices?wp_nonce",
-      {
-        method: "get",
-        headers: { "X-WP-NONCE": wpv.insta_nonce },
-      }
-    );
+    const response = await fetch(insta_api + "devices?wp_nonce", {
+      method: "get",
+      headers: { "X-WP-NONCE": wpv.insta_nonce },
+    });
 
     if (response.ok) {
       const json = await response.json();

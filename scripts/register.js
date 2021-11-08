@@ -26,14 +26,11 @@
 
       const body = { username, email };
 
-      const response = await fetch(
-        "/index.php/wp-json/instalogin/v1/register",
-        {
-          method: "post",
-          body: JSON.stringify(body),
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const response = await fetch(insta_api + "register", {
+        method: "post",
+        body: JSON.stringify(body),
+        headers: { "Content-Type": "application/json" },
+      });
 
       if (response.ok) {
         // TODO: Translation
