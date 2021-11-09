@@ -3,8 +3,8 @@
   const { __ } = wp.i18n;
 
   // Load devices and hide activation or management options
-  async function setup() {
-    if (!wpv.is_frontend) draw_table_backend();
+  async function setup(__) {
+    if (!wpv.is_frontend) draw_table_backend(__);
 
     const refreshers = document.querySelectorAll(".instalogin-refresh");
     const activators = document.querySelectorAll(".instalogin-activate");
@@ -124,7 +124,7 @@
     }
   }
 
-  function draw_table_backend() {
+  function draw_table_backend(__) {
     const device_container = document.querySelector(
       ".instalogin-devices-admin"
     );
@@ -340,5 +340,5 @@
   }
 
   //
-  setup();
+  setup(__);
 }
