@@ -61,6 +61,11 @@ class InstaloginLoginAPI
                         // }
 
                         $redirect = get_option('instalogin-api-redirect', admin_url());
+                        $redirect = trim($redirect);
+
+                        if ($redirect == '') {
+                            $redirect = admin_url();
+                        }
 
                         if ($is_desktop) {
                             return ['location' => $redirect];
