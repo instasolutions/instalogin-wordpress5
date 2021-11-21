@@ -310,7 +310,7 @@
 
   // API call to delete a device
   async function delete_device(id) {
-    const response = await fetch(insta_api + "/device/remove", {
+    const response = await fetch(insta_api + "device/remove", {
       method: "post",
       body: JSON.stringify({ device_id: id }),
       headers: {
