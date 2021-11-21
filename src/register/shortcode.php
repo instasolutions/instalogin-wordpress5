@@ -14,7 +14,7 @@ class InstaloginRegisterShortcode
             $attributes = shortcode_atts([
                 'require_username' => "true",
                 'show_button' => "true",
-                'button_text' => "Submit",
+                'button_text' => __("Submit", 'instalogin-me'),
                 'show_when_logged_in' => "false",
             ], $attributes, 'insta-register');
 
