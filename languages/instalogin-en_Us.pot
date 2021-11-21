@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2021-10-30 14:30+0200\n"
+"POT-Creation-Date: 2021-11-21 13:13+0100\n"
 "PO-Revision-Date: 2021-10-30 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,27 +22,27 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: plugin.php:125
+#: plugin.php:131
 msgid "You are almost ready to use Instalogin!"
 msgstr ""
 
-#: plugin.php:126
+#: plugin.php:132
 msgid "Please finish the setup: "
 msgstr ""
 
-#: plugin.php:142
+#: plugin.php:148
 msgid "API key or secret invalid."
 msgstr ""
 
-#: scripts/device-send-mail.js:43
+#: scripts/device-send-mail.js:40
 msgid "Email has been sent to"
 msgstr ""
 
-#: scripts/device-send-mail.js:59
+#: scripts/device-send-mail.js:56
 msgid "Email could not be sent!"
 msgstr ""
 
-#: scripts/device-send-mail.js:62
+#: scripts/device-send-mail.js:59
 msgid "Please try again later or contact an administrator"
 msgstr ""
 
@@ -54,19 +54,19 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: scripts/devices.js:94
+#: scripts/devices.js:91
 msgid "Email has been sent!"
 msgstr ""
 
-#: scripts/devices.js:152 src/devices/shortcode.php:59
+#: scripts/devices.js:149 src/devices/shortcode.php:59
 msgid "Add Device"
 msgstr ""
 
-#: scripts/devices.js:274
+#: scripts/devices.js:271
 msgid "Yes"
 msgstr ""
 
-#: scripts/register.js:41
+#: scripts/register.js:38
 msgid "Account created! Please check your inbox."
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Could not find user presented by token."
 msgstr ""
 
-#: src/login/rest.php:73
+#: src/login/rest.php:78
 msgid "Could not verify token."
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 msgid "PopUp Preview"
 msgstr ""
 
-#: src/popup/settings.php:10 src/settings/settings.php:308
+#: src/popup/settings.php:10 src/settings/settings.php:306
 msgid "Smartcode"
 msgstr ""
 
@@ -437,8 +437,8 @@ msgstr ""
 #: src/settings/settings.php:160
 msgid ""
 "If you do not have the necessary credentials, you may request them <a "
-"href='https://instalogin.me/de/keysecret/' target='_blank' "
-"rel='noopener'>here!</a>"
+"href='https://instalogin.me/keysecret/' target='_blank' rel='noopener'>here!"
+"</a>"
 msgstr ""
 
 #: src/settings/settings.php:177
@@ -499,67 +499,67 @@ msgid ""
 "<b>Appearance > Customize > Menus</b>."
 msgstr ""
 
-#: src/settings/settings.php:207 src/settings/settings.php:209
+#: src/settings/settings.php:207
 msgid "Save Settings"
 msgstr ""
 
-#: src/settings/settings.php:233
+#: src/settings/settings.php:231
 msgid "Basic"
 msgstr ""
 
-#: src/settings/settings.php:240 wizard/steps/step3.php:186
+#: src/settings/settings.php:238 wizard/steps/step3.php:186
 msgid "Enable login via Instalogin"
 msgstr ""
 
-#: src/settings/settings.php:244 wizard/steps/step3.php:189
+#: src/settings/settings.php:242 wizard/steps/step3.php:189
 msgid ""
 "Enable or disable all Instalogin methods. Users may not use Instalogin to "
 "sign in to or to create new accounts."
 msgstr ""
 
-#: src/settings/settings.php:251 wizard/steps/step3.php:192
+#: src/settings/settings.php:249 wizard/steps/step3.php:192
 msgid "Activation on Register"
 msgstr ""
 
-#: src/settings/settings.php:255 wizard/steps/step3.php:195
+#: src/settings/settings.php:253 wizard/steps/step3.php:195
 msgid "An Instalogin mail will be sent to every new user upon registration."
 msgstr ""
 
-#: src/settings/settings.php:262
+#: src/settings/settings.php:260
 msgid "Redirect to after login"
 msgstr ""
 
-#: src/settings/settings.php:266
+#: src/settings/settings.php:264
 msgid ""
 "Decide to which page users should be redirected to after successfully "
 "logging in. '/wp-admin' is the common directory."
 msgstr ""
 
-#: src/settings/settings.php:276
+#: src/settings/settings.php:274
 msgid "API"
 msgstr ""
 
-#: src/settings/settings.php:283 wizard/steps/step3.php:156
+#: src/settings/settings.php:281 wizard/steps/step3.php:156
 msgid "API Key"
 msgstr ""
 
-#: src/settings/settings.php:287
+#: src/settings/settings.php:285
 msgid "Your public API key provided by Instalogin."
 msgstr ""
 
-#: src/settings/settings.php:294 wizard/steps/step3.php:161
+#: src/settings/settings.php:292 wizard/steps/step3.php:161
 msgid "API Secret"
 msgstr ""
 
-#: src/settings/settings.php:298
+#: src/settings/settings.php:296
 msgid "Your private secret provided by Instalogin."
 msgstr ""
 
-#: src/settings/settings.php:315
+#: src/settings/settings.php:313
 msgid "Display Type"
 msgstr ""
 
-#: src/settings/settings.php:322
+#: src/settings/settings.php:320
 msgid ""
 "During beta smart images must be configured by an Instalogin employee.<br> "
 "You may submit a request to <a href='emailto:smartimage@instalogin."
@@ -567,51 +567,51 @@ msgid ""
 "will do the rest."
 msgstr ""
 
-#: wizard/index.php:19 wizard/index.php:20
+#: wizard/index.php:12 wizard/index.php:13
 msgid "Instalogin Wizard"
 msgstr ""
 
-#: wizard/index.php:37
+#: wizard/index.php:30
 msgid "LICENSE ACTIVE!"
 msgstr ""
 
-#: wizard/index.php:38
+#: wizard/index.php:31
 msgid "Activation Failed! Try again."
 msgstr ""
 
-#: wizard/index.php:51
+#: wizard/index.php:44
 msgid "Welcome"
 msgstr ""
 
-#: wizard/index.php:53
+#: wizard/index.php:46
 msgid "Setup"
 msgstr ""
 
-#: wizard/index.php:55 wizard/steps/step3.php:150
+#: wizard/index.php:48 wizard/steps/step3.php:150
 msgid "License"
 msgstr ""
 
-#: wizard/index.php:57
+#: wizard/index.php:50
 msgid "Finalize"
 msgstr ""
 
-#: wizard/index.php:59
+#: wizard/index.php:52
 msgid "Connect Devices"
 msgstr ""
 
-#: wizard/index.php:77
+#: wizard/index.php:70
 msgid "Back"
 msgstr ""
 
-#: wizard/index.php:79
+#: wizard/index.php:72
 msgid "Return to Wordpress"
 msgstr ""
 
-#: wizard/index.php:84
+#: wizard/index.php:77
 msgid "Next"
 msgstr ""
 
-#: wizard/index.php:86
+#: wizard/index.php:79
 msgid "Finish"
 msgstr ""
 
@@ -769,7 +769,7 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Christian Schemoschek"
+msgid "InstaSolutions GmbH"
 msgstr ""
 
 #. Author URI of the plugin/theme

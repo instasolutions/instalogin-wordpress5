@@ -1,13 +1,15 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2021-10-30 14:30+0200\n"
-"PO-Revision-Date: 2021-10-31 00:44+0200\n"
+"POT-Creation-Date: 2021-11-21 13:13+0100\n"
+"PO-Revision-Date: 2021-11-21 13:15+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -16,33 +18,31 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: de_DE\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: plugin.php:125
+#: plugin.php:131
 msgid "You are almost ready to use Instalogin!"
 msgstr "Sie sind fast bereit, Instalogin zu verwenden!"
 
-#: plugin.php:126
+#: plugin.php:132
 msgid "Please finish the setup: "
 msgstr "Bitte beenden Sie die Einrichtung: "
 
-#: plugin.php:142
+#: plugin.php:148
 msgid "API key or secret invalid."
 msgstr "API Schlüssel oder Secret ungültig."
 
-#: scripts/device-send-mail.js:43
+#: scripts/device-send-mail.js:40
 msgid "Email has been sent to"
 msgstr "Email wurde gesendet an"
 
-#: scripts/device-send-mail.js:59
+#: scripts/device-send-mail.js:56
 msgid "Email could not be sent!"
 msgstr "E-Mail konnte nicht verschickt werden!"
 
-#: scripts/device-send-mail.js:62
+#: scripts/device-send-mail.js:59
 msgid "Please try again later or contact an administrator"
 msgstr ""
 "Bitte später noch einmal probieren oder den Administrator kontaktieren."
@@ -55,19 +55,19 @@ msgstr "Eine E-Mail wird gesendet an"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: scripts/devices.js:94
+#: scripts/devices.js:91
 msgid "Email has been sent!"
 msgstr "E-Mail wurde gesendet!"
 
-#: scripts/devices.js:152 src/devices/shortcode.php:59
+#: scripts/devices.js:149 src/devices/shortcode.php:59
 msgid "Add Device"
 msgstr "Neues Gerät hinzufügen"
 
-#: scripts/devices.js:274
+#: scripts/devices.js:271
 msgid "Yes"
 msgstr "Ja"
 
-#: scripts/register.js:41
+#: scripts/register.js:38
 msgid "Account created! Please check your inbox."
 msgstr "Account erstellt! Bitte prüfe dein Postfach."
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Could not find user presented by token."
 msgstr "Der Nutzer konnte dem Token nicht zugeordnet werden."
 
-#: src/login/rest.php:73
+#: src/login/rest.php:78
 msgid "Could not verify token."
 msgstr "Der Token konnte nicht verifiziert werden."
 
@@ -160,7 +160,7 @@ msgstr ""
 msgid "PopUp Preview"
 msgstr "Popup-Vorschau"
 
-#: src/popup/settings.php:10 src/settings/settings.php:308
+#: src/popup/settings.php:10 src/settings/settings.php:306
 msgid "Smartcode"
 msgstr "Smartcode"
 
@@ -460,8 +460,8 @@ msgstr "Starten Sie den Installationsassistenten erneut."
 #: src/settings/settings.php:160
 msgid ""
 "If you do not have the necessary credentials, you may request them <a "
-"href='https://instalogin.me/de/keysecret/' target='_blank' "
-"rel='noopener'>here!</a>"
+"href='https://instalogin.me/keysecret/' target='_blank' rel='noopener'>here!"
+"</a>"
 msgstr ""
 "Wenn Sie nicht über die erforderlichen Anmeldeinformationen verfügen, können "
 "Sie diese <a href='https://instalogin.me/de/keysecret/' target='_blank' "
@@ -544,19 +544,19 @@ msgstr ""
 "Seite hinzuzufügen. Alternativ können Sie ein Popup hinzufügen, indem Sie "
 "Insta-PopUp zu einem Menü in <b>Appearance > Menus</b>."
 
-#: src/settings/settings.php:207 src/settings/settings.php:209
+#: src/settings/settings.php:207
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: src/settings/settings.php:233
+#: src/settings/settings.php:231
 msgid "Basic"
 msgstr ""
 
-#: src/settings/settings.php:240 wizard/steps/step3.php:186
+#: src/settings/settings.php:238 wizard/steps/step3.php:186
 msgid "Enable login via Instalogin"
 msgstr "Login über Instalogin aktivieren"
 
-#: src/settings/settings.php:244 wizard/steps/step3.php:189
+#: src/settings/settings.php:242 wizard/steps/step3.php:189
 msgid ""
 "Enable or disable all Instalogin methods. Users may not use Instalogin to "
 "sign in to or to create new accounts."
@@ -565,21 +565,21 @@ msgstr ""
 "Instalogin nicht verwenden, um sich bei Konten anzumelden oder neue Konten "
 "zu erstellen."
 
-#: src/settings/settings.php:251 wizard/steps/step3.php:192
+#: src/settings/settings.php:249 wizard/steps/step3.php:192
 msgid "Activation on Register"
 msgstr "Aktivierung bei Registrierung"
 
-#: src/settings/settings.php:255 wizard/steps/step3.php:195
+#: src/settings/settings.php:253 wizard/steps/step3.php:195
 msgid "An Instalogin mail will be sent to every new user upon registration."
 msgstr ""
 "Bei der Registrierung wird jedem neuen Benutzer eine Instalogin-Mail "
 "zugesandt."
 
-#: src/settings/settings.php:262
+#: src/settings/settings.php:260
 msgid "Redirect to after login"
 msgstr "Weiterleitung nach login"
 
-#: src/settings/settings.php:266
+#: src/settings/settings.php:264
 msgid ""
 "Decide to which page users should be redirected to after successfully "
 "logging in. '/wp-admin' is the common directory."
@@ -587,32 +587,32 @@ msgstr ""
 "Entscheiden Sie, auf welche Seite Benutzer nach erfolgreicher Anmeldung "
 "umgeleitet werden sollen. '/wp-admin' ist das Standardverzeichnis."
 
-#: src/settings/settings.php:276
+#: src/settings/settings.php:274
 msgid "API"
 msgstr ""
 
-#: src/settings/settings.php:283 wizard/steps/step3.php:156
+#: src/settings/settings.php:281 wizard/steps/step3.php:156
 msgid "API Key"
 msgstr "API Schlüssel "
 
-#: src/settings/settings.php:287
+#: src/settings/settings.php:285
 msgid "Your public API key provided by Instalogin."
 msgstr ""
 "Ihr öffentlicher API-Schlüssel, der von Instalogin bereitgestellt wird."
 
-#: src/settings/settings.php:294 wizard/steps/step3.php:161
+#: src/settings/settings.php:292 wizard/steps/step3.php:161
 msgid "API Secret"
 msgstr "API Secret"
 
-#: src/settings/settings.php:298
+#: src/settings/settings.php:296
 msgid "Your private secret provided by Instalogin."
 msgstr "Ihr Private-Key, welcher von Instalogin zur Verfügung gestellt wird."
 
-#: src/settings/settings.php:315
+#: src/settings/settings.php:313
 msgid "Display Type"
 msgstr "Anzeigetyp"
 
-#: src/settings/settings.php:322
+#: src/settings/settings.php:320
 msgid ""
 "During beta smart images must be configured by an Instalogin employee.<br> "
 "You may submit a request to <a href='emailto:smartimage@instalogin."
@@ -624,51 +624,51 @@ msgstr ""
 "smartimage@instalogin.me'>smartimage@instalogin.me</a>senden. <br>Senden Sie "
 "uns ein 500px x 500px Bild und wir erledigen den Rest."
 
-#: wizard/index.php:19 wizard/index.php:20
+#: wizard/index.php:12 wizard/index.php:13
 msgid "Instalogin Wizard"
 msgstr "Instalogin-Assistent"
 
-#: wizard/index.php:37
+#: wizard/index.php:30
 msgid "LICENSE ACTIVE!"
 msgstr "LIZENZ AKTIV!"
 
-#: wizard/index.php:38
+#: wizard/index.php:31
 msgid "Activation Failed! Try again."
 msgstr "Aktivierung fehlgeschlagen! Wiederholen."
 
-#: wizard/index.php:51
+#: wizard/index.php:44
 msgid "Welcome"
 msgstr "Willkommen"
 
-#: wizard/index.php:53
+#: wizard/index.php:46
 msgid "Setup"
 msgstr ""
 
-#: wizard/index.php:55 wizard/steps/step3.php:150
+#: wizard/index.php:48 wizard/steps/step3.php:150
 msgid "License"
 msgstr "Lizenz"
 
-#: wizard/index.php:57
+#: wizard/index.php:50
 msgid "Finalize"
 msgstr "Finalisieren"
 
-#: wizard/index.php:59
+#: wizard/index.php:52
 msgid "Connect Devices"
 msgstr "Geräte verbinden"
 
-#: wizard/index.php:77
+#: wizard/index.php:70
 msgid "Back"
 msgstr "Zurück"
 
-#: wizard/index.php:79
+#: wizard/index.php:72
 msgid "Return to Wordpress"
 msgstr "Zurück zu Wordpress"
 
-#: wizard/index.php:84
+#: wizard/index.php:77
 msgid "Next"
 msgstr "Weiter"
 
-#: wizard/index.php:86
+#: wizard/index.php:79
 msgid "Finish"
 msgstr "Fertigstellen"
 
@@ -836,7 +836,7 @@ msgstr ""
 
 #: wizard/steps/step6.php:235
 msgid "Scan the mail and it's all done!"
-msgstr ""
+msgstr "Scanne Sie die E-Mailsund alles ist fertig!"
 
 #. Plugin Name of the plugin/theme
 msgid "Official Instalogin"
@@ -851,7 +851,7 @@ msgstr ""
 "auf Ihrer Wordpress-Installation."
 
 #. Author of the plugin/theme
-msgid "Christian Schemoschek"
+msgid "InstaSolutions GmbH"
 msgstr ""
 
 #. Author URI of the plugin/theme
