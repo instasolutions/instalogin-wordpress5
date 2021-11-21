@@ -38,7 +38,7 @@
           );
           box.innerHTML = `<p>${__(
             "Email has been sent to",
-            "instalogin"
+            "instalogin-me"
           )} <b>${json.sent_to}</b> !</p>`;
           info_area.appendChild(box);
         } else {
@@ -54,10 +54,10 @@
           // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
           box.innerHTML = `${__(
             "Email could not be sent!",
-            "instalogin"
+            "instalogin-me"
           )}!<br> ${__(
             "Please try again later or contact an administrator",
-            "instalogin"
+            "instalogin-me"
           )}.<br>${body}`;
           info_area.appendChild(box);
           console.error(response);

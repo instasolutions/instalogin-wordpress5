@@ -48,11 +48,11 @@
         <div style="margin-top: 1rem;">
           <button class="instalogin-modal-button no instalogin-device-button">${__(
             "Cancel",
-            "instalogin"
+            "instalogin-me"
           )}</button>
           <button class="instalogin-modal-button yes instalogin-device-button">${__(
             "Send Mail",
-            "instalogin"
+            "instalogin-me"
           )}</button>
        </div>
      `;
@@ -89,17 +89,17 @@
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
           info_area.innerHTML = `<p>${__(
             "Email has been sent!",
-            "instalogin"
+            "instalogin-me"
           )}</p>`;
         } else {
           const body = await response.text();
           // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
           info_area.innerHTML = `${__(
             "Email could not be sent!",
-            "instalogin"
+            "instalogin-me"
           )}<br>${__(
             "Please try again later or contact an administrator.",
-            "instalogin"
+            "instalogin-me"
           )}<br>${body}`;
           console.error("instalogin: could not send mail.", response);
         }
@@ -147,11 +147,11 @@
         </table>
         <button class="insta-button instalogin-send-mail">${__(
           "Add Device",
-          "instalogin"
+          "instalogin-me"
         )}</button>
         <button class="insta-button instalogin-refresh">${__(
           "Refresh",
-          "instalogin"
+          "instalogin-me"
         )}</button>
     </div>`;
     }
@@ -265,11 +265,11 @@
           <div style="margin-top: 1rem;">
             <button class="instalogin-modal-button no instalogin-device-button">${__(
               "No",
-              "instalogin"
+              "instalogin-me"
             )}</button>
             <button class="instalogin-modal-button yes instalogin-device-button">${__(
               "Yes",
-              "instalogin"
+              "instalogin-me"
             )}</button>
           </div>
         `;

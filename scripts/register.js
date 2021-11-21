@@ -36,7 +36,7 @@
         // TODO: Translation
         e_info.innerText = __(
           "Account created! Please check your inbox.",
-          "instalogin"
+          "instalogin-me"
         );
         e_info.style.display = "block";
         if (e_username) e_username.disabled = true;
