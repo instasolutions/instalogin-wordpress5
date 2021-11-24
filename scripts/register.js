@@ -33,7 +33,6 @@
       });
 
       if (response.ok) {
-        // TODO: Translation
         e_info.innerText = __(
           "Account created! Please check your inbox.",
           "instalogin-me"

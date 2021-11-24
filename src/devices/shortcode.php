@@ -36,6 +36,7 @@ class InstaloginDevicesShortcode
                 'is_frontend' => true,
                 'insta_nonce' => wp_create_nonce('wp_rest'),
                 'show_activation' => false,
+                'email' => $email,
             ]);
 
             wp_enqueue_script('instalogin-send-mail', plugin_dir_url(__FILE__) . "../../scripts/device-send-mail.js", ['wp-i18n'], '1', true);
