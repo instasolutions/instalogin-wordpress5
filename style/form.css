@@ -32,7 +32,7 @@
 
   margin: 1.5rem 0;
 
-  max-width: 20rem !important;
+  max-width: 20rem;
 }
 
 .instalogin-devices-title {
@@ -62,10 +62,10 @@ ul.instalogin-device-list li {
 }
 
 ul.instalogin-device-list li button {
-  background-color: transparent !important;
+  background-color: transparent;
   padding: 0;
   border: none;
-  color: black !important;
+  color: black;
 }
 
 .instalogin-device-button {
@@ -73,8 +73,8 @@ ul.instalogin-device-list li button {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   padding: 0.375rem 0.75rem;
-  color: #6c757d !important;
-  background-color: white !important;
+  color: #6c757d;
+  background-color: white;
   border-color: #6c757d;
   border-radius: 0.25rem;
   border: 1px solid;
@@ -86,15 +86,15 @@ ul.instalogin-device-list li button {
 }
 
 .instalogin-modal .instalogin-device-button {
-  background: transparent !important;
+  background: transparent;
   border-color: white;
-  color: white !important;
+  color: white;
 }
 
 .instalogin-device-button:hover {
-  color: white !important;
-  background-color: #6c757d !important;
-  border-color: #6c757d !important;
+  color: white;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
 
 ul.instalogin-device-list .instalogin-device-entry {
@@ -104,18 +104,18 @@ ul.instalogin-device-list .instalogin-device-entry {
 }
 
 ul.instalogin-device-list .instalogin-device-entry span {
-  font-size: 1rem !important;
+  font-size: 1rem;
   font-weight: normal;
 }
 
 ul.instalogin-device-list .instalogin-device-entry small {
-  font-size: 0.775em !important;
+  font-size: 0.775em;
   line-height: 1;
   font-weight: 300;
 }
 
 ul.instalogin-device-list svg {
-  width: 8px !important;
+  width: 8px;
 }
 
 .instalogin-modal {
@@ -133,7 +133,7 @@ ul.instalogin-device-list svg {
   left: 0;
   right: 0;
 
-  font-size: 1.1rem !important;
+  font-size: 1.1rem ;
 
   color: white;
   background: rgba(39, 81, 118, 0.9);
