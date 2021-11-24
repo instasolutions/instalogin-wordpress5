@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2021-11-21 13:13+0100\n"
+"POT-Creation-Date: 2021-11-24 11:02+0100\n"
 "PO-Revision-Date: 2021-10-30 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -58,7 +58,7 @@ msgstr ""
 msgid "Email has been sent!"
 msgstr ""
 
-#: scripts/devices.js:149 src/devices/shortcode.php:59
+#: scripts/devices.js:149 src/devices/shortcode.php:60
 msgid "Add Device"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: scripts/register.js:38
+#: scripts/register.js:37
 msgid "Account created! Please check your inbox."
 msgstr ""
 
@@ -100,11 +100,11 @@ msgstr ""
 msgid "You must be logged in to manage devices."
 msgstr ""
 
-#: src/devices/shortcode.php:52
+#: src/devices/shortcode.php:53
 msgid "Connected Devices"
 msgstr ""
 
-#: src/devices/shortcode.php:58
+#: src/devices/shortcode.php:59
 msgid "Refresh"
 msgstr ""
 
@@ -364,6 +364,10 @@ msgstr ""
 
 #: src/register/rest.php:38
 msgid "Sorry, email missing or invalid!"
+msgstr ""
+
+#: src/register/shortcode.php:17
+msgid "Submit"
 msgstr ""
 
 #: src/register/shortcode.php:40

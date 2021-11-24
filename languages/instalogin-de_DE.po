@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2021-11-21 13:13+0100\n"
-"PO-Revision-Date: 2021-11-21 13:15+0100\n"
+"POT-Creation-Date: 2021-11-24 11:02+0100\n"
+"PO-Revision-Date: 2021-11-24 11:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -44,8 +44,7 @@ msgstr "E-Mail konnte nicht verschickt werden!"
 
 #: scripts/device-send-mail.js:59
 msgid "Please try again later or contact an administrator"
-msgstr ""
-"Bitte später noch einmal probieren oder den Administrator kontaktieren."
+msgstr "Bitte später noch einmal probieren oder den Administrator kontaktieren"
 
 #: scripts/devices.js:44
 msgid "An email will be sent to"
@@ -59,7 +58,7 @@ msgstr "Abbrechen"
 msgid "Email has been sent!"
 msgstr "E-Mail wurde gesendet!"
 
-#: scripts/devices.js:149 src/devices/shortcode.php:59
+#: scripts/devices.js:149 src/devices/shortcode.php:60
 msgid "Add Device"
 msgstr "Neues Gerät hinzufügen"
 
@@ -67,7 +66,7 @@ msgstr "Neues Gerät hinzufügen"
 msgid "Yes"
 msgstr "Ja"
 
-#: scripts/register.js:38
+#: scripts/register.js:37
 msgid "Account created! Please check your inbox."
 msgstr "Account erstellt! Bitte prüfe dein Postfach."
 
@@ -101,11 +100,11 @@ msgstr "Das Gerät gehört nicht zu diesem Nutzer."
 msgid "You must be logged in to manage devices."
 msgstr "Du musst angemeldet sein um Geräte verwalten zu können."
 
-#: src/devices/shortcode.php:52
+#: src/devices/shortcode.php:53
 msgid "Connected Devices"
 msgstr "Verbundene Geräte"
 
-#: src/devices/shortcode.php:58
+#: src/devices/shortcode.php:59
 msgid "Refresh"
 msgstr "Aktualisieren"
 
@@ -389,6 +388,10 @@ msgstr ""
 msgid "Sorry, email missing or invalid!"
 msgstr "Leider fehlt die E-Mail Adresse oder sie ist ungültig!"
 
+#: src/register/shortcode.php:17
+msgid "Submit"
+msgstr "Registrieren"
+
 #: src/register/shortcode.php:40
 msgid "Username"
 msgstr "Nutzername"
@@ -403,6 +406,9 @@ msgid ""
 "instead of using a combination of password and username.<br>Forgetting your "
 "password is a relic of the past - there are none!"
 msgstr ""
+"Instalogin ermöglicht eine sichere Authentifizierung durch Scannen des "
+"InstaCodes anstelle einer Kombination aus Passwort und Benutzername.<br>Das "
+"Vergessen Ihres Passworts ist ein Relikt der Vergangenheit - es gibt keine!"
 
 #. Plugin URI of the plugin/theme
 #: src/settings/header.php:67
@@ -593,7 +599,7 @@ msgstr ""
 
 #: src/settings/settings.php:281 wizard/steps/step3.php:156
 msgid "API Key"
-msgstr "API Schlüssel "
+msgstr "API Schlüssel"
 
 #: src/settings/settings.php:285
 msgid "Your public API key provided by Instalogin."
