@@ -244,8 +244,8 @@
         const li = document.createElement("li");
         li.innerHTML = `
           <div class="instalogin-device-entry">
-            <span>${device.label}</span>
-            <small>${device.model}</small>
+            <span class='instalogin-device-label'>${device.label}</span>
+            <small class='instalogin-device-model'>${device.model}</small>
           </div>
         `;
 
