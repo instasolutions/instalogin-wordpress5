@@ -1,10 +1,10 @@
 {
   // script requires insta_nonce, is_frontend, show_activation provided by php
-  const { __ } = wp.i18n;
+  // const { __ } = wp.i18n;
 
   // Load devices and hide activation or management options
-  async function setup(__) {
-    if (!wpv.is_frontend) draw_table_backend(__);
+  async function setup() {
+    if (!wpv.is_frontend) draw_table_backend();
 
     const refreshers = document.querySelectorAll(".instalogin-refresh");
     const activators = document.querySelectorAll(".instalogin-activate");
@@ -41,16 +41,16 @@
       modal.classList.add("instalogin-modal");
       modal.innerHTML = `
         <span class="instalogin-modal-text">
-          ${__("An email will be sent to", "instalogin-me")} <br>
+          ${wp.i18n.__("An email will be sent to", "instalogin-me")} <br>
           <b>${wpv.email}</b>
-          <br>${__("Are you sure?", "instalogin-me")}
+          <br>${wp.i18n.__("Are you sure?", "instalogin-me")}
         </span>  
         <div style="margin-top: 1rem;">
-          <button class="instalogin-modal-button no instalogin-device-button">${__(
+          <button class="instalogin-modal-button no instalogin-device-button">${wp.i18n.__(
             "Cancel",
             "instalogin-me"
           )}</button>
-          <button class="instalogin-modal-button yes instalogin-device-button">${__(
+          <button class="instalogin-modal-button yes instalogin-device-button">${wp.i18n.__(
             "Send Mail",
             "instalogin-me"
           )}</button>
@@ -86,18 +86,18 @@
         const info_area = modal.querySelector(".instalogin-modal-text");
         if (response.ok) {
           const json = await response.json();
-          // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          info_area.innerHTML = `<p>${__(
+          // info_area.innerText = wp.i18n.__(`Email has been sent to ${json.sent_to} !`, 'instalogin');
+          info_area.innerHTML = `<p>${wp.i18n.__(
             "Email has been sent!",
             "instalogin-me"
           )}</p>`;
         } else {
           const body = await response.text();
-          // info_area.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          info_area.innerHTML = `${__(
+          // info_area.innerText = wp.i18n.__(`Email has been sent to ${json.sent_to} !`, 'instalogin');
+          info_area.innerHTML = `${wp.i18n.__(
             "Email could not be sent!",
             "instalogin-me"
-          )}<br>${__(
+          )}<br>${wp.i18n.__(
             "Please try again later or contact an administrator.",
             "instalogin-me"
           )}<br>${body}`;
@@ -124,7 +124,7 @@
     }
   }
 
-  function draw_table_backend(__) {
+  function draw_table_backend() {
     const device_container = document.querySelector(
       ".instalogin-devices-admin"
     );
@@ -145,11 +145,11 @@
             </tbody>
 
         </table>
-        <button class="insta-button instalogin-send-mail">${__(
+        <button class="insta-button instalogin-send-mail">${wp.i18n.__(
           "Add Device",
           "instalogin-me"
         )}</button>
-        <button class="insta-button instalogin-refresh">${__(
+        <button class="insta-button instalogin-refresh">${wp.i18n.__(
           "Refresh",
           "instalogin-me"
         )}</button>
@@ -210,7 +210,7 @@
 
           if (!clicked_once) {
             clicked_once = true;
-            delete_button.innerText = __("Confirm deletion", "instalogin-me");
+            delete_button.innerText = wp.i18n.__("Confirm deletion", "instalogin-me");
             return;
           }
 
@@ -237,7 +237,7 @@
       device_list.innerHTML = "";
 
       if (devices.length == 0) {
-        device_list.innerHTML = __("No devices connected.", "instalogin-me");
+        device_list.innerHTML = wp.i18n.__("No devices connected.", "instalogin-me");
       }
 
       for (const device of devices) {
@@ -263,11 +263,11 @@
           <b>Remove device?</b><br>
           ${device.model}
           <div style="margin-top: 1rem;">
-            <button class="instalogin-modal-button no instalogin-device-button">${__(
+            <button class="instalogin-modal-button no instalogin-device-button">${wp.i18n.__(
               "No",
               "instalogin-me"
             )}</button>
-            <button class="instalogin-modal-button yes instalogin-device-button">${__(
+            <button class="instalogin-modal-button yes instalogin-device-button">${wp.i18n.__(
               "Yes",
               "instalogin-me"
             )}</button>
@@ -340,5 +340,5 @@
   }
 
   //
-  setup(__);
+  setup();
 }
