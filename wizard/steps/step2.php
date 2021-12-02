@@ -73,17 +73,17 @@
 
 <section class="step2">
 
-    <h1><?php _e("This setup consists of 2 parts:", 'instalogin') ?></h1>
+    <h1><?php _e("This setup consists of 2 parts:", 'instalogin-me') ?></h1>
 
     <div class="boxes">
         <div class="box">
             <div>
                 <div class="row">
                     <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/man.svg" alt="">
-                    <h3 class="red"><?php _e("Website Owners & Admins", 'instalogin') ?></h3>
+                    <h3 class="red"><?php _e("Website Owners & Admins", 'instalogin-me') ?></h3>
                 </div>
 
-                <h2><?php _e("Install the Instalogin plugin in Wordpress.", 'instalogin') ?></h2>
+                <h2><?php _e("Install the Instalogin plugin in Wordpress.", 'instalogin-me') ?></h2>
             </div>
             <div class="letter">A</div>
         </div>
@@ -92,9 +92,9 @@
             <div>
                 <div class="row">
                     <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/teamwork.svg" alt="">
-                    <h3><?php _e("Website Users", 'instalogin') ?></h3>
+                    <h3><?php _e("Website Users", 'instalogin-me') ?></h3>
                 </div>
-                <h2><?php _e("As admin or customer:<br>Connect your smartphone to enable login.", 'instalogin') ?></h2>
+                <h2><?php _e("As admin or customer:<br>Connect your smartphone to enable login.", 'instalogin-me') ?></h2>
             </div>
             <div class="letter">B</div>
         </div>

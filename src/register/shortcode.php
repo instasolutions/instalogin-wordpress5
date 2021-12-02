@@ -37,13 +37,13 @@ class InstaloginRegisterShortcode
 
                 <?php if ($require_username) { ?>
                     <label>
-                        <span class="instalogin-label"><?php _e("Username", 'instalogin') ?></span>
+                        <span class="instalogin-label"><?php _e("Username", 'instalogin-me') ?></span>
                         <input type="text" required class="instalogin-username" class="instalogin-input">
                     </label>
                 <?php } ?>
 
                 <label>
-                    <span class="instalogin-label"><?php _e("Email", 'instalogin') ?></span>
+                    <span class="instalogin-label"><?php _e("Email", 'instalogin-me') ?></span>
                     <input type="email" required class="instalogin-email" class="instalogin-input">
                 </label>
 

@@ -44,8 +44,8 @@
         <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/monitor-welcome.png" alt="">
     </div>
     <div class="max-width">
-        <h1><?php _e("Welcome to Instalogin", 'instalogin') ?></h1>
-        <h2><?php _e("Password free login and two-factor-authentication in one step!", 'instalogin') ?></h2>
-        <p><?php _e("Instalogin works for you and your team in the backend as well as your customers in the frontend.<br>Our password free login in two steps; ", 'instalogin') ?></p>
+        <h1><?php _e("Welcome to Instalogin", 'instalogin-me') ?></h1>
+        <h2><?php _e("Password free login and two-factor-authentication in one step!", 'instalogin-me') ?></h2>
+        <p><?php _e("Instalogin works for you and your team in the backend as well as your customers in the frontend.<br>Our password free login in two steps; ", 'instalogin-me') ?></p>
     </div>
 </section>

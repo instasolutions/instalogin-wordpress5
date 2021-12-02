@@ -40,9 +40,9 @@ class InstaloginProfilePage
                     } ?>
                 </div>
 
-                <!-- <p><?php _e('Ready to join the no-password revolution?', 'instalogin') ?></p> -->
+                <!-- <p><?php _e('Ready to join the no-password revolution?', 'instalogin-me') ?></p> -->
 
-                <!-- <button class="instalogin-activate button instalogin-send-mail"><?php _e('Send activation mail', 'instalogin') ?></button> -->
+                <!-- <button class="instalogin-activate button instalogin-send-mail"><?php _e('Send activation mail', 'instalogin-me') ?></button> -->
 
                 <?php if ($user_id == get_current_user_id()) { ?>
 
@@ -208,23 +208,23 @@ class InstaloginProfilePage
                     </style>
 
                     <div class="insta-box">
-                        <h2 class="insta-head-green"><?php _e("How to connect a device", 'instalogin') ?></h2>
+                        <h2 class="insta-head-green"><?php _e("How to connect a device", 'instalogin-me') ?></h2>
                         <div style="display: flex;">
                             <img style="margin-right: 2rem;" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) . "../../img/connect_device.svg" ?>" alt="">
                             <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
                                 <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) . "../../img/woman.svg" ?>" alt="">
 
                                 <div class="insta-text-green">
-                                    <?php _e("You did it! Passwords are no more! ", 'instalogin') ?>
+                                    <?php _e("You did it! Passwords are no more! ", 'instalogin-me') ?>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <details class="instalogin-devices-details insta-box">
-                        <summary class="insta" style="margin-bottom: .5rem; margin-top: .5rem;"><?php _e('Manage Instalogin Devices', 'instalogin') ?></summary>
+                        <summary class="insta" style="margin-bottom: .5rem; margin-top: .5rem;"><?php _e('Manage Instalogin Devices', 'instalogin-me') ?></summary>
                         <p class="insta-info-p">
-                            <?php _e("Add a new device with just a click! We will send you an email containing the InstaCode.<br>Scan the code using the app and you're ready to go.", 'instalogin') ?>
+                            <?php _e("Add a new device with just a click! We will send you an email containing the InstaCode.<br>Scan the code using the app and you're ready to go.", 'instalogin-me') ?>
                         </p>
                         <div class="instalogin-devices-admin">
                             <!-- <ul class="instalogin-device-list"></ul> -->
@@ -233,7 +233,7 @@ class InstaloginProfilePage
 
                     <div class="insta-box">
                         <details>
-                            <summary class="insta"><?php _e('Maximum Security: Randomize your Password', 'instalogin') ?></summary>
+                            <summary class="insta"><?php _e('Maximum Security: Randomize your Password', 'instalogin-me') ?></summary>
                             <p><?php _e('Instalogin enables effortless authentication by freeing you of the burden of having to remember a password.<br>
                                 If you created your account with a password we suggest that you replace it with a strong, random and secret password.<br>
                                 This will ensure that your password is unguessable and increase your account\'s security even further.<br>
@@ -242,11 +242,11 @@ class InstaloginProfilePage
 
                             <label class="insta-confirm">
                                 <input type="checkbox" name="instalogin-accept-reset" id="instalogin-accept-reset">
-                                <?php _e("Yes, replace my password with a secure random password.<br>I know that login will only be possible via the InstaApp unless I reset my password. ", 'instalogin') ?>
+                                <?php _e("Yes, replace my password with a secure random password.<br>I know that login will only be possible via the InstaApp unless I reset my password. ", 'instalogin-me') ?>
                             </label>
                             <br>
 
-                            <button id="instalogin-reset-password" disabled class=""><?php _e("Randomize my Password", 'instalogin') ?></button>
+                            <button id="instalogin-reset-password" disabled class=""><?php _e("Randomize my Password", 'instalogin-me') ?></button>
                         </details>
                     </div>
 
@@ -281,9 +281,9 @@ class InstaloginProfilePage
 
                     <div class="notice notice-warning is-dismissible inline">
                         <p>
-                            <?php _e("You can not manage another user's devices.", 'instalogin') ?>
+                            <?php _e("You can not manage another user's devices.", 'instalogin-me') ?>
                             <br>
-                            <button class="instalogin-activate button instalogin-send-mail"><?php _e('Send activation mail', 'instalogin') ?></button>
+                            <button class="instalogin-activate button instalogin-send-mail"><?php _e('Send activation mail', 'instalogin-me') ?></button>
 
                         </p>
                     </div>

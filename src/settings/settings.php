@@ -63,29 +63,29 @@ class InstaloginSettings
                         <?php echo settings_fields("instalogin") ?>
 
                         <input type="radio" name="tabs" id="tab1" checked class="tab-title" />
-                        <label for="tab1"><?php _e("Basic Settings", 'instalogin') ?></label>
+                        <label for="tab1"><?php _e("Basic Settings", 'instalogin-me') ?></label>
 
                         <input type="radio" name="tabs" id="tab2" class="tab" />
-                        <label for="tab2"><?php _e("License (Key&Secret)", 'instalogin') ?></label>
+                        <label for="tab2"><?php _e("License (Key&Secret)", 'instalogin-me') ?></label>
 
                         <input type="radio" name="tabs" id="tab3" class="tab" />
-                        <label for="tab3"><?php _e("SmartCode Type", 'instalogin') ?></label>
+                        <label for="tab3"><?php _e("SmartCode Type", 'instalogin-me') ?></label>
 
                         <input type="radio" name="tabs" id="tab4" class="tab" />
-                        <label for="tab4"><?php _e("Login Popup Style", 'instalogin') ?></label>
+                        <label for="tab4"><?php _e("Login Popup Style", 'instalogin-me') ?></label>
 
                         <input type="radio" name="tabs" id="tab5" class="tab" />
-                        <label for="tab5"><?php _e("Usage", 'instalogin') ?></label>
+                        <label for="tab5"><?php _e("Usage", 'instalogin-me') ?></label>
 
                         <div class="tab content1">
-                            <h3 class="insta-h3" style="grid-column: span 3;"><?php _e("Activate / Deactivate", 'instalogin') ?></h3>
+                            <h3 class="insta-h3" style="grid-column: span 3;"><?php _e("Activate / Deactivate", 'instalogin-me') ?></h3>
                             <?php echo do_settings_fields('instalogin', 'instalogin-basic'); ?>
-                            <h3 class="insta-h3" style="grid-column: span 3; margin-top: 2.5rem;"><?php _e("Redirection", 'instalogin') ?></h3>
+                            <h3 class="insta-h3" style="grid-column: span 3; margin-top: 2.5rem;"><?php _e("Redirection", 'instalogin-me') ?></h3>
                             <?php echo do_settings_fields('instalogin', 'instalogin-basic-redirect'); ?>
 
                             <div class="insta-3-col-s" style="background: transparent; margin-top: 3rem;">
                                 <div style="display: flex; align-items: center;">
-                                    <a class="insta-button insta-button-red" href="<?php echo esc_attr(admin_url('?page=instalogin-wizard')) ?>"><?php _e("Reinstall", 'instalogin') ?></a>
+                                    <a class="insta-button insta-button-red" href="<?php echo esc_attr(admin_url('?page=instalogin-wizard')) ?>"><?php _e("Reinstall", 'instalogin-me') ?></a>
                                 </div>
                                 <div></div>
                                 <div class="insta-info"><?php _e("If you want to restore the default settings just restart the setup and you will be guided through the steps.", 'instalogin-me') ?></div>
@@ -94,9 +94,9 @@ class InstaloginSettings
 
                         <div class="tab content2">
 
-                            <h3 class='insta-h3'><?php _e("License Key (Instalogin Key & Secret)", 'instalogin') ?></h3>
+                            <h3 class='insta-h3'><?php _e("License Key (Instalogin Key & Secret)", 'instalogin-me') ?></h3>
 
-                            <p class="insta-info" style="max-width: 110ch;"><?php _e("The Key and Secret are needed to secure the communication and login process. At the same time they are the license keys and the connection to the Instalogin servers and both also serve as license keys. If you don't have a Key & Secret from us yet, you can order it here:", 'instalogin') ?></p>
+                            <p class="insta-info" style="max-width: 110ch;"><?php _e("The Key and Secret are needed to secure the communication and login process. At the same time they are the license keys and the connection to the Instalogin servers and both also serve as license keys. If you don't have a Key & Secret from us yet, you can order it here:", 'instalogin-me') ?></p>
 
                             <div class="license-settings">
 
@@ -211,45 +211,45 @@ class InstaloginSettings
 
                         <div class="tab content5">
                             <div style="grid-column: span 3; max-width: initial;" class="insta-info">
-                                <h3 class="insta-h3"><?php _e("Usage", 'instalogin') ?></h3>
+                                <h3 class="insta-h3"><?php _e("Usage", 'instalogin-me') ?></h3>
 
                                 <p>
-                                    <?php _e("A Instalogin login code will be added to the wordpress login page automatically.", 'instalogin') ?><br>
-                                    <?php _e("If <b>'registration via Instalogin'</b> is enabled in the basic settings tab, an email allowing users to connect their account to the InstaApp will be sent out automatically.", 'instalogin') ?>
+                                    <?php _e("A Instalogin login code will be added to the wordpress login page automatically.", 'instalogin-me') ?><br>
+                                    <?php _e("If <b>'registration via Instalogin'</b> is enabled in the basic settings tab, an email allowing users to connect their account to the InstaApp will be sent out automatically.", 'instalogin-me') ?>
                                 </p>
 
-                                <h3 class="insta-h3"><?php _e("Shortcodes", 'instalogin') ?></h3>
+                                <h3 class="insta-h3"><?php _e("Shortcodes", 'instalogin-me') ?></h3>
                                 <p>
-                                    <?php _e("If you would like to add login and registration options to the frontend of your website you may use these shortcodes:", 'instalogin') ?>
+                                    <?php _e("If you would like to add login and registration options to the frontend of your website you may use these shortcodes:", 'instalogin-me') ?>
                                 </p>
 
                                 <p>
                                     <b class="insta-b">[insta-login]</b>
-                                    <?php _e(" adds an InstaCode to your page.", 'instalogin') ?>
+                                    <?php _e(" adds an InstaCode to your page.", 'instalogin-me') ?>
                                     <br>
-                                    <?php _e("Instalogin will use these settings by default as such <b>[insta-login size='100px' show_when_logged_in='false' border='false' ]</b> .", 'instalogin') ?>
+                                    <?php _e("Instalogin will use these settings by default as such <b>[insta-login size='100px' show_when_logged_in='false' border='false' ]</b> .", 'instalogin-me') ?>
                                     <br>
-                                    <?php _e("Feel free to edit any or all settings.", 'instalogin') ?>
+                                    <?php _e("Feel free to edit any or all settings.", 'instalogin-me') ?>
                                 </p>
 
                                 <p>
                                     <b class="insta-b">[insta-register]</b>
-                                    <?php _e(" adds a simple registration form to your page.", 'instalogin') ?>
+                                    <?php _e(" adds a simple registration form to your page.", 'instalogin-me') ?>
                                     <br>
-                                    <?php _e("With optional default settings: <b>[insta-register require_username='true' show_button='true' button_text='Submit' show_when_logged_in='false' ]</b> .", 'instalogin') ?>
+                                    <?php _e("With optional default settings: <b>[insta-register require_username='true' show_button='true' button_text='Submit' show_when_logged_in='false' ]</b> .", 'instalogin-me') ?>
                                     <br>
-                                    <?php _e("If a username is not required, the users email address will be used.", 'instalogin') ?>
+                                    <?php _e("If a username is not required, the users email address will be used.", 'instalogin-me') ?>
                                 </p>
 
                                 <p>
                                     <b class="insta-b">[insta-popup]</b>
-                                    <?php _e(" May be used to add a login popup to a page. Alternatively you can add a popup by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</b>.", 'instalogin') ?>
+                                    <?php _e(" May be used to add a login popup to a page. Alternatively you can add a popup by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</b>.", 'instalogin-me') ?>
                                 </p>
                             </div>
                         </div>
 
                         <div class="insta-save-box">
-                            <input type="submit" name="submit" id="submit" class="insta-button insta-cta" value="<?php _e('Save Settings', 'instalogin') ?>">
+                            <input type="submit" name="submit" id="submit" class="insta-button insta-cta" value="<?php _e('Save Settings', 'instalogin-me') ?>">
                         </div>
                     </form>
                 </div>
@@ -286,11 +286,11 @@ class InstaloginSettings
             $setting = get_option($setting_name); ?>
 
             <div class="insta-3-col-s">
-                <div class="insta-settings-label"><?php _e("Enable login via Instalogin", 'instalogin') ?></div>
+                <div class="insta-settings-label"><?php _e("Enable login via Instalogin", 'instalogin-me') ?></div>
                 <div>
                     <input type="checkbox" name="<?php echo esc_attr($setting_name) ?>" value="1" <?php echo esc_attr($setting) == 1 ? 'checked' : '' ?> />
                 </div>
-                <div class="insta-info"><?php _e("Enable or disable all Instalogin methods. Users may not use Instalogin to sign in to or to create new accounts.", 'instalogin') ?></div>
+                <div class="insta-info"><?php _e("Enable or disable all Instalogin methods. Users may not use Instalogin to sign in to or to create new accounts.", 'instalogin-me') ?></div>
             </div>
         <?php
         }, $page, $section);
@@ -303,11 +303,11 @@ class InstaloginSettings
             $setting = get_option($setting_name); ?>
 
             <div class="insta-3-col-s">
-                <div class="insta-settings-label"><?php _e("Activation on Register", 'instalogin') ?></div>
+                <div class="insta-settings-label"><?php _e("Activation on Register", 'instalogin-me') ?></div>
                 <div>
                     <input type="checkbox" name="<?php echo esc_attr($setting_name) ?>" value="1" <?php echo esc_attr($setting) == 1 ? 'checked' : '' ?> />
                 </div>
-                <div class="insta-info"><?php _e("An Instalogin mail will be sent to every new user upon registration.", 'instalogin') ?></div>
+                <div class="insta-info"><?php _e("An Instalogin mail will be sent to every new user upon registration.", 'instalogin-me') ?></div>
             </div>
         <?php
         }, $page, $section);
@@ -330,10 +330,10 @@ class InstaloginSettings
             $setting = get_option($setting_name); ?>
             <div class="insta-3-col-s">
 
-                <div class="insta-settings-label"><?php _e("Redirect to after login", 'instalogin') ?></div>
+                <div class="insta-settings-label"><?php _e("Redirect to after login", 'instalogin-me') ?></div>
                 <div></div>
                 <div class="insta-info">
-                    <?php _e("Decide to which page users should be redirected to after successfully logging in. '/wp-admin' is the common directory.", 'instalogin') ?>
+                    <?php _e("Decide to which page users should be redirected to after successfully logging in. '/wp-admin' is the common directory.", 'instalogin-me') ?>
                     <input type="text" placeholder="/wp-admin" name="<?php echo esc_attr($setting_name) ?>" value="<?php echo esc_attr($setting); ?>" />
                 </div>
             </div>
@@ -357,7 +357,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-key';
             $setting = get_option($setting_name); ?>
             <div class="insta-2-col">
-                <div class="insta-settings-label"><?php _e("API Key", 'instalogin') ?></div>
+                <div class="insta-settings-label"><?php _e("API Key", 'instalogin-me') ?></div>
                 <div>
                     <input type="text" id="<?php echo esc_attr($setting_name) ?>" name="<?php echo esc_attr($setting_name) ?>" value="<?php echo esc_attr($setting); ?>" />
                 </div>
@@ -372,7 +372,7 @@ class InstaloginSettings
             $setting_name = 'instalogin-api-secret';
             $setting = get_option($setting_name); ?>
             <div class="insta-2-col">
-                <div class="insta-settings-label"><?php _e("API Secret", 'instalogin') ?></div>
+                <div class="insta-settings-label"><?php _e("API Secret", 'instalogin-me') ?></div>
                 <div>
                     <input type="password" id="<?php echo esc_attr($setting_name) ?>" name="<?php echo esc_attr($setting_name) ?>" value="<?php echo esc_attr($setting); ?>" />
                 </div>
@@ -407,7 +407,7 @@ class InstaloginSettings
                             <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
                         </select>
                     </div>
-                    <div class="insta-info" style="grid-row: span 2;"><?php _e("Should the InstaCode be displayed in QR format or as a smart image, e.g. your logo?", 'instalogin') ?></div>
+                    <div class="insta-info" style="grid-row: span 2;"><?php _e("Should the InstaCode be displayed in QR format or as a smart image, e.g. your logo?", 'instalogin-me') ?></div>
                 </div>
 
                 <!-- TODO: proper settings -->
@@ -419,7 +419,7 @@ class InstaloginSettings
                             <option value="">...</option>
                         </select>
                     </div>
-                    <div class="insta-info" style="grid-row: span 2;"><?php _e("To use your logo or other image as SmartCode, please upload a PNG with 500x500 pixels and maximum 4 colors.", 'instalogin') ?></div>
+                    <div class="insta-info" style="grid-row: span 2;"><?php _e("To use your logo or other image as SmartCode, please upload a PNG with 500x500 pixels and maximum 4 colors.", 'instalogin-me') ?></div>
                 </div>
 
                 <div class="insta-3-col-l" style="opacity: .5;">
@@ -429,7 +429,7 @@ class InstaloginSettings
                             <option value="">...</option>
                         </select>
                     </div>
-                    <div class="insta-info" style="grid-row: span 2;"><?php _e("Upload your app icon. The icon will be displayed on your account in the app. The icon should be a PNG with 500x500 pixels.", 'instalogin') ?></div>
+                    <div class="insta-info" style="grid-row: span 2;"><?php _e("Upload your app icon. The icon will be displayed on your account in the app. The icon should be a PNG with 500x500 pixels.", 'instalogin-me') ?></div>
                 </div>
 
 

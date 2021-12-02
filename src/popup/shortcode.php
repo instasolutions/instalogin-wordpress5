@@ -301,7 +301,7 @@ class InstaloginPopupShortcode
                         </div>
 
                         <?php if (get_option('users_can_register')) { ?>
-                            <a href="<?php echo esc_attr(wp_registration_url()) ?>" class="insta-button"><?php _e('Register', 'instalogin') ?></a>
+                            <a href="<?php echo esc_attr(wp_registration_url()) ?>" class="insta-button"><?php _e('Register', 'instalogin-me') ?></a>
                         <?php } ?>
                     </div>
 

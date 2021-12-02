@@ -128,8 +128,8 @@ class InstalogIn
                 <div class="notice notice-info">
                     <h3>Instalogin Setup</h3>
                     <p>
-                        <?php _e('You are almost ready to use Instalogin!', 'instalogin') ?><br>
-                        <?php _e('Please finish the setup: ', 'instalogin') ?><br>
+                        <?php _e('You are almost ready to use Instalogin!', 'instalogin-me') ?><br>
+                        <?php _e('Please finish the setup: ', 'instalogin-me') ?><br>
                     </p>
                     <p>
                         <a class="button" href="<?php echo esc_attr(admin_url('?page=instalogin-wizard')) ?>">Run Installation Wizard</a>

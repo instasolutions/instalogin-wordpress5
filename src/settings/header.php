@@ -81,11 +81,11 @@ function settings_header()
         <div class="insta-header">
             <img class="logo" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) . "../../img/logo.svg" ?> " alt="Instalogin Logo">
         </div>
-        <p class="insta-description"><?php _e('Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!', 'instalogin') ?></p>
-        <a href="<?php _e("https://instalogin.me/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow"><?php _e('Find out more!', 'instalogin') ?></a>
-        <a href="<?php _e("https://instalogin.me/wordpress-help", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow insta-button-green"><?php _e('Help "What do I do" ?', 'instalogin') ?></a>
+        <p class="insta-description"><?php _e('Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!', 'instalogin-me') ?></p>
+        <a href="<?php _e("https://instalogin.me/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow"><?php _e('Find out more!', 'instalogin-me') ?></a>
+        <a href="<?php _e("https://instalogin.me/wordpress-help", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow insta-button-green"><?php _e('Help "What do I do" ?', 'instalogin-me') ?></a>
 
-        <a href="<?php _e("https://instalogin.me/contact/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow insta-button-yellow"><?php _e('Help us be better', 'instalogin') ?></a>
+        <a href="<?php _e("https://instalogin.me/contact/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow insta-button-yellow"><?php _e('Help us be better', 'instalogin-me') ?></a>
     </div>
 
 <?php

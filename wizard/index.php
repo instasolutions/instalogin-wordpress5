@@ -41,15 +41,15 @@ class InstaloginWizardPage
         <div class="wizard">
             <header>
                 <nav>
-                    <div class="step-label done">1. <?php _e("Welcome", 'instalogin') ?></div>
+                    <div class="step-label done">1. <?php _e("Welcome", 'instalogin-me') ?></div>
                     <div class="line"></div>
-                    <div class="step-label active">2. <?php _e("Setup", 'instalogin') ?></div>
+                    <div class="step-label active">2. <?php _e("Setup", 'instalogin-me') ?></div>
                     <div class="line"></div>
-                    <div class="step-label">3. <?php _e("License", 'instalogin') ?></div>
+                    <div class="step-label">3. <?php _e("License", 'instalogin-me') ?></div>
                     <div class="line"></div>
-                    <div class="step-label">4. <?php _e("Finalize", 'instalogin') ?></div>
+                    <div class="step-label">4. <?php _e("Finalize", 'instalogin-me') ?></div>
                     <div class="line"></div>
-                    <div class="step-label">5. <?php _e("Connect Devices", 'instalogin') ?></div>
+                    <div class="step-label">5. <?php _e("Connect Devices", 'instalogin-me') ?></div>
                 </nav>
                 <div>
                     <img src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>images/Instalogin-horiz_Blue-Grey.svg" alt="">
@@ -67,16 +67,16 @@ class InstaloginWizardPage
 
             <footer>
                 <div>
-                    <button id="back"><?php _e("Back", 'instalogin') ?></button>
+                    <button id="back"><?php _e("Back", 'instalogin-me') ?></button>
                     <a href="<?php echo esc_attr(admin_url('?page=instalogin')) ?>">
-                        <button><?php _e("Return to Wordpress", 'instalogin') ?></button>
+                        <button><?php _e("Return to Wordpress", 'instalogin-me') ?></button>
                     </a>
                 </div>
 
                 <div>
-                    <button id="next" class="primary"><?php _e("Next", 'instalogin') ?></button>
+                    <button id="next" class="primary"><?php _e("Next", 'instalogin-me') ?></button>
                     <a href="<?php echo esc_attr(admin_url('?page=instalogin')) ?>">
-                        <button id="finish" class="primary hidden"><?php _e("Finish", 'instalogin') ?></button>
+                        <button id="finish" class="primary hidden"><?php _e("Finish", 'instalogin-me') ?></button>
                     </a>
                 </div>
             </footer>

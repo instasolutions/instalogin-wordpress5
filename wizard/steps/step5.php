@@ -114,23 +114,23 @@ $email = $user->user_email;
             <img width="70px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/man.svg" alt="">
             <img width="70px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../images/teamwork.svg" alt="">
 
-            <h1 class="blue"><?php _e("As user or admin:<br>Connect your smartphone with Instalogin.", 'instalogin') ?></h1>
+            <h1 class="blue"><?php _e("As user or admin:<br>Connect your smartphone with Instalogin.", 'instalogin-me') ?></h1>
         </div>
         <div class="letter">B</div>
     </div>
 
 
     <h2 style="text-align: center;" class="green">
-        <?php _e("Connecting your admin account to Instalogin", 'instalogin') ?>
+        <?php _e("Connecting your admin account to Instalogin", 'instalogin-me') ?>
     </h2>
 
     <div class="boxes bg-gray-light">
         <div class="bg-gray box">
             <p class="gray-dark">
-                <?php _e("We have sent you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!", 'instalogin') ?>
+                <?php _e("We have sent you an email containing an InstaCode.<br>Download the InstaApp down below and use it to<br>scan the code you received.<br>And that's it!", 'instalogin-me') ?>
             </p>
             <div>
-                <span><?php _e("Email was sent to:", 'instalogin') ?></span>
+                <span><?php _e("Email was sent to:", 'instalogin-me') ?></span>
                 <span class="email"><?php echo esc_html($email) ?></span>
             </div>
 
