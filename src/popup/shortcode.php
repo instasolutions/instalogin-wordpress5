@@ -296,8 +296,8 @@ class InstaloginPopupShortcode
                     <div class="popup-body">
                         <div>
                             <span class="insta-title"><?php echo esc_html($setting['title-text']) ?></span>
-                            <div class="insta-sub"><?php echo esc_html($setting['sub-title-text']) ?></div>
-                            <p class="insta-text"><?php echo esc_html($setting['text-text']) ?></p>
+                            <div class="insta-sub"><?php echo $setting['sub-title-text'] ?></div>
+                            <p class="insta-text"><?php echo $setting['text-text'] ?></p>
                         </div>
 
                         <?php if (get_option('users_can_register')) { ?>

@@ -9,7 +9,8 @@ function settings_header()
             background: white;
             padding: 1rem 2.5rem;
             padding-right: 3rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 2px 3px 6px #00000029;
         }
 
         .insta-container>p {
@@ -35,7 +36,7 @@ function settings_header()
             border: solid 2px var(--insta-blue-light);
             border-radius: 100px;
             margin-top: .2rem !important;
-            font-weight: bold;
+            font-weight: bolder !important;
 
             padding: 8px 24px;
 
@@ -44,8 +45,25 @@ function settings_header()
             box-shadow: none;
         }
 
+        .insta-button-hollow+.insta-button-hollow {
+            margin-left: 1.5rem;
+        }
+
+        .insta-button-yellow {
+            border: none !important;
+            background-color: var(--insta-yellow) !important;
+            color: var(--insta-blue-dark);
+            float: right;
+            box-shadow: 0px 2px 6px #00000029;
+            border: 1px solid #FFFFFF40;
+        }
+
+        .insta-button-green {
+            color: var(--insta-green) !important;
+            border-color: var(--insta-green) !important;
+        }
+
         .insta-button:hover {
-            transform: scale(1.05);
             box-shadow: none;
         }
 
@@ -65,6 +83,9 @@ function settings_header()
         </div>
         <p class="insta-description"><?php _e('Instalogin enables secure authentication by scanning of the InstaCode instead of using a combination of password and username.<br>Forgetting your password is a relic of the past - there are none!', 'instalogin') ?></p>
         <a href="<?php _e("https://instalogin.me/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow"><?php _e('Find out more!', 'instalogin') ?></a>
+        <a href="<?php _e("https://instalogin.me/wordpress-help", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow insta-button-green"><?php _e('Help "What do I do" ?', 'instalogin') ?></a>
+
+        <a href="<?php _e("https://instalogin.me/contact/", 'instalogin') ?>" rel="noopener" target="_blank" class="insta-button-hollow insta-button-yellow"><?php _e('Help us be better', 'instalogin') ?></a>
     </div>
 
 <?php

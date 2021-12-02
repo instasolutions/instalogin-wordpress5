@@ -40,7 +40,7 @@ $default_popup_settings = [
     'button-radius' => "100px",
     'button-weight' => "400",
 
-    'login-type' => "text", // TODO: Translate
+    'login-type' => "icon",
     'login-text' =>  __('Sign In', 'instalogin-me'),
     'login-out-text' =>  __('Sign Out', 'instalogin-me'),
     'login-font-size' => '1rem',

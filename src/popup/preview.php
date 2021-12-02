@@ -25,13 +25,13 @@ class InstaloginPopupPreviewPage
                         display: none;
                     }
 
-                    #wpbody-content>div:not(.preview) {
+                    #wpbody-content>div:not(.insta-preview) {
                         display: none !important;
                     }
                 </style>
 
-                <div class="wrap preview">
-                    <div style="width: 100%; min-height: 400px; display: flex; justify-content: center; align-items: center;">
+                <div class="insta-preview">
+                    <div style="">
                         <?php echo do_shortcode('[insta-popup preview="true"]') ?>
                     </div>
                 </div>

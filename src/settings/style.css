@@ -8,6 +8,13 @@ input + label {
 
 input ~ .tab {
   display: none;
+
+  padding: 2.5rem 2.1rem;
+  /* width: 100%; */
+  background: white;
+  font-weight: bold;
+  color: var(--insta-black);
+  font-size: 14px;
 }
 
 #tab1:checked ~ .tab.content1,
@@ -15,18 +22,90 @@ input ~ .tab {
 #tab3:checked ~ .tab.content3,
 #tab4:checked ~ .tab.content4,
 #tab5:checked ~ .tab.content5 {
-  display: grid;
-  grid-template-columns: 300px 200px 1fr;
-  gap: 1.3rem;
+    display: block;
+    box-shadow: 2px 3px 6px #00000029;
+}
+
+/* settings */
+
+.insta-settings-label {
+  color: var(--insta-blue-darker);
+  font-weight: bold;
+}
+
+/* Basic settings tab */
+
+.insta-3-col-s, .insta-3-col-l, .insta-2-col {
+  padding: 0.5rem 1rem;
+  display: flex;
+  background: #F7F7F7;
+  margin-bottom: .4rem;
+}
+.insta-3-col-s > *:nth-child(1) {
+  width: 200px;
+}
+.insta-3-col-s > *:nth-child(2) {
+  width: 60px;
+}
+.insta-3-col-s > *:nth-child(3) {
+  width: 1fr;
+}
+
+/* license tab */
+
+.license-settings {
+  background: #F7F7F7;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.insta-2-col {
+  align-items: center;
+}
+
+.insta-2-col > *:nth-child(1) {
+width: 260px;
+}
+
+.insta-2-col > *:nth-child(2) {
+  width: 1fr;
+}
+
+.insta-2-col input {
+  width: 64ch;
+}
+
+/* Code Type tab */
+
+.insta-3-col-l {
+  align-items: center;
+}
+
+.insta-3-col-l > *:nth-child(1) {
+  width: 300px;
+}
+.insta-3-col-l > *:nth-child(2) {
+  width: 250px;
+}
+.insta-3-col-l > *:nth-child(3) {
+  width: 1fr;
+}
+
+
+.insta-3-col-l select {
+  width: 25ch;
+}
+
+.basic-settings-tab {
 }
 
 input + label {
-  background: white;
+  background: var(--insta-gray);
   padding: 1rem 1.2rem;
   position: relative;
   top: 1px;
   font-size: 20px;
-  color: var(--insta-red);
+  color: var(--insta-blue);
   font-weight: bold;
 
   user-select: none;
@@ -35,30 +114,27 @@ input + label {
 }
 
 input:checked + label {
-  background: var(--insta-red);
-  color: white;
-}
-
-input ~ .tab {
-  padding: 2rem 1.1rem;
-  /* width: 100%; */
+  color: var(--insta-red);
   background: white;
-  font-weight: bold;
-  color: var(--insta-black);
-  font-size: 14px;
 }
 
 .insta-info {
   font-weight: normal;
   color: #808080;
+  max-width: 60ch;
+}
+
+.insta-info input {
+  margin-top: 0.5rem;
 }
 
 .insta-save-box {
   background: var(--insta-blue-light);
+  margin-top: 2rem;
   padding: 2rem 2rem 4rem;
 }
 
-.insta-save-box input {
+/* .insta-save-box input {
   background: #ffd858 !important;
   border-radius: 4px !important;
   border: none !important;
@@ -66,4 +142,62 @@ input ~ .tab {
   color: var(--insta-black) !important;
   font-weight: bold;
   padding: 0.2rem 0.8rem !important;
+} */
+
+/* settings page */
+
+.insta-h3 {
+  color: var(--insta-red);
+  font-weight: bold;
+  margin: 1rem 0;
+  font-size: 18px;
+}
+
+.insta-b {
+  font-weight: bold;
+  color: var(--insta-blue-dark);
+}
+
+.insta-button,
+.insta-button:hover {
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+
+  color: var(--insta-blue);
+  border: solid 2px var(--insta-blue);
+  padding: 0.3rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.insta-button-blue-light, .insta-button-blue-light:hover {
+  background: transparent;
+  border-color: var(--insta-blue-light);
+  color: var(--insta-blue-light);
+}
+
+.insta-button-blue-light-fill, .insta-button-blue-light-fill:hover {
+  background: var(--insta-blue-light);
+  border-color: var(--insta-blue-light);
+  color: white;
+}
+
+.insta-button-green, .insta-button-green:hover {
+  background: transparent;
+  border-color: var(--insta-green);
+  color: var(--insta-green);
+}
+
+.insta-button-red, .insta-button-red:hover {
+  background: transparent;
+  border-color: var(--insta-red);
+  color: var(--insta-red);
+}
+
+.insta-cta,
+.insta-cta:hover {
+  background-color: var(--insta-yellow);
+  border: solid 1px var(--insta-yellow-light);
+  box-shadow: 0px 3px 6px #00000029;
 }
