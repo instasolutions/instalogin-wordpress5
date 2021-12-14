@@ -5,9 +5,11 @@
     /** @type {HTMLButtonElement} */
     const button = selector.querySelector("button");
     /** @type {HTMLInputElement} */
-    const idInput = selector.querySelector("input");
+    const idInput = selector.querySelector("input[type=hidden]");
     /** @type {HTMLImageElement} */
-    const img = selector.querySelector("img");
+    let img = selector.querySelector("#selected-media");
+
+    if (!img) img = selector.querySelector("img");
 
     setupMediaSelect(button, idInput, img);
   }

@@ -7,7 +7,7 @@
  * Author: InstaSolutions GmbH
  * Author URI: https://instalogin.me
  * Requires at least: 5.0
- * Version: 0.10.9
+ * Version: 0.11.0
  * Licence: GPL v2 or later
  * Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: instalogin-me
@@ -19,6 +19,12 @@ if (!defined('ABSPATH')) {
 }
 
 require_once __DIR__ . '/vendor/autoload.php';
+
+function load_wp_media_files()
+{
+    wp_enqueue_media();
+}
+add_action('admin_enqueue_scripts', 'load_wp_media_files');
 
 class InstalogIn
 {

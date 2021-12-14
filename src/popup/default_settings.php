@@ -7,7 +7,7 @@ $default_popup_settings = [
     // TODO: Animation direction
     'position' => 'top',
     'vertical' => '0px',
-    'horizontal' => '0px',
+    'horizontal' => 'right',
     'font' => "inherit",
     'trigger' => "hover",
     'box-shadow' => "on",
@@ -21,19 +21,19 @@ $default_popup_settings = [
     'qr-bg' => "#FFFFFF",
     'qr-shadow' => "on",
     // TODO: qr border radius
-    'title-text' => __('Admin Portal', 'instalogin-me'), // TODO: Translate
+    'title-text' => __('Admin Portal', 'instalogin-me'),
     'title-size' => "32px",
     'title-color' => "#3E84AD",
     'title-weight' => "600",
-    'sub-title-text' => __('Password-less<br> next gen login', 'instalogin-me'), // TODO: Translate
+    'sub-title-text' => __('Password-less<br> next gen login', 'instalogin-me'),
     'sub-title-size' => "18px",
     'sub-title-color' => "#808080", // TODO: line height?
     'sub-title-weight' => "400",
-    'text-text' =>  __('Scan the InstaCode using the InstaApp to login securely, password-free.', 'instalogin-me'), // TODO: Translate
+    'text-text' =>  __('Scan the InstaCode using the InstaApp to login securely, password-free.', 'instalogin-me'),
     'text-size' => "14px",
     'text-color' => "#808080",
     'text-weight' => "400",
-    'button-text' =>  __('Register', 'instalogin-me'), // TODO: Translate
+    'button-text' =>  __('Register', 'instalogin-me'),
     'button-size' => "14px",
     'button-color' => "#FFFFFF",
     'button-bg' => "#3E84AD",
@@ -52,6 +52,7 @@ $default_popup_settings = [
     'login-padding' => '0.4rem .7rem',
     'login-icon' => '',
     'login-icon-out' => '',
+    'login-icon-color' => '#808080',
 
 ];
 

@@ -127,8 +127,11 @@ class InstaloginPopupSettings
                         </label>
 
                         <label>
-                            <span><?php _e("Horizontal Offset", 'instalogin-me') ?></span>
-                            <input type="text" palceholder="e.g. 0px" name="<?php echo esc_attr($setting_name) ?>[horizontal]" value="<?php echo esc_attr($setting['horizontal']) ?>">
+                            <span><?php _e("Horizontal Alignment", 'instalogin-me') ?></span>
+                            <select name="<?php echo esc_attr($setting_name) ?>[horizontal]">
+                                <option <?php selected($setting['horizontal'], 'left') ?> value="left"><?php _e("Left", 'instalogin-me') ?></option>
+                                <option <?php selected($setting['horizontal'], 'right') ?> value="right"><?php _e("Right", 'instalogin-me') ?></option>
+                            </select>
                         </label>
                     </div>
 
@@ -197,14 +200,14 @@ class InstaloginPopupSettings
                             <input type="text" palceholder="e.g. 4px" name="<?php echo esc_attr($setting_name) ?>[login-size]" value="<?php echo esc_attr($setting['login-size']) ?>">
                         </label>
 
-                        <label>
+                        <!-- <label>
                             <span><?php _e("Login Icon", 'instalogin-me') ?></span>
                             <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
                                 <button class="button"><?php _e("Select Icon", 'instalogin-me') ?></button>
                                 <input type="hidden" name="<?php echo esc_attr($setting_name) ?>[login-icon]" value="<?php echo esc_attr($setting['login-icon']) ?>">
                                 <img width="32px" height="32px" src="<?php echo esc_attr($setting['login-icon']) ?>" alt="">
                             </div>
-                        </label>
+                        </label> -->
 
                         <label>
                             <span><?php _e("Logout Icon", 'instalogin-me') ?></span>
@@ -213,6 +216,11 @@ class InstaloginPopupSettings
                                 <input type="hidden" name="<?php echo esc_attr($setting_name) ?>[login-icon-out]" value="<?php echo esc_attr($setting['login-icon-out']) ?>">
                                 <img width="32px" height="32px" src="<?php echo esc_attr($setting['login-icon-out']) ?>" alt="">
                             </div>
+                        </label>
+
+                        <label>
+                            <span><?php _e("Icon Color", 'instalogin-me') ?></span>
+                            <input type="color" name="<?php echo esc_attr($setting_name) ?>[login-icon-color]" value="<?php echo esc_attr($setting['login-icon-color']) ?>">
                         </label>
                     </div>
 

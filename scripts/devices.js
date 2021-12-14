@@ -145,6 +145,10 @@
             </tbody>
 
         </table>
+
+        <div class="insta-success-notification"></div>
+        <div class="insta-error-notification"></div>
+
         <button class="insta-button instalogin-send-mail">${wp.i18n.__(
           "Add Device",
           "instalogin-me"

@@ -12,6 +12,11 @@ class InstaloginPopupPreviewPage
                 'manage_options',
                 'popup-preview',
                 function () {
+
+                    $setting_name = 'instalogin-popup-style';
+                    require(dirname(__FILE__) . '/default_settings.php');
+                    $setting = get_option($setting_name, $default_popup_settings);
+
 ?>
 
                 <style>
@@ -27,6 +32,17 @@ class InstaloginPopupPreviewPage
 
                     #wpbody-content>div:not(.insta-preview) {
                         display: none !important;
+                    }
+
+                    .insta-popup-container {
+                        <?php
+                        if ($setting['horizontal'] == "left") {
+                            echo "float: left;";
+                        } else {
+                            echo "float: right;";
+                        }
+                        ?>
+                        margin-right: 1rem;
                     }
                 </style>
 

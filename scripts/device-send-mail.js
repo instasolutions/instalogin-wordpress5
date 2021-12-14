@@ -26,40 +26,41 @@
 
         button.innerText = old_label;
 
-        const info_area = document.querySelector(".instalogin-info-area");
+        // const info_area = document.querySelector(".instalogin-info-area");
         if (response.ok) {
           const json = await response.json();
-          const box = document.createElement("div");
-          box.classList.add(
-            "notice",
-            "notice-info",
-            "is-dismissible",
-            "inline"
+
+          /** @type{HTMLDivElement} */
+          const notification = document.querySelector(
+            ".insta-success-notification"
           );
-          box.innerHTML = `<p>${__(
+
+          notification.style.display = "block";
+
+          notification.innerHTML = `<p>${__(
             "Email has been sent to",
             "instalogin-me"
           )} <b>${json.sent_to}</b> !</p>`;
-          info_area.appendChild(box);
+
+          // info_area.appendChild(box);
         } else {
           const body = await response.text();
-          const box = document.createElement("div");
-          box.classList.add(
-            "notice",
-            "notice-error",
-            "is-dismissible",
-            "inline"
+
+          /** @type{HTMLDivElement} */
+          const notification = document.querySelector(
+            ".insta-error-notification"
           );
+          notification.style.display = "block";
+
           console.error("instalogin: could not send mail", response);
-          // box.innerText = __(`Email has been sent to ${json.sent_to} !`, 'instalogin');
-          box.innerHTML = `${__(
+          notification.innerHTML = `${__(
             "Email could not be sent!",
             "instalogin-me"
           )}!<br> ${__(
             "Please try again later or contact an administrator",
             "instalogin-me"
           )}.<br>${body}`;
-          info_area.appendChild(box);
+
           console.error(response);
         }
       });

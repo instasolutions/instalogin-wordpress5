@@ -78,11 +78,18 @@ class InstaloginSettings
                         <label for="tab5"><?php _e("Usage", 'instalogin-me') ?></label>
 
                         <div class="tab content1">
+                            <!-- activate/deactive -->
                             <h3 class="insta-h3" style="grid-column: span 3;"><?php _e("Activate / Deactivate", 'instalogin-me') ?></h3>
                             <?php echo do_settings_fields('instalogin', 'instalogin-basic'); ?>
+                            <!-- redirect -->
                             <h3 class="insta-h3" style="grid-column: span 3; margin-top: 2.5rem;"><?php _e("Redirection", 'instalogin-me') ?></h3>
                             <?php echo do_settings_fields('instalogin', 'instalogin-basic-redirect'); ?>
 
+                            <!-- icon -->
+                            <h3 class="insta-h3" style="grid-column: span 3; margin-top: 2.5rem;"><?php _e("Login Icon (PopUp)", 'instalogin-me') ?></h3>
+                            <?php echo do_settings_fields('instalogin', 'instalogin-basic-icon'); ?>
+
+                            <!-- reinstall -->
                             <div class="insta-3-col-s" style="background: transparent; margin-top: 3rem;">
                                 <div style="display: flex; align-items: center;">
                                     <a class="insta-button insta-button-red" href="<?php echo esc_attr(admin_url('?page=instalogin-wizard')) ?>"><?php _e("Reinstall", 'instalogin-me') ?></a>
@@ -261,6 +268,7 @@ class InstaloginSettings
             $page = 'instalogin';
             $this->basic_tab($page);
             $this->basic_tab_redirect($page);
+            $this->basic_tab_icon($page);
             $this->api_tab($page);
             $this->api_smartcode($page);
 
@@ -317,7 +325,6 @@ class InstaloginSettings
     {
         $section = 'instalogin-basic-redirect';
 
-        // Add to wp
         add_settings_section($section, __('Basic-Redirect', 'instalogin-me'), function () {
             // Settings Section Title
         }, $page);
@@ -341,11 +348,106 @@ class InstaloginSettings
         }, $page, $section);
     }
 
+    private function basic_tab_icon($page)
+    {
+        $section = 'instalogin-basic-icon';
+
+        add_settings_section($section, __('Basic-Redirect', 'instalogin-me'), function () {
+            // Settings Section Title
+        }, $page);
+
+        // Custom Item
+        $setting_name = 'instalogin-popup-icon';
+        register_setting($page, $setting_name);
+        add_settings_field($setting_name . "_field", '', function () {
+            $setting_name = 'instalogin-popup-icon';
+            $setting = get_option($setting_name, [
+                'type' => 1,
+                'custom_src' => ''
+            ]);
+
+        ?>
+            <style>
+                .insta-icon-select-option {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            </style>
+            <div class="insta-3-col-s">
+
+
+                <div class="insta-settings-label"><?php _e("Icon shown in the login popup", 'instalogin-me') ?></div>
+                <div></div>
+                <div class="media-selector">
+                    <div class="insta-info">
+                        <?php _e('Choose a login icon which will be integrated into your navigation in the menu or in the footer. You can make further settings under "Login Popup Style", such as size and color, to adapt the icon to your style.', 'instalogin-me') ?>
+                    </div>
+                    <div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+
+                        <div class="insta-icon-select-option">
+                            <img width="30px" src="<?php echo plugin_dir_url(__FILE__) . "../../img/login1.svg"; ?>" alt="logo1">
+                            <input type="radio" name="<?php echo esc_attr($setting_name) ?>[type]" value="1" <?php echo esc_attr($setting['type']) == 1 ? 'checked' : '' ?> />
+                        </div>
+                        <div class="insta-icon-select-option">
+                            <img width="30px" src="<?php echo plugin_dir_url(__FILE__) . "../../img/login2.svg"; ?>" alt="logo1">
+                            <input type="radio" name="<?php echo esc_attr($setting_name) ?>[type]" value="2" <?php echo esc_attr($setting['type']) == 2 ? 'checked' : '' ?> />
+                        </div>
+                        <div class="insta-icon-select-option">
+                            <img width="30px" src="<?php echo plugin_dir_url(__FILE__) . "../../img/login3.svg"; ?>" alt="logo1">
+                            <input type="radio" name="<?php echo esc_attr($setting_name) ?>[type]" value="3" <?php echo esc_attr($setting['type']) == 3 ? 'checked' : '' ?> />
+                        </div>
+                        <div class="insta-icon-select-option">
+                            <img width="30px" src="<?php echo plugin_dir_url(__FILE__) . "../../img/login4.svg"; ?>" alt="logo1">
+                            <input type="radio" name="<?php echo esc_attr($setting_name) ?>[type]" value="4" <?php echo esc_attr($setting['type']) == 4 ? 'checked' : '' ?> />
+                        </div>
+
+                        <div class="insta-icon-select-option">
+                            <style>
+                                /* Hide Chrome "image missing" icon error. TODO: move to css */
+                                img {
+                                    position: relative;
+                                }
+
+                                img[alt]:after {
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: #fff;
+                                    font-family: 'Helvetica';
+                                    font-weight: 300;
+                                    line-height: 2;
+                                    text-align: center;
+                                    content: attr(alt);
+                                }
+                            </style>
+                            <?php
+                            echo '<img id="selected-media" width="30px" height="30px" style="border: none;" src="' . esc_attr($setting["custom_src"]) . '" alt=" ">';
+                            ?>
+
+                            <input type="radio" name="<?php echo esc_attr($setting_name) ?>[type]" value="custom" <?php echo esc_attr($setting['type']) == 'custom' ? 'checked' : '' ?> />
+                        </div>
+
+                        <div>
+                            <button class="button" style="border: 1px solid #707070; color: #707070; border-radius: 4px; font-size: 14px; font-weight: bold;"><?php _e("Select custom icon", 'instalogin-me') ?></button>
+                            <input type="hidden" name="<?php echo esc_attr($setting_name) ?>[custom_src]" value="<?php echo esc_attr($setting['custom_src']) ?>">
+                            <!-- <img width="30px" style="border: none;" src="<?php echo esc_attr($setting['custom_src']) ?>" alt=""> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php
+        }, $page, $section);
+    }
+
     private function api_tab($page)
     {
         $section = 'instalogin-api';
 
-        // Add to wp
         add_settings_section($section, __('API', 'instalogin-me'), function () {
             // Settings Section Title
         }, $page);
@@ -412,7 +514,13 @@ class InstaloginSettings
 
                 <!-- TODO: proper settings -->
 
-                <div class="insta-3-col-l" style="opacity: .5;">
+                <div class="insta-3-col-l">
+                    <h3 style="margin: 0; color: var(--insta-red);">
+                        COMING SOON
+                    </h3>
+                </div>
+
+                <div class=" insta-3-col-l" style="opacity: .5;">
                     <div class="insta-settings-label"><?php _e("Upload smartimage", 'instalogin-me') ?></div>
                     <div>
                         <select name="instalogin-api-type">
@@ -436,13 +544,13 @@ class InstaloginSettings
             </div>
 
             <h3 class="insta-h3" style="margin-top: 2rem;"><?php _e("Examples", 'instalogin-me') ?></h3>
-            <div class="insta-info" style="grid-row: span 2; max-width: 110ch;"><?php _e("During the beta phase, Smart Images must be configured by an Instalogin representative. You can submit a request to smartimage@instalogin.me. Send us a 500px x 500px image of your logo or an image and we'll do the rest.", 'instalogin-me') ?></div>
+            <div class="insta-info" style="grid-row: span 2; max-width: 110ch;"><?php _e("During the beta phase, Smart Images must be configured by an Instalogin representative. You can submit a request to <a href='mailto:support@instalogin.me'>support@instalogin.me</a>. Send us a 500px x 500px image of your logo or an image and we'll do the rest.", 'instalogin-me') ?></div>
 
             <div>
                 <div style="display: flex; gap: 6rem; color: var(--insta-blue-darker); font-size: 14px; font-weight: bold;">
                     <div>
                         <h4 style="">InstaCode</h4>
-                            <img height="200px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../../img/qr.png" alt="">
+                        <img height="200px" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../../img/qr.png" alt="">
                     </div>
                     <div>
                         <h4 style="">SmartImage</h4>

@@ -194,16 +194,24 @@ class InstaloginProfilePage
                         }
 
                         .insta-head-green {
-                            color: #31AA52;
+                            color: var(--insta-green);
                             font-size: 20px;
                             font-weight: bold;
                         }
 
                         .insta-text-green {
-                            color: #31AA52;
+                            color: var(--insta-green);
                             font-size: 16px;
                             font-weight: bold;
                             margin-top: 1rem;
+                        }
+
+                        .insta-success-notification {
+                            color: var(--insta-green);
+                        }
+
+                        .insta-error-notification {
+                            color: var(--insta-red);
                         }
                     </style>
 
