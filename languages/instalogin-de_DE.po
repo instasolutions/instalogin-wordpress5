@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2021-12-12 12:11+0100\n"
-"PO-Revision-Date: 2021-12-12 12:12+0100\n"
+"POT-Creation-Date: 2021-12-21 03:18+0100\n"
+"PO-Revision-Date: 2021-12-21 03:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -22,15 +22,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: plugin.php:137
+#: plugin.php:138
 msgid "You are almost ready to use Instalogin!"
 msgstr "Sie sind fast bereit, Instalogin zu verwenden!"
 
-#: plugin.php:138
+#: plugin.php:139
 msgid "Please finish the setup: "
 msgstr "Bitte beenden Sie die Einrichtung: "
 
-#: plugin.php:154
+#: plugin.php:155
 msgid "API key or secret invalid."
 msgstr "API Schlüssel oder Secret ungültig."
 
@@ -135,7 +135,7 @@ msgstr ""
 "Scannen Sie den InstaCode mit der InstaApp, um sich sicher und passwortfrei "
 "anzumelden."
 
-#: src/popup/default_settings.php:36 src/popup/shortcode.php:342
+#: src/popup/default_settings.php:36 src/popup/shortcode.php:346
 msgid "Register"
 msgstr "Registrieren"
 
