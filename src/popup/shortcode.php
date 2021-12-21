@@ -54,7 +54,8 @@ class InstaloginPopupShortcode
         <style>
             .insta-popup-container .instalogin-popup {
                 background: <?php echo esc_attr($setting['qr-bg']) ?>;
-                border-radius: 20px;
+                border-radius: 8px;
+                /* TODO: setting */
                 /* border:; */
                 box-shadow: <?php echo esc_html($setting['qr-shadow']) == 'on' ? '#00000029 0px 3px 6px' : '' ?>;
             }
