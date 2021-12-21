@@ -70,6 +70,8 @@ class InstaloginPopupShortcode
                 justify-content: center;
                 align-items: center;
 
+                white-space: wrap !important;
+
                 /* scale: .5; */
 
             }
@@ -146,45 +148,47 @@ class InstaloginPopupShortcode
             }
 
             .insta-popup-container .insta-title {
-                white-space: nowrap;
-                font-size: <?php echo esc_attr($setting['title-size']) ?>;
-                font-family: <?php echo esc_attr($setting['font']) ?>;
-                color: <?php echo esc_attr($setting['title-color']) ?>;
-                font-weight: <?php echo esc_attr($setting['title-weight']) ?>;
+                white-space: nowrap; 
+                font-size: <?php echo esc_attr($setting['title-size']) ?> !important;
+                font-family: <?php echo esc_attr($setting['font']) ?> !important;
+                color: <?php echo esc_attr($setting['title-color']) ?> !important;
+                font-weight: <?php echo esc_attr($setting['title-weight']) ?> !important;
             }
 
             .insta-popup-container .insta-sub {
-                font-size: <?php echo esc_attr($setting['sub-title-size']) ?>;
-                font-weight: <?php echo esc_attr($setting['sub-title-weight']) ?>;
-                font-family: <?php echo esc_attr($setting['font']) ?>;
-                color: <?php echo esc_attr($setting['sub-title-color']) ?>;
+                font-size: <?php echo esc_attr($setting['sub-title-size']) ?> !important;
+                font-weight: <?php echo esc_attr($setting['sub-title-weight']) ?> !important;
+                font-family: <?php echo esc_attr($setting['font']) ?> !important;
+                color: <?php echo esc_attr($setting['sub-title-color']) ?> !important;
                 line-height: 1.15;
             }
 
             .insta-popup-container .insta-text {
-                margin-top: .5rem;
-                line-height: 1.3;
+                margin-top: .5rem !important;
+                line-height: 1.3 !important;
 
-                font-size: <?php echo esc_attr($setting['text-size']) ?>;
-                font-weight: <?php echo esc_attr($setting['text-weight']) ?>;
-                font-family: <?php echo esc_attr($setting['font']) ?>;
-                color: <?php echo esc_attr($setting['text-color']) ?>;
+                font-size: <?php echo esc_attr($setting['text-size']) ?> !important;
+                font-weight: <?php echo esc_attr($setting['text-weight']) ?> !important;
+                font-family: <?php echo esc_attr($setting['font']) ?> !important;
+                color: <?php echo esc_attr($setting['text-color']) ?> !important;
+                /* TODO: setting */
+                text-transform: none !important; 
             }
 
             .insta-popup-container .insta-button {
                 font-size: <?php echo esc_attr($setting['button-size']) ?> !important;
                 color: <?php echo esc_attr($setting['button-color']) ?> !important;
                 background: <?php echo esc_attr($setting['button-bg']) ?> !important;
-                border-radius: <?php echo esc_attr($setting['button-radius']) ?>;
+                border-radius: <?php echo esc_attr($setting['button-radius']) ?> !important;
                 float: right;
                 margin-top: 1rem;
 
-                padding: 8px 24px;
+                padding: 8px 24px !important;
 
                 align-self: end;
                 text-decoration: none;
                 transition: transform .15s ease-out;
-                box-shadow: none;
+                box-shadow: none !important;
             }
 
             .insta-popup-button {
