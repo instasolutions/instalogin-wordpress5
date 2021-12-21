@@ -33,7 +33,7 @@ class InstaloginRegisterShortcode
 
             // RENDER
             ob_start(); ?>
-            <form class="instalogin-register">
+            <div class="instalogin-register">
 
                 <?php if ($require_username) { ?>
                     <label>
@@ -48,12 +48,12 @@ class InstaloginRegisterShortcode
                 </label>
 
                 <?php if ($show_button) { ?>
-                    <input class="instalogin-submit" type="submit" value="<?php echo esc_attr($button_text) ?>">
+                    <div class="instalogin-submit"><?php echo esc_attr($button_text) ?></div>
                 <?php } ?>
 
                 <p class="instalogin-error"></p>
                 <p class="instalogin-info"></p>
-            </form>
+            </div>
 <?php
             return ob_get_clean();
         });

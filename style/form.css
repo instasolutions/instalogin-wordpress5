@@ -8,16 +8,19 @@
 .instalogin-submit {
   margin-top: 1rem;
   display: block;
+  cursor: pointer;
 }
 
 .instalogin-info {
   display: none;
   margin: 1rem 0;
+  color: var(--insta-green);
 }
 
 .instalogin-error {
   display: none;
   margin: 1rem 0;
+  color: var(--insta-red);
 }
 
 /* Device Manager */

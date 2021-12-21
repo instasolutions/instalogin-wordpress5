@@ -1,7 +1,7 @@
 {
   const { __ } = wp.i18n;
 
-  /** @type {HTMLFormElement[]} */
+  /** @type {HTMLDivElement[]} */
   const forms = document.querySelectorAll(".instalogin-register");
 
   for (const form of forms) {
@@ -9,16 +9,19 @@
     const e_username = form.querySelector(".instalogin-username");
     /** @type {HTMLInputElement} */
     const e_email = form.querySelector(".instalogin-email");
-    /** @type HTMLInputElement */
+    /** @type HTMLDivElement */
     const e_submit = form.querySelector(".instalogin-submit");
     /** @type HTMLParagraphElement */
     const e_error = form.querySelector(".instalogin-error");
     /** @type HTMLParagraphElement */
     const e_info = form.querySelector(".instalogin-info");
 
-    form.addEventListener("submit", async (event) => {
+    e_submit.addEventListener("click", async (event) => {
       event.preventDefault();
+      if(e_submit.disabled) return;
+
       e_error.innerText = "";
+
 
       let username = null;
       if (e_username) username = e_username.value;
@@ -45,7 +48,7 @@
         const data = await response.json();
         console.error(data);
         e_error.style.display = "block";
-        e_error.innerText = data.message;
+        e_error.innerText = data.message ? data.message : data;
       }
     });
   }
