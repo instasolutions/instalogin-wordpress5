@@ -61,6 +61,7 @@ ul.instalogin-device-list li {
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
+  margin-top: 0.5rem;
 }
 
 ul.instalogin-device-list li button {
@@ -102,7 +103,7 @@ ul.instalogin-device-list li button {
 ul.instalogin-device-list .instalogin-device-entry {
   display: flex;
   flex-flow: column;
-  margin-top: 0.5rem;
+  
 }
 
 ul.instalogin-device-list .instalogin-device-entry span {
@@ -135,7 +136,8 @@ ul.instalogin-device-list svg {
   left: 0;
   right: 0;
 
-  font-size: 1.1rem ;
+  font-size: 1rem ;
+  line-height: 1.1;
 
   color: white;
   background: rgba(39, 81, 118, 0.9);
