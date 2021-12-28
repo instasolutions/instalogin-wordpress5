@@ -515,7 +515,7 @@ class InstaloginSettings
                 <!-- TODO: proper settings -->
 
                 <div class="insta-3-col-l">
-                    <h3 style="margin: 0; color: var(--insta-red);">
+                    <h3 style="margin: 0; color: var(--insta-new-blue);">
                         COMING SOON
                     </h3>
                 </div>

@@ -112,12 +112,12 @@ class InstaloginProfilePage
                         }
 
                         .insta-title {
-                            color: var(--insta-red);
+                            color: var(--insta-new-blue);
                             font-size: 20px;
                         }
 
                         #instalogin-reset-password {
-                            background: var(--insta-red) !important;
+                            background: var(--insta-new-blue) !important;
                             color: white !important;
 
                             font-size: 16px !important;
@@ -140,11 +140,11 @@ class InstaloginProfilePage
                         }
 
                         .insta-confirm {
-                            color: var(--insta-red);
+                            color: var(--insta-new-blue);
                         }
 
                         summary.insta {
-                            color: var(--insta-red);
+                            color: var(--insta-new-blue);
                             font-size: 20px;
                             font-weight: bold;
                         }

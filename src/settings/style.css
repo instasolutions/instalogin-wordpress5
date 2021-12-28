@@ -114,7 +114,7 @@ input + label {
 }
 
 input:checked + label {
-  color: var(--insta-red);
+  color: var(--insta-new-blue);
   background: white;
 }
 
@@ -147,7 +147,7 @@ input:checked + label {
 /* settings page */
 
 .insta-h3 {
-  color: var(--insta-red);
+  color: var(--insta-new-blue);
   font-weight: bold;
   margin: 1rem 0;
   font-size: 18px;
@@ -191,8 +191,8 @@ input:checked + label {
 
 .insta-button-red, .insta-button-red:hover {
   background: transparent;
-  border-color: var(--insta-red);
-  color: var(--insta-red);
+  border-color: var(--insta-new-blue);
+  color: var(--insta-new-blue);
 }
 
 .insta-cta,
