@@ -54,13 +54,15 @@ class InstaloginLoginAPI
                         wp_set_current_user($user->id);
                         wp_set_auth_cookie($user->id, true, is_ssl());
 
-                        // TODO: Add option redirect to current page?
-                        // $redirect = $request->get_header('referer');
-                        // if ($redirect == null || strpos($redirect, 'wp-login.php') !== false) {
-                        //     $redirect = '/wp-admin';
-                        // }
-
+                        // Redirect set in plugin settings
                         $redirect = get_option('instalogin-api-redirect', admin_url());
+                        
+                        // Overwrite with redirect set in shortcode
+                        $redirect_param = $request->get_param('redirect');
+                        if($redirect_param && $redirect_param != '') {
+                            $redirect = $redirect_param;
+                        }
+
                         $redirect = trim($redirect);
 
                         if ($redirect == '') {

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2021-12-21 03:18+0100\n"
-"PO-Revision-Date: 2021-12-21 03:18+0100\n"
+"POT-Creation-Date: 2021-12-29 20:20+0100\n"
+"PO-Revision-Date: 2021-12-29 20:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -58,7 +58,7 @@ msgstr "Abbrechen"
 msgid "Email has been sent!"
 msgstr "E-Mail wurde gesendet!"
 
-#: scripts/devices.js:153 src/devices/shortcode.php:60
+#: scripts/devices.js:153 src/devices/shortcode.php:61
 msgid "Add Device"
 msgstr "Neues Gerät hinzufügen"
 
@@ -66,7 +66,7 @@ msgstr "Neues Gerät hinzufügen"
 msgid "Yes"
 msgstr "Ja"
 
-#: scripts/register.js:37
+#: scripts/register.js:40
 msgid "Account created! Please check your inbox."
 msgstr "Account erstellt! Bitte prüfe dein Postfach."
 
@@ -96,15 +96,11 @@ msgstr "Der Parameter device_id fehlt."
 msgid "Device id does not belong to this identity."
 msgstr "Das Gerät gehört nicht zu diesem Nutzer."
 
-#: src/devices/shortcode.php:23
-msgid "You must be logged in to manage devices."
-msgstr "Du musst angemeldet sein um Geräte verwalten zu können."
-
-#: src/devices/shortcode.php:53
+#: src/devices/shortcode.php:54
 msgid "Connected Devices"
 msgstr "Verbundene Geräte"
 
-#: src/devices/shortcode.php:59
+#: src/devices/shortcode.php:60
 msgid "Refresh"
 msgstr "Aktualisieren"
 
@@ -117,25 +113,29 @@ msgstr ""
 msgid "Could not find user presented by token."
 msgstr "Der Nutzer konnte dem Token nicht zugeordnet werden."
 
-#: src/login/rest.php:78
+#: src/login/rest.php:80
 msgid "Could not verify token."
 msgstr "Der Token konnte nicht verifiziert werden."
 
 #: src/popup/default_settings.php:24
-msgid "Admin Portal"
-msgstr "Adminportal"
+msgid "Login"
+msgstr ""
 
 #: src/popup/default_settings.php:28
 msgid "Password-less<br> next gen login"
 msgstr "Passwortloser<br> Login der nächsten Generation"
 
 #: src/popup/default_settings.php:32
-msgid "Scan the InstaCode using the InstaApp to login securely, password-free."
+#, fuzzy
+#| msgid ""
+#| "Scan the InstaCode using the InstaApp to login securely, password-free."
+msgid ""
+"Scan the InstaCode using the Instalogin app to login securely, password-free."
 msgstr ""
 "Scannen Sie den InstaCode mit der InstaApp, um sich sicher und passwortfrei "
 "anzumelden."
 
-#: src/popup/default_settings.php:36 src/popup/shortcode.php:346
+#: src/popup/default_settings.php:36 src/popup/shortcode.php:344
 msgid "Register"
 msgstr "Registrieren"
 
@@ -147,11 +147,11 @@ msgstr "Einloggen"
 msgid "Sign Out"
 msgstr "Ausloggen"
 
-#: src/popup/menu.php:12 src/popup/menu.php:13
+#: src/popup/menu.php:11 src/popup/menu.php:12
 msgid "Instalogin"
 msgstr ""
 
-#: src/popup/menu.php:30
+#: src/popup/menu.php:29
 msgid "Instalogin PopUp"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr ""
 msgid "PopUp Preview"
 msgstr "Popup-Vorschau"
 
-#: src/popup/settings.php:10 src/settings/settings.php:491
+#: src/popup/settings.php:10 src/settings/settings.php:492
 msgid "Smartcode"
 msgstr "Smartcode"
 
@@ -587,9 +587,13 @@ msgid " adds an InstaCode to your page."
 msgstr " fügt Ihrer Seite einen InstaCode hinzu."
 
 #: src/settings/settings.php:237
+#, fuzzy
+#| msgid ""
+#| "Instalogin will use these settings by default as such <b>[insta-login "
+#| "size='100px' show_when_logged_in='false' border='false' ]</b> ."
 msgid ""
 "Instalogin will use these settings by default as such <b>[insta-login "
-"size='100px' show_when_logged_in='false' border='false' ]</b> ."
+"size='100px' show_when_logged_in='false' border='false' redirect='' ]</b> ."
 msgstr ""
 "Instalogin verwendet diese Einstellungen standardmäßig  <b>[insta-login "
 "size='100px' show_when_logged_in='false' border='false' ]</b> ."
@@ -598,11 +602,20 @@ msgstr ""
 msgid "Feel free to edit any or all settings."
 msgstr "Passen Sie nach Belieben an."
 
-#: src/settings/settings.php:244
+#: src/settings/settings.php:240
+msgid ""
+"Set redirect to any url to send the user to a non default login page like a "
+"dashboard or marketing page e.g. '/dashboard' or '/marketing'."
+msgstr ""
+"Setzen Sie die Weiterleitung auf eine beliebige URL, um den Benutzer zu "
+"einer nicht standardmäßigen Anmeldeseite wie einem Dashboard oder einer "
+"Marketingseite zu leiten, z. B. \"/dashboard\" oder \"/marketing\"."
+
+#: src/settings/settings.php:245
 msgid " adds a simple registration form to your page."
 msgstr " fügt Ihrer Seite ein einfaches Registrierungsformular hinzu."
 
-#: src/settings/settings.php:246
+#: src/settings/settings.php:247
 msgid ""
 "With optional default settings: <b>[insta-register require_username='true' "
 "show_button='true' button_text='Submit' show_when_logged_in='false' ]</b> ."
@@ -611,13 +624,13 @@ msgstr ""
 "require_username='true' show_button='true' button_text='Submit' "
 "show_when_logged_in='false' ]</b> ."
 
-#: src/settings/settings.php:248
+#: src/settings/settings.php:249
 msgid "If a username is not required, the users email address will be used."
 msgstr ""
 "Wenn kein Benutzername erforderlich ist, wird die E-Mail-Adresse des "
 "Benutzers verwendet."
 
-#: src/settings/settings.php:253
+#: src/settings/settings.php:254
 msgid ""
 " May be used to add a login popup to a page. Alternatively you can add a "
 "popup by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</"
@@ -627,19 +640,19 @@ msgstr ""
 "Alternativ können Sie ein Popup hinzufügen, indem Sie Insta-PopUp zu einem "
 "Menü in <b>Aussehen > Anpassen > Menüs</b>hinzufügen."
 
-#: src/settings/settings.php:259
+#: src/settings/settings.php:260
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: src/settings/settings.php:285
+#: src/settings/settings.php:286
 msgid "Basic"
 msgstr ""
 
-#: src/settings/settings.php:297 wizard/steps/step3.php:186
+#: src/settings/settings.php:298 wizard/steps/step3.php:186
 msgid "Enable login via Instalogin"
 msgstr "Login über Instalogin aktivieren"
 
-#: src/settings/settings.php:301 wizard/steps/step3.php:189
+#: src/settings/settings.php:302 wizard/steps/step3.php:189
 msgid ""
 "Enable or disable all Instalogin methods. Users may not use Instalogin to "
 "sign in to or to create new accounts."
@@ -648,25 +661,25 @@ msgstr ""
 "Instalogin nicht verwenden, um sich bei Konten anzumelden oder neue Konten "
 "zu erstellen."
 
-#: src/settings/settings.php:314 wizard/steps/step3.php:192
+#: src/settings/settings.php:315 wizard/steps/step3.php:192
 msgid "Activation on Register"
 msgstr "Aktivierung bei Registrierung"
 
-#: src/settings/settings.php:318 wizard/steps/step3.php:195
+#: src/settings/settings.php:319 wizard/steps/step3.php:195
 msgid "An Instalogin mail will be sent to every new user upon registration."
 msgstr ""
 "Bei der Registrierung wird jedem neuen Benutzer eine Instalogin-Mail "
 "zugesandt."
 
-#: src/settings/settings.php:328 src/settings/settings.php:355
+#: src/settings/settings.php:329 src/settings/settings.php:356
 msgid "Basic-Redirect"
 msgstr "Weiterleitung"
 
-#: src/settings/settings.php:340
+#: src/settings/settings.php:341
 msgid "Redirect to after login"
 msgstr "Weiterleitung nach login"
 
-#: src/settings/settings.php:343
+#: src/settings/settings.php:344
 msgid ""
 "Decide to which page users should be redirected to after successfully "
 "logging in. '/wp-admin' is the common directory."
@@ -674,11 +687,11 @@ msgstr ""
 "Entscheiden Sie, auf welche Seite Benutzer nach erfolgreicher Anmeldung "
 "umgeleitet werden sollen. '/wp-admin' ist das Standardverzeichnis."
 
-#: src/settings/settings.php:381
+#: src/settings/settings.php:382
 msgid "Icon shown in the login popup"
 msgstr "Icon im Login-Popup"
 
-#: src/settings/settings.php:385
+#: src/settings/settings.php:386
 msgid ""
 "Choose a login icon which will be integrated into your navigation in the "
 "menu or in the footer. You can make further settings under \"Login Popup "
@@ -689,27 +702,27 @@ msgstr ""
 "Einstellungen wie z.B. Größe und Farbe vornehmen, um das Icon an Ihren Stil "
 "anzupassen."
 
-#: src/settings/settings.php:436
+#: src/settings/settings.php:437
 msgid "Select custom icon"
 msgstr "Benutzerdefiniertes Symbol auswählen"
 
-#: src/settings/settings.php:451
+#: src/settings/settings.php:452
 msgid "API"
 msgstr ""
 
-#: src/settings/settings.php:462 wizard/steps/step3.php:156
+#: src/settings/settings.php:463 wizard/steps/step3.php:156
 msgid "API Key"
 msgstr "API Schlüssel"
 
-#: src/settings/settings.php:477 wizard/steps/step3.php:161
+#: src/settings/settings.php:478 wizard/steps/step3.php:161
 msgid "API Secret"
 msgstr "API Secret"
 
-#: src/settings/settings.php:505
+#: src/settings/settings.php:506
 msgid "InstaCode at login"
 msgstr "InstaCode beim Login"
 
-#: src/settings/settings.php:512
+#: src/settings/settings.php:513
 msgid ""
 "Should the InstaCode be displayed in QR format or as a smart image, e.g. "
 "your logo?"
@@ -717,11 +730,11 @@ msgstr ""
 "Soll der InstaCode im QR-Format oder als Smart Image angezeigt werden, z.B. "
 "Ihr Logo?"
 
-#: src/settings/settings.php:524
+#: src/settings/settings.php:525
 msgid "Upload smartimage"
 msgstr "Smartimage hochladen"
 
-#: src/settings/settings.php:530
+#: src/settings/settings.php:531
 msgid ""
 "To use your logo or other image as SmartCode, please upload a PNG with "
 "500x500 pixels and maximum 4 colors."
@@ -729,11 +742,11 @@ msgstr ""
 "Um Ihr Logo oder ein anderes Bild als SmartCode zu verwenden, laden Sie "
 "bitte ein PNG mit 500x500 Pixeln und maximal 4 Farben hoch."
 
-#: src/settings/settings.php:534
+#: src/settings/settings.php:535
 msgid "Upload icon"
 msgstr "Icon hochladen"
 
-#: src/settings/settings.php:540
+#: src/settings/settings.php:541
 msgid ""
 "Upload your app icon. The icon will be displayed on your account in the app. "
 "The icon should be a PNG with 500x500 pixels."
@@ -741,11 +754,11 @@ msgstr ""
 "Laden Sie Ihr App-Symbol hoch. Das Symbol wird in Ihrem Konto in der App "
 "angezeigt. Das Symbol sollte ein PNG mit 500x500 Pixeln sein."
 
-#: src/settings/settings.php:546
+#: src/settings/settings.php:547
 msgid "Examples"
 msgstr "Beispiele"
 
-#: src/settings/settings.php:547
+#: src/settings/settings.php:548
 msgid ""
 "During the beta phase, Smart Images must be configured by an Instalogin "
 "representative. You can submit a request to <a href='mailto:"
@@ -990,6 +1003,12 @@ msgstr "InstaSolutions GmbH"
 #. Author URI of the plugin/theme
 msgid "https://instalogin.me"
 msgstr "https://instalogin.me"
+
+#~ msgid "You must be logged in to manage devices."
+#~ msgstr "Du musst angemeldet sein um Geräte verwalten zu können."
+
+#~ msgid "Admin Portal"
+#~ msgstr "Adminportal"
 
 #~ msgid "Save & Refresh"
 #~ msgstr "Speichern & Aktualisieren"

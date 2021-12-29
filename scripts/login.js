@@ -1,4 +1,4 @@
-function init_insta(id, api_key, display_type) {
+function init_insta(id, api_key, display_type, redirect) {
   console.log("insta: creating qr code");
 
   /** @type {HTMLButtonElement} */
@@ -29,12 +29,19 @@ function init_insta(id, api_key, display_type) {
     display_type = "qr";
   }
 
+  let url = insta_api + "login-controller";
+  console.log(redirect);
+  if(redirect && redirect != '') {
+    url += '?redirect=' + redirect;
+  }
+
+
   // instance may be used by other scripts
   return new Instalogin.Auth({
     id,
     key: api_key,
     useAuthHeader: false,
-    authenticationUrl: insta_api + "login-controller",
+    authenticationUrl: url,
     type: display_type,
   }).start();
 }
