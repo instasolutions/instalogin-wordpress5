@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2021-12-29 20:20+0100\n"
-"PO-Revision-Date: 2021-12-29 20:21+0100\n"
+"POT-Creation-Date: 2022-01-05 00:22+0100\n"
+"PO-Revision-Date: 2022-01-05 00:23+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -159,7 +159,7 @@ msgstr ""
 msgid "PopUp Preview"
 msgstr "Popup-Vorschau"
 
-#: src/popup/settings.php:10 src/settings/settings.php:492
+#: src/popup/settings.php:10 src/settings/settings.php:494
 msgid "Smartcode"
 msgstr "Smartcode"
 
@@ -611,11 +611,19 @@ msgstr ""
 "einer nicht standardmäßigen Anmeldeseite wie einem Dashboard oder einer "
 "Marketingseite zu leiten, z. B. \"/dashboard\" oder \"/marketing\"."
 
-#: src/settings/settings.php:245
+#: src/settings/settings.php:242
+msgid ""
+"Alternatively: Set redirect to 'stayonpage' to just refresh the page the "
+"user is viewing."
+msgstr ""
+"Alternativ: Setzen Sie redirect auf 'stayonpage', um die aktive Seite "
+"einfach nur zu aktualisieren."
+
+#: src/settings/settings.php:247
 msgid " adds a simple registration form to your page."
 msgstr " fügt Ihrer Seite ein einfaches Registrierungsformular hinzu."
 
-#: src/settings/settings.php:247
+#: src/settings/settings.php:249
 msgid ""
 "With optional default settings: <b>[insta-register require_username='true' "
 "show_button='true' button_text='Submit' show_when_logged_in='false' ]</b> ."
@@ -624,13 +632,13 @@ msgstr ""
 "require_username='true' show_button='true' button_text='Submit' "
 "show_when_logged_in='false' ]</b> ."
 
-#: src/settings/settings.php:249
+#: src/settings/settings.php:251
 msgid "If a username is not required, the users email address will be used."
 msgstr ""
 "Wenn kein Benutzername erforderlich ist, wird die E-Mail-Adresse des "
 "Benutzers verwendet."
 
-#: src/settings/settings.php:254
+#: src/settings/settings.php:256
 msgid ""
 " May be used to add a login popup to a page. Alternatively you can add a "
 "popup by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</"
@@ -640,19 +648,19 @@ msgstr ""
 "Alternativ können Sie ein Popup hinzufügen, indem Sie Insta-PopUp zu einem "
 "Menü in <b>Aussehen > Anpassen > Menüs</b>hinzufügen."
 
-#: src/settings/settings.php:260
+#: src/settings/settings.php:262
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: src/settings/settings.php:286
+#: src/settings/settings.php:288
 msgid "Basic"
 msgstr ""
 
-#: src/settings/settings.php:298 wizard/steps/step3.php:186
+#: src/settings/settings.php:300 wizard/steps/step3.php:186
 msgid "Enable login via Instalogin"
 msgstr "Login über Instalogin aktivieren"
 
-#: src/settings/settings.php:302 wizard/steps/step3.php:189
+#: src/settings/settings.php:304 wizard/steps/step3.php:189
 msgid ""
 "Enable or disable all Instalogin methods. Users may not use Instalogin to "
 "sign in to or to create new accounts."
@@ -661,25 +669,25 @@ msgstr ""
 "Instalogin nicht verwenden, um sich bei Konten anzumelden oder neue Konten "
 "zu erstellen."
 
-#: src/settings/settings.php:315 wizard/steps/step3.php:192
+#: src/settings/settings.php:317 wizard/steps/step3.php:192
 msgid "Activation on Register"
 msgstr "Aktivierung bei Registrierung"
 
-#: src/settings/settings.php:319 wizard/steps/step3.php:195
+#: src/settings/settings.php:321 wizard/steps/step3.php:195
 msgid "An Instalogin mail will be sent to every new user upon registration."
 msgstr ""
 "Bei der Registrierung wird jedem neuen Benutzer eine Instalogin-Mail "
 "zugesandt."
 
-#: src/settings/settings.php:329 src/settings/settings.php:356
+#: src/settings/settings.php:331 src/settings/settings.php:358
 msgid "Basic-Redirect"
 msgstr "Weiterleitung"
 
-#: src/settings/settings.php:341
+#: src/settings/settings.php:343
 msgid "Redirect to after login"
 msgstr "Weiterleitung nach login"
 
-#: src/settings/settings.php:344
+#: src/settings/settings.php:346
 msgid ""
 "Decide to which page users should be redirected to after successfully "
 "logging in. '/wp-admin' is the common directory."
@@ -687,11 +695,11 @@ msgstr ""
 "Entscheiden Sie, auf welche Seite Benutzer nach erfolgreicher Anmeldung "
 "umgeleitet werden sollen. '/wp-admin' ist das Standardverzeichnis."
 
-#: src/settings/settings.php:382
+#: src/settings/settings.php:384
 msgid "Icon shown in the login popup"
 msgstr "Icon im Login-Popup"
 
-#: src/settings/settings.php:386
+#: src/settings/settings.php:388
 msgid ""
 "Choose a login icon which will be integrated into your navigation in the "
 "menu or in the footer. You can make further settings under \"Login Popup "
@@ -702,27 +710,27 @@ msgstr ""
 "Einstellungen wie z.B. Größe und Farbe vornehmen, um das Icon an Ihren Stil "
 "anzupassen."
 
-#: src/settings/settings.php:437
+#: src/settings/settings.php:439
 msgid "Select custom icon"
 msgstr "Benutzerdefiniertes Symbol auswählen"
 
-#: src/settings/settings.php:452
+#: src/settings/settings.php:454
 msgid "API"
 msgstr ""
 
-#: src/settings/settings.php:463 wizard/steps/step3.php:156
+#: src/settings/settings.php:465 wizard/steps/step3.php:156
 msgid "API Key"
 msgstr "API Schlüssel"
 
-#: src/settings/settings.php:478 wizard/steps/step3.php:161
+#: src/settings/settings.php:480 wizard/steps/step3.php:161
 msgid "API Secret"
 msgstr "API Secret"
 
-#: src/settings/settings.php:506
+#: src/settings/settings.php:508
 msgid "InstaCode at login"
 msgstr "InstaCode beim Login"
 
-#: src/settings/settings.php:513
+#: src/settings/settings.php:515
 msgid ""
 "Should the InstaCode be displayed in QR format or as a smart image, e.g. "
 "your logo?"
@@ -730,11 +738,11 @@ msgstr ""
 "Soll der InstaCode im QR-Format oder als Smart Image angezeigt werden, z.B. "
 "Ihr Logo?"
 
-#: src/settings/settings.php:525
+#: src/settings/settings.php:527
 msgid "Upload smartimage"
 msgstr "Smartimage hochladen"
 
-#: src/settings/settings.php:531
+#: src/settings/settings.php:533
 msgid ""
 "To use your logo or other image as SmartCode, please upload a PNG with "
 "500x500 pixels and maximum 4 colors."
@@ -742,11 +750,11 @@ msgstr ""
 "Um Ihr Logo oder ein anderes Bild als SmartCode zu verwenden, laden Sie "
 "bitte ein PNG mit 500x500 Pixeln und maximal 4 Farben hoch."
 
-#: src/settings/settings.php:535
+#: src/settings/settings.php:537
 msgid "Upload icon"
 msgstr "Icon hochladen"
 
-#: src/settings/settings.php:541
+#: src/settings/settings.php:543
 msgid ""
 "Upload your app icon. The icon will be displayed on your account in the app. "
 "The icon should be a PNG with 500x500 pixels."
@@ -754,11 +762,11 @@ msgstr ""
 "Laden Sie Ihr App-Symbol hoch. Das Symbol wird in Ihrem Konto in der App "
 "angezeigt. Das Symbol sollte ein PNG mit 500x500 Pixeln sein."
 
-#: src/settings/settings.php:547
+#: src/settings/settings.php:549
 msgid "Examples"
 msgstr "Beispiele"
 
-#: src/settings/settings.php:548
+#: src/settings/settings.php:550
 msgid ""
 "During the beta phase, Smart Images must be configured by an Instalogin "
 "representative. You can submit a request to <a href='mailto:"

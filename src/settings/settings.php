@@ -238,6 +238,8 @@ class InstaloginSettings
                                     <br>
                                     <?php _e("Feel free to edit any or all settings.", 'instalogin-me') ?>
                                     <?php _e("Set redirect to any url to send the user to a non default login page like a dashboard or marketing page e.g. '/dashboard' or '/marketing'.","instalogin-me") ?>
+                                    <br>
+                                    <?php _e("Alternatively: Set redirect to 'stayonpage' to just refresh the page the user is viewing.", "instalogin-me") ?>
                                 </p>
 
                                 <p>

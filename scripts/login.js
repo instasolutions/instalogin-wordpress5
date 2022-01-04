@@ -32,6 +32,11 @@ function init_insta(id, api_key, display_type, redirect) {
   let url = insta_api + "login-controller";
   console.log(redirect);
   if(redirect && redirect != '') {
+
+    if(redirect == 'stayonpage') {
+      redirect = window.location.href;
+    }
+
     url += '?redirect=' + redirect;
   }
 
