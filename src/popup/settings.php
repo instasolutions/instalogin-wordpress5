@@ -301,8 +301,7 @@ class InstaloginPopupSettings
                         <label>
                             <span><?php _e("Text", 'instalogin-me') ?></span>
                             <textarea type="text" placeholder="Sign In" name="<?php echo esc_attr($setting_name) ?>[sub-title-text]">
-                                <?php echo esc_attr($setting['sub-title-text']) ?>
-                            </textarea>
+<?php echo esc_attr($setting['sub-title-text']) ?></textarea>
                         </label>
                         <label>
                             <span><?php _e("Size", 'instalogin-me') ?></span>
@@ -332,9 +331,7 @@ class InstaloginPopupSettings
                     <div>
                         <label>
                             <span><?php _e("Content", 'instalogin-me') ?></span>
-                            <textarea type="text" placeholder="Sign In" name="<?php echo esc_attr($setting_name) ?>[text-text]">
-                                <?php echo esc_attr($setting['text-text']) ?>
-                            </textarea>
+                            <textarea type="text" placeholder="Sign In" name="<?php echo esc_attr($setting_name) ?>[text-text]"><?php echo wp_kses_post($setting['text-text']) ?></textarea>
                         </label>
                         <label>
                             <span><?php _e("Size", 'instalogin-me') ?></span>
