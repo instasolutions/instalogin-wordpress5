@@ -500,14 +500,15 @@ class InstaloginSettings
         register_setting($page, $setting_name);
         add_settings_field($setting_name . "_field", '', function () {
             $setting_name = 'instalogin-api-type';
-            $setting = get_option($setting_name); ?>
+            $setting = get_option($setting_name, 'qr'); 
+            ?>
 
 
             <div style="background: #F5F5F5; padding: 1rem 1rem;">
                 <div class="insta-3-col-l">
                     <div class="insta-settings-label"><?php _e("InstaCode at login", 'instalogin-me') ?></div>
                     <div>
-                        <select name="instalogin-api-type">
+                        <select name="<?php echo esc_attr($setting_name) ?>">
                             <option value="qr" <?php selected($setting, 'qr') ?>>InstaCode</option>
                             <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
                         </select>
@@ -526,7 +527,7 @@ class InstaloginSettings
                 <div class=" insta-3-col-l" style="opacity: .5;">
                     <div class="insta-settings-label"><?php _e("Upload smartimage", 'instalogin-me') ?></div>
                     <div>
-                        <select name="instalogin-api-type">
+                        <select name="instalogin-api-TODO">
                             <option value="">...</option>
                         </select>
                     </div>
@@ -536,7 +537,7 @@ class InstaloginSettings
                 <div class="insta-3-col-l" style="opacity: .5;">
                     <div class="insta-settings-label"><?php _e("Upload icon", 'instalogin-me') ?></div>
                     <div>
-                        <select name="instalogin-api-type">
+                        <select name="instalogin-api-TODO">
                             <option value="">...</option>
                         </select>
                     </div>
