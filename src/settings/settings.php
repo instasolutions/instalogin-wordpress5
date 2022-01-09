@@ -509,11 +509,11 @@ class InstaloginSettings
                     <div class="insta-settings-label"><?php _e("InstaCode at login", 'instalogin-me') ?></div>
                     <div>
                         <select name="<?php echo esc_attr($setting_name) ?>">
-                            <option value="qr" <?php selected($setting, 'qr') ?>>InstaCode</option>
+                            <option value="qr" <?php selected($setting, 'qr') ?>>QR Code</option>
                             <option value="si" <?php selected($setting, 'si') ?>>Smart Image</option>
                         </select>
                     </div>
-                    <div class="insta-info" style="grid-row: span 2;"><?php _e("Should the InstaCode be displayed in QR format or as a smart image, e.g. your logo?", 'instalogin-me') ?></div>
+                    <div class="insta-info" style="grid-row: span 2;"><?php _e("Should the login code be displayed as QR code or as a smart image, e.g. your logo?", 'instalogin-me') ?></div>
                 </div>
 
                 <!-- TODO: proper settings -->
