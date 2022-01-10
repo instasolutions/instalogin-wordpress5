@@ -88,6 +88,7 @@ class InstaloginSettings
                             <!-- icon -->
                             <h3 class="insta-h3" style="grid-column: span 3; margin-top: 2.5rem;"><?php _e("Login Icon (PopUp)", 'instalogin-me') ?></h3>
                             <?php echo do_settings_fields('instalogin', 'instalogin-basic-icon'); ?>
+                            <?php echo do_settings_fields('instalogin', 'instalogin-basic-icon-logout'); ?>
 
                             <!-- reinstall -->
                             <div class="insta-3-col-s" style="background: transparent; margin-top: 3rem;">
@@ -237,7 +238,7 @@ class InstaloginSettings
                                     <?php _e("Instalogin will use these settings by default as such <b>[insta-login size='100px' show_when_logged_in='false' border='false' redirect='' ]</b> .", 'instalogin-me') ?>
                                     <br>
                                     <?php _e("Feel free to edit any or all settings.", 'instalogin-me') ?>
-                                    <?php _e("Set redirect to any url to send the user to a non default login page like a dashboard or marketing page e.g. '/dashboard' or '/marketing'.","instalogin-me") ?>
+                                    <?php _e("Set redirect to any url to send the user to a non default login page like a dashboard or marketing page e.g. '/dashboard' or '/marketing'.", "instalogin-me") ?>
                                     <br>
                                     <?php _e("Alternatively: Set redirect to 'stayonpage' to just refresh the page the user is viewing.", "instalogin-me") ?>
                                 </p>
@@ -271,7 +272,8 @@ class InstaloginSettings
             $page = 'instalogin';
             $this->basic_tab($page);
             $this->basic_tab_redirect($page);
-            $this->basic_tab_icon($page);
+            $this->basic_tab_login_icon($page);
+            $this->basic_tab_logout_icon($page);
             $this->api_tab($page);
             $this->api_smartcode($page);
 
@@ -351,7 +353,7 @@ class InstaloginSettings
         }, $page, $section);
     }
 
-    private function basic_tab_icon($page)
+    private function basic_tab_login_icon($page)
     {
         $section = 'instalogin-basic-icon';
 
@@ -378,8 +380,8 @@ class InstaloginSettings
                     gap: 1rem;
                 }
             </style>
+            <!-- login icon -->
             <div class="insta-3-col-s">
-
 
                 <div class="insta-settings-label"><?php _e("Icon shown in the login popup", 'instalogin-me') ?></div>
                 <div></div>
@@ -442,6 +444,91 @@ class InstaloginSettings
                         </div>
                     </div>
                 </div>
+
+            </div>
+
+        <?php
+        }, $page, $section);
+    }
+
+    private function basic_tab_logout_icon($page)
+    {
+        $section = 'instalogin-basic-icon-logout';
+
+        add_settings_section($section, __('Basic-Redirect', 'instalogin-me'), function () {
+            // Settings Section Title
+        }, $page);
+
+        // Custom Item
+        $setting_name = 'instalogin-popup-icon-logout';
+        register_setting($page, $setting_name);
+        add_settings_field($setting_name . "_field", '', function () {
+            $setting_name = 'instalogin-popup-icon-logout';
+            $setting = get_option($setting_name, [
+                'type' => 1,
+                'custom_src' => ''
+            ]);
+
+        ?>
+            <style>
+                .insta-icon-select-option {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            </style>
+            <div class="insta-3-col-s">
+
+
+                <div class="insta-settings-label"><?php _e("Icon shown when the user is logged in.", 'instalogin-me') ?></div>
+                <div></div>
+                <div class="media-selector">
+                    <div class="insta-info">
+                        <?php _e('Choose a logout icon. Same settings as the login icon.', 'instalogin-me') ?>
+                    </div>
+                    <div style="display: flex; gap: 1.2rem; margin-top: 1rem;">
+
+                        <div class="insta-icon-select-option">
+                            <img width="30px" src="<?php echo plugin_dir_url(__FILE__) . "../../img/logout1.svg"; ?>" alt="logo1">
+                            <input type="radio" name="<?php echo esc_attr($setting_name) ?>[type]" value="1" <?php echo esc_attr($setting['type']) == 1 ? 'checked' : '' ?> />
+                        </div>
+
+                        <div class="insta-icon-select-option">
+                            <style>
+                                /* Hide Chrome "image missing" icon error. TODO: move to css */
+                                img {
+                                    position: relative;
+                                }
+
+                                img[alt]:after {
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: #fff;
+                                    font-family: 'Helvetica';
+                                    font-weight: 300;
+                                    line-height: 2;
+                                    text-align: center;
+                                    content: attr(alt);
+                                }
+                            </style>
+                            <?php
+                            echo '<img id="selected-media" width="30px" height="30px" style="border: none;" src="' . esc_attr($setting["custom_src"]) . '" alt=" ">';
+                            ?>
+
+                            <input type="radio" name="<?php echo esc_attr($setting_name) ?>[type]" value="custom" <?php echo esc_attr($setting['type']) == 'custom' ? 'checked' : '' ?> />
+                        </div>
+
+                        <div>
+                            <button class="button" style="margin-left: 148px; border: 1px solid #707070; color: #707070; border-radius: 4px; font-size: 14px; font-weight: bold;"><?php _e("Select custom icon", 'instalogin-me') ?></button>
+                            <input type="hidden" name="<?php echo esc_attr($setting_name) ?>[custom_src]" value="<?php echo esc_attr($setting['custom_src']) ?>">
+                        </div>
+                    </div>
+                </div>
             </div>
         <?php
         }, $page, $section);
@@ -500,8 +587,8 @@ class InstaloginSettings
         register_setting($page, $setting_name);
         add_settings_field($setting_name . "_field", '', function () {
             $setting_name = 'instalogin-api-type';
-            $setting = get_option($setting_name, 'qr'); 
-            ?>
+            $setting = get_option($setting_name, 'qr');
+        ?>
 
 
             <div style="background: #F5F5F5; padding: 1rem 1rem;">

@@ -209,14 +209,14 @@ class InstaloginPopupSettings
                             </div>
                         </label> -->
 
-                        <label>
+                        <!-- <label>
                             <span><?php _e("Logout Icon", 'instalogin-me') ?></span>
                             <div class="media-selector" style="display: flex; align-items: center; gap: .7rem;">
                                 <button class="button"><?php _e("Select Icon", 'instalogin-me') ?></button>
                                 <input type="hidden" name="<?php echo esc_attr($setting_name) ?>[login-icon-out]" value="<?php echo esc_attr($setting['login-icon-out']) ?>">
                                 <img width="32px" height="32px" src="<?php echo esc_attr($setting['login-icon-out']) ?>" alt="">
                             </div>
-                        </label>
+                        </label> -->
 
                         <label>
                             <span><?php _e("Icon Color", 'instalogin-me') ?></span>
