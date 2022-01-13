@@ -25,14 +25,8 @@ class InstaloginLoginPage
                 return;
             }
 
-            wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
-
-            $container_id = 'instalogin';
-            $api_key = get_option('instalogin-api-key');
-            $display_type = get_option('instalogin-api-type', 'qr');
-
-            wp_enqueue_script('instalogin-login', plugin_dir_url(__FILE__) . '../../scripts/login.js?v=3', ['instalogin-api'], null, true);
-            wp_add_inline_script('instalogin-login', "init_insta('$container_id', '$api_key', '$display_type');", 'after');
+            // login.js contains special code to handle the login page
+            echo do_shortcode("[insta-login]");
         });
     }
 }

@@ -18,7 +18,7 @@ class InstaloginLoginShortcode
 
             // SETTINGS
             $attributes = shortcode_atts([
-                'size' => '100px',
+                'size' => '168px',
                 'show_when_logged_in' => "false",
                 'border' => "false",
                 'redirect' => '',
@@ -49,16 +49,56 @@ class InstaloginLoginShortcode
             ob_start(); ?>
             <style>
                 .instalogin-login .instalogin-container {
-                    border: <?php echo esc_html($border) ? ' 1px solid rgb(200, 200, 200);' : ' none !important;' ?>;
+                    /* border: <?php echo esc_html($border) ? ' 1px solid rgb(200, 200, 200);' : ' none !important;' ?>; */
                     width: <?php echo esc_html($size) ?>;
                 }
+                
+                .instalogin-login .instalogin-image-container {
+                    /* width: <?php echo esc_html($size) ?>; */
+                    background-color: transparent !important;
+                }
 
-                .instalogin-login .instalogin-image {
-                    width: <?php echo esc_html($size) ?>;
+                .insta-card {
+                    background: #cbcbcb;
+                    border-radius: 18px;
+                    overflow: hidden;
+                    max-width: min-content;
+                }
+
+                .insta-card .insta-content {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    gap: .8rem;
+                    margin-top: 1rem;
+                    margin-bottom: .5rem;
+                }
+
+                .insta-card .insta-content a {
+                    background: #3C3C3B;
+                    color: white;
+                    border-radius: 15px;
+                    border: 1px solid white;
+                    text-transform: none;
+                    text-decoration: none;
+
+                    font-size: 14px;
+
+                    padding: .2rem 1rem;
+                }
+
+                .insta-card .insta-logo {
+                    max-height: 15px;
                 }
             </style>
 
-            <div class="instalogin-login" id="<?php echo esc_attr($container_id) ?>"></div>
+            <div class="insta-card">
+                <div class="instalogin-login" id="<?php echo esc_attr($container_id) ?>"></div>
+                <div class="insta-content">
+                    <a href=" https://instalogin.me" target="_blank" rel="noopener" ><?php _e('Learn more...', 'instalogin-me') ?></a>
+                    <img class="insta-logo" src="<?php echo esc_attr(plugin_dir_url(__FILE__)) ?>../../img/Logo-Instlogin-v2-gray.svg" alt="instalogin logo">
+                </div>
+            </div>
 <?php
 
             return ob_get_clean();

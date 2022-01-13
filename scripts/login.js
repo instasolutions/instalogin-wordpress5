@@ -46,5 +46,6 @@ function init_insta(id, api_key, display_type, redirect) {
     useAuthHeader: false,
     authenticationUrl: url,
     type: display_type,
+    removeLabel: true,
   }).start();
 }
