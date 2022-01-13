@@ -26,7 +26,7 @@ class InstaloginLoginPage
             }
 
             // login.js contains special code to handle the login page
-            echo do_shortcode("[insta-login]");
+            echo do_shortcode("[insta-login login_page='true']");
         });
     }
 }

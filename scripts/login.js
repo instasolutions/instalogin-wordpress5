@@ -1,20 +1,6 @@
 function init_insta(id, api_key, display_type, redirect) {
   console.log("insta: creating qr code");
 
-  /** @type {HTMLButtonElement} */
-  let add_after_element = document.querySelector("p.submit");
-
-  if (!add_after_element) {
-    console.warn(
-      "insta: could not find Button `Log In`. Trying to find shortcode container."
-    );
-  } else {
-    const div = document.createElement("div");
-    id = "instalogin";
-    div.id = id;
-    add_after_element.after(div);
-  }
-
   if (!id) {
     console.error(`Html container id missing.`);
     return;
