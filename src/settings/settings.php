@@ -235,7 +235,7 @@ class InstaloginSettings
                                     <b class="insta-b">[insta-login]</b>
                                     <?php _e(" adds an InstaCode to your page.", 'instalogin-me') ?>
                                     <br>
-                                    <?php _e("Instalogin will use these settings by default as such <b>[insta-login size='100px' show_when_logged_in='false' border='false' redirect='' ]</b> .", 'instalogin-me') ?>
+                                    <?php _e("Instalogin will use these settings by default as such <b>[insta-login size='100px' show_when_logged_in='false' redirect='' ]</b> .", 'instalogin-me') ?>
                                     <br>
                                     <?php _e("Feel free to edit any or all settings.", 'instalogin-me') ?>
                                     <?php _e("Set redirect to any url to send the user to a non default login page like a dashboard or marketing page e.g. '/dashboard' or '/marketing'.", "instalogin-me") ?>

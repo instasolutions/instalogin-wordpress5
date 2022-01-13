@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Official Instalogin\n"
-"POT-Creation-Date: 2022-01-05 00:22+0100\n"
+"POT-Creation-Date: 2022-01-14 00:45+0100\n"
 "PO-Revision-Date: 2021-10-30 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -116,6 +116,10 @@ msgstr ""
 msgid "Could not verify token."
 msgstr ""
 
+#: src/login/shortcode.php:146
+msgid "Learn more..."
+msgstr ""
+
 #: src/popup/default_settings.php:24
 msgid "Login"
 msgstr ""
@@ -129,7 +133,7 @@ msgid ""
 "Scan the InstaCode using the Instalogin app to login securely, password-free."
 msgstr ""
 
-#: src/popup/default_settings.php:36 src/popup/shortcode.php:344
+#: src/popup/default_settings.php:36 src/popup/shortcode.php:334
 msgid "Register"
 msgstr ""
 
@@ -153,7 +157,7 @@ msgstr ""
 msgid "PopUp Preview"
 msgstr ""
 
-#: src/popup/settings.php:10 src/settings/settings.php:494
+#: src/popup/settings.php:10 src/settings/settings.php:581
 msgid "Smartcode"
 msgstr ""
 
@@ -162,7 +166,7 @@ msgid "Container Design"
 msgstr ""
 
 #: src/popup/settings.php:94 src/popup/settings.php:169
-#: src/popup/settings.php:257 src/popup/settings.php:382
+#: src/popup/settings.php:257 src/popup/settings.php:379
 msgid "Background"
 msgstr ""
 
@@ -218,23 +222,23 @@ msgstr ""
 msgid "Logout Text"
 msgstr ""
 
-#: src/popup/settings.php:164 src/popup/settings.php:370
+#: src/popup/settings.php:164 src/popup/settings.php:367
 msgid "Font Size"
 msgstr ""
 
 #: src/popup/settings.php:174 src/popup/settings.php:237
-#: src/popup/settings.php:280 src/popup/settings.php:312
-#: src/popup/settings.php:344 src/popup/settings.php:378
+#: src/popup/settings.php:280 src/popup/settings.php:311
+#: src/popup/settings.php:341 src/popup/settings.php:375
 msgid "Color"
 msgstr ""
 
-#: src/popup/settings.php:179 src/popup/settings.php:374
+#: src/popup/settings.php:179 src/popup/settings.php:371
 msgid "Border Radius"
 msgstr ""
 
 #: src/popup/settings.php:184 src/popup/settings.php:284
-#: src/popup/settings.php:316 src/popup/settings.php:348
-#: src/popup/settings.php:386
+#: src/popup/settings.php:315 src/popup/settings.php:345
+#: src/popup/settings.php:383
 msgid "Weight"
 msgstr ""
 
@@ -283,12 +287,12 @@ msgid "Title"
 msgstr ""
 
 #: src/popup/settings.php:272 src/popup/settings.php:302
-#: src/popup/settings.php:331 src/popup/settings.php:366
+#: src/popup/settings.php:330 src/popup/settings.php:363
 msgid "Text"
 msgstr ""
 
-#: src/popup/settings.php:276 src/popup/settings.php:308
-#: src/popup/settings.php:340
+#: src/popup/settings.php:276 src/popup/settings.php:307
+#: src/popup/settings.php:337
 msgid "Size"
 msgstr ""
 
@@ -296,15 +300,15 @@ msgstr ""
 msgid "Sub Title"
 msgstr ""
 
-#: src/popup/settings.php:334
+#: src/popup/settings.php:333
 msgid "Content"
 msgstr ""
 
-#: src/popup/settings.php:363
+#: src/popup/settings.php:360
 msgid "Button"
 msgstr ""
 
-#: src/popup/settings.php:405
+#: src/popup/settings.php:402
 msgid "Save & Update preview"
 msgstr ""
 
@@ -451,7 +455,7 @@ msgstr ""
 msgid "Login Popup Style"
 msgstr ""
 
-#: src/settings/settings.php:78 src/settings/settings.php:221
+#: src/settings/settings.php:78 src/settings/settings.php:222
 msgid "Usage"
 msgstr ""
 
@@ -467,21 +471,21 @@ msgstr ""
 msgid "Login Icon (PopUp)"
 msgstr ""
 
-#: src/settings/settings.php:95
+#: src/settings/settings.php:96
 msgid "Reinstall"
 msgstr ""
 
-#: src/settings/settings.php:98
+#: src/settings/settings.php:99
 msgid ""
 "If you want to restore the default settings just restart the setup and you "
 "will be guided through the steps."
 msgstr ""
 
-#: src/settings/settings.php:104
+#: src/settings/settings.php:105
 msgid "License Key (Instalogin Key & Secret)"
 msgstr ""
 
-#: src/settings/settings.php:106
+#: src/settings/settings.php:107
 msgid ""
 "The Key and Secret are needed to secure the communication and login process. "
 "At the same time they are the license keys and the connection to the "
@@ -489,206 +493,215 @@ msgid ""
 "Key & Secret from us yet, you can order it here:"
 msgstr ""
 
-#: src/settings/settings.php:111
+#: src/settings/settings.php:112
 msgid "Status"
 msgstr ""
 
-#: src/settings/settings.php:132 src/settings/settings.php:184
+#: src/settings/settings.php:133 src/settings/settings.php:185
 msgid "Active"
 msgstr ""
 
-#: src/settings/settings.php:134 src/settings/settings.php:189
+#: src/settings/settings.php:135 src/settings/settings.php:190
 msgid "Inactive"
 msgstr ""
 
-#: src/settings/settings.php:181
+#: src/settings/settings.php:182
 msgid "License activated!"
 msgstr ""
 
-#: src/settings/settings.php:186
+#: src/settings/settings.php:187
 msgid "Invalid license. Please try again."
 msgstr ""
 
-#: src/settings/settings.php:201
+#: src/settings/settings.php:202
 msgid "Request license key"
 msgstr ""
 
-#: src/settings/settings.php:205
+#: src/settings/settings.php:206
 msgid "Extend license"
 msgstr ""
 
-#: src/settings/settings.php:224
+#: src/settings/settings.php:225
 msgid ""
 "A Instalogin login code will be added to the wordpress login page "
 "automatically."
 msgstr ""
 
-#: src/settings/settings.php:225
+#: src/settings/settings.php:226
 msgid ""
 "If <b>'registration via Instalogin'</b> is enabled in the basic settings "
 "tab, an email allowing users to connect their account to the InstaApp will "
 "be sent out automatically."
 msgstr ""
 
-#: src/settings/settings.php:228
+#: src/settings/settings.php:229
 msgid "Shortcodes"
 msgstr ""
 
-#: src/settings/settings.php:230
+#: src/settings/settings.php:231
 msgid ""
 "If you would like to add login and registration options to the frontend of "
 "your website you may use these shortcodes:"
 msgstr ""
 
-#: src/settings/settings.php:235
+#: src/settings/settings.php:236
 msgid " adds an InstaCode to your page."
 msgstr ""
 
-#: src/settings/settings.php:237
+#: src/settings/settings.php:238
 msgid ""
 "Instalogin will use these settings by default as such <b>[insta-login "
-"size='100px' show_when_logged_in='false' border='false' redirect='' ]</b> ."
-msgstr ""
-
-#: src/settings/settings.php:239
-msgid "Feel free to edit any or all settings."
+"size='100px' show_when_logged_in='false' redirect='' ]</b> ."
 msgstr ""
 
 #: src/settings/settings.php:240
+msgid "Feel free to edit any or all settings."
+msgstr ""
+
+#: src/settings/settings.php:241
 msgid ""
 "Set redirect to any url to send the user to a non default login page like a "
 "dashboard or marketing page e.g. '/dashboard' or '/marketing'."
 msgstr ""
 
-#: src/settings/settings.php:242
+#: src/settings/settings.php:243
 msgid ""
 "Alternatively: Set redirect to 'stayonpage' to just refresh the page the "
 "user is viewing."
 msgstr ""
 
-#: src/settings/settings.php:247
+#: src/settings/settings.php:248
 msgid " adds a simple registration form to your page."
 msgstr ""
 
-#: src/settings/settings.php:249
+#: src/settings/settings.php:250
 msgid ""
 "With optional default settings: <b>[insta-register require_username='true' "
 "show_button='true' button_text='Submit' show_when_logged_in='false' ]</b> ."
 msgstr ""
 
-#: src/settings/settings.php:251
+#: src/settings/settings.php:252
 msgid "If a username is not required, the users email address will be used."
 msgstr ""
 
-#: src/settings/settings.php:256
+#: src/settings/settings.php:257
 msgid ""
 " May be used to add a login popup to a page. Alternatively you can add a "
 "popup by adding Insta-PopUp to a menu in <b>Appearance > Customize > Menus</"
 "b>."
 msgstr ""
 
-#: src/settings/settings.php:262
+#: src/settings/settings.php:263
 msgid "Save Settings"
 msgstr ""
 
-#: src/settings/settings.php:288
+#: src/settings/settings.php:290
 msgid "Basic"
 msgstr ""
 
-#: src/settings/settings.php:300 wizard/steps/step3.php:186
+#: src/settings/settings.php:302 wizard/steps/step3.php:186
 msgid "Enable login via Instalogin"
 msgstr ""
 
-#: src/settings/settings.php:304 wizard/steps/step3.php:189
+#: src/settings/settings.php:306 wizard/steps/step3.php:189
 msgid ""
 "Enable or disable all Instalogin methods. Users may not use Instalogin to "
 "sign in to or to create new accounts."
 msgstr ""
 
-#: src/settings/settings.php:317 wizard/steps/step3.php:192
+#: src/settings/settings.php:319 wizard/steps/step3.php:192
 msgid "Activation on Register"
 msgstr ""
 
-#: src/settings/settings.php:321 wizard/steps/step3.php:195
+#: src/settings/settings.php:323 wizard/steps/step3.php:195
 msgid "An Instalogin mail will be sent to every new user upon registration."
 msgstr ""
 
-#: src/settings/settings.php:331 src/settings/settings.php:358
+#: src/settings/settings.php:333 src/settings/settings.php:360
+#: src/settings/settings.php:458
 msgid "Basic-Redirect"
 msgstr ""
 
-#: src/settings/settings.php:343
+#: src/settings/settings.php:345
 msgid "Redirect to after login"
 msgstr ""
 
-#: src/settings/settings.php:346
+#: src/settings/settings.php:348
 msgid ""
 "Decide to which page users should be redirected to after successfully "
 "logging in. '/wp-admin' is the common directory."
 msgstr ""
 
-#: src/settings/settings.php:384
+#: src/settings/settings.php:386
 msgid "Icon shown in the login popup"
 msgstr ""
 
-#: src/settings/settings.php:388
+#: src/settings/settings.php:390
 msgid ""
 "Choose a login icon which will be integrated into your navigation in the "
 "menu or in the footer. You can make further settings under \"Login Popup "
 "Style\", such as size and color, to adapt the icon to your style."
 msgstr ""
 
-#: src/settings/settings.php:439
+#: src/settings/settings.php:441 src/settings/settings.php:527
 msgid "Select custom icon"
 msgstr ""
 
-#: src/settings/settings.php:454
+#: src/settings/settings.php:484
+msgid "Icon shown when the user is logged in."
+msgstr ""
+
+#: src/settings/settings.php:488
+msgid "Choose a logout icon. Same settings as the login icon."
+msgstr ""
+
+#: src/settings/settings.php:541
 msgid "API"
 msgstr ""
 
-#: src/settings/settings.php:465 wizard/steps/step3.php:156
+#: src/settings/settings.php:552 wizard/steps/step3.php:156
 msgid "API Key"
 msgstr ""
 
-#: src/settings/settings.php:480 wizard/steps/step3.php:161
+#: src/settings/settings.php:567 wizard/steps/step3.php:161
 msgid "API Secret"
 msgstr ""
 
-#: src/settings/settings.php:508
+#: src/settings/settings.php:596
 msgid "InstaCode at login"
 msgstr ""
 
-#: src/settings/settings.php:515
+#: src/settings/settings.php:603
 msgid ""
-"Should the InstaCode be displayed in QR format or as a smart image, e.g. "
-"your logo?"
+"Should the login code be displayed as QR code or as a smart image, e.g. your "
+"logo?"
 msgstr ""
 
-#: src/settings/settings.php:527
+#: src/settings/settings.php:615
 msgid "Upload smartimage"
 msgstr ""
 
-#: src/settings/settings.php:533
+#: src/settings/settings.php:621
 msgid ""
 "To use your logo or other image as SmartCode, please upload a PNG with "
 "500x500 pixels and maximum 4 colors."
 msgstr ""
 
-#: src/settings/settings.php:537
+#: src/settings/settings.php:625
 msgid "Upload icon"
 msgstr ""
 
-#: src/settings/settings.php:543
+#: src/settings/settings.php:631
 msgid ""
 "Upload your app icon. The icon will be displayed on your account in the app. "
 "The icon should be a PNG with 500x500 pixels."
 msgstr ""
 
-#: src/settings/settings.php:549
+#: src/settings/settings.php:637
 msgid "Examples"
 msgstr ""
 
-#: src/settings/settings.php:550
+#: src/settings/settings.php:638
 msgid ""
 "During the beta phase, Smart Images must be configured by an Instalogin "
 "representative. You can submit a request to <a href='mailto:"
