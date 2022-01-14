@@ -54,12 +54,13 @@ class InstaloginLoginShortcode
 
             // RENDER
             if (!$login_page) {
-                echo $this->html($size, $container_id);
+                return $this->html($size, $container_id);
             } else {
                 // We can't insert HTML into the login page regularly, so we must use js.
-
+                ob_start();
 ?>
                 <script>
+                    console.log('instalogin - adding code to login page');
                     /** @type {HTMLButtonElement} */
                     let submit = document.querySelector("p.submit");
                     console.log(submit);
@@ -80,6 +81,7 @@ class InstaloginLoginShortcode
                 </script>
 
         <?php
+        return ob_get_clean();
             }
         });
     }
