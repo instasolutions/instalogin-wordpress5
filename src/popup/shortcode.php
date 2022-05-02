@@ -38,7 +38,9 @@ class InstaloginPopupShortcode
         $logout_icon_setting = get_option($logout_icon_setting_name);
 
         // SCRIPTS
-        wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
+        // wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
+        wp_enqueue_script('instalogin-api', plugin_dir_url(__FILE__) . '../../scripts/instalogin-sdk.js');
+
 
         $container_id = wp_generate_password(5, false);;
         $api_key = get_option('instalogin-api-key', false);

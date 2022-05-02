@@ -36,7 +36,8 @@ class InstaloginLoginShortcode
             }
 
             // SCRIPTS
-            wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
+            // wp_enqueue_script('instalogin-api', 'https://cdn.instalog.in/js/instalogin-0.7.2.js');
+            wp_enqueue_script('instalogin-api', plugin_dir_url(__FILE__) . '../../scripts/instalogin-sdk.js');
 
             $container_id = 'instalogin';
             if (!$login_page) {
